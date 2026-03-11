@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dlpfyy5menbrb"]
+
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/png version NPC.png" id="1_4kvco"]
+[ext_resource type="PackedScene" uid="uid://b4rkpf7hcumgf" path="res://scenes/components/area_of_effect/range_of_effect.tscn" id="2_4kvco"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
+size = Vector3(1.2825317, 1.2763672, 0.2177124)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqhh"]
+shading_mode = 0
+albedo_color = Color(1, 0.14117648, 0.14509805, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_abqhh"]
+material = SubResource("StandardMaterial3D_abqhh")
+text = "!!!!!"
+font_size = 50
+
+[node name="NPC" type="CharacterBody3D" unique_id=981572405]
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
+shape = SubResource("BoxShape3D_gr72c")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1590636786]
+texture = ExtResource("1_4kvco")
+
+[node name="Test Display Text" type="MeshInstance3D" parent="." unique_id=1710215210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.004)
+visible = false
+mesh = SubResource("TextMesh_abqhh")
+
+[node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_4kvco")]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b4rkpf7hcumgf"]
+
+[ext_resource type="Script" uid="uid://ci20i7me2qe4j" path="res://scenes/components/area_of_effect/range_of_effect.gd" id="1_k1x48"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nh2m4"]
+radius = 3.908636
+
+[node name="Range of Effect" type="Area3D" unique_id=1837924148]
+script = ExtResource("1_k1x48")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1856319881]
+shape = SubResource("SphereShape3D_nh2m4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="detected_player" from="." to="." method="_on_detected_player"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8lqrjd5peukc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_djix4"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpqbj"]
+albedo_texture = SubResource("CompressedTexture2D_djix4")
+uv1_scale = Vector3(3, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x65au"]
+material = SubResource("StandardMaterial3D_dpqbj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5g5t"]
+
+[node name="MeshLib" type="Node3D" unique_id=164260049]
+
+[node name="godot my goat" type="MeshInstance3D" parent="." unique_id=289516332]
+mesh = SubResource("BoxMesh_x65au")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="godot my goat" unique_id=845799703]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="godot my goat/StaticBody3D" unique_id=727777978]
+shape = SubResource("BoxShape3D_e5g5t")

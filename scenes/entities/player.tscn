@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://nny8kwvbu7pp"]
+
+[ext_resource type="Texture2D" uid="uid://c8orsmbuidgtn" path="res://assets/images/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://b5csjinbsck85" path="res://scenes/entities/player.gd" id="1_g2els"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2els"]
+size = Vector3(1.2825317, 1.2763672, 0.2177124)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2els"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_g2els"]
+material = SubResource("StandardMaterial3D_g2els")
+text = "5 seconds in collision range has passed
+idk what else to put here lmfao"
+font_size = 30
+
+[node name="Player" type="CharacterBody3D" unique_id=1934454904]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1008714095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
+shape = SubResource("BoxShape3D_g2els")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=212698178]
+texture = ExtResource("1_3vyb7")
+
+[node name="Temp Text Display Status" type="MeshInstance3D" parent="." unique_id=1602566306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0793457, 0)
+visible = false
+mesh = SubResource("TextMesh_g2els")
+
+[node name="Timer" type="Timer" parent="." unique_id=366077755]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
