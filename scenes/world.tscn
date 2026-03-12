@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_k0juu"]
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_k0juu")
