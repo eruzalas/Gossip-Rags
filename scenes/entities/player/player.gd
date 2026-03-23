@@ -2,7 +2,7 @@ extends CharacterBody3D
 @onready var timer: Timer = $Timer
 @onready var temp_text_display_status: MeshInstance3D = $"Temp Text Display Status"
 
-const SPEED = 10.0
+const SPEED = 5.0
 const JUMP_VELOCITY = 10
 
 func _physics_process(delta: float) -> void:

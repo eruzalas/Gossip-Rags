@@ -3,6 +3,36 @@
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_k0juu"]
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://6lcmmf07a1s3" path="res://assets/testsprites/player_AM/sprite1.png" id="4_71j4m"]
+[ext_resource type="Texture2D" uid="uid://ccnlaksqg35c2" path="res://assets/testsprites/player_AM/sprite2.png" id="5_qfnet"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7141"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_71j4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qfnet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71j4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_71j4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qfnet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_k0juu")
@@ -18,6 +48,17 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="Player" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9335082, -0.375)
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Player" unique_id=38661638]
+sprite_frames = SubResource("SpriteFrames_i7141")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235421529]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.012299538, 12.757189, 12.671423)
 fov = 50.0
+
+[node name="movedummy" type="CharacterBody3D" parent="." unique_id=979481404]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="movedummy" unique_id=900674632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9329567, 0)
+sprite_frames = SubResource("SpriteFrames_71j4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="movedummy/AnimatedSprite3D" unique_id=641757971]
