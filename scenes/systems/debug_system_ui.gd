@@ -12,17 +12,30 @@ extends Node
 var sus: float = 0.0
 var multi: float = 1.0
 var steps: int = 0 #changes per second of time spent in suspicion
+var state: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-# TODO: have debug UI update alongside the sus values
+# Current function operates with button presses
 func _process(delta: float) -> void:
-	pass
+	
+	#Debugging/Testing code 
+	if Input.is_action_just_pressed("ui_up"):
+		if(steps < 10):
+			steps += 1
+			print(steps)
+			_determine_sus()
+	if Input.is_action_just_pressed("ui_down"):
+		if(steps > 0):
+			steps -= 1
+		_determine_sus()
+	
 	
 func _determine_sus():
-	
+	sus = suspicion_system._calculate_sus(multi, sus, steps)
+	state = suspicion_system._state_level(sus)
+	sus_debug.text = "Sus: " + str(sus) + " " + state
 	pass

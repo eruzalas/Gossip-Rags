@@ -17,19 +17,19 @@ func _process(delta: float) -> void:
 #Calculate suspicion precentage (accounts for costume multipliers and "steps" how long in sus)
 func _calculate_sus(multi: float, sus_precent: float, steps: int):
 	
-	sus_level = (sus_precent + steps) * multi
+	sus_level = (steps) * multi  #should have the current sus influence this for exponential
 	return sus_level
 
 #Calculate current state level and updates state variable
-func _state_level():
+func _state_level(sus_precent: float):
 	
-	if(sus_level < 50):
+	if(sus_precent < 5):
 		state = "calm"
 		print("state: " + state)
-	elif(sus_level > 50 && sus_level < 80):
+	elif(sus_precent > 5 && sus_precent < 8):
 		state = "wary"
 		print("state: " + state)
-	elif(sus_level > 80):
+	elif(sus_precent > 8):
 		state = "alert"
 		print("state: " + state)
 		
