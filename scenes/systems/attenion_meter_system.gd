@@ -7,7 +7,7 @@ var state: String = ""
 var att_level: float = 0  #int or float?
 
 #Calculate attention to new total attention upon action
-func _calculate_att(action: int, current_att: int):
+func _calculate_att(action: float, current_att: float):
 	att_level = action				#current_att + action
 	return att_level
 

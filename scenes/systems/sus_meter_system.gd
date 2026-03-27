@@ -6,7 +6,7 @@ var state: String = ""
 var sus_level: float = 0  #int or float?
 
 #Calculate suspicion precentage (accounts for costume multipliers and "steps" how long in sus)
-func _calculate_sus(multi: float, sus_precent: float, steps: int):
+func _calculate_sus(multi: float, sus_precent: float, steps: float):
 	
 	sus_level = (steps) * multi  #should have the current sus influence this for exponential
 	return sus_level
