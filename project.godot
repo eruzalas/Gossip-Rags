@@ -15,6 +15,10 @@ run/main_scene="uid://b4c0t1vp8jiaf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/images/icon.svg"
 
+[dotnet]
+
+project/assembly_name="Gossip Rags"
+
 [global_group]
 
 players="group holding player entities - for gossip collision"
