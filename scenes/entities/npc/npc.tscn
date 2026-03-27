@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
 [ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/png version NPC.png" id="1_p5uw1"]
+[ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
 [ext_resource type="PackedScene" uid="uid://b4rkpf7hcumgf" path="res://scenes/components/area_of_effect/range_of_effect.tscn" id="2_xjnpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
@@ -16,6 +17,7 @@ text = "!!!!!"
 font_size = 50
 
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
+script = ExtResource("1_xjnpb")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
@@ -30,3 +32,7 @@ visible = false
 mesh = SubResource("TextMesh_abqhh")
 
 [node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_xjnpb")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

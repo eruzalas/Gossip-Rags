@@ -1,6 +1,7 @@
 extends Area3D
 @export var is_active: bool = false
-@export var origin_ID: String = ""
+@export var group_origin_ID: String = ""
+@export var unique_origin_ID: String = ""
 @export var gen_NPC_number: int = 2
 @export var max_NPC_number: int = 4
 @export var base_movement_chance: float = 0.5
@@ -9,6 +10,7 @@ extends Area3D
 const npc_prefab = preload("res://scenes/entities/npc/npc.tscn")
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var player: CharacterBody3D = $"../Player"
+@onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,3 +36,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_movement_opportunity_timer_timeout() -> void:
+	var current_NPC_children = get_children()
+	

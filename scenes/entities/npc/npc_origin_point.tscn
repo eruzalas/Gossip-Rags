@@ -13,3 +13,7 @@ is_active = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=461477972]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
 shape = SubResource("CylinderShape3D_i33o0")
+
+[node name="Movement Opportunity Timer" type="Timer" parent="." unique_id=1420510411]
+
+[connection signal="timeout" from="Movement Opportunity Timer" to="." method="_on_movement_opportunity_timer_timeout"]

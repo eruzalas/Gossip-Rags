@@ -6,7 +6,7 @@ extends Area3D
 # signal sent to observers (players) 
 #   - using observers is better than the player checking its own position constantly
 
-signal detected_player()
+signal detected_player
 
 func _ready() -> void:
 	pass # Replace with function body.
