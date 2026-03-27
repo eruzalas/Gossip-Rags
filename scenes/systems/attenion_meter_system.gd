@@ -32,5 +32,4 @@ func _natural_att_decay(att_precent: float):
 	att_level = att_precent
 	#TODO more proper math should be included here following amount of time past since last attention action
 	att_level -= 0.2
-	print(att_level)
 	return att_level

@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	#Decay, do not decay if there is nothing to decay
 	if Input.is_action_just_pressed("ui_accept"): #enter key
 		if(att > 0):
-			action -= 0.5
+			action = attention_system._natural_att_decay(att)
 		_determine_atten()
 	if Input.is_action_just_pressed("ui_text_backspace"): #backspace key
 		if(sus > 0):
