@@ -1,7 +1,6 @@
 extends Area3D
 @export var is_active: bool = false
-@export var group_origin_ID: String = ""
-@export var unique_origin_ID: String = ""
+@export var group_origin_ID: int = 0
 @export var gen_NPC_number: int = 2
 @export var max_NPC_number: int = 4
 @export var base_movement_chance: float = 0.5
@@ -9,8 +8,10 @@ extends Area3D
 
 const npc_prefab = preload("res://scenes/entities/npc/npc.tscn")
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var player: CharacterBody3D = $"../Player"
+@onready var player: CharacterBody3D = $"../../Player"
 @onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
+
+var movement_opportunity_flag: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,23 +22,55 @@ func _ready() -> void:
 		while i < gen_NPC_number:
 			var new_npc = npc_prefab.instantiate()
 			# https://forum.godotengine.org/t/create-node-at-random-position-in-area-3d/830/2
-			var npc_position = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)).normalized()
-			var npc_dist_from_origin = randf_range(1, collision_shape_3d.shape.radius)
-			npc_position.x *= npc_dist_from_origin
-			npc_position.y = 1
-			npc_position.z *= npc_dist_from_origin
 			add_child(new_npc)
 			new_npc.get_node("Range of Effect").detected_player.connect(player._on_detected)
-			new_npc.global_position = collision_shape_3d.global_position + npc_position
+			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_radius()
+			new_npc.group_origin_ID = group_origin_ID
 			i += 1
 	
 
+func _check_movement_opportunity_status():
+	return movement_opportunity_flag
+
+func _generate_timeout_period():
+	# retrieve suspicion/attention values - hardcoded for sake of testing
+	var suspicion = 5
+	var max_suspicion = 10
+	var timeout = 10 + 10 / (1 - (suspicion / max_suspicion))
+	#print(timeout)
+	return timeout
+	
+func _refresh_movement_opportunity_timer():
+	movement_opportunity_flag = false
+	movement_opportunity_timer.start(_generate_timeout_period())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	movement_opportunity_flag = false
+	movement_opportunity_timer.start(_generate_timeout_period())
 
 func _on_movement_opportunity_timer_timeout() -> void:
-	var current_NPC_children = get_children()
+	movement_opportunity_flag = true
 	
+func _tell_child_to_move(other_origin_points):
+	var dest_origin = other_origin_points[randi_range(0, other_origin_points.size() - 1)]
+	var children = get_children()
+	var selected_child = children[randi_range(0, children.size() - 1)]
+	remove_child(selected_child)
+	dest_origin._accept_child(selected_child)
+
+func _accept_child(child):
+	add_child(child)
+
+
+func _get_random_position_in_radius():
+	var og_new_position = collision_shape_3d.position
+	var new_position = collision_shape_3d.position
+	var random_position = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)).normalized()
+	var distance_from_origin = randf_range(-1 * collision_shape_3d.shape.radius, collision_shape_3d.shape.radius)
+	new_position.x = distance_from_origin
+	new_position.y = 1
+	new_position.z = distance_from_origin
+	print(new_position)
+	print(og_new_position)
+	return new_position
