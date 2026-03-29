@@ -35,4 +35,9 @@ mesh = SubResource("TextMesh_abqhh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
 
+[node name="Look Timer" type="Timer" parent="." unique_id=1900664280]
+
+[connection signal="body_entered" from="Range of Effect" to="." method="_on_range_of_effect_body_entered"]
+[connection signal="body_exited" from="Range of Effect" to="." method="_on_range_of_effect_body_exited"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Look Timer" to="." method="_on_look_timer_timeout"]

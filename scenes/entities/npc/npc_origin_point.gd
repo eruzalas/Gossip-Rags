@@ -23,9 +23,9 @@ func _ready() -> void:
 			var new_npc = npc_prefab.instantiate()
 			# https://forum.godotengine.org/t/create-node-at-random-position-in-area-3d/830/2
 			add_child(new_npc)
-			new_npc.get_node("Range of Effect").detected_player.connect(player._on_detected)
-			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_radius()
+			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
 			new_npc.group_origin_ID = group_origin_ID
+			new_npc.npc_type = Enums.NpcType.GROUP
 			i += 1
 	
 
@@ -74,3 +74,24 @@ func _get_random_position_in_radius():
 	print(new_position)
 	print(og_new_position)
 	return new_position
+
+
+# source: https://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly/50746409#50746409
+# and: https://codepen.io/KonradLinkowski/pen/ExjLGxJ
+func _get_random_position_in_annulus():
+	const spawn_inner_radius = 1
+	# outer_radius by which NPCs will spawn within (reduce this if you want them further within radius)
+	var spawn_outer_radius = collision_shape_3d.shape.radius - 0.5
+	
+	var width = collision_shape_3d.shape.radius * 2
+	var centre = collision_shape_3d.shape.radius
+	
+	var r = sqrt(randf() * (spawn_outer_radius**2 - spawn_inner_radius**2) + spawn_inner_radius**2)
+	var theta = randf() * 2 * PI
+	
+	var x = r * cos(theta)
+	var y = 1
+	var z = r * sin(theta)
+	
+	return Vector3(x, y, z)
+	

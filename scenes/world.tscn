@@ -38,10 +38,11 @@ script = ExtResource("4_71j4m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.093, 1, -2.533)
 is_active = false
 group_origin_ID = 1
+gen_NPC_number = 6
 max_NPC_number = 10
 
 [node name="origin 2" parent="Origin Controller 1" unique_id=2066619430 instance=ExtResource("4_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.010851, 1, -5.4277787)
 group_origin_ID = 1
-gen_NPC_number = 10
+gen_NPC_number = 5
 max_NPC_number = 10

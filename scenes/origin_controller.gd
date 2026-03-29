@@ -3,8 +3,6 @@ extends Node3D
 @export var rat_number_7: bool = true
 var children = []
 
-@onready var timer: Timer = $Timer
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	children = get_children()
