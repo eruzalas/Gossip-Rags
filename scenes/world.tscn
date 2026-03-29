@@ -4,11 +4,15 @@
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://xowdms5vesjr" path="res://scenes/systems/debug_system_ui.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="3_i7141"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="5_qfnet"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attenion_meter_system.gd" id="6_i7141"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4wyf3"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_i7141"]
+font_size = 40
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_k0juu")
@@ -41,6 +45,30 @@ offset_right = 220.0
 offset_bottom = 90.0
 text = "Attention: "
 label_settings = SubResource("LabelSettings_4wyf3")
+
+[node name="GUI" type="Control" parent="." unique_id=1731378885]
+layout_mode = 3
+anchor_right = 0.9990001
+anchor_bottom = 1.006
+offset_right = 0.15185547
+offset_bottom = 0.11199951
+script = ExtResource("3_i7141")
+
+[node name="Clock Label" type="Label" parent="GUI" unique_id=1683089376]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.096
+anchor_bottom = 0.097
+offset_left = 896.0
+offset_top = 2.0
+offset_right = 1044.504
+offset_bottom = 1.7559967
+text = "Time: "
+label_settings = SubResource("LabelSettings_i7141")
+
+[node name="InGame Clock" type="Timer" parent="GUI" unique_id=698479061]
+unique_name_in_owner = true
 
 [node name="Test Stage Layout" type="GridMap" parent="." unique_id=965549943]
 mesh_library = ExtResource("1_nnsk1")
