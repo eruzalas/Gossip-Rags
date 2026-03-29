@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccnlaksqg35c2"
-path.s3tc="res://.godot/imported/sprite2.png-c3acd9cecb7a40ede49b695e30f308d7.s3tc.ctex"
+uid="uid://bimvgmsyvupso"
+path.s3tc="res://.godot/imported/test_sprite.png-fbab3ede4b5b7edc0b52a7ccc493929c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/testsprites/player_AM/sprite2.png"
-dest_files=["res://.godot/imported/sprite2.png-c3acd9cecb7a40ede49b695e30f308d7.s3tc.ctex"]
+source_file="res://assets/testsprites/player_AM/test_sprite.png"
+dest_files=["res://.godot/imported/test_sprite.png-fbab3ede4b5b7edc0b52a7ccc493929c.s3tc.ctex"]
 
 [params]
 
