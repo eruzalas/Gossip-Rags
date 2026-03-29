@@ -22,6 +22,7 @@ project/assembly_name="Gossip Rags"
 [global_group]
 
 players="group holding player entities - for gossip collision"
+npcs="group holding npc entities"
 
 [input]
 

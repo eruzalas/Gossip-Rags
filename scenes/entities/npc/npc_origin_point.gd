@@ -1,4 +1,7 @@
 extends Area3D
+
+class_name OriginPoint
+
 @export var is_active: bool = false
 @export var group_origin_ID: int = 0
 @export var gen_NPC_number: int = 2
@@ -12,6 +15,7 @@ const npc_prefab = preload("res://scenes/entities/npc/npc.tscn")
 @onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
 
 var movement_opportunity_flag: bool = false
+var child_npcs: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +31,9 @@ func _ready() -> void:
 			new_npc.group_origin_ID = group_origin_ID
 			new_npc.npc_type = Enums.NpcType.GROUP
 			i += 1
+			
+		movement_opportunity_timer.start(_generate_timeout_period())
+		_get_child_npcs()
 	
 
 func _check_movement_opportunity_status():
@@ -34,10 +41,10 @@ func _check_movement_opportunity_status():
 
 func _generate_timeout_period():
 	# retrieve suspicion/attention values - hardcoded for sake of testing
-	var suspicion = 5
+	var suspicion = 9
 	var max_suspicion = 10
-	var timeout = 10 + 10 / (1 - (suspicion / max_suspicion))
-	#print(timeout)
+	#var timeout = 10 + (10 / (1 - (suspicion / max_suspicion)))
+	var timeout = 2
 	return timeout
 	
 func _refresh_movement_opportunity_timer():
@@ -46,22 +53,25 @@ func _refresh_movement_opportunity_timer():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	movement_opportunity_flag = false
-	movement_opportunity_timer.start(_generate_timeout_period())
+	pass
 
 func _on_movement_opportunity_timer_timeout() -> void:
 	movement_opportunity_flag = true
 	
+func _get_child_npcs() -> void:
+	child_npcs.clear()
+	for child in get_children():
+		if child is Npc:
+			child_npcs.append(child)
+			
+
 func _tell_child_to_move(other_origin_points):
 	var dest_origin = other_origin_points[randi_range(0, other_origin_points.size() - 1)]
-	var children = get_children()
-	var selected_child = children[randi_range(0, children.size() - 1)]
-	remove_child(selected_child)
-	dest_origin._accept_child(selected_child)
-
-func _accept_child(child):
-	add_child(child)
-
+	var selected_child = child_npcs[randi_range(0, child_npcs.size() - 1)]
+	selected_child.reparent(dest_origin)
+	selected_child.must_move = true
+	_get_child_npcs()
+	dest_origin._get_child_npcs()
 
 func _get_random_position_in_radius():
 	var og_new_position = collision_shape_3d.position
@@ -71,14 +81,19 @@ func _get_random_position_in_radius():
 	new_position.x = distance_from_origin
 	new_position.y = 1
 	new_position.z = distance_from_origin
-	print(new_position)
-	print(og_new_position)
 	return new_position
 
 
 # source: https://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly/50746409#50746409
 # and: https://codepen.io/KonradLinkowski/pen/ExjLGxJ
-func _get_random_position_in_annulus():
+func _get_random_position_in_annulus(include_own_position:bool = false):
+	var x_offset: float = 1.0
+	var z_offset: float = 1.0
+	
+	if include_own_position:
+		x_offset = global_position.x
+		z_offset = global_position.z
+	
 	const spawn_inner_radius = 1
 	# outer_radius by which NPCs will spawn within (reduce this if you want them further within radius)
 	var spawn_outer_radius = collision_shape_3d.shape.radius - 0.5
@@ -89,9 +104,9 @@ func _get_random_position_in_annulus():
 	var r = sqrt(randf() * (spawn_outer_radius**2 - spawn_inner_radius**2) + spawn_inner_radius**2)
 	var theta = randf() * 2 * PI
 	
-	var x = r * cos(theta)
+	var x = x_offset + r * cos(theta)
 	var y = 1
-	var z = r * sin(theta)
+	var z = z_offset + r * sin(theta)
 	
 	return Vector3(x, y, z)
 	

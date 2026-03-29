@@ -34,6 +34,7 @@ mesh = SubResource("TextMesh_abqhh")
 [node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_xjnpb")]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
+avoidance_enabled = true
 
 [node name="Look Timer" type="Timer" parent="." unique_id=1900664280]
 

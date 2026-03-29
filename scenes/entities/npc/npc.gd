@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
-@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+class_name Npc
+
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var test_display_text: MeshInstance3D = $"Test Display Text"
 @onready var player = get_tree().get_first_node_in_group("players")
 @onready var range_of_effect: Area3D = $"Range of Effect"
@@ -14,56 +16,67 @@ var max_look_time_elapsed: float = 10.0
 var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
 var parent_origin
 var at_target: bool = true
-var has_active_target: bool = true
+var has_active_target: bool = false
 
 var player_in_range: bool = false
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 
-const SPEED = 5.0
+var must_move: bool = false
+
+const SPEED = 2.0
 
 func _ready():
-	navigation_agent_3d.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
+	nav_agent.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
+	add_to_group("npcs")
 
 # https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 #changing this later
 func set_movement_target(movement_target: Vector3):
-	navigation_agent_3d.set_target_position(movement_target)
+	nav_agent.set_target_position(movement_target)
 
 func _physics_process(delta: float) -> void:
 	if not looking_at_entity:
 		_on_look_timer_timeout()
 		
-	if player_in_range:
-		_look_at_position(player.global_transform.origin, delta, 3.0)
-	elif looking_at_entity:
-		_look_at_position(target_look_position, delta, 3.0)
-		
 	# check if NPC is within origin range, if not, pathfind into range
 	
-	if not has_active_target:
-		var npc_distance = global_position.distance_to(get_parent().global_position)
-		#print(npc_distance)
-		if npc_distance > get_parent().collision_shape_3d.shape.radius:
-			has_active_target = true
-			set_movement_target(get_parent()._get_random_position_in_radius())
+	#if global_position.distance_to(get_parent().global_position) > get_parent().collision_shape_3d.shape.radius || must_move:
+	#	if not has_active_target:
+	#		set_movement_target(get_parent()._get_random_position_in_annulus())
+	#		has_active_target = true
+	#		must_move = false
+	#else:
+	#	has_active_target = false
 		
-	
-	# Do not query when the map has never synchronized and is empty.
-	if NavigationServer3D.map_get_iteration_id(navigation_agent_3d.get_navigation_map()) == 0:
-		return
-	if navigation_agent_3d.is_navigation_finished():
-		return
+	if must_move:
+		set_movement_target(get_parent()._get_random_position_in_annulus(true))
+		has_active_target = true
+		must_move = false
+		
+	if has_active_target:
+		# Do not query when the map has never synchronized and is empty.
+		if NavigationServer3D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
+			return
+		if nav_agent.is_navigation_finished():
+			has_active_target = false
+			return
 
-	var next_path_position: Vector3 = navigation_agent_3d.get_next_path_position()
-	var new_velocity: Vector3 = global_position.direction_to(next_path_position) * SPEED
-	if navigation_agent_3d.avoidance_enabled:
-		navigation_agent_3d.set_velocity(new_velocity)
+		var next_pos: Vector3 = nav_agent.get_next_path_position()
+		var direction: Vector3 = global_position.direction_to(next_pos) * SPEED
+		var new_velocity: Vector3 = velocity + (direction - velocity)
+		
+		nav_agent.set_velocity(new_velocity)
+		
+		#if navigation_agent_3d.avoidance_enabled:
+		#	navigation_agent_3d.set_velocity(new_velocity)
+		#else:
+		#	_on_navigation_agent_3d_velocity_computed(new_velocity)
 	else:
-		_on_navigation_agent_3d_velocity_computed(new_velocity)
-
-#	move_and_slide()
-
+		if player_in_range:
+			_look_at_position(player.global_transform.origin, delta, 3.0)
+		elif looking_at_entity:
+			_look_at_position(target_look_position, delta, 3.0)
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = safe_velocity
