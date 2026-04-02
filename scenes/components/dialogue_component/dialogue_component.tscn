@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://begdsacpnoxo6"]
+
+[ext_resource type="Script" uid="uid://ckkusch7boclc" path="res://scenes/components/dialogue_component/dialogue_component.gd" id="1_iigvq"]
+[ext_resource type="Texture2D" uid="uid://c6iie4lk0531q" path="res://assets/dialogue/better speech bubble.png" id="2_2bkhk"]
+
+[node name="DialogueComponent" type="Control" unique_id=1685725541]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iigvq")
+
+[node name="DialogueTimer" type="Timer" parent="." unique_id=1118606190]
+
+[node name="TextBubbleFrame" type="NinePatchRect" parent="." unique_id=1123131765]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 79.0
+texture = ExtResource("2_2bkhk")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 25
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TextMargin" type="MarginContainer" parent="TextBubbleFrame" unique_id=637580081]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 79.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 25
+
+[node name="DialogueText" type="RichTextLabel" parent="TextBubbleFrame/TextMargin" unique_id=800068860]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+scroll_active = false
+
+[connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
