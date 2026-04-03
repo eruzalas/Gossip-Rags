@@ -68,6 +68,8 @@ func _physics_process(delta: float) -> void:
 		
 		nav_agent.set_velocity(new_velocity)
 		
+		_look_at_position(next_pos, delta, 3.0)
+		
 		#if navigation_agent_3d.avoidance_enabled:
 		#	navigation_agent_3d.set_velocity(new_velocity)
 		#else:
@@ -75,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if player_in_range:
 			_look_at_position(player.global_transform.origin, delta, 3.0)
-		elif looking_at_entity:
+		else:
 			_look_at_position(target_look_position, delta, 3.0)
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
@@ -106,6 +108,9 @@ func _get_random_entity_pos_in_area():
 		if entities_in_range.size() > 0:
 			looking_at_entity = true
 			entity_position = entities_in_range[randi_range(0, entities_in_range.size() - 1)].global_transform.origin
+	
+	if entity_position == Vector3.ZERO:
+		entity_position = get_parent().global_transform.origin
 	return entity_position
 
 # source: https://forum.godotengine.org/t/slowly-interpolate-look-at-function-for-my-enemy/100750

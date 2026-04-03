@@ -35,6 +35,7 @@ mesh = SubResource("TextMesh_abqhh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
 avoidance_enabled = true
+radius = 0.6
 
 [node name="Look Timer" type="Timer" parent="." unique_id=1900664280]
 
