@@ -13,7 +13,7 @@ albedo_color = Color(1, 1, 1, 0.12941177)
 albedo_color = Color(0.078431375, 0.078431375, 0.99607843, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wyf3"]
-size = Vector3(1.7768259, 2.9747314, 1.5387878)
+size = Vector3(1.7768259, 2.9747314, 3.0482712)
 
 [node name="playtest_area" type="Node3D" unique_id=783765433]
 script = ExtResource("1_k0juu")
@@ -48,6 +48,7 @@ operation = 2
 size = Vector3(2, 2, 1)
 
 [node name="closet" type="CSGCombiner3D" parent="." unique_id=1737088303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015193701, 0)
 gi_mode = 2
 use_collision = true
 script = ExtResource("4_k0juu")
@@ -58,15 +59,15 @@ material_override = SubResource("StandardMaterial3D_k0juu")
 size = Vector3(3, 3, 1.2849121)
 
 [node name="closet_inside" type="CSGBox3D" parent="closet/closet_body" unique_id=341419051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, -0.112265825, 0.045866013)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, -0.15532613, 0.045866013)
 operation = 2
-size = Vector3(2.4680176, 2.7601318, 1.2173767)
+size = Vector3(2.4680176, 2.6740112, 1.2173767)
 
 [node name="Area3D" type="Area3D" parent="closet" unique_id=1886425791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125816, -8.746481)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="closet/Area3D" unique_id=1857423467]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48225498, 0.4697876, -0.45005703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48225498, 0.4697876, -0.91224957)
 shape = SubResource("BoxShape3D_4wyf3")
 
 [node name="LeftHinge" type="Node3D" parent="closet/Area3D" unique_id=489663715]
@@ -82,7 +83,7 @@ size = Vector3(1.1807861, 2.9682007, 0.1484375)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2004961, 2.125816, -8.746481)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="closet/Area3D2" unique_id=1779269918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041888, 0.4697876, -0.45005703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041888, 0.4697876, -0.74260616)
 shape = SubResource("BoxShape3D_4wyf3")
 
 [node name="RightHinge" type="Node3D" parent="closet/Area3D2" unique_id=1309622137]
