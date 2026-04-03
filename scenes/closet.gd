@@ -38,9 +38,9 @@ func _toggle_closet():
 	#will use Tween for now to animate 
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	if is_open:
-		tween.tween_property(%closet_door_left, "rotation_degrees:y", 0, 0.6)
-		tween.tween_property(%closet_door_right, "rotation_degrees:y", 0, 0.6) #this one goes back to when its closed
+		tween.tween_property($Area3D/LeftHinge, "rotation_degrees:y", 0, 0.6)
+		tween.tween_property($Area3D2/RightHinge, "rotation_degrees:y", 0, 0.6) #this one goes back to when its closed
 	else: 
-		tween.tween_property(%closet_door_left, "rotation_degrees:y", -90, 0.6)
-		tween.tween_property(%closet_door_right, "rotation_degrees:y", 90, 0.6) #this one is the open position
+		tween.tween_property($Area3D/LeftHinge, "rotation_degrees:y", -90, 0.6)
+		tween.tween_property($Area3D2/RightHinge, "rotation_degrees:y", 90, 0.6) #this one is the open position
 	is_open = !is_open
