@@ -27,5 +27,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.566715, 0, -5.844839)
 size = Vector3(27.5, 1, 27.5)
 
 [node name="Sec2" type="CSGBox3D" parent="HouseFloor1" unique_id=1308842825]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.621115, 0, 12.797725)
-size = Vector3(23.244629, 1, 9.807678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.652304, 0, 12.797725)
+size = Vector3(23.307007, 1, 9.807678)
