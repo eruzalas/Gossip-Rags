@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_k0juu"]
 [ext_resource type="MeshLibrary" uid="uid://bjygdtx2yxfu0" path="res://assets/meshlibs/whitebox.meshlib" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://e36algoack6h" path="res://scenes/closet.gd" id="4_k0juu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wyf3"]
 transparency = 1
@@ -12,7 +13,7 @@ albedo_color = Color(1, 1, 1, 0.12941177)
 albedo_color = Color(0.078431375, 0.078431375, 0.99607843, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wyf3"]
-size = Vector3(3.1086578, 3.0385132, 1)
+size = Vector3(1.7768259, 2.9747314, 1.5387878)
 
 [node name="playtest_area" type="Node3D" unique_id=783765433]
 script = ExtResource("1_k0juu")
@@ -49,6 +50,7 @@ size = Vector3(2, 2, 1)
 [node name="closet" type="CSGCombiner3D" parent="." unique_id=1737088303]
 gi_mode = 2
 use_collision = true
+script = ExtResource("4_k0juu")
 
 [node name="closet_body" type="CSGBox3D" parent="closet" unique_id=1068882440]
 transform = Transform3D(1, 0, 0, 0, 1.1096048, 0, 0, 0, 1, 0.32754433, 2.668181, -10.686617)
@@ -56,23 +58,48 @@ material_override = SubResource("StandardMaterial3D_k0juu")
 size = Vector3(3, 3, 1.2849121)
 
 [node name="closet_inside" type="CSGBox3D" parent="closet/closet_body" unique_id=341419051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, -0.112265825, 0.04597473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, -0.112265825, 0.045866013)
 operation = 2
 size = Vector3(2.4680176, 2.7601318, 1.2173767)
 
-[node name="closet_door_left" type="CSGBox3D" parent="closet" unique_id=427192610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29810208, 2.5442019, -10.008481)
-size = Vector3(1.1950989, 3.0372314, 0.080078125)
+[node name="Area3D" type="Area3D" parent="." unique_id=1886425791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125816, -8.746481)
 
-[node name="closet_door_right" type="CSGBox3D" parent="closet" unique_id=478352763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9423792, 2.5442019, -10.008481)
-size = Vector3(1.1950989, 3.0372314, 0.080078125)
+[node name="closet_door_left" type="CSGBox3D" parent="Area3D" unique_id=348298545]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32254654, 0.4742651, -1.2446194)
+use_collision = true
+size = Vector3(1.1807861, 2.9682007, 0.048828125)
 
-[node name="Area3D" type="Area3D" parent="closet" unique_id=2144773660]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="closet/Area3D" unique_id=1787532261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39967, 2.5742266, -9.422242)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1857423467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48225498, 0.4697876, -0.45005703)
 shape = SubResource("BoxShape3D_4wyf3")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1053396214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2004961, 2.125816, -8.746481)
+
+[node name="closet_door_right" type="CSGBox3D" parent="Area3D2" unique_id=207727534]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32254654, 0.4742651, -1.2446194)
+use_collision = true
+size = Vector3(1.1807861, 2.9682007, 0.048828125)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1779269918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041888, 0.4697876, -0.45005703)
+shape = SubResource("BoxShape3D_4wyf3")
+
+[node name="ClosetInteractLabel" type="Label" parent="." unique_id=113854485]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press 'E' to Open"
+horizontal_alignment = 3
+vertical_alignment = 3
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=920437972]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39693093, 2.363446, -8.249363)
+
+[connection signal="body_entered" from="Area3D" to="closet" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="closet" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Area3D2" to="closet" method="_on_area_3d_2_body_entered"]
+[connection signal="body_exited" from="Area3D2" to="closet" method="_on_area_3d_2_body_exited"]
