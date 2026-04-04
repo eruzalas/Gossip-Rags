@@ -6,19 +6,19 @@
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11, 0, -2)
 
 [node name="Backyard" type="CSGBox3D" parent="Floor" unique_id=1127876661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 23.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99999976, 0, 28.5)
 size = Vector3(23, 1, 10)
 
 [node name="OutsideEntrance" type="CSGBox3D" parent="Floor" unique_id=632880187]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.24145508, 11)
-size = Vector3(7, 0.51708984, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.10046387, 13.5)
+size = Vector3(7, 0.79907227, 20)
 
 [node name="LeftBackyard1" type="CSGBox3D" parent="Floor" unique_id=1677233801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1.5)
 size = Vector3(7, 1, 10)
 
 [node name="LeftBackyard2" type="CSGBox3D" parent="Floor" unique_id=463681253]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000002, 0, -3)
 size = Vector3(10, 1, 7)
 
 [node name="LeftBackyard3" type="CSGBox3D" parent="Floor" unique_id=762127950]
@@ -30,21 +30,127 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -4)
 size = Vector3(4, 1, 5)
 
 [node name="Inside1" type="CSGBox3D" parent="Floor" unique_id=768584132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
-size = Vector3(10, 1, 18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 12)
+size = Vector3(10, 1, 23)
 
 [node name="Inside2" type="CSGBox3D" parent="Floor" unique_id=1539027249]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 10)
-size = Vector3(4, 1, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 12.5)
+size = Vector3(4, 1, 22)
 
 [node name="Inside3" type="CSGBox3D" parent="Floor" unique_id=1175034565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 8.5)
-size = Vector3(18, 1, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 11.002036)
+size = Vector3(18, 1, 25)
 
 [node name="Garage" type="CSGBox3D" parent="Floor" unique_id=235472532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.500006, 0, 23.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.500013, 0, 28.500002)
 size = Vector3(16, 1, 10)
 
 [node name="Inside4" type="CSGBox3D" parent="Floor" unique_id=969014861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -3.999999)
 size = Vector3(6, 1, 5)
+
+[node name="Walls" type="CSGCombiner3D" parent="." unique_id=1682302731]
+
+[node name="FrontFence" type="CSGBox3D" parent="Walls" unique_id=593650450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.587891, 2.5, 5)
+size = Vector3(0.17578125, 4, 7)
+
+[node name="Hole" type="CSGBox3D" parent="Walls/FrontFence" unique_id=1851403627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016845703, 0, 0.035609245)
+operation = 2
+size = Vector3(0.20947266, 5, 2)
+
+[node name="FrontFence2" type="CSGBox3D" parent="Walls" unique_id=834434620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4121094, 2.5, 5)
+size = Vector3(0.17578125, 4, 7)
+
+[node name="Hole" type="CSGBox3D" parent="Walls/FrontFence2" unique_id=1412046347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016845703, 0, 0.035609245)
+operation = 2
+size = Vector3(0.20947266, 5, 2)
+
+[node name="BackyardFence" type="CSGBox3D" parent="Walls" unique_id=1173839416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.586426, 2.5, 8.403454)
+size = Vector3(9.827148, 4, 0.176)
+
+[node name="BackyardFence2" type="CSGBox3D" parent="Walls" unique_id=1086001095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.407684, 2.5, -3.0888672)
+size = Vector3(0.176, 4, 22.775146)
+
+[node name="FrontWall" type="CSGBox3D" parent="Walls" unique_id=1232360881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0185547, 3.5, 1.3122559)
+size = Vector3(23, 6, 0.37548828)
+
+[node name="Hole" type="CSGBox3D" parent="Walls/FrontWall" unique_id=372202186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1033936, 0, 0)
+operation = 2
+size = Vector3(4.239258, 7, 1)
+
+[node name="FrontDoorWall" type="CSGBox3D" parent="Walls" unique_id=1516858328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.100639, 3.5, 0.6193825)
+size = Vector3(5, 6, 1)
+
+[node name="Hole" type="CSGBox3D" parent="Walls/FrontDoorWall" unique_id=622338624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024541378, -1.5, 0)
+operation = 2
+size = Vector3(4.27417, 4, 1)
+
+[node name="RightSideWall" type="CSGBox3D" parent="Walls" unique_id=1203913128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.477688, 3.5, -14.688171)
+size = Vector3(0.375, 6, 31.614502)
+
+[node name="BackWall" type="CSGBox3D" parent="Walls" unique_id=1064615599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009422302, 3.5, -30.308266)
+size = Vector3(25, 6, 0.375)
+
+[node name="LeftSideWall" type="CSGBox3D" parent="Walls" unique_id=100852196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.325065, 3.5, -21.315475)
+size = Vector3(0.375, 6, 17.612915)
+
+[node name="LeftSideWall2" type="CSGBox3D" parent="Walls" unique_id=1758746045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.821959, 3.5, -12.710175)
+size = Vector3(2.6313477, 6, 0.375)
+
+[node name="LeftSideWall3" type="CSGBox3D" parent="Walls" unique_id=1388220651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.314469, 3.5, -10.682159)
+size = Vector3(0.375, 6, 4.416931)
+
+[node name="LeftSideWall4" type="CSGBox3D" parent="Walls" unique_id=1132283116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.812073, 3.5, -8.29621)
+size = Vector3(1.3758545, 6, 0.375)
+
+[node name="LeftSideWall5" type="CSGBox3D" parent="Walls" unique_id=1930624397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.318791, 3.5, -3.4941883)
+size = Vector3(0.375, 6, 9.214966)
+
+[node name="GarageWall" type="CSGBox3D" parent="Walls" unique_id=1640474048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.577063, 3.5, -30.30719)
+size = Vector3(9.837891, 6, 0.375)
+
+[node name="GarageWall2" type="CSGBox3D" parent="Walls" unique_id=1585479512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.300573, 3.5, -22.307451)
+size = Vector3(0.372, 6, 15.628845)
+
+[node name="GarageWall3" type="CSGBox3D" parent="Walls" unique_id=1750508977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.391247, 3.5, -14.710204)
+size = Vector3(9.4383545, 6, 0.375)
+
+[node name="LeftSideWall6" type="CSGBox3D" parent="Walls" unique_id=43666685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.5, -22.289995)
+size = Vector3(5, 6, 0.375)
+
+[node name="LeftSideWall7" type="CSGBox3D" parent="Walls" unique_id=1916561830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.310852, 3.5, -17.295624)
+size = Vector3(0.375, 6, 9.625122)
+
+[node name="LeftSideWall8" type="CSGBox3D" parent="Walls" unique_id=1720390663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.807095, 3.5, -12.68747)
+size = Vector3(4.6257324, 6, 0.375)
+
+[node name="LeftBackyardFence" type="CSGBox3D" parent="Walls" unique_id=1752546747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 2.5, 8.391009)
+size = Vector3(10, 4, 0.176)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=120411295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.40085, 2.5, -2.0904512)
+size = Vector3(0.176, 4, 20.776367)
