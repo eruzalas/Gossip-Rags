@@ -7,13 +7,14 @@ class_name Npc
 @onready var player = get_tree().get_first_node_in_group("players")
 @onready var range_of_effect: Area3D = $"Range of Effect"
 @onready var look_timer: Timer = $"Look Timer"
+@onready var sprite_3d: Sprite3D = $Sprite3D
 
 @export var group_origin_ID: int = 0
+@export var npc_type: String = "stationary"
 
 var min_look_time_elapsed: float = 5.0
 var max_look_time_elapsed: float = 10.0
 
-var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
 var parent_origin
 var at_target: bool = true
 var has_active_target: bool = false
@@ -29,6 +30,11 @@ const SPEED = 2.0
 func _ready():
 	nav_agent.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
 	add_to_group("npcs")
+	sprite_3d.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+
+func _set_npc_type(type:String) -> void:
+	npc_type = type
+	sprite_3d.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
 
 # https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 #changing this later

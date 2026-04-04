@@ -29,7 +29,7 @@ func _ready() -> void:
 			add_child(new_npc)
 			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
 			new_npc.group_origin_ID = group_origin_ID
-			new_npc.npc_type = Enums.NpcType.GROUP
+			new_npc._set_npc_type("group")
 			i += 1
 			
 		movement_opportunity_timer.start(_generate_timeout_period())
@@ -65,13 +65,12 @@ func _get_child_npcs() -> void:
 			child_npcs.append(child)
 			
 
-func _tell_child_to_move(other_origin_points):
-	var dest_origin = other_origin_points[randi_range(0, other_origin_points.size() - 1)]
+func _tell_child_to_move(destination):
 	var selected_child = child_npcs[randi_range(0, child_npcs.size() - 1)]
-	selected_child.reparent(dest_origin)
+	selected_child.reparent(destination)
 	selected_child.must_move = true
 	_get_child_npcs()
-	dest_origin._get_child_npcs()
+	destination._get_child_npcs()
 
 func _get_random_position_in_radius():
 	var og_new_position = collision_shape_3d.position
