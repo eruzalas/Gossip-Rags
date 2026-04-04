@@ -19,7 +19,7 @@ size = Vector3(1, 2, 1)
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1590636786]
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1590636786]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 pixel_size = 0.0078125
 texture = ExtResource("2_67e1k")
@@ -41,7 +41,10 @@ radius = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
 shape = SubResource("BoxShape3D_gr72c")
 
+[node name="Wander Timer" type="Timer" parent="." unique_id=1217527983]
+
 [connection signal="body_entered" from="Range of Effect" to="." method="_on_range_of_effect_body_entered"]
 [connection signal="body_exited" from="Range of Effect" to="." method="_on_range_of_effect_body_exited"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="timeout" from="Look Timer" to="." method="_on_look_timer_timeout"]
+[connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]

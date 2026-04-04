@@ -68,7 +68,7 @@ func _get_child_npcs() -> void:
 func _tell_child_to_move(destination):
 	var selected_child = child_npcs[randi_range(0, child_npcs.size() - 1)]
 	selected_child.reparent(destination)
-	selected_child.must_move = true
+	selected_child._npc_must_move()
 	_get_child_npcs()
 	destination._get_child_npcs()
 

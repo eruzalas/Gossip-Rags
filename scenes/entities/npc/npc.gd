@@ -1,45 +1,61 @@
 extends CharacterBody3D
-
 class_name Npc
 
+# -- references --
+# external to NPC
+@onready var player = get_tree().get_first_node_in_group("players")
+@onready var navigation_region_3d: NavigationRegion3D = $"../NavigationRegion3D"
+
+# internal to NPC
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var test_display_text: MeshInstance3D = $"Test Display Text"
-@onready var player = get_tree().get_first_node_in_group("players")
 @onready var range_of_effect: Area3D = $"Range of Effect"
+@onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
-@onready var sprite_3d: Sprite3D = $Sprite3D
+@onready var wander_timer: Timer = $"Wander Timer"
 
+# export vars
 @export var group_origin_ID: int = 0
 @export var npc_type: String = "stationary"
 
 var min_look_time_elapsed: float = 5.0
 var max_look_time_elapsed: float = 10.0
 
-var parent_origin
-var at_target: bool = true
+var min_wander_wait: float = 5.0
+var max_wander_wait: float = 10.0
+
 var has_active_target: bool = false
 
 var player_in_range: bool = false
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 
-var must_move: bool = false
-
-const SPEED = 2.0
+const SPEED = 3.0
 
 func _ready():
 	nav_agent.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
 	add_to_group("npcs")
-	sprite_3d.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+	if npc_type.contains("wander"):
+		wander_timer.start(_generate_wander_wait())
 
 func _set_npc_type(type:String) -> void:
 	npc_type = type
-	sprite_3d.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
 
 # https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 #changing this later
-func set_movement_target(movement_target: Vector3):
+func _set_movement_target(movement_target: Vector3):
 	nav_agent.set_target_position(movement_target)
+
+func _npc_must_move():
+	if npc_type == "group":
+		_set_movement_target(get_parent()._get_random_position_in_annulus(true))
+	elif npc_type == "wander_all":
+		var world = get_world_3d().navigation_map
+		var random_location = NavigationServer3D.map_get_random_point(world, 1, true)
+		_set_movement_target(random_location)
+	has_active_target = true
 
 func _physics_process(delta: float) -> void:
 	if not looking_at_entity:
@@ -49,16 +65,11 @@ func _physics_process(delta: float) -> void:
 	
 	#if global_position.distance_to(get_parent().global_position) > get_parent().collision_shape_3d.shape.radius || must_move:
 	#	if not has_active_target:
-	#		set_movement_target(get_parent()._get_random_position_in_annulus())
+	#		_set_movement_target(get_parent()._get_random_position_in_annulus())
 	#		has_active_target = true
 	#		must_move = false
 	#else:
 	#	has_active_target = false
-		
-	if must_move:
-		set_movement_target(get_parent()._get_random_position_in_annulus(true))
-		has_active_target = true
-		must_move = false
 		
 	if has_active_target:
 		# Do not query when the map has never synchronized and is empty.
@@ -133,6 +144,15 @@ func _look_at_position(target_position: Vector3, delta: float, turn_speed: float
 	)
 	global_rotation.y = target_rotation
 
+func _generate_wander_wait():
+	# maybe add calculation off suspicion/attention?
+	return randf_range(min_wander_wait, max_wander_wait)
+
+
 func _on_look_timer_timeout() -> void:
 	target_look_position = _get_random_entity_pos_in_area()
 	look_timer.start(randf_range(min_look_time_elapsed, max_look_time_elapsed))
+	
+func _on_wander_timer_timeout() -> void:
+	_npc_must_move()
+	wander_timer.start(_generate_wander_wait())
