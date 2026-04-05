@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://b4rkpf7hcumgf"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_nh2m4"]
-radius = 3.908636
-
-[node name="Range of Effect" type="Area3D" unique_id=1837924148]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1856319881]
-shape = SubResource("SphereShape3D_nh2m4")

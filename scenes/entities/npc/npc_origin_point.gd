@@ -27,13 +27,35 @@ func _ready() -> void:
 			var new_npc = npc_prefab.instantiate()
 			# https://forum.godotengine.org/t/create-node-at-random-position-in-area-3d/830/2
 			add_child(new_npc)
+			child_npcs.append(new_npc)
+			
+			var valid_position_set = false
+			var iteration_counter = 0
+			var random_position
+			# check position before setting - to reduce issues with NPC position being too close to another
+			while valid_position_set != true:
+				if iteration_counter > 10:
+					print("Failed to find appropriate location in 10 iterations.")
+					valid_position_set = true
+					
+				random_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
+				if !_is_position_colliding_with_children(random_position):
+					valid_position_set = true
+					
+				iteration_counter += 1
+				
 			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
 			new_npc._set_npc_type("group")
 			i += 1
 			
 		movement_opportunity_timer.start(_generate_timeout_period())
-		_get_child_npcs()
 	
+
+func _is_position_colliding_with_children(unchecked_position: Vector3) -> bool:
+	for child in child_npcs:
+		if child.global_position.distance_to(unchecked_position) < 1.5:
+			return true
+	return false
 
 func _check_movement_opportunity_status():
 	return movement_opportunity_flag
@@ -50,13 +72,16 @@ func _refresh_movement_opportunity_timer():
 	movement_opportunity_flag = false
 	movement_opportunity_timer.start(_generate_timeout_period())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
+# if timeout - post flag active - controller checks this
+# this doesnt follow pattern correctly lmfao i need to fix it
+# TODO: as above lmao
 func _on_movement_opportunity_timer_timeout() -> void:
 	movement_opportunity_flag = true
 	
+# get children
 func _get_child_npcs() -> void:
 	child_npcs.clear()
 	for child in get_children():
@@ -64,23 +89,15 @@ func _get_child_npcs() -> void:
 			child_npcs.append(child)
 			
 
+# gets selected child, reparents it and then gives it a target
 func _tell_child_to_move(destination):
 	var selected_child = child_npcs[randi_range(0, child_npcs.size() - 1)]
 	selected_child.reparent(destination)
-	selected_child._npc_must_move()
+	selected_child._get_new_target_position()
+	# get_child called again to ensure child list is up to date
+	# TODO: I feel there is a better way to do this - ill look into ts later
 	_get_child_npcs()
 	destination._get_child_npcs()
-
-func _get_random_position_in_radius():
-	var og_new_position = collision_shape_3d.position
-	var new_position = collision_shape_3d.position
-	var random_position = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)).normalized()
-	var distance_from_origin = randf_range(-1 * collision_shape_3d.shape.radius, collision_shape_3d.shape.radius)
-	new_position.x = distance_from_origin
-	new_position.y = 1
-	new_position.z = distance_from_origin
-	return new_position
-
 
 # source: https://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly/50746409#50746409
 # and: https://codepen.io/KonradLinkowski/pen/ExjLGxJ
@@ -95,9 +112,6 @@ func _get_random_position_in_annulus(include_own_position:bool = false):
 	const spawn_inner_radius = 1
 	# outer_radius by which NPCs will spawn within (reduce this if you want them further within radius)
 	var spawn_outer_radius = collision_shape_3d.shape.radius - 0.5
-	
-	var width = collision_shape_3d.shape.radius * 2
-	var centre = collision_shape_3d.shape.radius
 	
 	var r = sqrt(randf() * (spawn_outer_radius**2 - spawn_inner_radius**2) + spawn_inner_radius**2)
 	var theta = randf() * 2 * PI

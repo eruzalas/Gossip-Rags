@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
 [ext_resource type="Texture2D" uid="uid://d3knt8buxf035" path="res://assets/images/npc_sprites/npc_sprite_unassigned.png" id="2_67e1k"]
-[ext_resource type="PackedScene" uid="uid://b4rkpf7hcumgf" path="res://scenes/components/area_of_effect/range_of_effect.tscn" id="2_xjnpb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqhh"]
 shading_mode = 0
@@ -16,6 +15,12 @@ font_size = 50
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
 size = Vector3(1, 2, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p5uw1"]
+radius = 4.0
+
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
 
@@ -26,10 +31,7 @@ texture = ExtResource("2_67e1k")
 
 [node name="Test Display Text" type="MeshInstance3D" parent="." unique_id=1710215210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.004)
-visible = false
 mesh = SubResource("TextMesh_abqhh")
-
-[node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_xjnpb")]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
 avoidance_enabled = true
@@ -43,8 +45,19 @@ shape = SubResource("BoxShape3D_gr72c")
 
 [node name="Wander Timer" type="Timer" parent="." unique_id=1217527983]
 
-[connection signal="body_entered" from="Range of Effect" to="." method="_on_range_of_effect_body_entered"]
-[connection signal="body_exited" from="Range of Effect" to="." method="_on_range_of_effect_body_exited"]
+[node name="Danger Range" type="Area3D" parent="." unique_id=708937469]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Danger Range" unique_id=2080543890]
+shape = SubResource("SphereShape3D_xjnpb")
+
+[node name="Attention Range" type="Area3D" parent="." unique_id=1431406855]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attention Range" unique_id=123208677]
+shape = SubResource("SphereShape3D_p5uw1")
+
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="timeout" from="Look Timer" to="." method="_on_look_timer_timeout"]
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]
+[connection signal="body_entered" from="Danger Range" to="." method="_on_danger_range_body_entered"]
+[connection signal="body_exited" from="Danger Range" to="." method="_on_danger_range_body_exited"]

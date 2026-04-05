@@ -1,9 +1,9 @@
 extends Node3D
 
+# TODO: THIS NEEDS TO BE REDONE
+
 @onready var flag_timer: Timer = $"Flag Timer"
 
-
-@export var rat_number_7: bool = true
 var all_children: Array = []
 var valid_origin_children: Array = []
 
@@ -17,8 +17,7 @@ func _ready() -> void:
 	flag_timer.start(3)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _get_valid_origin_points() -> void:
