@@ -28,7 +28,6 @@ func _ready() -> void:
 			# https://forum.godotengine.org/t/create-node-at-random-position-in-area-3d/830/2
 			add_child(new_npc)
 			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
-			new_npc.group_origin_ID = group_origin_ID
 			new_npc._set_npc_type("group")
 			i += 1
 			

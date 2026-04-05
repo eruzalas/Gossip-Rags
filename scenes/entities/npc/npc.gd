@@ -15,8 +15,8 @@ class_name Npc
 @onready var wander_timer: Timer = $"Wander Timer"
 
 # export vars
-@export var group_origin_ID: int = 0
 @export var npc_type: String = "stationary"
+@export var npc_allowed_zone_layers: Array[int] = []
 
 var min_look_time_elapsed: float = 5.0
 var max_look_time_elapsed: float = 10.0
@@ -51,9 +51,23 @@ func _set_movement_target(movement_target: Vector3):
 func _npc_must_move():
 	if npc_type == "group":
 		_set_movement_target(get_parent()._get_random_position_in_annulus(true))
-	elif npc_type == "wander_all":
+	elif npc_type.contains("wander"):
 		var world = get_world_3d().navigation_map
-		var random_location = NavigationServer3D.map_get_random_point(world, 1, true)
+		var nav_layer = 1
+		if npc_type == "wander_zone":
+			# note: when setting nav layers for wandering, the layer number is equiv to 2^(layer index FROM ZERO)
+				# adding multiple layers involve taking the original calculated layer and ADDING THEM TOGETHER
+				# ie. nav layer for layer 1 = 2^0 => 1
+				# ie. nav layer for layer 2 = 2^1 => 2
+				# ie. nav layer for layer 3 = 2^2 => 4
+				# ie. nav layer for layer 1, 2 and 3 = 1+2+4 => 7
+			# just consider nav layer as binary bits - but for ease of use ive added the export array to do calculations here instead
+			if !npc_allowed_zone_layers.is_empty():
+				nav_layer = 0
+				for value in npc_allowed_zone_layers:
+					nav_layer += pow(2, (value - 1))
+					
+		var random_location = NavigationServer3D.map_get_random_point(world, nav_layer, true)
 		_set_movement_target(random_location)
 	has_active_target = true
 
