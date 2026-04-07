@@ -192,4 +192,7 @@ size = Vector3(0.375, 6, 5.92334)
 
 [node name="UpstairsWall2" type="CSGBox3D" parent="Walls" unique_id=2007800222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3078928, 3.5, -28.942469)
+visible = false
 size = Vector3(0.375, 6, 6.3583984)
+
+[node name="Stairs" type="CSGCombiner3D" parent="." unique_id=583091846]
