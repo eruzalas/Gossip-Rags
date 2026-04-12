@@ -61,4 +61,6 @@ func _update_progress_bar():
 func _reset_prog_bars():
 	for tea in tea_bar_array:
 		tea.value = 0
+		
+#TODO: Make a way for it to increase backwards mahaps?? like an actual timeline
 	
