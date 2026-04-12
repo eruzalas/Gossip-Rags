@@ -3,6 +3,7 @@ extends Control
 #UI components
 @onready var in_game_clock: Timer = %"InGame Clock"
 @onready var clock_label: Label = %"Clock Label"
+@onready var timeline: Control = %Timeline # CURRENTLY DOES NOTHING BUT WILL BE USED TO PASS VALUES TO THE TIMELINE
 
 #Variables
 var pause: bool = false

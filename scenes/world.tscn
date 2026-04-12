@@ -4,9 +4,19 @@
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://xowdms5vesjr" path="res://scenes/systems/debug_system_ui.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="2_rwgxs"]
-[ext_resource type="Script" path="res://scenes/gui.gd" id="3_i7141"]
+[ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="3_i7141"]
+[ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="4_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="4_dss4m"]
+[ext_resource type="Texture2D" uid="uid://b21m8xm8fejjv" path="res://assets/ui/placeholder_progress_fill_1.png" id="5_7t5mc"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="5_qfnet"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attenion_meter_system.gd" id="6_i7141"]
+[ext_resource type="Texture2D" uid="uid://bj5u4f4epj5wn" path="res://assets/ui/placeholder_progress_fill_2.png" id="6_lakw3"]
+[ext_resource type="Texture2D" uid="uid://j7ou8uc38l6k" path="res://assets/ui/placeholder_progress_fill_3.png" id="7_pm21f"]
+[ext_resource type="Texture2D" uid="uid://cujh7rnx1ve5r" path="res://assets/ui/placeholder_progress_fill_4.png" id="8_2lf6f"]
+[ext_resource type="Texture2D" uid="uid://dxt240vov2e34" path="res://assets/ui/placeholder_progress_fill_5.png" id="9_7iits"]
+[ext_resource type="Texture2D" uid="uid://bj76pbumdkk2w" path="res://assets/ui/placeholder_progress_fill_6.png" id="10_oo54l"]
+[ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="11_kpybi"]
+[ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="12_ctatt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4wyf3"]
 font_size = 32
@@ -69,6 +79,127 @@ label_settings = SubResource("LabelSettings_i7141")
 
 [node name="InGame Clock" type="Timer" parent="GUI" unique_id=698479061]
 unique_name_in_owner = true
+
+[node name="Timeline" type="Control" parent="GUI" unique_id=1892862117 node_paths=PackedStringArray("tea_bar_array")]
+layout_mode = 1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_right = 0.1508789
+offset_bottom = 1.0
+script = ExtResource("4_7t5mc")
+tea_bar_array = [NodePath("Tea Bar 1"), NodePath("Tea Bar 2"), NodePath("Tea Bar 3"), NodePath("Tea Bar 4"), NodePath("Tea Bar 5"), NodePath("Tea Bar 6"), NodePath("Tea Bar 7"), NodePath("Tea Bar 8")]
+
+[node name="Tea Bar 1" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1591140698]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -2.047058
+offset_right = -1024.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("5_7t5mc")
+
+[node name="Tea Bar 2" type="TextureProgressBar" parent="GUI/Timeline" unique_id=334877453]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = -2.047058
+offset_right = -905.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("6_lakw3")
+
+[node name="Tea Bar 3" type="TextureProgressBar" parent="GUI/Timeline" unique_id=2113834835]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 245.0
+offset_top = -2.047058
+offset_right = -786.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("7_pm21f")
+
+[node name="Tea Bar 4" type="TextureProgressBar" parent="GUI/Timeline" unique_id=822185404]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 364.0
+offset_top = -2.047058
+offset_right = -667.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("8_2lf6f")
+
+[node name="Tea Bar 5" type="TextureProgressBar" parent="GUI/Timeline" unique_id=2092846419]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+offset_top = -2.047058
+offset_right = -548.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("9_7iits")
+
+[node name="Tea Bar 6" type="TextureProgressBar" parent="GUI/Timeline" unique_id=863284149]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 602.0
+offset_top = -2.047058
+offset_right = -429.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("10_oo54l")
+
+[node name="Tea Bar 7" type="TextureProgressBar" parent="GUI/Timeline" unique_id=146222078]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 721.0
+offset_top = -2.047058
+offset_right = -310.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("11_kpybi")
+
+[node name="Tea Bar 8" type="TextureProgressBar" parent="GUI/Timeline" unique_id=924967359]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.89900005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 840.0
+offset_top = -2.047058
+offset_right = -191.0
+offset_bottom = -12.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_dss4m")
+texture_progress = ExtResource("12_ctatt")
 
 [node name="Test Stage Layout" type="GridMap" parent="." unique_id=965549943]
 mesh_library = ExtResource("1_nnsk1")
