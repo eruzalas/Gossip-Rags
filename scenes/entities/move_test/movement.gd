@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 #---- Attach Inventory ----
+
+#for debugging, second is normal
 @export var player_inventory: inventory
+#@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
 
 func _ready():
 	player_inventory.print()

@@ -10,6 +10,7 @@ class_name inventory
 func size():
 	return equipment.size()
 
+##prints costumes (+stats) in inventory to console
 func print():
 	print("inv size: "+ str(size()))
 	for i in range(size()):

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6sr56wa1glfb"]
 
-[ext_resource type="Script" uid="uid://5a4a0v4cuxsw" path="res://inventory_control.gd" id="1_x4jqs"]
+[ext_resource type="Script" uid="uid://5a4a0v4cuxsw" path="res://scenes/components/inventory/inventory_ui.gd" id="1_x4jqs"]
 
-[node name="inventory_control" type="Control" unique_id=802980208]
+[node name="inventory_ui" type="Control" unique_id=802980208]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -10,6 +10,19 @@ offset_bottom = 40.0
 script = ExtResource("1_x4jqs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=27137823]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="costume_display" type="Sprite2D" parent="." unique_id=1606048084]
+position = Vector2(20, 20)
+region_rect = Rect2(0, 0, 40, 40)

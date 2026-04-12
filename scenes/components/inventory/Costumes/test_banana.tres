@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="costume" format=3 uid="uid://dh5i84kebr6p5"]
 
-[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/costume.gd" id="1_xkd16"]
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_xkd16"]
 [ext_resource type="Texture2D" uid="uid://cadxu6wccxxbs" path="res://assets/testsprites/costumes_AM/banana.png" id="2_nrbdt"]
 
 [resource]

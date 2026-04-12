@@ -3,16 +3,10 @@
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_k0juu"]
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/default_test_player/player.tscn" id="2_rwgxs"]
-[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/costume.gd" id="5_4mrxx"]
-[ext_resource type="Script" uid="uid://shsgbbavtnsx" path="res://scenes/components/inventory/inventory.gd" id="6_7r4gi"]
+[ext_resource type="Resource" uid="uid://boow28lhauifp" path="res://scenes/components/inventory/player_inventory.tres" id="5_i7141"]
 [ext_resource type="Script" uid="uid://cfwmkm6fukdb0" path="res://scenes/entities/move_test/movement.gd" id="6_i7141"]
 [ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player_AM/test_sprite.png" id="7_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://6sr56wa1glfb" path="res://scenes/components/inventory/inventory_control.tscn" id="7_i7141"]
-
-[sub_resource type="Resource" id="Resource_e3hyu"]
-script = ExtResource("6_7r4gi")
-equipment = Array[ExtResource("5_4mrxx")]([null, null])
-metadata/_custom_type_script = "uid://shsgbbavtnsx"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7r4gi"]
 animations = [{
@@ -49,7 +43,7 @@ fov = 50.0
 [node name="move_test" type="CharacterBody3D" parent="." unique_id=250697812 groups=["players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8824987, 0)
 script = ExtResource("6_i7141")
-player_inventory = SubResource("Resource_e3hyu")
+player_inventory = ExtResource("5_i7141")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="move_test" unique_id=1546117199]
 sprite_frames = SubResource("SpriteFrames_7r4gi")

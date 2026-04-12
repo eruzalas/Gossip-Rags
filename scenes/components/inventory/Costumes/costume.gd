@@ -1,5 +1,6 @@
 extends Resource
 
+##Equipment
 class_name costume
 
 #-------item name and texture-------
