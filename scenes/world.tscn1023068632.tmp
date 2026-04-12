@@ -9,9 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player_AM/test_sprite.png" id="7_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://6sr56wa1glfb" path="res://scenes/components/inventory/inventory_control.tscn" id="7_i7141"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fqqit"]
+load_path = "res://.godot/imported/banana.png-efa771f1a2827b152973deb3105bd045.ctex"
+
+[sub_resource type="Resource" id="Resource_w7kh3"]
+script = ExtResource("5_4mrxx")
+name = "Banana"
+texture = SubResource("CompressedTexture2D_fqqit")
+speed_modifier = 1.5
+accel_modifier = 0.6
+deccel_modifier = 0.075
+suspicion_modifier = 0.7
+attention_modifier = 1.1
+metadata/_custom_type_script = "uid://df08msjn6bry6"
+
 [sub_resource type="Resource" id="Resource_e3hyu"]
 script = ExtResource("6_7r4gi")
-equipment = Array[ExtResource("5_4mrxx")]([null, null])
+equipment = Array[ExtResource("5_4mrxx")]([SubResource("Resource_w7kh3")])
 metadata/_custom_type_script = "uid://shsgbbavtnsx"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7r4gi"]

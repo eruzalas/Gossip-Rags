@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://6sr56wa1glfb"]
+
+[ext_resource type="Script" uid="uid://5a4a0v4cuxsw" path="res://inventory_control.gd" id="1_x4jqs"]
+
+[node name="inventory_control" type="Control" unique_id=802980208]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x4jqs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=27137823]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

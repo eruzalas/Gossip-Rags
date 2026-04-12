@@ -7,7 +7,7 @@ func _ready() -> void:
 	# run randomise to ensure all rand calls return more random random randoms
 	randomize()
 	var player = $Player
-	for i in range(2):
+	for i in range(5):
 		var new_npc = npc_prefab.instantiate()
 		new_npc.global_position = Vector3(randi_range(-5, 5), 2, randi_range(-10, 0))
 		add_child(new_npc)
