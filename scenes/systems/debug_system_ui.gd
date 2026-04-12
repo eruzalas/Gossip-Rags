@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"): #arrow down
 		if(steps > 0):
 			steps -= 1
-		#currently negates effects if attention is maxed in sus but given chnaged values this will change
+		#currently negates effects if attention is maxed in sus but given changed values this will change
 		_are_sus() 
 		_determine_sus()
 		

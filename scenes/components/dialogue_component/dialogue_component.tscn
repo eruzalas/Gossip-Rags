@@ -5,7 +5,13 @@
 
 [node name="DialogueComponent" type="Control" unique_id=1685725541]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_iigvq")
 
 [node name="DialogueTimer" type="Timer" parent="." unique_id=1118606190]
@@ -14,8 +20,10 @@ script = ExtResource("1_iigvq")
 texture_filter = 1
 custom_minimum_size = Vector2(80, 40)
 layout_mode = 0
-offset_right = 174.0
-offset_bottom = 79.0
+offset_left = -2.0
+offset_top = 144.0
+offset_right = 172.0
+offset_bottom = 257.0
 texture = ExtResource("2_2bkhk")
 patch_margin_left = 10
 patch_margin_top = 10
@@ -26,8 +34,9 @@ axis_stretch_vertical = 1
 
 [node name="TextMargin" type="MarginContainer" parent="TextBubbleFrame" unique_id=637580081]
 layout_mode = 0
+offset_top = 4.0
 offset_right = 174.0
-offset_bottom = 79.0
+offset_bottom = 102.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
