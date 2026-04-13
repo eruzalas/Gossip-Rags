@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
-[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/png version NPC.png" id="1_p5uw1"]
-[ext_resource type="PackedScene" uid="uid://b4rkpf7hcumgf" path="res://scenes/components/area_of_effect/range_of_effect.tscn" id="2_xjnpb"]
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_group.png" id="1_p5uw1"]
+[ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
 [ext_resource type="PackedScene" uid="uid://begdsacpnoxo6" path="res://scenes/components/dialogue_component/dialogue_component.tscn" id="3_xjnpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
-size = Vector3(1.2825317, 1.2763672, 0.2177124)
+size = Vector3(1, 2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqhh"]
 shading_mode = 0
@@ -16,55 +16,50 @@ material = SubResource("StandardMaterial3D_abqhh")
 text = "!!!!!"
 font_size = 50
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_p5uw1"]
 radius = 1.5
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_p5uw1"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
 radius = 4.0
 
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
 
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
+shape = SubResource("BoxShape3D_gr72c")
+
 [node name="Sprite" type="Sprite3D" parent="." unique_id=1590636786]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 pixel_size = 0.0078125
-texture = ExtResource("2_67e1k")
+texture = ExtResource("1_p5uw1")
 
 [node name="Test Display Text" type="MeshInstance3D" parent="." unique_id=1710215210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.004)
 mesh = SubResource("TextMesh_abqhh")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=549698861]
-avoidance_enabled = true
-radius = 0.8
+[node name="DialogueComponent" parent="." unique_id=211027122 instance=ExtResource("3_xjnpb")]
 
-[node name="Look Timer" type="Timer" parent="." unique_id=1900664280]
+[node name="Bangarang Range" type="Area3D" parent="." unique_id=1818692468]
 
-[node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
-shape = SubResource("BoxShape3D_gr72c")
-
-[node name="Wander Timer" type="Timer" parent="." unique_id=1217527983]
-
-[node name="Danger Range" type="Area3D" parent="." unique_id=708937469]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Danger Range" unique_id=2080543890]
-shape = SubResource("SphereShape3D_xjnpb")
-
-[node name="Attention Range" type="Area3D" parent="." unique_id=1431406855]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Attention Range" unique_id=123208677]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bangarang Range" unique_id=1568075916]
 shape = SubResource("SphereShape3D_p5uw1")
 
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[node name="Attention Range" type="Area3D" parent="." unique_id=308478209]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attention Range" unique_id=2046363988]
+shape = SubResource("SphereShape3D_xjnpb")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=777356627]
+avoidance_enabled = true
+radius = 0.8
+debug_enabled = true
+
+[node name="Look Timer" type="Timer" parent="." unique_id=1589166161]
+
+[node name="Wander Timer" type="Timer" parent="." unique_id=2124301048]
+
+[connection signal="body_entered" from="Bangarang Range" to="." method="_on_bangarang_range_body_entered"]
+[connection signal="body_exited" from="Bangarang Range" to="." method="_on_bangarang_range_body_exited"]
 [connection signal="timeout" from="Look Timer" to="." method="_on_look_timer_timeout"]
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]
-[connection signal="body_entered" from="Danger Range" to="." method="_on_danger_range_body_entered"]
-[connection signal="body_exited" from="Danger Range" to="." method="_on_danger_range_body_exited"]
-[node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_xjnpb")]
-
-[node name="DialogueComponent" parent="." unique_id=211027122 instance=ExtResource("3_xjnpb")]

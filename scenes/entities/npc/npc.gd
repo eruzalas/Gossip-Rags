@@ -184,12 +184,13 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	if current_state == NpcType.MOVING:
 		velocity = safe_velocity
 		move_and_slide()
-
-func _on_danger_range_body_entered(body: Node3D) -> void:
+		
+		
+func _on_bangarang_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
 		current_state = NpcType.WATCHING
 
-func _on_danger_range_body_exited(body: Node3D) -> void:
+func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
 		current_state = NpcType.IDLE
 		if has_active_target == true:
