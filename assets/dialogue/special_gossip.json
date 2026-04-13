@@ -1,0 +1,41 @@
+{
+    "progression_dialogue": [
+        {
+            "name": "BF_hears_GF_rumour",
+            "associated_stage": 1,
+            "minimum_unique_dialogue_to_be_heard": 3,
+            "dialogue": [
+                {
+                    "id": "000001",
+                    "originates_from_special_character": false,
+                    "origin": "npc_group_1",
+                    "bubble_icon": "normal.png",
+                    "dialogue": "Did you hear...",
+                    "audio_file": "whispering_audio_001.mp4",
+                    "next_id": "000002"
+                },
+                {
+                    "id": "000002",
+                    "originates_from_special_character": true,
+                    "origin": "specific_npc_001",
+                    "bubble_icon": "alarm.png",
+                    "dialogue": "omg yeah I cannot believe I heard that about Peaches",
+                    "audio_file": "whispering_audio_002.mp4",
+                    "next_id": "000003"
+                },
+                {
+                    "id": "000003",
+                    "originates_from_special_character": false,
+                    "origin": "npc_group_2",
+                    "bubble_icon": "normal.png",
+                    "dialogue": "What the fuck?",
+                    "audio_file": "whispering_audio_003.mp4",
+                    "next_id": ""
+                }
+            ]
+        }
+    ],
+    "substitute_progression_dialogue": [
+        
+    ] 
+}
