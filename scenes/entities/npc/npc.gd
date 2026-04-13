@@ -11,7 +11,7 @@ class_name Npc
 # internal to NPC
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var text_display: MeshInstance3D = $"Test Display Text"
-@onready var danger_range: Area3D = $"Danger Range"
+@onready var bangarang_range: Area3D = $"Bangarang Range"
 @onready var attention_range: Area3D = $"Attention Range"
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
