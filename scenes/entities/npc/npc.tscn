@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
-[ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
-[ext_resource type="Texture2D" uid="uid://d3knt8buxf035" path="res://assets/images/npc_sprites/npc_sprite_unassigned.png" id="2_67e1k"]
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/png version NPC.png" id="1_p5uw1"]
+[ext_resource type="PackedScene" uid="uid://b4rkpf7hcumgf" path="res://scenes/components/area_of_effect/range_of_effect.tscn" id="2_xjnpb"]
+[ext_resource type="PackedScene" uid="uid://begdsacpnoxo6" path="res://scenes/components/dialogue_component/dialogue_component.tscn" id="3_xjnpb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
+size = Vector3(1.2825317, 1.2763672, 0.2177124)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqhh"]
 shading_mode = 0
@@ -61,3 +65,6 @@ shape = SubResource("SphereShape3D_p5uw1")
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]
 [connection signal="body_entered" from="Danger Range" to="." method="_on_danger_range_body_entered"]
 [connection signal="body_exited" from="Danger Range" to="." method="_on_danger_range_body_exited"]
+[node name="Range of Effect" parent="." unique_id=1837924148 instance=ExtResource("2_xjnpb")]
+
+[node name="DialogueComponent" parent="." unique_id=211027122 instance=ExtResource("3_xjnpb")]

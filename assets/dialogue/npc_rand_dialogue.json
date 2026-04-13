@@ -1,0 +1,58 @@
+{
+	"idle": [
+		{
+			"id": "000001",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "normal.png",
+			"dialogue": "Dude I cannot believe the weather we are having right now :(",
+			"audio_file": "talking_audio_001.mp4",
+			"next_id": ""
+		},
+		{
+			"id": "000002",
+			"is_start": true,
+			"is_solo": false,
+			"origin": "cult_group",
+			"bubble_icon": "spooky.png",
+			"dialogue": "Are you feeling like a sacrifice rn?",
+			"audio_file": "talking_audio_002.mp4",
+			"next_id": "000003"
+		},
+		{
+			"id": "000003",
+			"is_start": false,
+			"is_solo": true,
+			"origin": "cult_group",
+			"bubble_icon": "spooky.png",
+			"dialogue": "honestly yeah a sacrifice would hit the spot rn.",
+			"audio_file": "talking_audio_003.mp4",
+			"next_id": ""
+		}
+	],
+	"notice_player": [
+		{
+			"id": "000004",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "normal.png",
+			"dialogue": "Ah I'll tell you later.",
+			"audio_file": "talking_audio_004.mp4",
+			"next_id": ""
+		}
+	],
+	"un-notice player": [
+		{
+			"id": "000005",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "normal.png",
+			"dialogue": "Ok, now that they are gone, where was I...",
+			"audio_file": "talking_audio_005.mp4",
+			"next_id": ""
+		}
+	]
+}

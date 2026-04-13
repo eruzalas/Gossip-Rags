@@ -17,7 +17,7 @@ config/icon="res://assets/images/icon.svg"
 
 [autoload]
 
-ResourcePaths="*uid://v6c1o1bt0cig"
+DialogueProcessor="*uid://citna3265758u"
 
 [dotnet]
 
@@ -26,7 +26,6 @@ project/assembly_name="Gossip Rags"
 [global_group]
 
 players="group holding player entities - for gossip collision"
-npcs="group holding npc entities"
 
 [input]
 
