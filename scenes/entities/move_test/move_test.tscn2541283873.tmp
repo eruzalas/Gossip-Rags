@@ -19,6 +19,9 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_i7141"]
 size = Vector3(1, 1, 0.23046875)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_54mo8"]
+radius = 1.6172378
+
 [node name="move_test" type="CharacterBody3D" unique_id=1857290036 groups=["players"]]
 script = ExtResource("1_54mo8")
 player_inventory = ExtResource("2_cnb4k")
@@ -31,3 +34,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.007851124)
 shape = SubResource("BoxShape3D_i7141")
 
 [node name="inventory_control" parent="." unique_id=802980208 instance=ExtResource("4_fwuli")]
+
+[node name="interactable_area" type="Area3D" parent="." unique_id=583277789]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interactable_area" unique_id=343793791]
+shape = SubResource("SphereShape3D_54mo8")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

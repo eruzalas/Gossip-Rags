@@ -10,6 +10,7 @@ class_name costume
 ##costume icon texture
 @export var texture: Texture2D
 
+
 #-------character stat modifiers (base x item)-------
 
 ##affects player movement speed

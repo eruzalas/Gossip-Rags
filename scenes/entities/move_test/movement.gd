@@ -2,9 +2,13 @@ extends CharacterBody3D
 
 #---- Attach Inventory ----
 
-#for debugging, second is normal
 @export var player_inventory: inventory
 #@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
+
+
+#currently just a player identifier
+func player():
+	pass
 
 func _ready():
 	player_inventory.print()
@@ -25,21 +29,16 @@ var jump_modifier = 1
 var accel_modifier = 1
 var decel_modifier = 1
 
-func player(message):
-	print(message)
-
 ##applies stats from inventory items (gets average if multiple items present)
 func update_stats():
 	var temp_speed = 1
 	var temp_jump = 1
 	var temp_accel = 1
 	var temp_decel = 1
-	var count = 0
 	for i in range (player_inventory.size()):
 		if (!player_inventory.equipment[i]):
 			pass
 		else:
-			count += 1
 			temp_speed *= player_inventory.equipment[i].speed_modifier
 			temp_jump *= player_inventory.equipment[i].jump_height_modifier
 			temp_accel *= player_inventory.equipment[i].accel_modifier
@@ -55,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = (jump_velocity * jump_modifier)
@@ -81,3 +80,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, (deceleration * decel_modifier) * delta)
 
 	move_and_slide()
+
+#called by item to collect it
+func pickup(item: costume):
+	player_inventory.equip(item)
+	update_stats()
+	$inventory_control.update()

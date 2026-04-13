@@ -35,17 +35,17 @@ func cycle_slot():
 	current_costume += 1
 	if (current_costume >= inv.size()):
 		current_costume = 0
-	update(inv.equipment[current_costume])
+	update()
 
 #change the displayed costume
-func update(display: costume):
-	if (!display):
+func update():
+	if (!inv.equipment[current_costume]):
 		costume_ui.visible = false
 	else:
 		costume_ui.visible = true
-		costume_ui.texture = display.texture
+		costume_ui.texture = inv.equipment[current_costume].texture
 
 #set default state
 func _ready():
 	close()
-	update(inv.equipment[current_costume])
+	update()

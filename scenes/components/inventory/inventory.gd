@@ -33,6 +33,7 @@ func equip(item: costume):
 		else:
 			equipment[i] = item
 			replace = false
+			break
 	if (replace == true):
 			drop(equipment[selected_costume])
 			equipment[selected_costume] = item
