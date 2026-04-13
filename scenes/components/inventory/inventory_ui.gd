@@ -6,14 +6,20 @@ extends Control
 #hold state of UI, visible true/false
 var is_open = false
 
+#for cycling through displayed item
+var current_costume = 0
+
 # Called every frame. 'delta' is the elapsed time since the previous frame
 #for handling button press to open/close UI
 func _process(delta):
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (Input.is_action_just_pressed("debug_menu")):
 		if (is_open):
 			close()
 		else:
 			open()
+	if (Input.is_action_just_pressed("cycle")):
+		cycle_slot()
+	
 
 #make the UI hidden (closed)
 func close():
@@ -24,6 +30,12 @@ func close():
 func open():
 	self.visible = true
 	is_open = true
+
+func cycle_slot():
+	current_costume += 1
+	if (current_costume >= inv.size()):
+		current_costume = 0
+	update(inv.equipment[current_costume])
 
 #change the displayed costume
 func update(display: costume):
@@ -36,4 +48,4 @@ func update(display: costume):
 #set default state
 func _ready():
 	close()
-	update(inv.equipment[0])
+	update(inv.equipment[current_costume])

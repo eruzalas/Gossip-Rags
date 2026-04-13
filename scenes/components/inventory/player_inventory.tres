@@ -1,9 +1,20 @@
 [gd_resource type="Resource" script_class="inventory" format=3 uid="uid://boow28lhauifp"]
 
 [ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_ngs2w"]
+[ext_resource type="Texture2D" uid="uid://cadxu6wccxxbs" path="res://assets/testsprites/costumes_AM/banana.png" id="2_ngs2w"]
 [ext_resource type="Script" uid="uid://shsgbbavtnsx" path="res://scenes/components/inventory/inventory.gd" id="3_ghct4"]
+
+[sub_resource type="Resource" id="Resource_ngs2w"]
+script = ExtResource("1_ngs2w")
+name = "Banana"
+texture = ExtResource("2_ngs2w")
+speed_modifier = 1.5
+accel_modifier = 0.6
+suspicion_modifier = 0.7
+attention_modifier = 1.1
+metadata/_custom_type_script = "uid://df08msjn6bry6"
 
 [resource]
 script = ExtResource("3_ghct4")
-equipment = Array[ExtResource("1_ngs2w")]([null])
+equipment = Array[ExtResource("1_ngs2w")]([SubResource("Resource_ngs2w")])
 metadata/_custom_type_script = "uid://shsgbbavtnsx"

@@ -12,36 +12,6 @@ func _ready():
 	print("-----")
 	print("current speed: "+ str(base_speed * speed_modifier))
 
-func update_stats():
-	var temp_speed = 0
-	var temp_jump = 0
-	var temp_accel = 0
-	var temp_decel = 0
-	var count = 0
-	for i in range (player_inventory.size()):
-		if (!player_inventory.equipment[i]):
-			pass
-		else:
-			count += 1
-			temp_speed += player_inventory.equipment[i].speed_modifier
-			temp_jump += player_inventory.equipment[i].jump_height_modifier
-			temp_accel += player_inventory.equipment[i].accel_modifier
-			temp_decel += player_inventory.equipment[i].decel_modifier
-	if (count > 0):
-		temp_speed /= count
-		temp_jump /= count
-		temp_accel /= count
-		temp_decel /= count
-	else: 
-		temp_speed = 1
-		temp_jump = 1
-		temp_accel = 1
-		temp_decel = 1
-	speed_modifier = temp_speed
-	jump_modifier = temp_jump
-	accel_modifier = temp_accel
-	decel_modifier = temp_decel
-
 #---- Movement Base Stats ----
 var base_speed = 10
 var move_speed = 0 #used to handle speed when running/crouching, inputs required
@@ -54,6 +24,31 @@ var speed_modifier = 1
 var jump_modifier = 1
 var accel_modifier = 1
 var decel_modifier = 1
+
+func player(message):
+	print(message)
+
+##applies stats from inventory items (gets average if multiple items present)
+func update_stats():
+	var temp_speed = 1
+	var temp_jump = 1
+	var temp_accel = 1
+	var temp_decel = 1
+	var count = 0
+	for i in range (player_inventory.size()):
+		if (!player_inventory.equipment[i]):
+			pass
+		else:
+			count += 1
+			temp_speed *= player_inventory.equipment[i].speed_modifier
+			temp_jump *= player_inventory.equipment[i].jump_height_modifier
+			temp_accel *= player_inventory.equipment[i].accel_modifier
+			temp_decel *= player_inventory.equipment[i].decel_modifier
+	speed_modifier = temp_speed
+	jump_modifier = temp_jump
+	accel_modifier = temp_accel
+	decel_modifier = temp_decel
+
 
 #---- Actual Controls /w physics ----
 func _physics_process(delta: float) -> void:
