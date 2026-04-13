@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://68s4y85p8gpm"]
+
+[ext_resource type="Script" uid="uid://dctf3cbwo7ix0" path="res://scenes/components/inventory/Costumes/item_collectable.gd" id="1_xv1bf"]
+[ext_resource type="Texture2D" uid="uid://npofle3s271" path="res://assets/testsprites/costumes_AM/placeholder.png" id="2_wbokh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3wq3e"]
+radius = 0.9
+
+[node name="item_collectable" type="Node3D" unique_id=1933756928]
+script = ExtResource("1_xv1bf")
+
+[node name="placeholder_sprite" type="Sprite3D" parent="." unique_id=1490945758]
+texture = ExtResource("2_wbokh")
+
+[node name="costume_sprite" type="Sprite3D" parent="." unique_id=255336274]
+
+[node name="interactable_area" type="Area3D" parent="." unique_id=89158931]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interactable_area" unique_id=173005605]
+shape = SubResource("SphereShape3D_3wq3e")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

@@ -1,0 +1,83 @@
+extends CharacterBody3D
+
+#---- Attach Inventory ----
+
+#for debugging, second is normal
+@export var player_inventory: inventory
+#@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
+
+func _ready():
+	player_inventory.print()
+	update_stats()
+	print("-----")
+	print("current speed: "+ str(base_speed * speed_modifier))
+
+#---- Movement Base Stats ----
+var base_speed = 10
+var move_speed = 0 #used to handle speed when running/crouching, inputs required
+var jump_velocity = 10
+var acceleration = 35
+var deceleration = 30
+
+#---- Stat Modifiers ----
+var speed_modifier = 1
+var jump_modifier = 1
+var accel_modifier = 1
+var decel_modifier = 1
+
+func player(message):
+	print(message)
+
+##applies stats from inventory items (gets average if multiple items present)
+func update_stats():
+	var temp_speed = 1
+	var temp_jump = 1
+	var temp_accel = 1
+	var temp_decel = 1
+	var count = 0
+	for i in range (player_inventory.size()):
+		if (!player_inventory.equipment[i]):
+			pass
+		else:
+			count += 1
+			temp_speed *= player_inventory.equipment[i].speed_modifier
+			temp_jump *= player_inventory.equipment[i].jump_height_modifier
+			temp_accel *= player_inventory.equipment[i].accel_modifier
+			temp_decel *= player_inventory.equipment[i].decel_modifier
+	speed_modifier = temp_speed
+	jump_modifier = temp_jump
+	accel_modifier = temp_accel
+	decel_modifier = temp_decel
+
+
+#---- Actual Controls /w physics ----
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = (jump_velocity * jump_modifier)
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
+	if Input.is_action_pressed("run") and !Input.is_action_pressed("crouch"):
+		move_speed = (base_speed * speed_modifier) * 1.5
+	elif Input.is_action_pressed("crouch") and !Input.is_action_pressed("run"):
+		move_speed = (base_speed * speed_modifier) * 0.75
+	else :
+		move_speed = (base_speed * speed_modifier)
+
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		
+		velocity.x = move_toward(velocity.x, direction.x * move_speed, (acceleration * accel_modifier) * delta)
+		velocity.z = move_toward(velocity.z, direction.z * move_speed, (acceleration * accel_modifier) * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, (deceleration * decel_modifier) * delta)
+		velocity.z = move_toward(velocity.z, 0, (deceleration * decel_modifier) * delta)
+
+	move_and_slide()
