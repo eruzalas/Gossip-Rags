@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_bq33v"]
 [ext_resource type="Script" uid="uid://d13ccj4k37tsx" path="res://utils/debug/fps_label.gd" id="2_j2gmx"]
 [ext_resource type="PackedScene" uid="uid://68s4y85p8gpm" path="res://scenes/components/inventory/Costumes/costume_collectable.tscn" id="2_xq18t"]
-[ext_resource type="PackedScene" path="res://scenes/entities/player/player.tscn" id="3_1yooq"]
+[ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="3_1yooq"]
 [ext_resource type="Resource" uid="uid://dh5i84kebr6p5" path="res://scenes/components/inventory/Costumes/test_banana.tres" id="3_x0nq1"]
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="4_gb53w"]
 [ext_resource type="PackedScene" uid="uid://0i0a8dqms8db" path="res://scenes/entities/move_test/move_test.tscn" id="4_rwifv"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="9_6hctx"]
 [ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="10_ues17"]
 [ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="11_xq18t"]
+[ext_resource type="Script" uid="uid://baox6kivo6tru" path="res://scenes/camera_components/camera_manager.gd" id="12_rwifv"]
 [ext_resource type="Texture2D" uid="uid://b21m8xm8fejjv" path="res://assets/ui/placeholder_progress_fill_1.png" id="12_x0nq1"]
+[ext_resource type="Shader" uid="uid://vdffugcut0q" path="res://scenes/camera_components/splitsceen_shader.gdshader" id="13_ckok1"]
 [ext_resource type="Texture2D" uid="uid://bj5u4f4epj5wn" path="res://assets/ui/placeholder_progress_fill_2.png" id="13_rwifv"]
 [ext_resource type="Texture2D" uid="uid://j7ou8uc38l6k" path="res://assets/ui/placeholder_progress_fill_3.png" id="14_ckok1"]
 [ext_resource type="Texture2D" uid="uid://cujh7rnx1ve5r" path="res://assets/ui/placeholder_progress_fill_4.png" id="15_2x71e"]
@@ -39,6 +41,18 @@ cell_size = 0.2
 cell_height = 0.2
 agent_radius = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2x71e"]
+shader = ExtResource("13_ckok1")
+shader_parameter/viewport_size = Vector2(0, 0)
+shader_parameter/split_active = false
+shader_parameter/player1_position = Vector2(0, 0)
+shader_parameter/player2_position = Vector2(0, 0)
+shader_parameter/split_line_thickness = 0.0
+shader_parameter/split_line_color = Color(0, 0, 0, 1)
+shader_parameter/is_multi_floor = false
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rwifv"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_lbnhc"]
 font_size = 32
 
@@ -52,10 +66,10 @@ script = ExtResource("1_bq33v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0037732, -9.154972)
 item = ExtResource("3_x0nq1")
 
-[node name="move_test" parent="." unique_id=1857290036 instance=ExtResource("4_rwifv")]
+[node name="Player1" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("3_1yooq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9335082, -0.375)
 
-[node name="Camera3D" type="Camera3D" parent="move_test" unique_id=235421529]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.012299538, 9.87469, 12.671423)
+[node name="Player2" parent="." unique_id=1857290036 instance=ExtResource("4_rwifv")]
 
 [node name="Optimisation Metric Display" type="CanvasLayer" parent="." unique_id=1770815078]
 
@@ -63,10 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.01229
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_j2gmx")
-
-[node name="Player" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("3_1yooq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9335082, -0.375)
-visible = false
 
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 navigation_mesh = SubResource("NavigationMesh_k0juu")
@@ -150,6 +160,28 @@ npc_type = "wander_all"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.715305, 1, -3.2989287)
 npc_type = "wander_zone"
 npc_allowed_zone_layers = Array[int]([2])
+
+[node name="CameraManager" type="Node3D" parent="." unique_id=957882876]
+script = ExtResource("12_rwifv")
+
+[node name="View" type="TextureRect" parent="CameraManager" unique_id=914826662]
+material = SubResource("ShaderMaterial_2x71e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_rwifv")
+
+[node name="Viewport1" type="SubViewport" parent="CameraManager" unique_id=1040274272]
+
+[node name="Player1Cam" type="Camera3D" parent="CameraManager/Viewport1" unique_id=812204678]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -17.853947, 4.218769, 0)
+
+[node name="Viewport2" type="SubViewport" parent="CameraManager" unique_id=1234397570]
+
+[node name="Player2Cam" type="Camera3D" parent="CameraManager/Viewport2" unique_id=871099603]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -17.853947, 4.218769, 0)
 
 [node name="Systems Debug UI" type="Control" parent="." unique_id=1491472664]
 layout_mode = 3
