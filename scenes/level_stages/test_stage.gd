@@ -3,7 +3,7 @@ extends Node3D
 func _ready() -> void:
 	# run randomise to ensure all rand calls return more random random randoms
 	randomize()
-	var player = $Player
+	var player = $Player1
 	#for i in range(1):
 		#var new_npc = npc_prefab.instantiate()
 		#new_npc.global_position = Vector3(randi_range(-5, 5), 2, randi_range(-10, 0))
