@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dh5i84kebr6p5" path="res://scenes/components/inventory/Costumes/test_banana.tres" id="3_x0nq1"]
 [ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="4_gb53w"]
 [ext_resource type="PackedScene" uid="uid://0i0a8dqms8db" path="res://scenes/entities/move_test/move_test.tscn" id="4_rwifv"]
+[ext_resource type="Resource" uid="uid://cdrkg6uclmwul" path="res://scenes/components/inventory/Costumes/test_bike_helmet.tres" id="4_x0nq1"]
 [ext_resource type="PackedScene" uid="uid://dlpfyy5menbrb" path="res://scenes/entities/npc/npc.tscn" id="5_5qq27"]
 [ext_resource type="Script" uid="uid://dxt0saqc8n3fm" path="res://utils/controllers/origin_controller.gd" id="6_dlabj"]
 [ext_resource type="PackedScene" uid="uid://ctqlardy4ps7h" path="res://scenes/entities/npc/npc_origin_point.tscn" id="7_srmg5"]
@@ -50,6 +51,10 @@ script = ExtResource("1_bq33v")
 [node name="item_collectable" parent="." unique_id=1933756928 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68702364, -9.154972)
 item = ExtResource("3_x0nq1")
+
+[node name="item_collectable2" parent="." unique_id=1836070800 instance=ExtResource("2_xq18t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2888346, 0.68702364, -9.154972)
+item = ExtResource("4_x0nq1")
 
 [node name="move_test" parent="." unique_id=1857290036 instance=ExtResource("4_rwifv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78385425, 0)

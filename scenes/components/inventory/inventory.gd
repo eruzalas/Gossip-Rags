@@ -46,4 +46,4 @@ func equip(item: costume):
 ##functionality for manually removing items from inventory (doesn't drop)
 func remove(equip_slot: int):
 	if (equipment[equip_slot]):
-		equipment.remove_at(equip_slot)
+		equipment[equip_slot] = null
