@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("3_ghct4")
-equipment = Array[ExtResource("1_ngs2w")]([null, null])
+equipment = Array[ExtResource("1_ngs2w")]([null])
 metadata/_custom_type_script = "uid://shsgbbavtnsx"

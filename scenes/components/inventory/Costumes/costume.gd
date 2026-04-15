@@ -30,6 +30,8 @@ class_name costume
 
 ##Costume's own suspicion stat
 @export var costume_suspicion: int = 0
+##numerical identifier to key to a player sprite
+@export var costume_ID: int
 
 #------- Methods -------
 func print():

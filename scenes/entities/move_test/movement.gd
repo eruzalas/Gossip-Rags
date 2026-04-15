@@ -63,6 +63,7 @@ func _physics_process(delta: float) -> void:
 		player_inventory.remove(selected_costume)
 		update_stats()
 		$inventory_ui.update()
+		update_sprite()
 	
 	if (Input.is_action_just_pressed("interact") and costume_in_range and is_on_floor()):
 		pickup()
@@ -107,6 +108,7 @@ func pickup():
 	$inventory_ui.update()
 	if (!is_empty):
 		toggle_selected()
+	update_sprite()
 		
 	
 ##"drops" an item by spawning a collectable with the same variables in the scene at the player's location
@@ -114,16 +116,27 @@ func drop(item: costume):
 	var dropped_item = load("res://scenes/components/inventory/Costumes/costume_collectable.tscn").instantiate()
 	dropped_item.global_position = $Marker3D.global_position
 	dropped_item.item = item
-	get_parent().add_child(dropped_item)
-	
+	get_parent().add_child(dropped_item)	
 
 func toggle_selected():
 	selected_costume += 1
 	if (selected_costume >= player_inventory.size()):
 		selected_costume = 0
 	
+##very badly assigns costumes based on a keyed ID system (ID = position in array)
+func update_sprite():
+	var sprite = ["default","banana_costume","motorbike_helmet_costume"]
+	var selected = 0 #
+	for i in range (player_inventory.size()):
+		if (!player_inventory.equipment[i]):
+			pass
+		else:
+			selected = player_inventory.equipment[i].costume_ID
+	$AnimatedSprite3D.animation = sprite[selected]
+	
 func _ready():
 	player_inventory.print()
 	update_stats()
+	update_sprite()
 	print("-----")
 	print("current speed: "+ str(base_speed * speed_modifier))
