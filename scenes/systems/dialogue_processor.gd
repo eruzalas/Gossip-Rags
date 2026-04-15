@@ -18,8 +18,9 @@ static func _filter_dialogue_list(dialogue_list:Array, attribute:String, filter)
 			
 	return filtered_dialogue_list
 
-func _get_random_npc_dialogue(npc_status:String) -> Dictionary:
-	var possible_dialogue:Array = _return_npc_dialogue_off_type(npc_status)
+func _get_random_npc_dialogue(npc_status: Enums.NpcType) -> Dictionary:
+	var status = _convert_NpcType_to_string(npc_status)
+	var possible_dialogue:Array = _return_npc_dialogue_off_type(status)
 	# run filtering
 	possible_dialogue = _filter_dialogue_list(possible_dialogue, "is_start", true)
 	# return result
@@ -31,8 +32,9 @@ func _return_npc_dialogue_off_type(npc_status:String):
 	print("Type/Status passed in could not be found.")
 	return
 
-func _get_next_dialogue(npc_status, next_id: String):
-	var possible_dialogue:Array = _return_npc_dialogue_off_type(npc_status)
+func _get_next_dialogue(npc_status: Enums.NpcType, next_id: String):
+	var status = _convert_NpcType_to_string(npc_status)
+	var possible_dialogue:Array = _return_npc_dialogue_off_type(status)
 	
 	for dialogue in possible_dialogue:
 		if dialogue["id"] == next_id:
@@ -41,3 +43,12 @@ func _get_next_dialogue(npc_status, next_id: String):
 	print("Could not find next_id of " + next_id + " in dialogue array.")	
 	return
 	
+
+func _convert_NpcType_to_string(npc_status: Enums.NpcType):
+	match npc_status:
+		0:
+			return "idle"
+		1:
+			return "moving"
+		2:
+			return "watching"

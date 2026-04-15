@@ -1,40 +1,42 @@
 extends Node
+@onready var dialogue_renderer: Sprite3D = $"../.."
+@onready var dialogue_timer: Timer = $"../DialogueTimer"
 
-@onready var npc: CharacterBody3D = $".."
-@onready var dialogue_timer: Timer = $DialogueTimer
-@onready var text_bubble_frame: NinePatchRect = $TextBubbleFrame
-@onready var text_margin: MarginContainer = $TextBubbleFrame/TextMargin
-@onready var dialogue_text: RichTextLabel = $TextBubbleFrame/TextMargin/DialogueText
-
-# dialogue_file = path to file - set to the generic NPC rand dialogue as default
-@export var dialogue_file: String = "res://assets/dialogue/npc_rand_dialogue.json"
 # handles_gossip = whether this component should return progression gossip or generic NPC dialogue
 @export var handles_gossip: bool = false
 # debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
 @export var debug_mode: bool = true
 
-# HARDCODED STATUS - THIS SHOULD INTERFACE WITH PLAYER/NPC STATE
-var status = "idle"
+var status: Enums.NpcType = Enums.NpcType.IDLE
 
 var current_dialogue
 var dialogue_timeout = 5
 var max_width_dialogue_box = 400
+var bubble
+
+var dialogue_bubble_prefab = preload("res://scenes/components/dialogue_component/dialogue_bubble.tscn")
 
 func _ready() -> void:
 	randomize()
 	
+	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
 	dialogue_timer.start(dialogue_timeout)
+	
+	bubble = dialogue_bubble_prefab.instantiate()
+	add_child(bubble)
 		
 	if debug_mode:
 		print("DEBUG MODE ACTIVE")
 
 
+func _set_status(new_status: Enums.NpcType) -> void:
+	status = new_status
+
 func _process(delta: float) -> void:
 	pass
 
 func _update_dialogue_text_box(dialogue_dict:Dictionary) -> void:
-	dialogue_text.text = current_dialogue["dialogue"]
-	text_bubble_frame.size.x = dialogue_text.get_content_width()
+	bubble.rich_text_label.text = current_dialogue["dialogue"]
 
 
 func _on_dialogue_timer_timeout() -> void:

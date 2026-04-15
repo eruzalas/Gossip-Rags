@@ -27,17 +27,12 @@ class_name Npc
 @export var min_wander_wait: float = 5.0
 @export var max_wander_wait: float = 10.0
 
-# FSM DECLARATION
-enum NpcType {
-	IDLE,
-	WATCHING,
-	MOVING,
-}
+signal npc_status_changed(new_status: Enums.NpcType)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
-var current_state = NpcType.IDLE
+var current_state = Enums.NpcType.IDLE
 
 # constants
 const SPEED = 3.0
@@ -70,17 +65,17 @@ func _physics_process(delta: float) -> void:
 	
 	if debug_mode:
 		# set mesh to what the state of the NPC is
-		text_display.mesh.text = NpcType.find_key(current_state)
+		text_display.mesh.text = Enums.NpcType.find_key(current_state)
 	
 	# check if active target
-	if current_state == NpcType.MOVING:
+	if current_state == Enums.NpcType.MOVING:
 		# dont query when the map has never synchronized and is empty
 		if NavigationServer3D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
 			return
 			
 		# if finished navigation, return to IDLE state
 		if nav_agent.is_navigation_finished():
-			current_state = NpcType.IDLE
+			current_state = Enums.NpcType.IDLE
 			has_active_target = false
 			return
 		
@@ -94,10 +89,10 @@ func _physics_process(delta: float) -> void:
 		# look at direction
 		_look_at_position(next_pos, delta)
 		
-	elif current_state == NpcType.WATCHING:
+	elif current_state == Enums.NpcType.WATCHING:
 		_look_at_position(player.global_transform.origin, delta)
 		
-	elif current_state == NpcType.IDLE:
+	elif current_state == Enums.NpcType.IDLE:
 		_look_at_position(target_look_position, delta)
 		
 
@@ -137,7 +132,7 @@ func _get_new_target_position():
 		var random_location = NavigationServer3D.map_get_random_point(world, nav_layer, true)
 		_set_movement_target(random_location)
 	# tell npc to start moving next frame
-	current_state = NpcType.MOVING
+	current_state = Enums.NpcType.MOVING
 	has_active_target = true
 
 func _flatten_look_y(target_position):
@@ -181,20 +176,23 @@ func _generate_wander_wait():
 
 # ---- SIGNAL FUNCTIONS ----
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
-	if current_state == NpcType.MOVING:
+	if current_state == Enums.NpcType.MOVING:
 		velocity = safe_velocity
 		move_and_slide()
 		
 		
 func _on_bangarang_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = NpcType.WATCHING
+		current_state = Enums.NpcType.WATCHING
+		npc_status_changed.emit(current_state)
 
 func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = NpcType.IDLE
+		current_state = Enums.NpcType.IDLE
 		if has_active_target == true:
-			current_state = NpcType.MOVING
+			current_state = Enums.NpcType.MOVING
+			
+		npc_status_changed.emit(current_state)
 
 
 # ---- TIMER FUNCTIONS ----

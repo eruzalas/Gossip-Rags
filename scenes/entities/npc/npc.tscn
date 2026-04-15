@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_group.png" id="1_p5uw1"]
 [ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
-[ext_resource type="PackedScene" uid="uid://begdsacpnoxo6" path="res://scenes/components/dialogue_component/dialogue_component.tscn" id="3_xjnpb"]
+[ext_resource type="PackedScene" uid="uid://0ejoi0soyt7e" path="res://scenes/components/dialogue_component/dialogue_renderer.tscn" id="3_xjnpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
 size = Vector3(1, 2, 1)
@@ -22,6 +22,9 @@ radius = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
 radius = 4.0
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_xjnpb"]
+viewport_path = NodePath("SubViewport")
+
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
 
@@ -37,8 +40,6 @@ texture = ExtResource("1_p5uw1")
 [node name="Test Display Text" type="MeshInstance3D" parent="." unique_id=1710215210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.004)
 mesh = SubResource("TextMesh_abqhh")
-
-[node name="DialogueComponent" parent="." unique_id=211027122 instance=ExtResource("3_xjnpb")]
 
 [node name="Bangarang Range" type="Area3D" parent="." unique_id=1818692468]
 
@@ -58,6 +59,10 @@ debug_enabled = true
 [node name="Look Timer" type="Timer" parent="." unique_id=1589166161]
 
 [node name="Wander Timer" type="Timer" parent="." unique_id=2124301048]
+
+[node name="DialogueRenderer" parent="." unique_id=494158148 instance=ExtResource("3_xjnpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7701063, 0)
+texture = SubResource("ViewportTexture_xjnpb")
 
 [connection signal="body_entered" from="Bangarang Range" to="." method="_on_bangarang_range_body_entered"]
 [connection signal="body_exited" from="Bangarang Range" to="." method="_on_bangarang_range_body_exited"]

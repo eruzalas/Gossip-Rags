@@ -31,7 +31,7 @@
 			"next_id": ""
 		}
 	],
-	"notice_player": [
+	"watching": [
 		{
 			"id": "000004",
 			"is_start": true,
@@ -43,7 +43,7 @@
 			"next_id": ""
 		}
 	],
-	"un-notice player": [
+	"moving": [
 		{
 			"id": "000005",
 			"is_start": true,

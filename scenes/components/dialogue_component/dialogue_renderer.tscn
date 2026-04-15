@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0ejoi0soyt7e"]
+
+[ext_resource type="Script" uid="uid://ckkusch7boclc" path="res://scenes/components/dialogue_component/dialogue_component.gd" id="1_yc6pw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yc6pw"]
+viewport_path = NodePath("SubViewport")
+
+[node name="DialogueRenderer" type="Sprite3D" unique_id=494158148]
+billboard = 2
+texture = SubResource("ViewportTexture_yc6pw")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1443175936]
+size = Vector2i(600, 100)
+
+[node name="DialogueTimer" type="Timer" parent="SubViewport" unique_id=95052949]
+
+[node name="DialogueComponent" type="Node" parent="SubViewport" unique_id=1778367718]
+script = ExtResource("1_yc6pw")
+
+[connection signal="timeout" from="SubViewport/DialogueTimer" to="SubViewport/DialogueComponent" method="_on_dialogue_timer_timeout"]
