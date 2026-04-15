@@ -83,6 +83,14 @@ func _physics_process(delta: float) -> void:
 
 #called by item to collect it
 func pickup(item: costume):
-	player_inventory.equip(item)
+	var old_item = player_inventory.equip(item)
+	if (old_item): #if an item has to be dropped, player needs to spawn it
+		drop(old_item)
 	update_stats()
-	$inventory_control.update()
+	$inventory_ui.update()
+	
+func drop(item: costume):
+	var dropped_item = load("res://scenes/components/inventory/Costumes/costume_collectable.tscn").instantiate()
+	dropped_item.global_position = $Marker3D.global_position
+	dropped_item.item = item
+	get_parent().add_child(dropped_item)

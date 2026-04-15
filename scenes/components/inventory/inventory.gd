@@ -7,6 +7,9 @@ class_name inventory
 @export var equipment: Array[costume]
 #should be an array of size 1, but it could be funny to equip multiple costumess
 
+##used for spawning dropped costumes
+var dropped_item = preload("res://scenes/components/inventory/Costumes/costume_collectable.tscn")
+
 ##costume to be replaced on new costume pickup
 var selected_costume = 0
 
@@ -35,8 +38,12 @@ func equip(item: costume):
 			replace = false
 			break
 	if (replace == true):
-			drop(equipment[selected_costume])
+			var old_item = equipment[selected_costume]
 			equipment[selected_costume] = item
+			return(old_item)
 			
-func drop(item: costume):
-	pass
+
+##functionality for manually removing items from inventory (doesn't drop)
+func remove(equip_slot: int):
+	if (equipment[equip_slot]):
+		equipment.remove_at(equip_slot)

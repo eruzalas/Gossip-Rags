@@ -64,10 +64,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_j2gmx")
 
-[node name="Player" parent="." unique_id=1934454904 groups=["players"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9335082, -0.375)
-visible = false
-
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 navigation_mesh = SubResource("NavigationMesh_k0juu")
 

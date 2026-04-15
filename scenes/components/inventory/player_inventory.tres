@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="inventory" format=3 uid="uid://boow28lhauifp"]
 
 [ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_ngs2w"]
+[ext_resource type="Resource" uid="uid://dh5i84kebr6p5" path="res://scenes/components/inventory/Costumes/test_banana.tres" id="2_ngs2w"]
 [ext_resource type="Script" uid="uid://shsgbbavtnsx" path="res://scenes/components/inventory/inventory.gd" id="3_ghct4"]
 
 [resource]
 script = ExtResource("3_ghct4")
-equipment = Array[ExtResource("1_ngs2w")]([null])
+equipment = Array[ExtResource("1_ngs2w")]([ExtResource("2_ngs2w")])
 metadata/_custom_type_script = "uid://shsgbbavtnsx"
