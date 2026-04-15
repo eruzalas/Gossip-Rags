@@ -19,7 +19,6 @@ func _process(delta):
 			open()
 	if (Input.is_action_just_pressed("cycle")):
 		cycle_slot()
-	
 
 #make the UI hidden (closed)
 func close():
@@ -31,13 +30,14 @@ func open():
 	self.visible = true
 	is_open = true
 
+##toggles costume shown in inventory debug UI if multiple costumes equipped
 func cycle_slot():
 	current_costume += 1
 	if (current_costume >= inv.size()):
 		current_costume = 0
 	update()
 
-#change the displayed costume
+##change the currently displayed costume
 func update():
 	if (!inv.equipment[current_costume]):
 		costume_ui.visible = false

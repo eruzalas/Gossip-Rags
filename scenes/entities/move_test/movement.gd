@@ -5,31 +5,29 @@ extends CharacterBody3D
 @export var player_inventory: inventory
 #@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
 
+#---- Movement Base Stats ----
+var base_speed = 10
+var move_speed = 0 #used to handle speed when running/crouching, inputs required
+var jump_velocity = 000 #base is actually 10
+var acceleration = 35
+var deceleration = 30
+
+#---- Stat Modifiers for Costumes ----
+var speed_modifier: float
+var jump_modifier: float
+var accel_modifier: float
+var decel_modifier: float
+
+#---- Other Player Variables ----
+var costume_in_range = []
+var selected_costume = 0
+
 
 #currently just a player identifier
 func player():
 	pass
 
-func _ready():
-	player_inventory.print()
-	update_stats()
-	print("-----")
-	print("current speed: "+ str(base_speed * speed_modifier))
-
-#---- Movement Base Stats ----
-var base_speed = 10
-var move_speed = 0 #used to handle speed when running/crouching, inputs required
-var jump_velocity = 10
-var acceleration = 35
-var deceleration = 30
-
-#---- Stat Modifiers ----
-var speed_modifier = 1
-var jump_modifier = 1
-var accel_modifier = 1
-var decel_modifier = 1
-
-##applies stats from inventory items (gets average if multiple items present)
+##applies stats from inventory items (multiplicative if several items present)
 func update_stats():
 	var temp_speed = 1
 	var temp_jump = 1
@@ -59,11 +57,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = (jump_velocity * jump_modifier)
 	
-	if (Input.is_action_just_pressed("drop") and player_inventory.equipment[0]):
-		drop(player_inventory.equipment[0])
-		player_inventory.remove(0)
+	#handles input for dropping a costume and updating player stats afterwards
+	if (Input.is_action_just_pressed("drop") and player_inventory.equipment[selected_costume]):
+		drop(player_inventory.equipment[selected_costume])
+		player_inventory.remove(selected_costume)
 		update_stats()
 		$inventory_ui.update()
+	
+	if (Input.is_action_just_pressed("interact") and costume_in_range and is_on_floor()):
+		pickup()
+	
+	if (Input.is_action_just_pressed("cycle")):
+		toggle_selected()
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -84,19 +89,41 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, (deceleration * decel_modifier) * delta)
 		velocity.z = move_toward(velocity.z, 0, (deceleration * decel_modifier) * delta)
-
 	move_and_slide()
 
-#called by item to collect it
-func pickup(item: costume):
-	var old_item = player_inventory.equip(item)
-	if (old_item): #if an item has to be dropped, player needs to spawn it
-		drop(old_item)
+##called to pickup costumes stored in costumes_in_range
+func pickup():
+	var is_empty = true
+	if(!costume_in_range[0]):
+		return
+	if(player_inventory.equipment[0]):
+		is_empty = false
+	var new_costume = costume_in_range[0]
+	var old_costume = player_inventory.equip(new_costume.item, selected_costume) #equips the new item and returns the old one
+	if (old_costume): #if an item has to be dropped, player needs to spawn it
+		drop(old_costume)
+	new_costume.remove()
 	update_stats()
 	$inventory_ui.update()
+	if (!is_empty):
+		toggle_selected()
+		
 	
+##"drops" an item by spawning a collectable with the same variables in the scene at the player's location
 func drop(item: costume):
 	var dropped_item = load("res://scenes/components/inventory/Costumes/costume_collectable.tscn").instantiate()
 	dropped_item.global_position = $Marker3D.global_position
 	dropped_item.item = item
 	get_parent().add_child(dropped_item)
+	
+
+func toggle_selected():
+	selected_costume += 1
+	if (selected_costume >= player_inventory.size()):
+		selected_costume = 0
+	
+func _ready():
+	player_inventory.print()
+	update_stats()
+	print("-----")
+	print("current speed: "+ str(base_speed * speed_modifier))

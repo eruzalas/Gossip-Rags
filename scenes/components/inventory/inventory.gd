@@ -10,8 +10,7 @@ class_name inventory
 ##used for spawning dropped costumes
 var dropped_item = preload("res://scenes/components/inventory/Costumes/costume_collectable.tscn")
 
-##costume to be replaced on new costume pickup
-var selected_costume = 0
+
 
 func size():
 	return equipment.size()
@@ -27,8 +26,8 @@ func print():
 		else:
 			equipment[i].print()
 			
-##equips costume in empty slot
-func equip(item: costume):
+##equips costume in slot, returns previous item if slot was occupied
+func equip(item: costume, selected = 0):
 	var replace = true
 	for i in range (size()):
 		if (equipment[i]):
@@ -38,8 +37,8 @@ func equip(item: costume):
 			replace = false
 			break
 	if (replace == true):
-			var old_item = equipment[selected_costume]
-			equipment[selected_costume] = item
+			var old_item = equipment[selected]
+			equipment[selected] = item
 			return(old_item)
 			
 
@@ -47,3 +46,24 @@ func equip(item: costume):
 func remove(equip_slot: int):
 	if (equipment[equip_slot]):
 		equipment[equip_slot] = null
+
+##adds an empty slot to the end of the inventory array
+func add_slot():
+	equipment.append(null)
+
+##removes slot from inventory, can be specified slot (by array index number) otherwise removes an empty slot or the last slot if no empty slots availablep
+func remove_slot(slot = null):
+	if (slot and equipment[slot]):
+		equipment.remove_at(slot)
+		return
+	var delete_last = true
+	for i in range (size()):
+		if (equipment[i]):
+			pass
+		else:
+			equipment.remove_at(i)
+			delete_last = false
+			break
+	if (delete_last == true):
+		equipment.remove_at((size() - 1))
+		
