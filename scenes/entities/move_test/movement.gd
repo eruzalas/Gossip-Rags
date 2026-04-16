@@ -132,6 +132,8 @@ func update_sprite():
 			pass
 		else:
 			selected = player_inventory.equipment[i].costume_ID
+	if (selected >= sprite.size()):
+		selected = 0
 	$AnimatedSprite3D.animation = sprite[selected]
 	
 func _ready():

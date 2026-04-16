@@ -43,7 +43,6 @@ player_inventory = ExtResource("2_cnb4k")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=603342761]
 sprite_frames = SubResource("SpriteFrames_7r4gi")
-animation = &"motorbike_helmet_costume"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1810674352]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.007851124)
