@@ -19,7 +19,10 @@ var accel_modifier: float
 var decel_modifier: float
 
 #---- Other Player Variables ----
+##array for storing costumes in interactable range, used to avoid multiplayer issues
 var costume_in_range = []
+
+#unfinished toggle for selecting a costume if multiple are equipped, idea is to be able to choose which one is dropped
 var selected_costume = 0
 
 

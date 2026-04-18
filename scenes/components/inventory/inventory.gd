@@ -7,11 +7,6 @@ class_name inventory
 @export var equipment: Array[costume]
 #should be an array of size 1, but it could be funny to equip multiple costumess
 
-##used for spawning dropped costumes
-var dropped_item = preload("res://scenes/components/inventory/Costumes/costume_collectable.tscn")
-
-
-
 func size():
 	return equipment.size()
 
