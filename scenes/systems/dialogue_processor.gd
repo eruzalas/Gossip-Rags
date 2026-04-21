@@ -32,8 +32,8 @@ func _return_npc_dialogue_off_type(npc_status:String):
 	print("Type/Status passed in could not be found.")
 	return
 
-func _get_next_dialogue(npc_status: Enums.NpcType, next_id: String):
-	var status = _convert_NpcType_to_string(npc_status)
+func _get_next_dialogue(next_id: String):
+	var status = "responses"
 	var possible_dialogue:Array = _return_npc_dialogue_off_type(status)
 	
 	for dialogue in possible_dialogue:

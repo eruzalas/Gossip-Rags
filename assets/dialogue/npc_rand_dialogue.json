@@ -1,4 +1,16 @@
 {
+	"responses": [
+		{
+			"id": "000003",
+			"is_start": false,
+			"is_solo": true,
+			"origin": "cult_group",
+			"bubble_icon": "spooky.png",
+			"dialogue": "honestly yeah a sacrifice would hit the spot rn.",
+			"audio_file": "talking_audio_003.mp4",
+			"next_id": ""
+		}
+	],
 	"idle": [
 		{
 			"id": "000001",
@@ -19,16 +31,6 @@
 			"dialogue": "Are you feeling like a sacrifice rn?",
 			"audio_file": "talking_audio_002.mp4",
 			"next_id": "000003"
-		},
-		{
-			"id": "000003",
-			"is_start": false,
-			"is_solo": true,
-			"origin": "cult_group",
-			"bubble_icon": "spooky.png",
-			"dialogue": "honestly yeah a sacrifice would hit the spot rn.",
-			"audio_file": "talking_audio_003.mp4",
-			"next_id": ""
 		}
 	],
 	"watching": [

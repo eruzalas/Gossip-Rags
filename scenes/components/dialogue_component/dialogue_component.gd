@@ -46,7 +46,7 @@ func _on_dialogue_timer_timeout() -> void:
 		
 	# if initialised, but next_id is not "" - get next dialogue
 	elif current_dialogue["next_id"] != "":
-		current_dialogue = DialogueProcessor._get_next_dialogue(status, current_dialogue["next_id"])
+		current_dialogue = DialogueProcessor._get_next_dialogue(current_dialogue["next_id"])
 		
 	# else (aka is initialised and does not have a next_id) - get random dialogue
 	else:
