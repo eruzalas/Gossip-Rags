@@ -10,7 +10,7 @@ func _ready():
 		$placeholder_sprite.hide()
 		$costume_sprite.texture = item.texture
 
-## removes the costume from the scene and from costume_in_range for all nearby playerss
+## removes the costume from the scene and from costume_in_range for all nearby players
 func remove():
 	collected = true
 	for i in range (players_in_range.size()):
@@ -19,7 +19,7 @@ func remove():
 	queue_free()
 
 func _on_interactable_area_body_exited(body: Node3D):
-	if (body.has_method("player") and !collected):
+	if (body.has_method("player")):
 		print("Item: Player no longer in range")
 		body.costume_in_range.erase(self)
 		players_in_range.erase(body)
