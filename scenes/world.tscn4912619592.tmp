@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://b4c0t1vp8jiaf"]
 
 [ext_resource type="Script" uid="uid://dfs3vrxmfbb6p" path="res://scenes/level_stages/test_stage.gd" id="1_k0juu"]
-[ext_resource type="MeshLibrary" uid="uid://bjygdtx2yxfu0" path="res://assets/meshlibs/whitebox.meshlib" id="2_71j4m"]
-[ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/player/player.tscn" id="3_qfnet"]
-[ext_resource type="Script" uid="uid://e36algoack6h" path="res://scenes/closet.gd" id="4_i7141"]
+[ext_resource type="MeshLibrary" uid="uid://ca7h1wa5n7ufy" path="res://assets/meshlibs/basic.meshlib" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://nny8kwvbu7pp" path="res://scenes/entities/default_test_player/player.tscn" id="2_rwgxs"]
+[ext_resource type="Resource" uid="uid://boow28lhauifp" path="res://scenes/components/inventory/player_inventory.tres" id="5_i7141"]
+[ext_resource type="Script" uid="uid://cfwmkm6fukdb0" path="res://scenes/entities/move_test/movement.gd" id="6_i7141"]
+[ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player_AM/test_sprite.png" id="7_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://6sr56wa1glfb" path="res://scenes/components/inventory/inventory_control.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://68s4y85p8gpm" path="res://scenes/components/inventory/Costumes/costume_collectable.tscn" id="8_7r4gi"]
+[ext_resource type="Resource" uid="uid://dh5i84kebr6p5" path="res://scenes/components/inventory/Costumes/test_banana.tres" id="9_w7kh3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r4gi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4mrxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7141"]
+size = Vector3(1, 1, 0.23046875)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wyf3"]
 transparency = 1
@@ -27,86 +46,27 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(1, 0, 0)
 
-[node name="Player" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("3_qfnet")]
+[node name="Player" parent="." unique_id=1934454904 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9335082, -0.375)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235421529]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.012299538, 12.757189, 12.671423)
 fov = 50.0
 
-[node name="transparent_wall_test" type="CSGCombiner3D" parent="." unique_id=989236018]
-use_collision = true
+[node name="move_test" type="CharacterBody3D" parent="." unique_id=250697812 groups=["players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8824987, 0)
+script = ExtResource("6_i7141")
+player_inventory = ExtResource("5_i7141")
 
-[node name="back_wall" type="CSGBox3D" parent="transparent_wall_test" unique_id=1723648511]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014999986, 2.5, 5.5)
-size = Vector3(20, 5, 1)
-material = SubResource("StandardMaterial3D_4wyf3")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="move_test" unique_id=1546117199]
+sprite_frames = SubResource("SpriteFrames_7r4gi")
 
-[node name="back_wall_door" type="CSGBox3D" parent="transparent_wall_test/back_wall" unique_id=159890960]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-operation = 2
-size = Vector3(2, 2, 1)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="move_test" unique_id=671572153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.007851124)
+shape = SubResource("BoxShape3D_i7141")
 
-[node name="closet" type="CSGCombiner3D" parent="." unique_id=1737088303]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015193701, 0)
-gi_mode = 2
-use_collision = true
-script = ExtResource("4_i7141")
+[node name="inventory_control" parent="move_test" unique_id=802980208 instance=ExtResource("7_i7141")]
 
-[node name="closet_body" type="CSGBox3D" parent="closet" unique_id=1068882440]
-transform = Transform3D(1, 0, 0, 0, 1.1096048, 0, 0, 0, 1, 0.32754433, 2.668181, -10.686617)
-material_override = SubResource("StandardMaterial3D_k0juu")
-size = Vector3(3, 3, 1.2849121)
-
-[node name="closet_inside" type="CSGBox3D" parent="closet/closet_body" unique_id=341419051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, -0.15532613, 0.045866013)
-operation = 2
-size = Vector3(2.4680176, 2.6740112, 1.2173767)
-
-[node name="Area3D" type="Area3D" parent="closet" unique_id=1886425791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125816, -8.746481)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="closet/Area3D" unique_id=1857423467]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48225498, 0.4697876, -0.91224957)
-shape = SubResource("BoxShape3D_4wyf3")
-
-[node name="LeftHinge" type="Node3D" parent="closet/Area3D" unique_id=489663715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93506885, 0, -1.2814264)
-
-[node name="closet_door_left" type="CSGBox3D" parent="closet/Area3D/LeftHinge" unique_id=348298545]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59704417, 0.4742651, -0.06700516)
-use_collision = true
-size = Vector3(1.1807861, 2.9682007, 0.1484375)
-
-[node name="Area3D2" type="Area3D" parent="closet" unique_id=1053396214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2004961, 2.125816, -8.746481)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="closet/Area3D2" unique_id=1779269918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041888, 0.4697876, -0.74260616)
-shape = SubResource("BoxShape3D_4wyf3")
-
-[node name="RightHinge" type="Node3D" parent="closet/Area3D2" unique_id=1309622137]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34758365, 0, -1.3427858)
-
-[node name="closet_door_right" type="CSGBox3D" parent="closet/Area3D2/RightHinge" unique_id=207727534]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6378691, 0.471339, -0.0046310425)
-use_collision = true
-size = Vector3(1.2277527, 2.9682007, 0.15039063)
-
-[node name="ClosetInteractLabel" type="Label" parent="." unique_id=113854485]
-unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Press 'E' to Open"
-horizontal_alignment = 3
-vertical_alignment = 3
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=920437972]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39693093, 2.363446, -8.249363)
-
-[connection signal="body_entered" from="closet/Area3D" to="closet" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="closet/Area3D" to="closet" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="closet/Area3D2" to="closet" method="_on_area_3d_2_body_entered"]
-[connection signal="body_exited" from="closet/Area3D2" to="closet" method="_on_area_3d_2_body_exited"]
+[node name="item_collectable" parent="move_test" unique_id=1933756928 instance=ExtResource("8_7r4gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.870876, -1.0687141, -2.9883327)
+item = ExtResource("9_w7kh3")
