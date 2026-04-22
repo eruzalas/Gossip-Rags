@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="inventory" format=3 uid="uid://dtiv07c8nsne7"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_eiv8b"]
+[ext_resource type="Script" uid="uid://shsgbbavtnsx" path="res://scenes/components/inventory/inventory.gd" id="2_hbp6c"]
+
+[resource]
+script = ExtResource("2_hbp6c")
+equipment = Array[ExtResource("1_eiv8b")]([null])
+metadata/_custom_type_script = "uid://shsgbbavtnsx"

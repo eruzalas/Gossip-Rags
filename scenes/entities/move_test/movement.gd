@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = (jump_velocity * jump_modifier)
 	
 	#handles input for dropping a costume and updating player stats afterwards
-	if (Input.is_action_just_pressed("drop") and player_inventory.equipment[selected_costume]):
+	if (Input.is_action_just_pressed("drop")):
 		drop(player_inventory.equipment[selected_costume])
 		player_inventory.remove(selected_costume)
 		update_stats()
@@ -116,10 +116,13 @@ func pickup():
 	
 ##"drops" an item by spawning a collectable with the same variables in the scene at the player's location
 func drop(item: costume):
+	if (!item):
+		return
 	var dropped_item = load("res://scenes/components/inventory/Costumes/costume_collectable.tscn").instantiate()
 	dropped_item.global_position = $Marker3D.global_position
 	dropped_item.item = item
-	get_parent().add_child(dropped_item)	
+	get_parent().add_child(dropped_item)
+	print("dropping: "+ str(item.name))	
 
 func toggle_selected():
 	selected_costume += 1
