@@ -310,6 +310,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.760742, 7, -32.65772)
 size = Vector3(7.782715, 1, 3.6395874)
 
 [node name="Stairs" type="CSGCombiner3D" parent="." unique_id=583091846]
+use_collision = true
 
 [node name="DowntoUp1" type="CSGPolygon3D" parent="Stairs" unique_id=11481827]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5367776, 5.220624, -29.94488)
@@ -366,6 +367,7 @@ size = Vector3(7.782715, 1, 3.6395874)
 
 [node name="UpstairsWalls" type="CSGCombiner3D" parent="." unique_id=948776083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.230024, 0)
+use_collision = true
 
 [node name="EnsuiteWall" type="CSGBox3D" parent="UpstairsWalls" unique_id=1904508347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.576288, 10.5, -8.31162)
@@ -537,6 +539,7 @@ size = Vector3(1, 3.5, 2)
 [node name="UpstairsRoof" type="CSGCombiner3D" parent="." unique_id=713476108]
 visible = false
 transparency = 1.0
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="UpstairsRoof" unique_id=1589783157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 40, -16.5)
@@ -544,6 +547,7 @@ size = Vector3(28, 1, 36)
 
 [node name="BasementWalls" type="CSGCombiner3D" parent="." unique_id=2060047728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.068785, 0)
+use_collision = true
 
 [node name="BackWall" type="CSGBox3D" parent="BasementWalls" unique_id=407124222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -3.4906597, -34.624912)
@@ -599,6 +603,7 @@ size = Vector3(1, 6, 29)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.90005, 0)
 visible = false
 transparency = 1.0
+use_collision = true
 
 [node name="Floor4" type="CSGBox3D" parent="BasementRoof" unique_id=1910595654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -7.000002, -27.319336)
@@ -610,6 +615,7 @@ size = Vector3(15.091797, 1, 13.027344)
 
 [node name="BasementFloor" type="CSGCombiner3D" parent="." unique_id=685655810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.068785, 0)
+use_collision = true
 
 [node name="Floor1" type="CSGBox3D" parent="BasementFloor" unique_id=38171200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -7, -27.319336)
