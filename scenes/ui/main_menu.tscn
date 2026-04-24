@@ -102,7 +102,7 @@ offset_top = -0.048034668
 offset_right = 0.29595947
 offset_bottom = -0.22399902
 bbcode_enabled = true
-text = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
+text = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
 
 [node name="Ready 2 set" type="RichTextLabel" parent="." unique_id=1967351802]
 layout_mode = 1
@@ -116,7 +116,7 @@ offset_top = -0.048034668
 offset_right = 0.3199463
 offset_bottom = -0.22399902
 bbcode_enabled = true
-text = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
+text = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
 
 [node name="Player 2 Text" type="RichTextLabel" parent="." unique_id=1351968638]
 layout_mode = 1
