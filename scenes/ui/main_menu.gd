@@ -8,6 +8,7 @@ extends Control
 #Additional variables needed for checks and assignments
 var p1_ready: bool = false
 var p2_ready: bool = false
+var ready_button_on: bool = false
 var ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][b]Ready[/b][/center][/font_size][/rainbow][/wave]"
 var not_ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][b]Not Ready[/b][/center][/font_size][/rainbow][/wave]"
 
@@ -32,9 +33,18 @@ func _process(delta: float) -> void:
 		p2_ready = false
 		ready_2_set.text = not_ready_text
 		
+	if (ready_button_on):
+		if (Input.is_action_just_pressed("p1_up") or Input.is_action_just_pressed("p2_up")):
+			go_to_game()
+		
 	#Check if both players are ready and allow the button to be pressed
 	if (p1_ready && p2_ready):
 		play_button.disabled = false
+		ready_button_on = true
 	else:
 		play_button.disabled = true
+		ready_button_on = false
 		
+func go_to_game() -> void:
+	print("game time")
+	get_tree().change_scene_to_file("res://scenes/world/world.tscn")
