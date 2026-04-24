@@ -361,7 +361,10 @@ nine_patch_stretch = true
 texture_under = ExtResource("11_xq18t")
 texture_progress = ExtResource("19_5o5dd")
 
-[node name="Pause Menu" type="Control" parent="." unique_id=27835547]
+[node name="Pause Canvas" type="CanvasLayer" parent="." unique_id=423945713]
+process_mode = 3
+
+[node name="Pause Menu" type="Control" parent="Pause Canvas" unique_id=27835547]
 process_mode = 3
 layout_mode = 3
 anchor_right = 0.9990001
@@ -369,7 +372,7 @@ anchor_bottom = 1.0
 offset_right = 0.15185547
 script = ExtResource("25_26xou")
 
-[node name="Phone Screen" type="TextureRect" parent="Pause Menu" unique_id=34987769]
+[node name="Phone Screen" type="TextureRect" parent="Pause Canvas/Pause Menu" unique_id=34987769]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.063
@@ -382,7 +385,7 @@ offset_right = 0.2109375
 offset_bottom = -0.2880249
 texture = ExtResource("25_wnndm")
 
-[node name="Gossip Collected Text" type="RichTextLabel" parent="Pause Menu" unique_id=19489082]
+[node name="Gossip Collected Text" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=19489082]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.09
@@ -398,7 +401,7 @@ text = "[b][color=black]Gossip Collected text goes here blah blah blah...of woul
 
 The cake is a lie...[/color][/b]"
 
-[node name="Resume" type="TextureButton" parent="Pause Menu" unique_id=1176942067]
+[node name="Resume" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=1176942067]
 process_mode = 3
 layout_mode = 0
 offset_left = 116.0
@@ -409,19 +412,7 @@ texture_normal = ExtResource("26_26xou")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Resume Label" type="RichTextLabel" parent="Pause Menu/Resume" unique_id=1151388835]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.22600001
-anchor_right = 0.98800004
-anchor_bottom = 0.9620001
-offset_top = 0.02199936
-offset_right = -0.012008667
-offset_bottom = 0.013996124
-bbcode_enabled = true
-text = "[center][color=black][b]Resume[/b][/color][/center]"
-
-[node name="Quit" type="TextureButton" parent="Pause Menu" unique_id=2034798251]
+[node name="Quit" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=2034798251]
 process_mode = 3
 layout_mode = 0
 offset_left = 789.0
@@ -432,21 +423,7 @@ texture_normal = ExtResource("26_26xou")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Quit Label" type="RichTextLabel" parent="Pause Menu/Quit" unique_id=682952065]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.208
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -0.024000168
-offset_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[center][color=black][b]Quit[/b][/color][/center]"
-
-[node name="Restart" type="TextureButton" parent="Pause Menu" unique_id=739454548]
+[node name="Restart" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=739454548]
 process_mode = 3
 layout_mode = 0
 offset_left = 450.0
@@ -457,16 +434,44 @@ texture_normal = ExtResource("26_26xou")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Restart Label" type="RichTextLabel" parent="Pause Menu/Restart" unique_id=65120904]
+[node name="Quit Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=682952065]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.208
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 871.0
+offset_top = 280.216
+offset_right = -187.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][color=black][b]Quit[/b][/color][/center]"
+
+[node name="Resume Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=1151388835]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.22600001
+anchor_right = 0.98800004
+anchor_bottom = 0.9620001
+offset_left = 202.0
+offset_top = 269.552
+offset_right = -861.188
+offset_bottom = -182.37604
+bbcode_enabled = true
+text = "[center][color=black][b]Resume[/b][/color][/center]"
+
+[node name="Restart Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=65120904]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.30200002
 anchor_right = 1.0
 anchor_bottom = 0.98100007
-offset_left = 1.0
-offset_top = -4.0060005
-offset_right = -1.0
-offset_bottom = 0.006996155
+offset_left = 536.0
+offset_top = 218.30399
+offset_right = -527.0
+offset_bottom = -198.68805
 bbcode_enabled = true
 text = "[center][color=black][b]Restart[/b][/color][/center]"
 
@@ -484,6 +489,6 @@ unique_name_in_owner = true
 script = ExtResource("27_ckok1")
 
 [connection signal="timeout" from="Origin Controller/Flag Timer" to="Origin Controller" method="_on_flag_timer_timeout"]
-[connection signal="pressed" from="Pause Menu/Resume" to="Pause Menu" method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause Menu/Quit" to="Pause Menu" method="_on_quit_pressed"]
-[connection signal="pressed" from="Pause Menu/Restart" to="Pause Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause Canvas/Pause Menu/Resume" to="Pause Canvas/Pause Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause Canvas/Pause Menu/Quit" to="Pause Canvas/Pause Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Pause Canvas/Pause Menu/Restart" to="Pause Canvas/Pause Menu" method="_on_restart_pressed"]
