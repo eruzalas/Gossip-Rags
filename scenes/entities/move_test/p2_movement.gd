@@ -11,7 +11,7 @@ var move_speed = 0 #used to handle speed when running/crouching, inputs required
 var jump_velocity = 000 #base is actually 10
 var acceleration = 35
 var deceleration = 30
-var sprint_speed = 1
+var sprint_speed = 1 #increase above 1 to go faster when sprinting
 
 #---- Stat Modifiers for Costumes ----
 var speed_modifier: float

@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2888346, 0.68702364, -9.154
 item = ExtResource("4_x0nq1")
 
 [node name="Player2" parent="." unique_id=586723739 instance=ExtResource("6_ckok1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.048671, 1.6207104, -1.1258373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42474842, 1.5081139, -2.1531315)
 
 [node name="Player1" parent="." unique_id=1857290036 instance=ExtResource("4_rwifv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78385425, 0)
