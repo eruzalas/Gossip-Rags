@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="background" type="TextureRect" parent="." unique_id=2052658413]
+[node name="Background" type="TextureRect" parent="." unique_id=2052658413]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -145,7 +145,7 @@ offset_bottom = -0.22399902
 bbcode_enabled = true
 text = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1158147716]
+[node name="Play Button" type="TextureButton" parent="." unique_id=1158147716]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.37
@@ -156,5 +156,17 @@ offset_left = -0.23999023
 offset_top = 0.104003906
 offset_right = 0.39196777
 offset_bottom = 0.063964844
+disabled = true
 texture_normal = ExtResource("3_m1kxf")
 texture_disabled = ExtResource("4_x2yvf")
+
+[node name="Play Text" type="RichTextLabel" parent="Play Button" unique_id=186635506]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99300003
+anchor_bottom = 0.9850001
+offset_top = 17.0
+offset_right = 0.09298706
+offset_bottom = -15.980003
+bbcode_enabled = true
+text = "[font_size=24][center][color=black][b]Not Ready[/b][/color][/center][/font_size]"
