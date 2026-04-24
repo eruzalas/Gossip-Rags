@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 		_determine_sus()
 		
 	#Hide Debug menu
-	if Input.is_action_just_pressed("ui_cancel"): #esc key
+	if Input.is_action_just_pressed("debug_menu"): #f1 key
 		sus_debug.visible = visi
 		attention_debug.visible = visi
 		visi = !visi
