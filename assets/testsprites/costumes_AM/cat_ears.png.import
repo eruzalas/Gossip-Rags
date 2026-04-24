@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf07pqye4vdw3"
-path="res://.godot/imported/player2_pirate.png-5e4e25e57003140d890e5bbd4396d082.ctex"
+uid="uid://cqwsi061chx5p"
+path="res://.godot/imported/cat_ears.png-dd3a0c10079b485b100cabbe417bc02d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/testsprites/player2_AM/player2_pirate.png"
-dest_files=["res://.godot/imported/player2_pirate.png-5e4e25e57003140d890e5bbd4396d082.ctex"]
+source_file="res://assets/testsprites/costumes_AM/cat_ears.png"
+dest_files=["res://.godot/imported/cat_ears.png-dd3a0c10079b485b100cabbe417bc02d.ctex"]
 
 [params]
 
