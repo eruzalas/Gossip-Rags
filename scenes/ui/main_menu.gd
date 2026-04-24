@@ -47,4 +47,4 @@ func _process(delta: float) -> void:
 		
 func go_to_game() -> void:
 	print("game time")
-	get_tree().change_scene_to_file("res://scenes/world/world.tscn")
+	#get_tree().change_scene_to_file("res://scenes/world/world.tscn")
