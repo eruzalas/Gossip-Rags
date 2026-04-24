@@ -20,3 +20,4 @@ texture = ExtResource("2_wbokh")
 shape = SubResource("SphereShape3D_3wq3e")
 
 [connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]
+[connection signal="body_exited" from="interactable_area" to="." method="_on_interactable_area_body_exited"]
