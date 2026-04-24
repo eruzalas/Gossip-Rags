@@ -9,8 +9,8 @@ extends Control
 var p1_ready: bool = false
 var p2_ready: bool = false
 var ready_button_on: bool = false
-var ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][b]Ready[/b][/center][/font_size][/rainbow][/wave]"
-var not_ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.05 sat=10 val=20][font_size=24][center][b]Not Ready[/b][/center][/font_size][/rainbow][/wave]"
+var ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][b]Ready[/b][/center][/font_size][/rainbow][/wave]"
+var not_ready_text: String = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][b]Not Ready[/b][/center][/font_size][/rainbow][/wave]"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
