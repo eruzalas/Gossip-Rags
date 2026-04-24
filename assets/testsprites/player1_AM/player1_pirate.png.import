@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bimvgmsyvupso"
-path.s3tc="res://.godot/imported/test_sprite.png-fbab3ede4b5b7edc0b52a7ccc493929c.s3tc.ctex"
+uid="uid://dml303n7q57pw"
+path.s3tc="res://.godot/imported/player1_pirate.png-273daee7efcb085a48eb4c063d8c6e5e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/testsprites/player_AM/test_sprite.png"
-dest_files=["res://.godot/imported/test_sprite.png-fbab3ede4b5b7edc0b52a7ccc493929c.s3tc.ctex"]
+source_file="res://assets/testsprites/player1_AM/player1_pirate.png"
+dest_files=["res://.godot/imported/player1_pirate.png-273daee7efcb085a48eb4c063d8c6e5e.s3tc.ctex"]
 
 [params]
 

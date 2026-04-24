@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bpqyakqqyurql"]
+
+[ext_resource type="Texture2D" uid="uid://cmjdpjui0tnop" path="res://assets/testsprites/player2_AM/player2_banana.png" id="1_x8np7"]
+[ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player2_AM/test_sprite2.png" id="2_t1x0k"]
+[ext_resource type="Texture2D" uid="uid://b30kllqru3jnp" path="res://assets/testsprites/player2_AM/player2_motorbike.png" id="3_jfo0h"]
+[ext_resource type="Texture2D" uid="uid://di5la3iwdqp0n" path="res://assets/testsprites/player2_AM/player2_pirate.png" id="4_arfia"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x8np7")
+}],
+"loop": true,
+"name": &"p2_banana_costume",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t1x0k")
+}],
+"loop": true,
+"name": &"p2_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jfo0h")
+}],
+"loop": true,
+"name": &"p2_motorbike_helmet_costume",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_arfia")
+}],
+"loop": true,
+"name": &"p2_pirate_costume",
+"speed": 5.0
+}]

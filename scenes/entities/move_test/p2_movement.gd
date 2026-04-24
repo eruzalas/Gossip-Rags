@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 #---- Attach Inventory ----
 
-@export var player_inventory: inventory
-#@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
+#@export var player_inventory: inventory
+@onready var player_inventory: inventory = preload("res://scenes/components/inventory/player2_inventory.tres")
 
 #---- Movement Base Stats ----
 var base_speed = 10
@@ -11,6 +11,7 @@ var move_speed = 0 #used to handle speed when running/crouching, inputs required
 var jump_velocity = 000 #base is actually 10
 var acceleration = 35
 var deceleration = 30
+var sprint_speed = 1
 
 #---- Stat Modifiers for Costumes ----
 var speed_modifier: float
@@ -61,14 +62,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = (jump_velocity * jump_modifier)
 	
 	#handles input for dropping a costume and updating player stats afterwards
-	if (Input.is_action_just_pressed("drop")):
+	if (Input.is_action_just_pressed("p2_drop")):
 		drop(player_inventory.equipment[selected_costume])
 		player_inventory.remove(selected_costume)
 		update_stats()
-		$inventory_ui.update()
+		#$inventory_ui.update()
 		update_sprite()
 	
-	if (Input.is_action_just_pressed("interact") and costume_in_range and is_on_floor()):
+	if (Input.is_action_just_pressed("p2_interact") and costume_in_range and is_on_floor()):
 		pickup()
 	
 	if (Input.is_action_just_pressed("cycle")):
@@ -78,9 +79,9 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")
 
-	if Input.is_action_pressed("p2_run") and !Input.is_action_pressed("p2_crouch"):
-		move_speed = (base_speed * speed_modifier) * 1.5
-	elif Input.is_action_pressed("p2_crouch") and !Input.is_action_pressed("p2_run"):
+	if Input.is_action_pressed("p2_sprint") and !Input.is_action_pressed("p2_crouch"):
+		move_speed = (base_speed * speed_modifier) * sprint_speed
+	elif Input.is_action_pressed("p2_crouch") and !Input.is_action_pressed("p2_sprint"):
 		move_speed = (base_speed * speed_modifier) * 0.75
 	else :
 		move_speed = (base_speed * speed_modifier)
@@ -108,7 +109,7 @@ func pickup():
 		drop(old_costume)
 	new_costume.remove()
 	update_stats()
-	$inventory_ui.update()
+	#$inventory_ui.update() #debug UI, not really important (also unfinished lol)
 	if (!is_empty):
 		toggle_selected()
 	update_sprite()
@@ -131,7 +132,7 @@ func toggle_selected():
 	
 ##very badly assigns costumes based on a keyed ID system (ID = position in array)
 func update_sprite():
-	var sprite = ["default","banana_costume","motorbike_helmet_costume"]
+	var sprite = ["p2_default","p2_banana_costume","p2_motorbike_helmet_costume","p2_pirate_costume"]
 	var selected = 0 #
 	for i in range (player_inventory.size()):
 		if (!player_inventory.equipment[i]):
@@ -143,6 +144,7 @@ func update_sprite():
 	$AnimatedSprite3D.animation = sprite[selected]
 	
 func _ready():
+	$AnimatedSprite3D.animation = "p2_default"
 	player_inventory.print()
 	update_stats()
 	update_sprite()

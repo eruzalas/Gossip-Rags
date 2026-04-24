@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmjdpjui0tnop"
-path.s3tc="res://.godot/imported/player_banana.png-bfee808fa9ddd7003feafd9e2d640d13.s3tc.ctex"
+uid="uid://bimvgmsyvupso"
+path.s3tc="res://.godot/imported/test_sprite1.png-35f906312d114685a6f0f90a19a977a1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/testsprites/player_AM/player_banana.png"
-dest_files=["res://.godot/imported/player_banana.png-bfee808fa9ddd7003feafd9e2d640d13.s3tc.ctex"]
+source_file="res://assets/testsprites/player1_AM/test_sprite1.png"
+dest_files=["res://.godot/imported/test_sprite1.png-35f906312d114685a6f0f90a19a977a1.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://c5x2ucmp02m2w"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_qc1uy"]
+[ext_resource type="Texture2D" uid="uid://dugnq4lk1hssh" path="res://assets/testsprites/costumes_AM/pirate.png" id="2_6c1oj"]
+
+[resource]
+script = ExtResource("1_qc1uy")
+name = "pirate"
+texture = ExtResource("2_6c1oj")
+speed_modifier = 1.5
+accel_modifier = 0.5
+decel_modifier = 0.5
+suspicion_modifier = 0.5
+attention_modifier = 0.5
+costume_ID = 3
+metadata/_custom_type_script = "uid://df08msjn6bry6"

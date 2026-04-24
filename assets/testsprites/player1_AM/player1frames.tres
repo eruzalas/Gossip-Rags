@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cv5lxiuftju7b"]
+
+[ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player1_AM/test_sprite1.png" id="1_iyrnp"]
+[ext_resource type="Texture2D" uid="uid://dml303n7q57pw" path="res://assets/testsprites/player1_AM/player1_pirate.png" id="4_dambt"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"p1_banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iyrnp")
+}],
+"loop": true,
+"name": &"p1_default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"p1_motorbike_helmet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dambt")
+}],
+"loop": true,
+"name": &"p1_pirate",
+"speed": 5.0
+}]
