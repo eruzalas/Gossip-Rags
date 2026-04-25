@@ -27,13 +27,6 @@ viewport_path = NodePath("SubViewport")
 
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
-debug_mode = null
-npc_type = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
@@ -68,7 +61,7 @@ debug_enabled = true
 [node name="Wander Timer" type="Timer" parent="." unique_id=2124301048]
 
 [node name="DialogueRenderer" parent="." unique_id=494158148 instance=ExtResource("3_xjnpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7701063, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0308096, 0)
 texture = SubResource("ViewportTexture_xjnpb")
 
 [connection signal="body_entered" from="Bangarang Range" to="." method="_on_bangarang_range_body_entered"]

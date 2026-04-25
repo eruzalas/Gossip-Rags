@@ -2,15 +2,13 @@ extends Node
 @onready var dialogue_renderer: Sprite3D = $"../.."
 @onready var dialogue_timer: Timer = $"../DialogueTimer"
 
-# handles_gossip = whether this component should return progression gossip or generic NPC dialogue
-@export var handles_gossip: bool = false
 # debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
 @export var debug_mode: bool = true
 
 var status: Enums.NpcState = Enums.NpcState.IDLE
 
 var current_dialogue
-var dialogue_timeout = 5
+var dialogue_timeout = 1
 var max_width_dialogue_box = 400
 var bubble
 
@@ -21,9 +19,6 @@ func _ready() -> void:
 	
 	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
 	dialogue_timer.start(dialogue_timeout)
-	
-	bubble = dialogue_bubble_prefab.instantiate()
-	add_child(bubble)
 		
 	if debug_mode:
 		print("DEBUG MODE ACTIVE")
@@ -35,8 +30,33 @@ func _set_status(new_status: Enums.NpcState) -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _update_dialogue_text_box(dialogue_dict:Dictionary) -> void:
-	bubble.rich_text_label.text = current_dialogue["dialogue"]
+func _remove_bubble(child):
+	child.queue_free()
+	_update_bubble_positions()
+
+func _add_bubble(dialogue: String) -> void:
+	var bubble = dialogue_bubble_prefab.instantiate()
+	#bubble.base_transparency_speed = dialogue_renderer.base_transparency_speed
+	
+	add_child(bubble)
+	bubble._set_text(dialogue)
+	# this will need to be changed depending on if dialogue is active due to player staring?
+	# TODO: REVIEW THIS
+	bubble.can_disappear = true
+	# make component listen to the child transparency calls
+	bubble.is_transparent.connect(_remove_bubble)
+	# set initial position
+	_update_bubble_positions()
+
+func _update_bubble_positions() -> void:
+	var children = get_children()
+	if children.size() > 1:
+		var index = 0
+		for child in children:
+			child._update_off_index((children.size() - 1) - index)
+			index += 1
+	else:
+		children[0]._update_off_index()
 
 
 func _on_dialogue_timer_timeout() -> void:
@@ -55,6 +75,6 @@ func _on_dialogue_timer_timeout() -> void:
 	if debug_mode:
 		print(current_dialogue["dialogue"])
 	
-	_update_dialogue_text_box(current_dialogue)
+	_add_bubble(current_dialogue["dialogue"])
 	
 	dialogue_timer.start(dialogue_timeout)

@@ -10,12 +10,12 @@ billboard = 2
 texture = SubResource("ViewportTexture_yc6pw")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1443175936]
-transparent_bg = true
-size = Vector2i(600, 100)
+size = Vector2i(600, 200)
 
 [node name="DialogueTimer" type="Timer" parent="SubViewport" unique_id=95052949]
 
 [node name="DialogueComponent" type="Node" parent="SubViewport" unique_id=1778367718]
 script = ExtResource("1_yc6pw")
+debug_mode = false
 
 [connection signal="timeout" from="SubViewport/DialogueTimer" to="SubViewport/DialogueComponent" method="_on_dialogue_timer_timeout"]
