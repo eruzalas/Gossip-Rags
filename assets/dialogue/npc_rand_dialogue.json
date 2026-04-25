@@ -68,5 +68,17 @@
 			"audio_file": "talking_audio_005.mp4",
 			"next_id": ""
 		}
+	],
+	"GOSSIPING": [
+		{
+			"id": "000007",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "dialogue_warning.png",
+			"dialogue": "WHAT THE FUCK...",
+			"audio_file": "talking_audio_005.mp4",
+			"next_id": ""
+		}
 	]
 }

@@ -16,9 +16,12 @@ class_name Npc
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
+@onready var generic_dialogue_timer: Timer = $"Generic Dialogue Timer"
+@onready var dialogue_renderer: Sprite3D = $DialogueRenderer
 
 # export vars
 @export var debug_mode: bool = true
+
 @export var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
 @export var npc_allowed_zone_layers: Array[int] = []
 	# vars controlling waiting periods
@@ -32,7 +35,11 @@ signal npc_status_changed(new_status: Enums.NpcState)
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
-var current_state = Enums.NpcState.IDLE
+var current_state = Enums.NpcState.IDLE:
+	set(value):
+		if current_state != value:
+			current_state = value
+			npc_status_changed.emit(current_state)
 
 # constants
 const SPEED = 3.0
@@ -96,7 +103,6 @@ func _physics_process(delta: float) -> void:
 		_look_at_position(target_look_position, delta)
 		
 
-
 # runtime set self (used when npc_type == "group" given they are dynamically generated)
 func _set_npc_type(type: Enums.NpcType) -> void:
 	npc_type = type
@@ -151,6 +157,7 @@ func _get_random_entity_pos_in_area():
 	if entity_position == Vector3.ZERO:
 		entity_position = get_parent().global_transform.origin
 	return entity_position
+	
 
 # source: https://forum.godotengine.org/t/slowly-interpolate-look-at-function-for-my-enemy/100750
 func _look_at_position(target_position: Vector3, delta: float, turn_speed: float = TURN_SPEED) -> void:
@@ -184,15 +191,12 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 func _on_bangarang_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
 		current_state = Enums.NpcState.WATCHING
-		npc_status_changed.emit(current_state)
 
 func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
 		current_state = Enums.NpcState.IDLE
 		if has_active_target == true:
 			current_state = Enums.NpcState.MOVING
-			
-		npc_status_changed.emit(current_state)
 
 
 # ---- TIMER FUNCTIONS ----
@@ -207,4 +211,3 @@ func _on_wander_timer_timeout() -> void:
 	_get_new_target_position()
 	# begin timer
 	wander_timer.start(_generate_wander_wait())
-	

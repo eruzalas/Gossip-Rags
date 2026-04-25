@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://0ejoi0soyt7e"]
 
+[ext_resource type="Script" uid="uid://c34lrryvus64x" path="res://scenes/components/dialogue_component/dialogue_renderer.gd" id="1_ornic"]
 [ext_resource type="Script" uid="uid://ckkusch7boclc" path="res://scenes/components/dialogue_component/dialogue_component.gd" id="1_yc6pw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yc6pw"]
@@ -8,6 +9,7 @@ viewport_path = NodePath("SubViewport")
 [node name="DialogueRenderer" type="Sprite3D" unique_id=494158148]
 billboard = 2
 texture = SubResource("ViewportTexture_yc6pw")
+script = ExtResource("1_ornic")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1443175936]
 transparent_bg = true

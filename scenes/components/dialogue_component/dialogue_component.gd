@@ -5,7 +5,11 @@ extends Node
 # debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
 @export var debug_mode: bool = true
 
+const MIN_WAIT: float = 1.0
+const MAX_WAIT: float = 10.0
+
 var status: Enums.NpcState = Enums.NpcState.IDLE
+var previous_status: Enums.NpcState
 
 var current_dialogue
 var dialogue_timeout = 1
@@ -18,14 +22,24 @@ func _ready() -> void:
 	randomize()
 	
 	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
-	dialogue_timer.start(dialogue_timeout)
 		
 	if debug_mode:
+		dialogue_timer.start(dialogue_timeout)
 		print("DEBUG MODE ACTIVE")
+		
+	
+	#dialogue_timer.start(randf_range(min_dialogue_wait, max_dialogue_wait))
 
 
 func _set_status(new_status: Enums.NpcState) -> void:
 	status = new_status
+	
+	if status == Enums.NpcState.WATCHING:
+		dialogue_timer.start(0.1)
+		# TODO: fix this popup bullshit
+	else:
+		dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+		
 
 func _process(delta: float) -> void:
 	pass
@@ -61,6 +75,11 @@ func _update_bubble_positions() -> void:
 
 
 func _on_dialogue_timer_timeout() -> void:
+	if previous_status != null && status == previous_status:
+		_get_and_display_dialogue()
+	previous_status = status
+	
+func _get_and_display_dialogue() -> void:
 	# if not initialised - get random dialogue
 	if current_dialogue == null:
 		current_dialogue = DialogueProcessor._get_random_npc_dialogue(status)
@@ -78,4 +97,5 @@ func _on_dialogue_timer_timeout() -> void:
 	
 	_add_bubble(current_dialogue)
 	
-	dialogue_timer.start(dialogue_timeout)
+	if debug_mode:
+		dialogue_timer.start(dialogue_timeout)

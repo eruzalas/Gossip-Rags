@@ -8,8 +8,8 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	#if not loaded_special_npcs:
-		#for child in WORLD.find_children("*", "Character3D", true):
-			#if child.
-
-	pass
+	if not loaded_special_npcs:
+		for child in WORLD.find_children("*", "Character3D", true):
+			if child.npc_type == Enums.NpcType.GOSSIPER:
+				pass
+				# connect here?
