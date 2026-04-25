@@ -18,8 +18,8 @@ static func _filter_dialogue_list(dialogue_list:Array, attribute:String, filter)
 			
 	return filtered_dialogue_list
 
-func _get_random_npc_dialogue(npc_status: Enums.NpcType) -> Dictionary:
-	var status = _convert_NpcType_to_string(npc_status)
+func _get_random_npc_dialogue(npc_status: Enums.NpcState) -> Dictionary:
+	var status = _convert_NpcState_to_string(npc_status)
 	var possible_dialogue:Array = _return_npc_dialogue_off_type(status)
 	# run filtering
 	possible_dialogue = _filter_dialogue_list(possible_dialogue, "is_start", true)
@@ -44,7 +44,7 @@ func _get_next_dialogue(next_id: String):
 	return
 	
 
-func _convert_NpcType_to_string(npc_status: Enums.NpcType):
+func _convert_NpcState_to_string(npc_status: Enums.NpcState):
 	match npc_status:
 		0:
 			return "idle"

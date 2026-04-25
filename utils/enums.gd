@@ -1,7 +1,17 @@
 class_name Enums
 
-enum NpcType {
+enum NpcState {
 	IDLE,
 	WATCHING,
 	MOVING,
+	GOSSIPING,
+	INTERRUPTED,
+}
+
+enum NpcType {
+	STATIONARY,
+	WANDER,
+	WANDER_ALL,
+	GROUP,
+	GOSSIPER,
 }

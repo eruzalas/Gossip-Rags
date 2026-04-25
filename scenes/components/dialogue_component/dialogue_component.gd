@@ -7,7 +7,7 @@ extends Node
 # debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
 @export var debug_mode: bool = true
 
-var status: Enums.NpcType = Enums.NpcType.IDLE
+var status: Enums.NpcState = Enums.NpcState.IDLE
 
 var current_dialogue
 var dialogue_timeout = 5
@@ -29,7 +29,7 @@ func _ready() -> void:
 		print("DEBUG MODE ACTIVE")
 
 
-func _set_status(new_status: Enums.NpcType) -> void:
+func _set_status(new_status: Enums.NpcState) -> void:
 	status = new_status
 
 func _process(delta: float) -> void:
