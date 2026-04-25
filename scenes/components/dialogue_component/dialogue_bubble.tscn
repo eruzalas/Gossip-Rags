@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cf8vaaj8g3xmh"]
 
-[ext_resource type="Texture2D" uid="uid://ox0u7sfd2cu1" path="res://assets/dialogue/dialogue box.png" id="1_e8p56"]
+[ext_resource type="Texture2D" uid="uid://2i4nliug8vda" path="res://assets/dialogue/dialogue_normal.png" id="1_7nr3g"]
 [ext_resource type="Script" uid="uid://423dwsstb15f" path="res://scenes/components/dialogue_component/dialogue_bubble.gd" id="2_7nr3g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nr3g"]
-texture = ExtResource("1_e8p56")
-texture_margin_left = 10.0
+texture = ExtResource("1_7nr3g")
+texture_margin_left = 25.0
 texture_margin_top = 10.0
-texture_margin_right = 10.0
+texture_margin_right = 25.0
 texture_margin_bottom = 10.0
 
 [node name="DialogueBubble" type="PanelContainer" unique_id=1158154028]

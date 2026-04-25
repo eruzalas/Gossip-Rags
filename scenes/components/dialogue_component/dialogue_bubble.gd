@@ -1,5 +1,6 @@
 extends PanelContainer
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var dialogue_bubble: PanelContainer = $"."
 
 # consts
 const MAX_OPACITY: int = 1.0
@@ -30,6 +31,13 @@ func _process(delta: float) -> void:
 
 func _set_text(dialogue: String):
 	rich_text_label.text = dialogue
+
+func _set_texture(path: String):
+	var texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
+	var new_style_box = get_theme_stylebox("panel").duplicate() as StyleBoxTexture
+	new_style_box.texture = texture
+	add_theme_stylebox_override("panel", new_style_box)
+	#dialogue_bubble.texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
 
 # update position and transparency based off index of child
 # the index which is passed in is the reverse of the child list!

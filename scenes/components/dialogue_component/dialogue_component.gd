@@ -34,12 +34,13 @@ func _remove_bubble(child):
 	child.queue_free()
 	_update_bubble_positions()
 
-func _add_bubble(dialogue: String) -> void:
+func _add_bubble(dialogue: Dictionary) -> void:
 	var bubble = dialogue_bubble_prefab.instantiate()
 	#bubble.base_transparency_speed = dialogue_renderer.base_transparency_speed
 	
 	add_child(bubble)
-	bubble._set_text(dialogue)
+	bubble._set_text(dialogue["dialogue"])
+	bubble._set_texture(dialogue["bubble_icon"])
 	# this will need to be changed depending on if dialogue is active due to player staring?
 	# TODO: REVIEW THIS
 	bubble.can_disappear = true
@@ -75,6 +76,6 @@ func _on_dialogue_timer_timeout() -> void:
 	if debug_mode:
 		print(current_dialogue["dialogue"])
 	
-	_add_bubble(current_dialogue["dialogue"])
+	_add_bubble(current_dialogue)
 	
 	dialogue_timer.start(dialogue_timeout)
