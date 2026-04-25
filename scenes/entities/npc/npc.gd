@@ -19,7 +19,7 @@ class_name Npc
 
 # export vars
 @export var debug_mode: bool = true
-@export var npc_type: String = "stationary"
+@export var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
 @export var npc_allowed_zone_layers: Array[int] = []
 	# vars controlling waiting periods
 @export var min_look_time_elapsed: float = 5.0
@@ -48,8 +48,8 @@ func _ready():
 	add_to_group("npcs")
 	
 	# change self based off type
-	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
-	if npc_type.contains("wander"):
+	sprite.texture = load(ResourcePaths.npc_icon_path + Enums.NpcType.keys()[npc_type] + ".png")
+	if npc_type == Enums.NpcType.WANDER_ALL || npc_type == Enums.NpcType.WANDER_ZONE:
 		wander_timer.start(_generate_wander_wait())
 	
 	# mesh was shared between NPCs - this fixes it
@@ -98,9 +98,9 @@ func _physics_process(delta: float) -> void:
 
 
 # runtime set self (used when npc_type == "group" given they are dynamically generated)
-func _set_npc_type(type:String) -> void:
+func _set_npc_type(type: Enums.NpcType) -> void:
 	npc_type = type
-	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+	sprite.texture = load(ResourcePaths.npc_icon_path + Enums.NpcType.keys()[npc_type] + ".png")
 
 # set desired target
 func _set_movement_target(movement_target: Vector3):
@@ -108,14 +108,14 @@ func _set_movement_target(movement_target: Vector3):
 
 # if NPC requested to move (either by origin or called in wander timeout) get new target position
 func _get_new_target_position():
-	if npc_type == "group":
+	if Enums.NpcType.keys()[npc_type] == "GROUP":
 		# get position by calling parent
 		_set_movement_target(get_parent()._get_random_position_in_annulus(true))
 	# most of the processing is same across both wander_all and wander_zone, so I've merged them
-	elif npc_type.contains("wander"):
+	elif Enums.NpcType.keys()[npc_type].contains("WANDER"):
 		var world = get_world_3d().navigation_map
 		var nav_layer = 1
-		if npc_type == "wander_zone":
+		if Enums.NpcType.keys()[npc_type] == "WANDER_ZONE":
 			# note: when setting nav layers for wandering, the layer number is equiv to 2^(layer index FROM ZERO)
 				# adding multiple layers involve taking the original calculated layer and ADDING THEM TOGETHER
 				# ie. nav layer for layer 1 = 2^0 => 1

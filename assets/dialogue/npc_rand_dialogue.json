@@ -11,7 +11,7 @@
 			"next_id": ""
 		}
 	],
-	"idle": [
+	"IDLE": [
 		{
 			"id": "000001",
 			"is_start": true,
@@ -33,7 +33,7 @@
 			"next_id": "000003"
 		}
 	],
-	"watching": [
+	"WATCHING": [
 		{
 			"id": "000004",
 			"is_start": true,
@@ -45,9 +45,21 @@
 			"next_id": ""
 		}
 	],
-	"moving": [
+	"MOVING": [
 		{
 			"id": "000005",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "normal.png",
+			"dialogue": "Omg where is the alcohol I swear to gawd",
+			"audio_file": "talking_audio_005.mp4",
+			"next_id": ""
+		}
+	],
+	"INTERRUPTED": [
+		{
+			"id": "000006",
 			"is_start": true,
 			"is_solo": true,
 			"origin": "",

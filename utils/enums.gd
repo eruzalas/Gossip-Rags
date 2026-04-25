@@ -10,8 +10,9 @@ enum NpcState {
 
 enum NpcType {
 	STATIONARY,
-	WANDER,
 	WANDER_ALL,
+	WANDER_ZONE,
 	GROUP,
 	GOSSIPER,
+	SPECIAL,
 }

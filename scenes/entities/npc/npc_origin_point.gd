@@ -45,7 +45,7 @@ func _ready() -> void:
 				iteration_counter += 1
 				
 			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
-			new_npc._set_npc_type("group")
+			new_npc._set_npc_type(Enums.NpcType.GROUP)
 			i += 1
 			
 		movement_opportunity_timer.start(_generate_timeout_period())

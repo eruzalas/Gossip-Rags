@@ -105,12 +105,33 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="stationary NPC 1" parent="." unique_id=981572405 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.175133, 1, -10.552883)
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="stationary NPC 2" parent="." unique_id=1281532514 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.688403, 1, -9.164005)
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="stationary NPC 3" parent="." unique_id=869678440 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.055, 1, -2.563)
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="GROUP NPCS" type="Node" parent="." unique_id=358091135]
 
@@ -140,26 +161,55 @@ max_NPC_number = 3
 
 [node name="wander NPC 1" parent="." unique_id=1893472972 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.25243, 1, -7.626)
-npc_type = "wander_all"
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="wander NPC 2" parent="." unique_id=1293646166 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.676422, 1, 3.7167544)
-npc_type = "wander_all"
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="wander NPC 3" parent="." unique_id=1910700534 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.304001, 1, -3.9148345)
-npc_type = "wander_all"
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="wander NPC 4" parent="." unique_id=1312555435 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.294522, 1, 3.725408)
-npc_type = "wander_all"
+debug_mode = true
+npc_type = 0
+npc_allowed_zone_layers = Array[int]([])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="WANDER ZONE NPCS" type="Node" parent="." unique_id=1848413065]
 
 [node name="wander zone NPC 1" parent="." unique_id=1260027074 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.715305, 1, -3.2989287)
-npc_type = "wander_zone"
+debug_mode = true
+npc_type = 0
 npc_allowed_zone_layers = Array[int]([2])
+min_look_time_elapsed = 5.0
+max_look_time_elapsed = 10.0
+min_wander_wait = 5.0
+max_wander_wait = 10.0
 
 [node name="CameraManager" type="Node3D" parent="." unique_id=957882876]
 script = ExtResource("12_rwifv")

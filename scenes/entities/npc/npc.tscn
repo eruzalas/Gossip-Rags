@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
-[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_group.png" id="1_p5uw1"]
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_GROUP.png" id="1_p5uw1"]
 [ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
 [ext_resource type="PackedScene" uid="uid://0ejoi0soyt7e" path="res://scenes/components/dialogue_component/dialogue_renderer.tscn" id="3_xjnpb"]
 
@@ -27,6 +27,13 @@ viewport_path = NodePath("SubViewport")
 
 [node name="NPC" type="CharacterBody3D" unique_id=981572405]
 script = ExtResource("1_xjnpb")
+debug_mode = null
+npc_type = null
+npc_allowed_zone_layers = null
+min_look_time_elapsed = null
+max_look_time_elapsed = null
+min_wander_wait = null
+max_wander_wait = null
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=229261682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024719238, 0.00048828125, 0.0014953613)
