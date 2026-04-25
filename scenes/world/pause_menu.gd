@@ -41,6 +41,7 @@ func _on_resume_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-#reload the current scene
+#reload the current scene -- THIS IS CURRENTLY BROKEN
 func _on_restart_pressed() -> void:
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	pass
