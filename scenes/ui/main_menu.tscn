@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="4_x2yvf"]
 
 [node name="Main Menu" type="Control" unique_id=565250105]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

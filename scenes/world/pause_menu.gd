@@ -39,9 +39,9 @@ func _on_resume_pressed() -> void:
 
 #quit the scene
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
-#reload the current scene -- THIS IS CURRENTLY BROKEN
-func _on_restart_pressed() -> void:
-	#get_tree().reload_current_scene()
-	pass
+#Code to restart the game
+#func _restart() -> void:
+#	get_tree().paused = false
+#	get_tree().reload_current_scene()

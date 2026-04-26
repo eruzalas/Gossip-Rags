@@ -375,27 +375,23 @@ script = ExtResource("25_26xou")
 [node name="Phone Screen" type="TextureRect" parent="Pause Canvas/Pause Menu" unique_id=34987769]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.063
-anchor_top = 0.148
-anchor_right = 0.93900007
-anchor_bottom = 0.80600005
-offset_left = -0.5130005
-offset_top = 0.09600067
-offset_right = 0.2109375
-offset_bottom = -0.2880249
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 96.0
+offset_right = -70.0
+offset_bottom = -126.0
 texture = ExtResource("25_wnndm")
 
 [node name="Gossip Collected Text" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=19489082]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.09
-anchor_top = 0.224
-anchor_right = 0.90800005
-anchor_bottom = 0.596
-offset_left = 0.40999603
-offset_top = -0.15200806
-offset_right = -0.10803223
-offset_bottom = -0.20800781
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 145.0
+offset_right = -106.0
+offset_bottom = -262.0
 bbcode_enabled = true
 text = "[b][color=black]Gossip Collected text goes here blah blah blah...of would you look at that someone has cheated, are you gonna go and snoop? Gonna be a lil snooper and see what's going on? Plot twist it's about you, isn't that intersting...
 
@@ -403,33 +399,28 @@ The cake is a lie...[/color][/b]"
 
 [node name="Resume" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=1176942067]
 process_mode = 3
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 116.0
 offset_top = 438.0
-offset_right = 365.0
-offset_bottom = 491.0
+offset_right = -786.0
+offset_bottom = -157.0
 texture_normal = ExtResource("26_26xou")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Quit" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=2034798251]
 process_mode = 3
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 789.0
 offset_top = 438.0
-offset_right = 1038.0
-offset_bottom = 491.0
-texture_normal = ExtResource("26_26xou")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Restart" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=739454548]
-process_mode = 3
-layout_mode = 0
-offset_left = 450.0
-offset_top = 438.0
-offset_right = 699.0
-offset_bottom = 491.0
+offset_right = -113.0
+offset_bottom = -157.0
 texture_normal = ExtResource("26_26xou")
 ignore_texture_size = true
 stretch_mode = 0
@@ -437,11 +428,10 @@ stretch_mode = 0
 [node name="Quit Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=682952065]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.208
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 871.0
-offset_top = 280.216
+offset_top = 415.0
 offset_right = -187.0
 offset_bottom = -210.0
 grow_horizontal = 2
@@ -452,28 +442,14 @@ text = "[center][color=black][b]Quit[/b][/color][/center]"
 [node name="Resume Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=1151388835]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.22600001
-anchor_right = 0.98800004
-anchor_bottom = 0.9620001
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 202.0
-offset_top = 269.552
-offset_right = -861.188
-offset_bottom = -182.37604
+offset_top = 416.0
+offset_right = -875.0
+offset_bottom = -207.0
 bbcode_enabled = true
 text = "[center][color=black][b]Resume[/b][/color][/center]"
-
-[node name="Restart Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=65120904]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.30200002
-anchor_right = 1.0
-anchor_bottom = 0.98100007
-offset_left = 536.0
-offset_top = 218.30399
-offset_right = -527.0
-offset_bottom = -198.68805
-bbcode_enabled = true
-text = "[center][color=black][b]Restart[/b][/color][/center]"
 
 [node name="Suspicion System" type="Node" parent="." unique_id=616305401]
 unique_name_in_owner = true
@@ -491,4 +467,3 @@ script = ExtResource("27_ckok1")
 [connection signal="timeout" from="Origin Controller/Flag Timer" to="Origin Controller" method="_on_flag_timer_timeout"]
 [connection signal="pressed" from="Pause Canvas/Pause Menu/Resume" to="Pause Canvas/Pause Menu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Canvas/Pause Menu/Quit" to="Pause Canvas/Pause Menu" method="_on_quit_pressed"]
-[connection signal="pressed" from="Pause Canvas/Pause Menu/Restart" to="Pause Canvas/Pause Menu" method="_on_restart_pressed"]
