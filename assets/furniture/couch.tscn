@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bevrtmggo8r7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngcwa"]
+albedo_color = Color(0.5351928, 0.48966008, 0.6144828, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvaqw"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l1620"]
+
+[node name="couch" type="Area3D" unique_id=216600216]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1209690716]
+material_override = SubResource("StandardMaterial3D_ngcwa")
+mesh = SubResource("BoxMesh_qvaqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=268246068]
+shape = SubResource("BoxShape3D_l1620")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cpa74rykxf0m1"]
 
 [ext_resource type="PackedScene" uid="uid://ddl0hr6vxvm4p" path="res://assets/furniture/table.tscn" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://den153t386hca" path="res://assets/furniture/big_table.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://rt8vndpygu8e" path="res://assets/furniture/lamp.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bpgbjqlg8aanb" path="res://assets/furniture/chair.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bevrtmggo8r7l" path="res://assets/furniture/couch.tscn" id="5_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b3mss5ncut83" path="res://assets/furniture/bigger_bigger_table.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b5gmnwd37qb7e" path="res://assets/furniture/wall_television.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cvpw76cshilna" path="res://assets/furniture/fridge.tscn" id="6_o6xl0"]
@@ -414,14 +414,14 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.72481, 0.
 [node name="table6" parent="Downstairs Furniture" unique_id=117174663 instance=ExtResource("1_0wfyh")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.4397163, 0.9812511, -20.670145)
 
+[node name="table7" parent="Downstairs Furniture" unique_id=1170960128 instance=ExtResource("1_0wfyh")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 7.8792887, 0.9812511, -29.901651)
+
 [node name="table4" parent="Downstairs Furniture" unique_id=1004652392 instance=ExtResource("1_0wfyh")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 11.855063, 1.0454149, -15.290824)
 
 [node name="table" parent="Downstairs Furniture" unique_id=1253870419 instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.129371, 1.0565758, 0.44455147)
-
-[node name="big table" parent="Downstairs Furniture" unique_id=1369107110 instance=ExtResource("2_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.879435, 0.9999981, -5.4060454)
 
 [node name="lamp" parent="Downstairs Furniture" unique_id=1427162693 instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.454969, 1.7416492, 0.39774895)
@@ -429,60 +429,63 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.454969, 1.7416492, 0.39774
 [node name="lamp2" parent="Downstairs Furniture" unique_id=1052230474 instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5874243, 1.7416492, -19.78721)
 
-[node name="chair" parent="Downstairs Furniture" unique_id=622996427 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.305563, 1.5000005, -4.771127)
+[node name="lamp4" parent="Downstairs Furniture" unique_id=712404604 instance=ExtResource("2_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3214335, 1.7416492, -29.870335)
 
-[node name="chair2" parent="Downstairs Furniture" unique_id=455733006 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02771, 1.5, -3.788626)
+[node name="lamp3" parent="Downstairs Furniture" unique_id=912905944 instance=ExtResource("2_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.468148, 1.7416492, -7.1160994)
 
-[node name="chair3" parent="Downstairs Furniture" unique_id=1651130772 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0358286, 1.5000005, -3.8689458)
-
-[node name="chair4" parent="Downstairs Furniture" unique_id=981766611 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.824045, 1.5, -7.113898)
-
-[node name="chair5" parent="Downstairs Furniture" unique_id=2122326315 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.789481, 1.5, -6.9220953)
-
-[node name="chair6" parent="Downstairs Furniture" unique_id=1434649592 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.476437, 1.5, -5.4131)
-
-[node name="wall_television" parent="Downstairs Furniture" unique_id=508576185 instance=ExtResource("5_tefeu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.989928, 3.5255833, -17.396355)
+[node name="wall_television3" parent="Downstairs Furniture" unique_id=1153137924 instance=ExtResource("5_tefeu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.005356, 3.5255833, -2.972249)
 
 [node name="wall_television2" parent="Downstairs Furniture" unique_id=1325340056 instance=ExtResource("5_tefeu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.107417, 3.5255833, -17.396355)
 
+[node name="wall_television4" parent="Downstairs Furniture" unique_id=403128854 instance=ExtResource("5_tefeu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.783929, 2.1556673, -30.247898)
+
+[node name="chair4" parent="Downstairs Furniture" unique_id=254100916 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.548073, 1.5000005, -18.354618)
+
+[node name="chair5" parent="Downstairs Furniture" unique_id=348011739 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.145011, 1.5000005, -19.807444)
+
+[node name="chair6" parent="Downstairs Furniture" unique_id=318960490 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6747775, 1.5000005, -19.807444)
+
+[node name="chair7" parent="Downstairs Furniture" unique_id=672312016 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6747775, 1.5000005, -14.411167)
+
+[node name="chair8" parent="Downstairs Furniture" unique_id=1454655199 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.192206, 1.5000005, -14.411167)
+
+[node name="chair3" parent="Downstairs Furniture" unique_id=463064328 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.52458, 1.5000005, -16.021114)
+
+[node name="chair2" parent="Downstairs Furniture" unique_id=153020066 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9257588, 1.5000005, -16.021114)
+
+[node name="couch" parent="Downstairs Furniture" unique_id=130710680 instance=ExtResource("5_o6xl0")]
+transform = Transform3D(0.7965299, 0, -0.6045991, 0, 1, 0, 0.6045991, 0, 0.7965299, -6.3680563, 1, -5.833085)
+
+[node name="couch2" parent="Downstairs Furniture" unique_id=216600216 instance=ExtResource("5_o6xl0")]
+transform = Transform3D(0.6467898, 0, 0.7626684, 0, 1, 0, -0.7626684, 0, 0.6467898, -6.045349, 1, -1.6925843)
+
+[node name="chair" parent="Downstairs Furniture" unique_id=807377685 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9257588, 1.5000005, -18.354618)
+
+[node name="chair9" parent="Downstairs Furniture" unique_id=310211664 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.104849, 1.5000005, -28.367916)
+
 [node name="fridge" parent="Downstairs Furniture" unique_id=130125870 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8052607, 1.4026587, -20.544321)
+
+[node name="bigger bigger table" parent="Downstairs Furniture" unique_id=983047030 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17)
+
+[node name="bigger bigger table2" parent="Downstairs Furniture" unique_id=1496273437 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52331, 1, -28.804762)
 
 [node name="InsideWall" type="CSGBox3D" parent="." unique_id=186091032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.326355, 3.5, -12.71961)
 size = Vector3(8.297653, 6, 0.375)
-
-[node name="bigger bigger table" parent="." unique_id=983047030 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17)
-
-[node name="chair" parent="." unique_id=807377685 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9257588, 1.5000005, -18.354618)
-
-[node name="chair4" parent="." unique_id=254100916 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.548073, 1.5000005, -18.354618)
-
-[node name="chair5" parent="." unique_id=348011739 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.145011, 1.5000005, -19.807444)
-
-[node name="chair6" parent="." unique_id=318960490 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6747775, 1.5000005, -19.807444)
-
-[node name="chair7" parent="." unique_id=672312016 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6747775, 1.5000005, -14.411167)
-
-[node name="chair8" parent="." unique_id=1454655199 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.192206, 1.5000005, -14.411167)
-
-[node name="chair2" parent="." unique_id=153020066 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9257588, 1.5000005, -16.021114)
-
-[node name="chair3" parent="." unique_id=463064328 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.52458, 1.5000005, -16.021114)
