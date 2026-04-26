@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5a4a0v4cuxsw" path="res://scenes/components/inventory/inventory_ui.gd" id="1_x4jqs"]
 
+
 [node name="inventory_ui" type="Control" unique_id=802980208]
 layout_mode = 3
 anchors_preset = 0

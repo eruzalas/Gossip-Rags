@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://cdrkg6uclmwul"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_tj408"]
+[ext_resource type="Texture2D" uid="uid://2snr3m1jy21j" path="res://assets/testsprites/costumes_AM/bike helmet.png" id="2_p3q60"]
+
+[resource]
+script = ExtResource("1_tj408")
+name = "motorcycle"
+texture = ExtResource("2_p3q60")
+speed_modifier = -2.0
+accel_modifier = 1.5
+decel_modifier = 0.8
+suspicion_modifier = 0.2
+attention_modifier = 1.0
+costume_ID = 2
+metadata/_custom_type_script = "uid://df08msjn6bry6"
