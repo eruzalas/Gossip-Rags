@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c054hvg7ccmlj"
-path="res://.godot/imported/npc_sprite_wander_zone.png-eadd7babd4a4fce37fd2f39b0858ae10.ctex"
+uid="uid://dvaev7i2552ty"
+path="res://.godot/imported/sarah_placeholder.png-f3aefbff7b15b3e644a76b3e5f01939b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npc_sprites/npc_sprite_wander_zone.png"
-dest_files=["res://.godot/imported/npc_sprite_wander_zone.png-eadd7babd4a4fce37fd2f39b0858ae10.ctex"]
+source_file="res://assets/magazine/sarah_placeholder.png"
+dest_files=["res://.godot/imported/sarah_placeholder.png-f3aefbff7b15b3e644a76b3e5f01939b.ctex"]
 
 [params]
 

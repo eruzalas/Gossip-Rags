@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c054hvg7ccmlj"
-path="res://.godot/imported/npc_sprite_wander_zone.png-eadd7babd4a4fce37fd2f39b0858ae10.ctex"
+uid="uid://bfojigjscfisg"
+path="res://.godot/imported/page template.png-300e10475e12d552199216978361b1db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npc_sprites/npc_sprite_wander_zone.png"
-dest_files=["res://.godot/imported/npc_sprite_wander_zone.png-eadd7babd4a4fce37fd2f39b0858ae10.ctex"]
+source_file="res://assets/magazine/page template.png"
+dest_files=["res://.godot/imported/page template.png-300e10475e12d552199216978361b1db.ctex"]
 
 [params]
 
