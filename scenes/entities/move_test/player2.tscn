@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c56ttmud00t6d"]
+
+[ext_resource type="Script" uid="uid://dconw2hksueac" path="res://scenes/entities/move_test/p2_movement.gd" id="1_igt8j"]
+[ext_resource type="SpriteFrames" uid="uid://bpqyakqqyurql" path="res://assets/testsprites/player2_AM/player2_spriteframes.tres" id="2_iwcew"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7141"]
+size = Vector3(1, 1, 0.23046875)
+
+[node name="player2" type="CharacterBody3D" unique_id=1857290036 groups=["players"]]
+script = ExtResource("1_igt8j")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=603342761]
+sprite_frames = ExtResource("2_iwcew")
+animation = &"p2_default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1810674352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.007851124)
+shape = SubResource("BoxShape3D_i7141")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=744883581]
