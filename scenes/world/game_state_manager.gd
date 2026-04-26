@@ -19,7 +19,8 @@ var P_2_att_level: float = 0
 var P_2_sus_level: float = 0
 
 #Global variables
-var steps: int = 0 #have setps increase as player is in NPC zone, decrease when outside the zone
+#increases by 1 each second the player is in the gossip zone - returns to 0 once no longer collecting suspicion
+var steps: int = 0
 var sus: bool = false #if the player is currently in a sus zone
 var yoink: bool = false #if player is trying to grab attention
 
@@ -31,9 +32,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	#Game constantly needs to know player states to impact NPCs
+	#Game constantly needs to know player states to impact NPCs--changes game effects
 	P_1_sus_state = suspicion_system._state_level(P_1_sus_level)
 	P_1_att_state = attention_system._state_level(P_1_att_level)
+	
 	P_2_sus_state = suspicion_system._state_level(P_2_sus_level)
 	P_2_att_state = attention_system._state_level(P_2_att_level)
 	
@@ -59,10 +61,10 @@ func _determine_att_level(which_player: int, action: float):
 	var player_att: float
 	if(which_player == 1):
 		player_att = P_1_att_level
-		player_att = attention_system._calculate_att(action, player_att)
+		player_att = attention_system._calculate_att(1, action, player_att)
 		P_1_att_level = player_att
 	else:
 		player_att = P_2_att_level
-		player_att = attention_system._calculate_att(action, player_att)
+		player_att = attention_system._calculate_att(1, action, player_att)
 		P_2_att_level = player_att
 	

@@ -74,7 +74,7 @@ func _determine_sus():
 	
 #Change Debug UI to show attention level and state
 func _determine_atten():
-	att = attention_system._calculate_att(action, att)
+	att = attention_system._calculate_att(1, action, att)
 	att_state = attention_system._state_level(att)
 	attention_debug.text = "Attention: " + str(att) + " " + att_state
 
