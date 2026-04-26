@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpgbjqlg8aanb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5v4w"]
+albedo_color = Color(0.9546556, 0, 0.2049497, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p3w2w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gart3"]
+
+[node name="chair" type="Area3D" unique_id=310211664]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=834532414]
+material_override = SubResource("StandardMaterial3D_c5v4w")
+mesh = SubResource("CapsuleMesh_p3w2w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=744743429]
+shape = SubResource("CapsuleShape3D_gart3")

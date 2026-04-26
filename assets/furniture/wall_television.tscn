@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5gmnwd37qb7e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sebpf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2dpxy"]
+size = Vector3(3, 2, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iyydb"]
+size = Vector3(2.9921265, 2.0072632, 0.29772186)
+
+[node name="wall_television" type="Area3D" unique_id=1153137924]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1697476599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0040656924, -0.0029810667, 0.0039135516)
+material_override = SubResource("StandardMaterial3D_sebpf")
+mesh = SubResource("BoxMesh_2dpxy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=86311043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009857178, -0.008148193, 0.006855011)
+shape = SubResource("BoxShape3D_iyydb")

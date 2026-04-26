@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3mss5ncut83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odsk2"]
+albedo_color = Color(0.45508766, 0.26444978, 0.05284834, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8iycj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0432"]
+size = Vector3(4.7089844, 1, 3.8200684)
+
+[node name="bigger bigger table" type="Area3D" unique_id=1496273437]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=78816183]
+transform = Transform3D(4.7, 0, 0, 0, 1, 0, 0, 0, 3.78, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_odsk2")
+mesh = SubResource("BoxMesh_8iycj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=815628860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00052011013, 0, 0.019269705)
+shape = SubResource("BoxShape3D_j0432")

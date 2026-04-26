@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvpw76cshilna"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7dmh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hphgq"]
+albedo_color = Color(0, 0.6121075, 0.4732268, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhtdr"]
+
+[node name="fridge" type="Area3D" unique_id=130125870]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=858595999]
+shape = SubResource("BoxShape3D_v7dmh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1326032515]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hphgq")
+mesh = SubResource("BoxMesh_nhtdr")
