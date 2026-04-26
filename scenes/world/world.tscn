@@ -223,7 +223,7 @@ anchor_bottom = 1.006
 offset_right = 0.15185547
 offset_bottom = 0.11199951
 script = ExtResource("9_6hctx")
-game_time = 10
+game_time = 60
 
 [node name="Clock Label" type="Label" parent="GUI" unique_id=793086485]
 unique_name_in_owner = true
@@ -464,6 +464,8 @@ multi = 1.0
 [node name="Attention System" type="Node" parent="." unique_id=1550473888]
 unique_name_in_owner = true
 script = ExtResource("21_fymcc")
+reset_thresh = 30
+sus_thresh = 80
 
 [node name="Game State Manager" type="Node" parent="." unique_id=1281440516]
 unique_name_in_owner = true
