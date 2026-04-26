@@ -46,6 +46,15 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Arr
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2x71e"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_rwifv"]
+radius = 1.409
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckok1"]
+size = Vector3(8.176025, 1, 8.40625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2x71e"]
+size = Vector3(11.655533, 1, 10.290527)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_k0juu"]
 vertices = PackedVector3Array(-5.8, 0.40000004, -10.6, -4.3999996, 0.40000004, -11, -4.3999996, 0.40000004, -11.8, -14.8, 0.40000004, -11.8, -4, 0.40000004, -6, -4.2, 0.40000004, -7.7999997, -5.2, 0.40000004, -7.7999997, -5, 0.40000004, -5.2, -14.8, 0.40000004, -1.3999996, -11, 0.40000004, -1.3999996, -10.6, 0.40000004, -2.8000002, -6, 0.40000004, -8.6, -8.4, 0.40000004, -2.8000002, -5, 0.40000004, -3.8000002, -3.5999994, 0.40000004, -11, -3, 0.40000004, -8.4, -2.3999996, 0.40000004, -5.8, -2.8000002, 0.40000004, -10.2, 2.2000008, 0.40000004, -8.6, 3.6000004, 0.40000004, -9, 3.6000004, 0.40000004, -11.8, 2, 0.40000004, -7, 13.4, 0.40000004, -9, 14.200001, 0.40000004, -8, 16.2, 0.40000004, -8.4, 16, 0.40000004, -11.8, 5, 0.40000004, -8.6, 11.800001, 0.40000004, -9, 11, 0.40000004, -8.2, 5, 0.40000004, -6.6, 11, 0.40000004, -6.6, 10.6, 0.40000004, 3, 9.6, 0.40000004, 3.2000008, 9.6, 0.40000004, 5, 14.200001, 0.40000004, -6.7999997, 16.8, 0.40000004, -7.7999997, 13.6, 0.40000004, -6, 11.6, 0.40000004, -6, 10.6, 0.40000004, 0.19999981, 11.200001, 0.40000004, 2.2000008, 16, 0.40000004, 5, 16, 0.40000004, 1.8000002, 18, 0.40000004, -7.7999997, 11.200001, 0.40000004, 0.8000002, 16.8, 0.40000004, 1, 18, 0.40000004, 1, -2.3999996, 0.40000004, -3, -3.3999996, 0.40000004, -2.8000002, -3.3999996, 0.40000004, 0, -2.1999998, 0.40000004, 0.19999981, -1.8000002, 0.40000004, 1.1999998, 2.6000004, 0.40000004, 0, 2, 0.40000004, -0.5999994, 2.3999996, 0.40000004, -2.8000002, 3.6000004, 0.40000004, -3, 3.6000004, 0.40000004, -5.8, 2.3999996, 0.40000004, -6, -1.8000002, 0.40000004, -5.2, 2, 0.40000004, -2.1999998, -1.8000002, 0.40000004, -3.8000002, 4.6000004, 0.40000004, -6, 5, 0.40000004, -2.5999994, 8.6, 0.40000004, 0.19999981, 5.200001, 0.40000004, -1, -7.8, 0.40000004, -2.1999998, -4.5999994, 0.40000004, 0.19999981, -4.5999994, 0.40000004, -3, -7.8, 0.40000004, -0.8000002, -8.599999, 0.40000004, 0, -5, 0.40000004, 1, -10.799999, 0.40000004, -0.19999981, -9.6, 0.40000004, 5, -9.6, 0.40000004, 0.19999981, -14.8, 0.40000004, 5, 8.4, 0.40000004, 3, 6.200001, 0.40000004, 3.8000011, 6.200001, 0.40000004, 5, 8, 0.40000004, 2.3999996, 8, 0.40000004, 0.8000002, 5.800001, 0.40000004, 3.2000008, 4.6000004, 0.40000004, 0, 4, 0.40000004, 3, 3.8000011, 0.40000004, 0.19999981, -3.3999996, 0.40000004, 5, -3.3999996, 0.40000004, 3.2000008, -4.8, 0.40000004, 2.8000011, -2, 0.40000004, 2.6000004, 3, 0.40000004, 3.8000011, 3, 0.40000004, 5)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(8, 10, 9), PackedInt32Array(6, 7, 11), PackedInt32Array(11, 7, 13), PackedInt32Array(11, 13, 12), PackedInt32Array(11, 12, 10), PackedInt32Array(11, 10, 0), PackedInt32Array(0, 10, 8), PackedInt32Array(0, 8, 3), PackedInt32Array(14, 1, 2), PackedInt32Array(5, 15, 4), PackedInt32Array(4, 15, 16), PackedInt32Array(18, 17, 14), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 14), PackedInt32Array(20, 14, 2), PackedInt32Array(15, 17, 16), PackedInt32Array(16, 17, 21), PackedInt32Array(21, 17, 18), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(19, 20, 26), PackedInt32Array(26, 20, 27), PackedInt32Array(27, 20, 25), PackedInt32Array(27, 28, 26), PackedInt32Array(25, 22, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(28, 29, 26), PackedInt32Array(33, 32, 31), PackedInt32Array(24, 35, 23), PackedInt32Array(23, 35, 34), PackedInt32Array(38, 37, 36), PackedInt32Array(31, 39, 33), PackedInt32Array(33, 39, 40), PackedInt32Array(40, 39, 41), PackedInt32Array(34, 35, 36), PackedInt32Array(36, 35, 42), PackedInt32Array(43, 38, 44), PackedInt32Array(44, 38, 45), PackedInt32Array(45, 38, 36), PackedInt32Array(45, 36, 42), PackedInt32Array(39, 43, 41), PackedInt32Array(41, 43, 44), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(52, 51, 50), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(57, 16, 21), PackedInt32Array(53, 58, 56), PackedInt32Array(56, 58, 21), PackedInt32Array(21, 58, 57), PackedInt32Array(57, 58, 59), PackedInt32Array(46, 59, 49), PackedInt32Array(49, 59, 50), PackedInt32Array(50, 59, 52), PackedInt32Array(52, 59, 58), PackedInt32Array(54, 55, 60), PackedInt32Array(60, 29, 54), PackedInt32Array(54, 29, 61), PackedInt32Array(62, 61, 38), PackedInt32Array(38, 61, 29), PackedInt32Array(38, 29, 30), PackedInt32Array(38, 30, 37), PackedInt32Array(62, 63, 61), PackedInt32Array(64, 12, 13), PackedInt32Array(48, 65, 47), PackedInt32Array(47, 65, 66), PackedInt32Array(69, 68, 67), PackedInt32Array(13, 66, 64), PackedInt32Array(64, 66, 67), PackedInt32Array(67, 66, 65), PackedInt32Array(67, 65, 69), PackedInt32Array(70, 8, 9), PackedInt32Array(70, 72, 8), PackedInt32Array(8, 72, 71), PackedInt32Array(8, 71, 73), PackedInt32Array(74, 32, 33), PackedInt32Array(77, 74, 75), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 33), PackedInt32Array(63, 62, 78), PackedInt32Array(77, 79, 78), PackedInt32Array(78, 79, 81), PackedInt32Array(78, 81, 80), PackedInt32Array(78, 80, 63), PackedInt32Array(77, 75, 79), PackedInt32Array(81, 82, 80), PackedInt32Array(84, 83, 85), PackedInt32Array(85, 83, 71), PackedInt32Array(68, 69, 72), PackedInt32Array(72, 69, 85), PackedInt32Array(72, 85, 71), PackedInt32Array(83, 84, 86), PackedInt32Array(82, 81, 51), PackedInt32Array(51, 81, 87), PackedInt32Array(86, 50, 51), PackedInt32Array(87, 88, 51), PackedInt32Array(51, 88, 86), PackedInt32Array(86, 88, 83)]
@@ -77,15 +86,6 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_sygq6"]
 font_size = 40
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_rwifv"]
-radius = 1.409
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ckok1"]
-size = Vector3(8.176025, 1, 8.40625)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2x71e"]
-size = Vector3(11.655533, 1, 10.290527)
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_bq33v")
@@ -403,7 +403,7 @@ polygon = PackedVector2Array(-6, -5, 1.7509446, -5.433709, 1.7267838, 1.7915728)
 depth = 2.58
 
 [node name="Upstairs" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=1981887349]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07759857, 0.08270264, 0.053318024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.33425, 43.00917, -77.352486)
 navigation_mesh = SubResource("NavigationMesh_ckok1")
 
 [node name="UpstairsFloor" type="CSGCombiner3D" parent="Environment (NavMesh)/Upstairs" unique_id=1440875160]
@@ -626,10 +626,11 @@ polygon = PackedVector2Array(-5.0092564, -5.3619194, 2, -5, 2, 1)
 depth = 2.58
 
 [node name="Basement" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=1910384335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.72669, -43.48345, 79.68603)
 navigation_mesh = SubResource("NavigationMesh_2x71e")
 
 [node name="DowntoBase3" type="CSGPolygon3D" parent="Environment (NavMesh)/Basement" unique_id=1368832850]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -42.666306, 5.49157, -61.722633)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -42.666306, 5.385212, -61.722633)
 use_collision = true
 polygon = PackedVector2Array(-6, -5, 1.9339561, -4.9570427, 1.7267838, 1.7915728)
 depth = 2.58
@@ -750,6 +751,80 @@ size = Vector3(7, 1, 4)
 [node name="Floor" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1152770143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.760742, 7, -32.65772)
 size = Vector3(7.782715, 1, 3.6395874)
+
+[node name="Portals" type="Node3D" parent="Environment (NavMesh)" unique_id=830002159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="DownToUp" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1979833835 node_paths=PackedStringArray("connect_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8446116, 4.3248916, -35.37744)
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../DownToUpDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/DownToUp" unique_id=672902607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
+shape = SubResource("SphereShape3D_rwifv")
+
+[node name="DownToBasement" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1214600516 node_paths=PackedStringArray("connect_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.337809, -0.74541044, -38.804672)
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../DownToBasementDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/DownToBasement" unique_id=138554608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
+shape = SubResource("SphereShape3D_rwifv")
+
+[node name="BasementToDown" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1524305490 node_paths=PackedStringArray("connect_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.132427, 4.951942, -35.405487)
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../BasementToDownDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/BasementToDown" unique_id=60423699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.723007, -44.110878, 79.689865)
+shape = SubResource("SphereShape3D_rwifv")
+
+[node name="UpToDown" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1690729533 node_paths=PackedStringArray("connect_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.80353, -1.7077627, -26.930204)
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../UpToDownDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/UpToDown" unique_id=1673387792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.186752, 41.880695, -77.29216)
+shape = SubResource("SphereShape3D_rwifv")
+
+[node name="DownToUpDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=1097321146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.801256, 42.26914, -106.007065)
+
+[node name="UpToDownDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=2056092478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7545075, 2.4404507, -32.356186)
+
+[node name="DownToBasementDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=1082074634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4905205, -40.86494, 44.344563)
+
+[node name="BasementToDownDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=367595222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.870265, 0.11938918, -38.586964)
+
+[node name="BackHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=602506108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.451176, 6.623755, -31.717344)
+
+[node name="BackHole" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=394167414 node_paths=PackedStringArray("connect_portal")]
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../BackHoleDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/BackHole" unique_id=1120729149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.296484, 40.699535, -101.97395)
+shape = SubResource("BoxShape3D_ckok1")
+
+[node name="FrontHole" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1238966522 node_paths=PackedStringArray("connect_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.33273, 0, 0)
+script = ExtResource("27_ckok1")
+connect_portal = NodePath("../FrontHoleDestination")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/FrontHole" unique_id=1860156978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.336754, 41.338585, -78.463394)
+shape = SubResource("BoxShape3D_2x71e")
+
+[node name="FrontHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=971976256]
+transform = Transform3D(1.873399, 0, 0, 0, 1, 0, 0, 0, 1, -4.7890077, 4.7463584, -10.47924)
 
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
@@ -1042,83 +1117,10 @@ script = ExtResource("20_d0ajt")
 unique_name_in_owner = true
 script = ExtResource("21_fymcc")
 
-[node name="Portals" type="Node3D" parent="." unique_id=830002159]
-
-[node name="DownToUp" type="Area3D" parent="Portals" unique_id=1979833835 node_paths=PackedStringArray("connect_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8446116, 4.3248916, -35.37744)
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../DownToUpDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/DownToUp" unique_id=672902607]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
-shape = SubResource("SphereShape3D_rwifv")
-
-[node name="DownToBasement" type="Area3D" parent="Portals" unique_id=1214600516 node_paths=PackedStringArray("connect_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.337809, -0.74541044, -38.804672)
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../DownToBasementDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/DownToBasement" unique_id=138554608]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
-shape = SubResource("SphereShape3D_rwifv")
-
-[node name="BasementToDown" type="Area3D" parent="Portals" unique_id=1524305490 node_paths=PackedStringArray("connect_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.132427, 4.951942, -35.405487)
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../BasementToDownDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/BasementToDown" unique_id=60423699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
-shape = SubResource("SphereShape3D_rwifv")
-
-[node name="UpToDown" type="Area3D" parent="Portals" unique_id=1690729533 node_paths=PackedStringArray("connect_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.80353, -1.7077627, -26.930204)
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../UpToDownDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/UpToDown" unique_id=1673387792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06990051, -1.045774, 0.11363459)
-shape = SubResource("SphereShape3D_rwifv")
-
-[node name="DownToUpDestination" type="Marker3D" parent="Portals" unique_id=1097321146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.05791, -0.6573319, -28.601267)
-
-[node name="UpToDownDestination" type="Marker3D" parent="Portals" unique_id=2056092478]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7545075, 2.4404507, -32.356186)
-
-[node name="DownToBasementDestination" type="Marker3D" parent="Portals" unique_id=1082074634]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.236168, 2.6185105, -35.341465)
-
-[node name="BasementToDownDestination" type="Marker3D" parent="Portals" unique_id=367595222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.870265, 0.11938918, -38.586964)
-
-[node name="BackHoleDestination" type="Marker3D" parent="Portals" unique_id=602506108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.451176, 6.623755, -31.717344)
-
-[node name="BackHole" type="Area3D" parent="Portals" unique_id=394167414 node_paths=PackedStringArray("connect_portal")]
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../BackHoleDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/BackHole" unique_id=1120729149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.55314, -2.2269347, -24.568157)
-shape = SubResource("BoxShape3D_ckok1")
-
-[node name="FrontHole" type="Area3D" parent="Portals" unique_id=1238966522 node_paths=PackedStringArray("connect_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.33273, 0, 0)
-script = ExtResource("27_ckok1")
-connect_portal = NodePath("../FrontHoleDestination")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portals/FrontHole" unique_id=1860156978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.080097, -1.587883, -1.0575945)
-shape = SubResource("BoxShape3D_2x71e")
-
-[node name="FrontHoleDestination" type="Marker3D" parent="Portals" unique_id=971976256]
-transform = Transform3D(1.873399, 0, 0, 0, 1, 0, 0, 0, 1, -4.7890077, 4.7463584, -10.47924)
-
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToUp" to="Environment (NavMesh)/Portals/DownToUp" method="_on_body_entered"]
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToBasement" to="Environment (NavMesh)/Portals/DownToBasement" method="_on_body_entered"]
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/BasementToDown" to="Environment (NavMesh)/Portals/BasementToDown" method="_on_body_entered"]
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/UpToDown" to="Environment (NavMesh)/Portals/UpToDown" method="_on_body_entered"]
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/BackHole" to="Environment (NavMesh)/Portals/BackHole" method="_on_body_entered"]
+[connection signal="body_entered" from="Environment (NavMesh)/Portals/FrontHole" to="Environment (NavMesh)/Portals/FrontHole" method="_on_body_entered"]
 [connection signal="timeout" from="Origin Controller/Flag Timer" to="Origin Controller" method="_on_flag_timer_timeout"]
-[connection signal="body_entered" from="Portals/DownToUp" to="Portals/DownToUp" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/DownToBasement" to="Portals/DownToBasement" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/BasementToDown" to="Portals/BasementToDown" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/UpToDown" to="Portals/UpToDown" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/BackHole" to="Portals/BackHole" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/FrontHole" to="Portals/FrontHole" method="_on_body_entered"]
