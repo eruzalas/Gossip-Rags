@@ -10,6 +10,7 @@ const JUMP_VELOCITY = 10
 var is_detected: bool = false
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

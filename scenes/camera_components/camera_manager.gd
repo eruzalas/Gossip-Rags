@@ -4,9 +4,9 @@ extends Node3D
 @export var split_line_thickness: float = 3.0
 @export var split_line_color: Color = Color.BLACK
 
-@onready var isMultiplayer: bool = true 	 #FOR TESTING PURPOSES, use a signal to test
-@onready var player1: Node = get_node("/root/World/Player1")
-@onready var player2: Node = get_node("/root/World/Player2")
+@onready var isMultiplayer: bool = true 	 #FOR TESTING PURPOSES, use actual signal in menu
+@onready var player1: Node = $"../Player1"
+@onready var player2: Node = $"../Player2"
 @onready var view = $View
 @onready var viewport1: Viewport = $Viewport1
 @onready var viewport2: Viewport = $Viewport2
@@ -53,44 +53,61 @@ func _multiplayer_cam() -> void:
 
 	position_difference = position_difference.normalized() * distance
 	
-	#_multi_floor_cam()
-	#if(_is_multi_floor()):
-		#camera1.position.x = player1.position.x 
-		#camera1.position.z = player1.position.z + 5
-		#
-		#camera2.position.x = player2.position.x 
-		#camera2.position.z = player2.position.z + 5
-		#
-		#return
+	
+	
+	_multi_floor_screen_resize()
+	
+	if(!_is_multi_floor()):
+	
+		camera1.position.x = player1.position.x + position_difference.x / 2.0
+		camera1.position.z = (player1.position.z + position_difference.z / 2.0) + 5
+	
+		camera2.position.x = player2.position.x - position_difference.x / 2.0
+		camera2.position.z = (player2.position.z - position_difference.z / 2.0) + 5
 		
-	camera1.position.x = player1.position.x + position_difference.x / 2.0
-	camera1.position.z = (player1.position.z + position_difference.z / 2.0) + 5
+		camera1.position.y = player1.position.y + 5 
+		camera2.position.y = player2.position.y + 5
 	
-	camera2.position.x = player2.position.x - position_difference.x / 2.0
-	camera2.position.z = (player2.position.z - position_difference.z / 2.0) + 5
+	else: if(_is_multi_floor()):
+		
+		camera1.position.x = player1.position.x
+		camera1.position.z = player1.position.z + 2
 	
-	camera1.position.y = player1.position.y + 5 
-	camera2.position.y = player2.position.y + 5
-	
-#func _multi_floor_cam() -> void:
-	#
-	#if(_is_multi_floor()):
-		#camera1.position.y = player1.position.y + 5
-		#camera2.position.y = player2.position.y + 5
-		#
-		#return
-		#
-	#else:
-		#camera1.position.y = player1.position.y + 5 
-		#camera2.position.y = player2.position.y + 5
+		camera2.position.x = player2.position.x
+		camera2.position.z = player2.position.z + 2
+		
+		camera1.position.y = player1.position.y + 3
+		camera2.position.y = player2.position.y + 3
+
 
 func _is_multi_floor() -> bool:
 	
-	if(abs(player1.position.y - player2.position.y) > 2.0 ):
+	if(abs(player1.position.y - player2.position.y) > 1.0 ):
 		return true
 	
 	return false
 
+func _multi_floor_screen_resize() -> void:
+	var screen_size: Vector2 = _get_screen_size() 
+	
+	if _is_multi_floor():
+		var half_size = Vector2(screen_size.x, screen_size.y / 2.0)
+		$Viewport1.size = half_size
+		$Viewport2.size = half_size
+
+	else:
+		$Viewport1.size = screen_size
+		$Viewport2.size = screen_size
+
+func _get_screen_size():
+	return get_viewport().get_visible_rect().size
+
+func _is_p1_top() -> bool:
+	
+	if player1.position.y > player2.position.y:
+		return true
+		
+	return false
 
 func _update_splitscreen() -> void:
 	var screen_size: Vector2 = get_viewport().get_visible_rect().size
@@ -109,6 +126,7 @@ func _update_splitscreen() -> void:
 	view.material.set_shader_parameter("split_line_thickness", thickness)
 	view.material.set_shader_parameter("split_line_color", split_line_color)
 	view.material.set_shader_parameter("is_multi_floor", _is_multi_floor())
+	view.material.set_shader_parameter("is_p1_top", _is_p1_top())
 
 
 # Split screen is active if players are too far apart from each other.
@@ -120,7 +138,7 @@ func _get_split_state() -> bool:
 
 
 func _on_size_changed() -> void:
-	var screen_size = get_viewport().get_visible_rect().size
+	var screen_size: Vector2 = _get_screen_size()
 
 	$Viewport1.size = screen_size
 	if(isMultiplayer):
