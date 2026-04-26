@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	#Check if the clock is paused, if not check if clock is running, if not then start clock else do nothing
 	if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		if(!clock_start): 
-			in_game_clock.start(10)
+			in_game_clock.start(30)
 			clock_start = true
 			
 		if(pause):

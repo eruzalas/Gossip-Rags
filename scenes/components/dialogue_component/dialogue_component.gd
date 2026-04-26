@@ -15,6 +15,7 @@ var current_dialogue
 var dialogue_timeout = 1
 var max_width_dialogue_box = 400
 var bubble
+var can_speak_randomly: bool = true
 
 var dialogue_bubble_prefab = preload("res://scenes/components/dialogue_component/dialogue_bubble.tscn")
 
@@ -44,6 +45,16 @@ func _set_status(new_status: Enums.NpcState) -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _set_gossiping(status: bool) -> void:
+	can_speak_randomly = !status
+	if can_speak_randomly:
+		dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+	else:
+		dialogue_timer.stop()
+
+func _display_gossip(gossip: Dictionary):
+	_add_bubble(gossip)
+
 func _remove_bubble(child):
 	child.queue_free()
 	_update_bubble_positions()
@@ -57,7 +68,8 @@ func _add_bubble(dialogue: Dictionary) -> void:
 	bubble._set_texture(dialogue["bubble_icon"])
 	# this will need to be changed depending on if dialogue is active due to player staring?
 	# TODO: REVIEW THIS
-	bubble.can_disappear = true
+	if can_speak_randomly:
+		bubble.can_disappear = true
 	# make component listen to the child transparency calls
 	bubble.is_transparent.connect(_remove_bubble)
 	# set initial position

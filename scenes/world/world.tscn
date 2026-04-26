@@ -159,6 +159,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.715305, 1, -3.2989287)
 npc_type = 2
 npc_allowed_zone_layers = Array[int]([2])
 
+[node name="GOSSIP NPC BAR 1" parent="." unique_id=1817096426 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.052, 1, -6.598)
+npc_type = 4
+gossiper_ID = 1
+npc_allowed_zone_layers = Array[int]([2])
+
 [node name="CameraManager" type="Node3D" parent="." unique_id=957882876]
 script = ExtResource("12_rwifv")
 

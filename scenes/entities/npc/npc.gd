@@ -16,14 +16,18 @@ class_name Npc
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
-@onready var generic_dialogue_timer: Timer = $"Generic Dialogue Timer"
 @onready var dialogue_renderer: Sprite3D = $DialogueRenderer
+@onready var gossiper_component: Node = $GossiperComponent
 
 # export vars
 @export var debug_mode: bool = true
 
+@export_group("Type")
 @export var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
+@export var gossiper_ID: int = 0
 @export var npc_allowed_zone_layers: Array[int] = []
+
+@export_group("Timer Control")
 	# vars controlling waiting periods
 @export var min_look_time_elapsed: float = 5.0
 @export var max_look_time_elapsed: float = 10.0
@@ -31,15 +35,24 @@ class_name Npc
 @export var max_wander_wait: float = 10.0
 
 signal npc_status_changed(new_status: Enums.NpcState)
+signal player_listening_call(gossiper_npc: Npc, listening_status: bool)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
+
 var current_state = Enums.NpcState.IDLE:
 	set(value):
 		if current_state != value:
 			current_state = value
 			npc_status_changed.emit(current_state)
+
+var player_listening = false:
+	set(value):
+		if player_listening != value:
+			player_listening = value
+			if npc_type == Enums.NpcType.GOSSIPER:
+				player_listening_call.emit(self, value)
 
 # constants
 const SPEED = 3.0
@@ -62,6 +75,9 @@ func _ready():
 	# mesh was shared between NPCs - this fixes it
 	# TODO: find a better fix
 	text_display.mesh = text_display.mesh.duplicate(true)
+	
+	if npc_type == Enums.NpcType.GOSSIPER:
+		gossiper_component.gossiping_active.connect(_set_gossiping)
 
 
 func _physics_process(delta: float) -> void:
@@ -180,6 +196,11 @@ func _generate_wander_wait():
 	# maybe add calculation off suspicion/attention?
 	return randf_range(min_wander_wait, max_wander_wait)
 
+func _set_gossiping(status: bool):
+	if status:
+		current_state = Enums.NpcState.GOSSIPING
+	else:
+		current_state = Enums.NpcState.IDLE
 
 # ---- SIGNAL FUNCTIONS ----
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
@@ -198,7 +219,21 @@ func _on_bangarang_range_body_exited(body: Node3D) -> void:
 		if has_active_target == true:
 			current_state = Enums.NpcState.MOVING
 
+func _on_attention_range_body_entered(body: Node3D) -> void:
+	if body.is_in_group("players"):
+		player_listening = true
 
+func _on_attention_range_body_exited(body: Node3D) -> void:
+	if body.is_in_group("players"):
+		var player_found: bool = false
+		var entities = attention_range.get_overlapping_bodies()
+		for entity in entities:
+			if entity.is_in_group("players"):
+				player_found = true
+				
+		if not player_found:
+			player_listening = false
+		
 # ---- TIMER FUNCTIONS ----
 func _on_look_timer_timeout() -> void:
 	# get new look position
