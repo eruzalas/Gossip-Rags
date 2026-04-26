@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 	
 #Change Debug UI to show sus level and state
 func _determine_sus():
-	sus = suspicion_system._calculate_sus_general(sus, steps)
+	sus = suspicion_system._calculate_sus_general(1, sus, steps)
 	state = suspicion_system._state_level(sus)
 	sus_debug.text = "Sus: " + str(sus) + " " + state
 	

@@ -49,11 +49,11 @@ func _determine_sus_level(which_player: int):
 	var player_sus: float
 	if(which_player == 1):
 		player_sus = P_1_sus_level
-		player_sus = suspicion_system._calculate_sus_general(player_sus, steps)
+		player_sus = suspicion_system._calculate_sus_general(1, player_sus, steps)
 		P_1_sus_level = player_sus
 	else:
 		player_sus = P_2_sus_level
-		player_sus = suspicion_system._calculate_sus_general(player_sus, steps)
+		player_sus = suspicion_system._calculate_sus_general(1, player_sus, steps)
 		P_2_sus_level = player_sus
 	
 # Maths to determine the attention level of the players

@@ -459,7 +459,6 @@ text = "[center][color=black][b]Resume[/b][/color][/center]"
 [node name="Suspicion System" type="Node" parent="." unique_id=616305401]
 unique_name_in_owner = true
 script = ExtResource("20_d0ajt")
-multi = 1.0
 
 [node name="Attention System" type="Node" parent="." unique_id=1550473888]
 unique_name_in_owner = true
