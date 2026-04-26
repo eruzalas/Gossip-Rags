@@ -11,9 +11,13 @@ var clock_start: bool = false
 var current_time: int
 @export var game_time: int
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	in_game_clock.one_shot = true
+	
+	#Listen for when the clock hits 0 then change scene
+	in_game_clock.timeout.connect(_on_timeout)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,8 +32,8 @@ func _process(delta: float) -> void:
 
 	_update_timer_label()
 		
-	#Listen for when the clock hits 0 then change scene
-	in_game_clock.timeout.connect(_on_timeout)
+	
+	
 
 func _update_timer_label():
 	current_time = in_game_clock.time_left

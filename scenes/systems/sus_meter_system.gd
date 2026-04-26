@@ -11,12 +11,16 @@ var sus_level: float = 0  #int or float?
 #Calculate suspicion precentage (accounts for costume multipliers and "steps" how long in sus)
 #TODO: Work on maths
 func _calculate_sus_general(multi: float, sus_precent: float, steps: float):
-	sus_level == sus_precent
+	sus_level = sus_precent
 	sus_level += (steps/2) * multi
 	return sus_level
 	
-func _sudden_sus_boost(sus_precent: float, action: float):
-	pass
+#Adds to the sus meter a static amount -- effected by costume
+#TODO: Sort out maths
+func _sudden_sus_boost(multi: float, sus_precent: float, action: float):
+	sus_level = sus_precent
+	sus_level += action * multi
+	return sus_level
 
 #Calculate current state level and updates state variable
 func _state_level(sus_precent: float):
@@ -35,3 +39,11 @@ func _state_level(sus_precent: float):
 		print("state: " + state)
 		
 	return state
+	
+#Decay for suspicion
+#TODO: Sort out maths
+func _sus_decay(sus_precent: float):
+	sus_level = sus_precent
+	if(sus_level > 0):
+		sus_level -= 1
+	return sus_level

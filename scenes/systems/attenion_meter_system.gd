@@ -33,7 +33,8 @@ func _state_level(att_precent: float):
 func _natural_att_decay(att_precent: float):
 	att_level = att_precent
 	#TODO more proper math should be included here following amount of time past since last attention action
-	att_level -= 1
+	if(att_level > 0):
+		att_level -= 1
 	return att_level
 	
 #Set attention level--used for specific
