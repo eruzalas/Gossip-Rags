@@ -1,0 +1,40 @@
+{
+	"0": [
+		{
+			"id": "0001",
+			"gossip": "Did you hear that % went to % and did %.",
+			"bubble_icon": "normal.png",
+			"image_insertions": [
+				"image.png", "image2.png", "image3.png"
+			],
+			"audio_file": "whispering_audio_001.mp4",
+			"internal_timer": 100,
+			"require_npc_id": "",
+			"next_id": ""
+		}
+	],
+	"1": [
+		{
+			"id": "0002",
+			"gossip": "OMG did you hear...",
+			"bubble_icon": "normal.png",
+			"image_insertions": [],
+			"audio_file": "whispering_audio_001.mp4",
+			"internal_timer": 100,
+			"require_npc_id": "",
+			"next_id": ""
+		}
+	],
+	"2": [
+		{
+			"id": "0003",
+			"gossip": "What happened??",
+			"bubble_icon": "normal.png",
+			"image_insertions": [],
+			"audio_file": "whispering_audio_001.mp4",
+			"internal_timer": 100,
+			"require_npc_id": "1",
+			"next_id": "0004"
+		}
+	]
+}

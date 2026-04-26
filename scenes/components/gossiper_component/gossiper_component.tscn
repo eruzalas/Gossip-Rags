@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://vr7io76ls44b"]
+
+[ext_resource type="Script" uid="uid://5d0y483caok4" path="res://scenes/components/gossiper_component/gossiper_component.gd" id="1_fmgqu"]
+
+[node name="GossiperComponent" type="Node" unique_id=203323628]
+script = ExtResource("1_fmgqu")
+
+[node name="Internal Activation Timer" type="Timer" parent="." unique_id=1105449882]
+
+[node name="Gossip Collection Timer" type="Timer" parent="." unique_id=1027429484]
+
+[connection signal="timeout" from="Internal Activation Timer" to="." method="_on_internal_activation_timer_timeout"]
+[connection signal="timeout" from="Gossip Collection Timer" to="." method="_on_gossip_collection_timer_timeout"]

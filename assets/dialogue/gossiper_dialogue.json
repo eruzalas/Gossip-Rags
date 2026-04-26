@@ -1,0 +1,99 @@
+{
+	"1": {
+		"trigger_time": 5,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ 24, 1, -9 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "I saw Sarah’s dad, [b]Jared[/b], at the [b]shops[/b] the other day…",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ 24, 1, -9 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Oh, really? What was he doing?",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ 35, 1, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "I caught him [b]buying a pregnancy test[b] as well as [b]chocolates and flowers[/b].",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ 35, 1, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Ohhh? Do you this Sarah might be getting a sib?",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ 27, 1, 1 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Maybe~ Just what I saw…",
+				"audio_file": "",
+			}
+		],
+	},
+	"2": {
+		"trigger_time": 40,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "gossiper_2",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Did you hear...",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "gossiper_1",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "omg yeah I cannot believe I heard that about Peaches",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "gossiper_2",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "What the fuck?",
+				"audio_file": "",
+			}
+		],
+	},
+	"3": {
+		"trigger_time": 60,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "gossiper_1",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Did you hear...",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "gossiper_2",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "omg yeah I cannot believe I heard that about Peaches",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "gossiper_1",
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "What the fuck?",
+				"audio_file": "",
+			}
+		]
+	}
+}
