@@ -4,12 +4,29 @@ class_name SpatialAudio extends AudioStreamPlayer3D
 @export_range(1, 20_000, 0.1, "suffix:Hz") var muffle_lp_cutoff: int = 600 
 @export_range(0, 5, 0.05, "or_greater", "suffix:s") var muffle_fadetime: float = 0.5 
 @export_range(0, 100, 0.1, "or_greater", "suffix:m") var bass_proximity: int = 50 
+@export_range(1, 100, 1, "or_greater", "suffix:m") var max_raycast_distance: int = 100
 @export_flags_3d_physics var collision_mask: int = 1
 
 @export_category("System")
 @export var loop: bool = false 
 @export var stop: bool = false 
 @export var debug: bool = false 
+
+@onready var player_character: CharacterBody3D 
+@onready var raycasts_coords: Array = [
+	Vector3(0, 0, max_raycast_distance),						# N
+	Vector3(max_raycast_distance, 0, max_raycast_distance),		# NW
+	Vector3(max_raycast_distance, 0, 0),						# W
+	Vector3(max_raycast_distance, 0, -max_raycast_distance),	# SW
+	Vector3(0, 0, -max_raycast_distance),						# S
+	Vector3(-max_raycast_distance, 0, -max_raycast_distance),	# SE
+	Vector3(-max_raycast_distance, 0, 0),						# E
+	Vector3(-max_raycast_distance, 0, max_raycast_distance),	# NE
+	Vector3(0, max_raycast_distance, 0),						# U
+#	Vector3(0, max_raycast_distance, max_raycast_distance),		# U 45°
+#	Vector3(0, -max_raycast_distance, 0),						# D
+]
+
 
 var soundsource: Soundsource
 
@@ -44,6 +61,15 @@ func raycast(name, position) -> RayCast3D:
 	r.collision_mask = collision_mask
 	r.enabled = false
 	return r
+
+func SFX_play():
+	soundsource.SFX_play()
+
+func SFX_stop():
+	soundsource.SFX_stop()
+
+func SFX_stream(sound: AudioStream):
+	soundsource.SFX_stream(sound)
 
 class Soundsource extends SpatialAudio: 
 	
