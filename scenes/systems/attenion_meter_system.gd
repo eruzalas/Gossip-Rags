@@ -35,3 +35,6 @@ func _natural_att_decay(att_precent: float):
 	#TODO more proper math should be included here following amount of time past since last attention action
 	att_level -= 1
 	return att_level
+	
+#Set attention level--used for specific
+#TODO: detemine if this method is needed

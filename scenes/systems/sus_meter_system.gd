@@ -14,6 +14,9 @@ func _calculate_sus_general(multi: float, sus_precent: float, steps: float):
 	sus_level == sus_precent
 	sus_level += (steps/2) * multi
 	return sus_level
+	
+func _sudden_sus_boost(sus_precent: float, action: float):
+	pass
 
 #Calculate current state level and updates state variable
 func _state_level(sus_precent: float):
