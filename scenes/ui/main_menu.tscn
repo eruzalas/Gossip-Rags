@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="1_sl1te"]
 [ext_resource type="Script" uid="uid://dte43hd0ciqmu" path="res://scenes/ui/main_menu.gd" id="1_uhagc"]
-[ext_resource type="Texture2D" uid="uid://bimvgmsyvupso" path="res://assets/testsprites/player_AM/test_sprite.png" id="2_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://dj60ws67olcx7" path="res://assets/ui/Button_unlocked_placeholder.png" id="3_m1kxf"]
 [ext_resource type="Texture2D" uid="uid://c8orsmbuidgtn" path="res://assets/images/icon.svg" id="3_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://b8hkubt2803s2" path="res://assets/images/png version OTHER PLAYER.png" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="4_x2yvf"]
 
 [node name="Main Menu" type="Control" unique_id=565250105]
@@ -77,7 +77,7 @@ offset_left = -0.5600586
 offset_top = -35.224
 offset_right = -0.024047852
 offset_bottom = -35.320007
-texture = ExtResource("2_fe2o3")
+texture = ExtResource("4_uhagc")
 
 [node name="Player 2 Ready Text" type="RichTextLabel" parent="Player 2 Image" unique_id=221755218]
 layout_mode = 1
