@@ -30,7 +30,6 @@
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
-[ext_resource type="Script" uid="uid://cosqrersv4kf7" path="res://scenes/world/game_state_manager.gd" id="27_ckok1"]
 [ext_resource type="Script" uid="uid://btvd7wcct4jlg" path="res://scenes/world/portal.gd" id="27_ckok1"]
 [ext_resource type="Resource" uid="uid://c5x2ucmp02m2w" path="res://scenes/components/inventory/Costumes/test_pirate.tres" id="28_2x71e"]
 [ext_resource type="Resource" uid="uid://csm7r8galo5mp" path="res://scenes/components/inventory/Costumes/test_cat.tres" id="29_wnndm"]
