@@ -1,9 +1,13 @@
+class_name Player
+
 extends CharacterBody3D
 @onready var timer: Timer = $Timer
 @onready var temp_text_display_status: MeshInstance3D = $"Temp Text Display Status"
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 10
+
+var is_detected: bool = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -28,11 +32,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
-func _on_detected(args):
-	var is_detected = args[0]
-	var player_detected = args[1]
-	# TODO: chuck code to handle multiple players - "player_detected" is unused currently
+func _on_detected():
 	if is_detected:
 		timer.start(5)
 	else:

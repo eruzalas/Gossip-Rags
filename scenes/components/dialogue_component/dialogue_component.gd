@@ -1,50 +1,105 @@
 extends Node
+@onready var dialogue_renderer: Sprite3D = $"../.."
+@onready var dialogue_timer: Timer = $"../DialogueTimer"
 
-@onready var npc: CharacterBody3D = $".."
-@onready var dialogue_timer: Timer = $DialogueTimer
-@onready var text_bubble_frame: NinePatchRect = $TextBubbleFrame
-@onready var text_margin: MarginContainer = $TextBubbleFrame/TextMargin
-@onready var dialogue_text: RichTextLabel = $TextBubbleFrame/TextMargin/DialogueText
-
-# dialogue_file = path to file - set to the generic NPC rand dialogue as default
-@export var dialogue_file: String = "res://assets/dialogue/npc_rand_dialogue.json"
-# handles_gossip = whether this component should return progression gossip or generic NPC dialogue
-@export var handles_gossip: bool = false
 # debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
 @export var debug_mode: bool = true
 
-# HARDCODED STATUS - THIS SHOULD INTERFACE WITH PLAYER/NPC STATE
-var status = "idle"
+const MIN_WAIT: float = 1.0
+const MAX_WAIT: float = 10.0
+
+var status: Enums.NpcState = Enums.NpcState.IDLE
+var previous_status: Enums.NpcState
 
 var current_dialogue
-var dialogue_timeout = 5
+var dialogue_timeout = 1
 var max_width_dialogue_box = 400
+var bubble
+var can_speak_randomly: bool = true
+
+var dialogue_bubble_prefab = preload("res://scenes/components/dialogue_component/dialogue_bubble.tscn")
 
 func _ready() -> void:
 	randomize()
 	
-	dialogue_timer.start(dialogue_timeout)
+	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
 		
 	if debug_mode:
+		#dialogue_timer.start(dialogue_timeout)
 		print("DEBUG MODE ACTIVE")
+		
+	
+	#dialogue_timer.start(randf_range(min_dialogue_wait, max_dialogue_wait))
 
+
+func _set_status(new_status: Enums.NpcState) -> void:
+	status = new_status
+	
+	if status != Enums.NpcState.GOSSIPING:
+		if status == Enums.NpcState.WATCHING:
+			dialogue_timer.start(0.1)
+			# TODO: fix this popup bullshit
+		else:
+			dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+		
 
 func _process(delta: float) -> void:
 	pass
 
-func _update_dialogue_text_box(dialogue_dict:Dictionary) -> void:
-	dialogue_text.text = current_dialogue["dialogue"]
-	text_bubble_frame.size.x = dialogue_text.get_content_width()
+func _set_gossiping(status: bool) -> void:
+	can_speak_randomly = !status
+	if can_speak_randomly:
+		dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+	else:
+		dialogue_timer.stop()
+
+func _display_gossip(gossip: Dictionary):
+	_add_bubble(gossip)
+
+func _remove_bubble(child):
+	child.queue_free()
+	_update_bubble_positions()
+
+func _add_bubble(dialogue: Dictionary) -> void:
+	var bubble = dialogue_bubble_prefab.instantiate()
+	#bubble.base_transparency_speed = dialogue_renderer.base_transparency_speed
+	
+	add_child(bubble)
+	bubble._set_text(dialogue["dialogue"])
+	bubble._set_texture(dialogue["bubble_icon"])
+	# this will need to be changed depending on if dialogue is active due to player staring?
+	# TODO: REVIEW THIS
+	if can_speak_randomly:
+		bubble.can_disappear = true
+	# make component listen to the child transparency calls
+	bubble.is_transparent.connect(_remove_bubble)
+	# set initial position
+	_update_bubble_positions()
+
+func _update_bubble_positions() -> void:
+	var children = get_children()
+	if children.size() > 1:
+		var index = 0
+		for child in children:
+			child._update_off_index((children.size() - 1) - index)
+			index += 1
+	else:
+		children[0]._update_off_index()
 
 
 func _on_dialogue_timer_timeout() -> void:
+	if previous_status != null && status == previous_status:
+		_get_and_display_dialogue()
+	previous_status = status
+	
+func _get_and_display_dialogue() -> void:
 	# if not initialised - get random dialogue
 	if current_dialogue == null:
 		current_dialogue = DialogueProcessor._get_random_npc_dialogue(status)
 		
 	# if initialised, but next_id is not "" - get next dialogue
 	elif current_dialogue["next_id"] != "":
-		current_dialogue = DialogueProcessor._get_next_dialogue(status, current_dialogue["next_id"])
+		current_dialogue = DialogueProcessor._get_next_dialogue(current_dialogue["next_id"])
 		
 	# else (aka is initialised and does not have a next_id) - get random dialogue
 	else:
@@ -53,6 +108,7 @@ func _on_dialogue_timer_timeout() -> void:
 	if debug_mode:
 		print(current_dialogue["dialogue"])
 	
-	_update_dialogue_text_box(current_dialogue)
+	_add_bubble(current_dialogue)
 	
-	dialogue_timer.start(dialogue_timeout)
+	if debug_mode:
+		dialogue_timer.start(dialogue_timeout)

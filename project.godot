@@ -19,6 +19,7 @@ config/icon="res://assets/images/icon.svg"
 
 DialogueProcessor="*uid://citna3265758u"
 ResourcePaths="*uid://v6c1o1bt0cig"
+SignalBus="*uid://sbfspjroykx2"
 
 [display]
 
