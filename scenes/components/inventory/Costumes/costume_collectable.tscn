@@ -10,6 +10,7 @@ radius = 0.9
 script = ExtResource("1_xv1bf")
 
 [node name="placeholder_sprite" type="Sprite3D" parent="." unique_id=1490945758]
+pixel_size = 0.0078125
 texture = ExtResource("2_wbokh")
 
 [node name="costume_sprite" type="Sprite3D" parent="." unique_id=255336274]

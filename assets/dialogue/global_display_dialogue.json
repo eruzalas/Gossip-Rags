@@ -1,38 +1,38 @@
 {
-    "player_enters_zone": [
-        {
-            "notifs": [
-                {
-                    "style": "warning",
-                    "dialogue": "The guests may recognise the costume you are wearing. Look for a different costume.",
-                    "attention_threshold": 0,
-                    "suspicion_threshold": 3
-                },
-                {
-                    "style": "warning",
-                    "dialogue": "High level of attention on you in this area, be cautious.",
-                    "attention_threshold": 7,
-                    "suspicion_threshold": 0
-                },
-                {
-                    "style": "alert",
-                    "dialogue": "The guests are very suspicious of you.",
-                    "attention_threshold": 0,
-                    "suspicion_threshold": 8
-                }
-            ]
-        }
-    ],
-    "player_wears_costume": [
-        {
-            "notifs": [
-                {
-                    "style": "warning",
-                    "dialogue": "The guests will recognise this costume.",
-                    "attention_threshold": 0,
-                    "suspicion_threshold": 3
-                }
-            ]
-        }
-    ]
+	"player_enters_zone": [
+		{
+			"notifs": [
+				{
+					"style": "warning",
+					"dialogue": "The guests may recognise the costume you are wearing. Look for a different costume.",
+					"attention_threshold": 0,
+					"suspicion_threshold": 3
+				},
+				{
+					"style": "warning",
+					"dialogue": "High level of attention on you in this area, be cautious.",
+					"attention_threshold": 7,
+					"suspicion_threshold": 0
+				},
+				{
+					"style": "alert",
+					"dialogue": "The guests are very suspicious of you.",
+					"attention_threshold": 0,
+					"suspicion_threshold": 8
+				}
+			]
+		}
+	],
+	"player_wears_costume": [
+		{
+			"notifs": [
+				{
+					"style": "warning",
+					"dialogue": "The guests will recognise this costume.",
+					"attention_threshold": 0,
+					"suspicion_threshold": 3
+				}
+			]
+		}
+	]
 }

@@ -11,6 +11,7 @@ texture_margin_right = 25.0
 texture_margin_bottom = 10.0
 
 [node name="DialogueBubble" type="PanelContainer" unique_id=1158154028]
+texture_filter = 1
 custom_minimum_size = Vector2(100, 20)
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,6 +27,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7nr3g")
 script = ExtResource("2_7nr3g")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1901713756]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16

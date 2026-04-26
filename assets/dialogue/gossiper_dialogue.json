@@ -5,7 +5,7 @@
 			{
 				"part": 1,
 				"origin": "1",
-				"path_position" : [ 24, 1, -9 ],
+				"path_position" : [ -11, 1.5, -23 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "I saw Sarah’s dad, [b]Jared[/b], at the [b]shops[/b] the other day…",
 				"audio_file": "",
@@ -13,7 +13,7 @@
 			{
 				"part": 2,
 				"origin": "2",
-				"path_position" : [ 24, 1, -9 ],
+				"path_position" : [ -11, 1.5, -23 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "Oh, really? What was he doing?",
 				"audio_file": "",
@@ -21,7 +21,7 @@
 			{
 				"part": 3,
 				"origin": "1",
-				"path_position" : [ 35, 1, -5 ],
+				"path_position" : [ -9, 1.5, -32 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "I caught him [b]buying a pregnancy test[b] as well as [b]chocolates and flowers[/b].",
 				"audio_file": "",
@@ -29,7 +29,7 @@
 			{
 				"part": 4,
 				"origin": "2",
-				"path_position" : [ 35, 1, -5 ],
+				"path_position" : [ -9, 1.5, -32 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "Ohhh? Do you this Sarah might be getting a sib?",
 				"audio_file": "",
@@ -37,7 +37,7 @@
 			{
 				"part": 5,
 				"origin": "1",
-				"path_position" : [ 27, 1, 1 ],
+				"path_position" : [ 8, 1.5, -30 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "Maybe~ Just what I saw…",
 				"audio_file": "",
