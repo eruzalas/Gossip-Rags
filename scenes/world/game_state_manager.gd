@@ -11,6 +11,8 @@ var p_1_att_state: String = ""
 var p_1_sus_state: String = ""
 var p_1_att_level: float = 0
 var p_1_sus_level: float = 0
+#may change variables later depending if I can yoink them easily from player
+var p1_costume_sus_level: float = 1
 var p1_costume_sus_mult: float = 1
 var p1_costume_att_mult: float = 1
 
@@ -20,6 +22,10 @@ var p_2_att_state: String = ""
 var p_2_sus_state: String = ""
 var p_2_att_level: float = 0
 var p_2_sus_level: float = 0
+#may change variables later depending if I can yoink them easily from player
+var p2_costume_sus_level: float = 1
+var p2_costume_sus_mult: float = 1
+var p2_costume_att_mult: float = 1
 
 #Global variables
 var steps: int = 0 #increases by 1 each second the player is in the gossip zone - returns to 0 once no longer collecting suspicion
