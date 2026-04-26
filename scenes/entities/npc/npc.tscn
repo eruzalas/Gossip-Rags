@@ -18,10 +18,10 @@ text = "!!!!!"
 font_size = 50
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p5uw1"]
-radius = 1.5
+radius = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
-radius = 4.0
+radius = 5.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_67e1k"]
 viewport_path = NodePath("SubViewport")

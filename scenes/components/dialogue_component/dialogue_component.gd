@@ -25,7 +25,7 @@ func _ready() -> void:
 	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
 		
 	if debug_mode:
-		dialogue_timer.start(dialogue_timeout)
+		#dialogue_timer.start(dialogue_timeout)
 		print("DEBUG MODE ACTIVE")
 		
 	
@@ -35,11 +35,12 @@ func _ready() -> void:
 func _set_status(new_status: Enums.NpcState) -> void:
 	status = new_status
 	
-	if status == Enums.NpcState.WATCHING:
-		dialogue_timer.start(0.1)
-		# TODO: fix this popup bullshit
-	else:
-		dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+	if status != Enums.NpcState.GOSSIPING:
+		if status == Enums.NpcState.WATCHING:
+			dialogue_timer.start(0.1)
+			# TODO: fix this popup bullshit
+		else:
+			dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
 		
 
 func _process(delta: float) -> void:

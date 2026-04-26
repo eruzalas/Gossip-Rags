@@ -35,7 +35,6 @@ class_name Npc
 @export var max_wander_wait: float = 10.0
 
 signal npc_status_changed(new_status: Enums.NpcState)
-signal player_listening_call(gossiper_npc: Npc, listening_status: bool)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
@@ -52,7 +51,8 @@ var player_listening = false:
 		if player_listening != value:
 			player_listening = value
 			if npc_type == Enums.NpcType.GOSSIPER:
-				player_listening_call.emit(self, value)
+				SignalBus.player_listening_call.emit(self, value)
+				gossiper_component._collect_gossip(self, value)
 
 # constants
 const SPEED = 3.0
@@ -78,6 +78,7 @@ func _ready():
 	
 	if npc_type == Enums.NpcType.GOSSIPER:
 		gossiper_component.gossiping_active.connect(_set_gossiping)
+		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
 
 
 func _physics_process(delta: float) -> void:
@@ -91,14 +92,15 @@ func _physics_process(delta: float) -> void:
 		text_display.mesh.text = Enums.NpcState.find_key(current_state)
 	
 	# check if active target
-	if current_state == Enums.NpcState.MOVING:
+	if current_state == Enums.NpcState.MOVING || (current_state == Enums.NpcState.GOSSIPING && has_active_target):
 		# dont query when the map has never synchronized and is empty
 		if NavigationServer3D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
 			return
 			
 		# if finished navigation, return to IDLE state
 		if nav_agent.is_navigation_finished():
-			current_state = Enums.NpcState.IDLE
+			if current_state == Enums.NpcState.MOVING:
+				current_state = Enums.NpcState.IDLE
 			has_active_target = false
 			return
 		
@@ -119,6 +121,12 @@ func _physics_process(delta: float) -> void:
 		_look_at_position(target_look_position, delta)
 		
 
+func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
+	var extracted_pos = gossip["path_position"]
+	var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
+	_set_movement_target(gossip_location)
+	has_active_target = true
+
 # runtime set self (used when npc_type == "group" given they are dynamically generated)
 func _set_npc_type(type: Enums.NpcType) -> void:
 	npc_type = type
@@ -127,7 +135,7 @@ func _set_npc_type(type: Enums.NpcType) -> void:
 # set desired target
 func _set_movement_target(movement_target: Vector3):
 	nav_agent.set_target_position(movement_target)
-
+	
 # if NPC requested to move (either by origin or called in wander timeout) get new target position
 func _get_new_target_position():
 	if Enums.NpcType.keys()[npc_type] == "GROUP":
@@ -204,35 +212,44 @@ func _set_gossiping(status: bool):
 
 # ---- SIGNAL FUNCTIONS ----
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
-	if current_state == Enums.NpcState.MOVING:
+	if current_state == Enums.NpcState.MOVING || current_state == Enums.NpcState.GOSSIPING:
 		velocity = safe_velocity
 		move_and_slide()
 		
-		
 func _on_bangarang_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = Enums.NpcState.WATCHING
+		if current_state != Enums.NpcState.GOSSIPING:
+			current_state = Enums.NpcState.WATCHING
+			# TODO INTERRUPT SEQUENCE HERE?
+			# SPIKE ATTENTION BUT RESTART SEQUENCE?
 
 func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = Enums.NpcState.IDLE
-		if has_active_target == true:
-			current_state = Enums.NpcState.MOVING
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			pass
+			# TODO INTERRUPT SEQUENCE HERE?
+			# SPIKE ATTENTION BUT RESTART SEQUENCE?
+		else:
+			current_state = Enums.NpcState.IDLE
+			if has_active_target == true:
+				current_state = Enums.NpcState.MOVING
 
 func _on_attention_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		player_listening = true
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			player_listening = true
 
 func _on_attention_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		var player_found: bool = false
-		var entities = attention_range.get_overlapping_bodies()
-		for entity in entities:
-			if entity.is_in_group("players"):
-				player_found = true
-				
-		if not player_found:
-			player_listening = false
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			var player_found: bool = false
+			var entities = attention_range.get_overlapping_bodies()
+			for entity in entities:
+				if entity.is_in_group("players"):
+					player_found = true
+					
+			if not player_found:
+				player_listening = false
 		
 # ---- TIMER FUNCTIONS ----
 func _on_look_timer_timeout() -> void:

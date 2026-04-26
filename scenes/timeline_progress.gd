@@ -16,6 +16,7 @@ var bar_a_num: int  # may need to be changed later for this to be a variable rec
 
 # When the game begins set all the progress bars values to 0
 func _ready() -> void:
+	SignalBus.incremented_timeline.connect(_update_progress_bar)
 	print("Number in tea array " + str(tea_bar_array.size()))
 	for tea in tea_bar_array:
 		tea.value == tea.min_value
@@ -26,8 +27,8 @@ func _process(delta: float) -> void:
 	
 	#Debugging/Testing code 
 	if Input.is_key_pressed(KEY_1): # 1 on keyboard
-		bar_a_num = 0
-		_update_progress_bar()
+		_update_progress_bar(0)
+		
 	if Input.is_key_pressed(KEY_2): # 2 on keyboard
 		bar_a_num = 1
 		_update_progress_bar()
@@ -53,9 +54,9 @@ func _process(delta: float) -> void:
 		_reset_prog_bars()
 	
 # Use bar_a_num variable to grab the correct node from the array and then add 1 to the value
-func _update_progress_bar():
-	var tea = tea_bar_array[bar_a_num]
-	tea.value += 1
+func _update_progress_bar(bar_number: int = 0, increment_value: float = 1):
+	var tea = tea_bar_array[bar_number]
+	tea.value += increment_value
 
 # Reset all the bars to 0 FOR DEBUG PURPOSES CURRENTLY
 func _reset_prog_bars():

@@ -7,4 +7,7 @@ script = ExtResource("1_fmgqu")
 
 [node name="Internal Activation Timer" type="Timer" parent="." unique_id=1105449882]
 
+[node name="Gossip Collection Timer" type="Timer" parent="." unique_id=1027429484]
+
 [connection signal="timeout" from="Internal Activation Timer" to="." method="_on_internal_activation_timer_timeout"]
+[connection signal="timeout" from="Gossip Collection Timer" to="." method="_on_gossip_collection_timer_timeout"]
