@@ -87,10 +87,10 @@ anchor_left = 0.052
 anchor_top = 0.056
 anchor_right = 0.45600003
 anchor_bottom = 0.83400005
-offset_left = 269.096
-offset_top = 288.712
-offset_right = -68.31201
-offset_bottom = -78.43201
+offset_left = 279.096
+offset_top = 258.712
+offset_right = -58.31201
+offset_bottom = -108.43201
 texture = ExtResource("5_m0tqb")
 expand_mode = 1
 
