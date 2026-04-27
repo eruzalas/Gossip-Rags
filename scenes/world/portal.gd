@@ -1,4 +1,4 @@
-extends Area3D
+extends Node
 
 @export var connect_portal: Marker3D
 

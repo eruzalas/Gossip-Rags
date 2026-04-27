@@ -16,28 +16,43 @@ class_name Npc
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
+@onready var dialogue_renderer: Sprite3D = $DialogueRenderer
+@onready var gossiper_component: Node = $GossiperComponent
 
 # export vars
 @export var debug_mode: bool = true
-@export var npc_type: String = "stationary"
+
+@export_group("Type")
+@export var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
+@export var gossiper_ID: int = 0
 @export var npc_allowed_zone_layers: Array[int] = []
+
+@export_group("Timer Control")
 	# vars controlling waiting periods
 @export var min_look_time_elapsed: float = 5.0
 @export var max_look_time_elapsed: float = 10.0
 @export var min_wander_wait: float = 5.0
 @export var max_wander_wait: float = 10.0
 
-# FSM DECLARATION
-enum NpcType {
-	IDLE,
-	WATCHING,
-	MOVING,
-}
+signal npc_status_changed(new_status: Enums.NpcState)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
-var current_state = NpcType.IDLE
+
+var current_state = Enums.NpcState.IDLE:
+	set(value):
+		if current_state != value:
+			current_state = value
+			npc_status_changed.emit(current_state)
+
+var player_listening = false:
+	set(value):
+		if player_listening != value:
+			player_listening = value
+			if npc_type == Enums.NpcType.GOSSIPER:
+				SignalBus.player_listening_call.emit(self, value)
+				gossiper_component._collect_gossip(self, value)
 
 # constants
 const SPEED = 3.0
@@ -53,13 +68,17 @@ func _ready():
 	add_to_group("npcs")
 	
 	# change self based off type
-	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
-	if npc_type.contains("wander"):
+	sprite.texture = load(ResourcePaths.npc_icon_path + Enums.NpcType.keys()[npc_type] + ".png")
+	if npc_type == Enums.NpcType.WANDER_ALL || npc_type == Enums.NpcType.WANDER_ZONE:
 		wander_timer.start(_generate_wander_wait())
 	
 	# mesh was shared between NPCs - this fixes it
 	# TODO: find a better fix
 	text_display.mesh = text_display.mesh.duplicate(true)
+	
+	if npc_type == Enums.NpcType.GOSSIPER:
+		gossiper_component.gossiping_active.connect(_set_gossiping)
+		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
 
 
 func _physics_process(delta: float) -> void:
@@ -70,17 +89,18 @@ func _physics_process(delta: float) -> void:
 	
 	if debug_mode:
 		# set mesh to what the state of the NPC is
-		text_display.mesh.text = NpcType.find_key(current_state)
+		text_display.mesh.text = Enums.NpcState.find_key(current_state)
 	
 	# check if active target
-	if current_state == NpcType.MOVING:
+	if current_state == Enums.NpcState.MOVING || (current_state == Enums.NpcState.GOSSIPING && has_active_target):
 		# dont query when the map has never synchronized and is empty
 		if NavigationServer3D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
 			return
 			
 		# if finished navigation, return to IDLE state
 		if nav_agent.is_navigation_finished():
-			current_state = NpcType.IDLE
+			if current_state == Enums.NpcState.MOVING:
+				current_state = Enums.NpcState.IDLE
 			has_active_target = false
 			return
 		
@@ -94,33 +114,38 @@ func _physics_process(delta: float) -> void:
 		# look at direction
 		_look_at_position(next_pos, delta)
 		
-	elif current_state == NpcType.WATCHING:
+	elif current_state == Enums.NpcState.WATCHING:
 		_look_at_position(player.global_transform.origin, delta)
 		
-	elif current_state == NpcType.IDLE:
+	elif current_state == Enums.NpcState.IDLE:
 		_look_at_position(target_look_position, delta)
 		
 
+func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
+	var extracted_pos = gossip["path_position"]
+	var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
+	_set_movement_target(gossip_location)
+	has_active_target = true
 
 # runtime set self (used when npc_type == "group" given they are dynamically generated)
-func _set_npc_type(type:String) -> void:
+func _set_npc_type(type: Enums.NpcType) -> void:
 	npc_type = type
-	sprite.texture = load(ResourcePaths.npc_icon_path + npc_type + ".png")
+	sprite.texture = load(ResourcePaths.npc_icon_path + Enums.NpcType.keys()[npc_type] + ".png")
 
 # set desired target
 func _set_movement_target(movement_target: Vector3):
 	nav_agent.set_target_position(movement_target)
-
+	
 # if NPC requested to move (either by origin or called in wander timeout) get new target position
 func _get_new_target_position():
-	if npc_type == "group":
+	if Enums.NpcType.keys()[npc_type] == "GROUP":
 		# get position by calling parent
 		_set_movement_target(get_parent()._get_random_position_in_annulus(true))
 	# most of the processing is same across both wander_all and wander_zone, so I've merged them
-	elif npc_type.contains("wander"):
+	elif Enums.NpcType.keys()[npc_type].contains("WANDER"):
 		var world = get_world_3d().navigation_map
 		var nav_layer = 1
-		if npc_type == "wander_zone":
+		if Enums.NpcType.keys()[npc_type] == "WANDER_ZONE":
 			# note: when setting nav layers for wandering, the layer number is equiv to 2^(layer index FROM ZERO)
 				# adding multiple layers involve taking the original calculated layer and ADDING THEM TOGETHER
 				# ie. nav layer for layer 1 = 2^0 => 1
@@ -137,7 +162,7 @@ func _get_new_target_position():
 		var random_location = NavigationServer3D.map_get_random_point(world, nav_layer, true)
 		_set_movement_target(random_location)
 	# tell npc to start moving next frame
-	current_state = NpcType.MOVING
+	current_state = Enums.NpcState.MOVING
 	has_active_target = true
 
 func _flatten_look_y(target_position):
@@ -156,6 +181,7 @@ func _get_random_entity_pos_in_area():
 	if entity_position == Vector3.ZERO:
 		entity_position = get_parent().global_transform.origin
 	return entity_position
+	
 
 # source: https://forum.godotengine.org/t/slowly-interpolate-look-at-function-for-my-enemy/100750
 func _look_at_position(target_position: Vector3, delta: float, turn_speed: float = TURN_SPEED) -> void:
@@ -178,25 +204,53 @@ func _generate_wander_wait():
 	# maybe add calculation off suspicion/attention?
 	return randf_range(min_wander_wait, max_wander_wait)
 
+func _set_gossiping(status: bool):
+	if status:
+		current_state = Enums.NpcState.GOSSIPING
+	else:
+		current_state = Enums.NpcState.IDLE
 
 # ---- SIGNAL FUNCTIONS ----
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
-	if current_state == NpcType.MOVING:
+	if current_state == Enums.NpcState.MOVING || current_state == Enums.NpcState.GOSSIPING:
 		velocity = safe_velocity
 		move_and_slide()
 		
-		
 func _on_bangarang_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = NpcType.WATCHING
+		if current_state != Enums.NpcState.GOSSIPING:
+			current_state = Enums.NpcState.WATCHING
+			# TODO INTERRUPT SEQUENCE HERE?
+			# SPIKE ATTENTION BUT RESTART SEQUENCE?
 
 func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
-		current_state = NpcType.IDLE
-		if has_active_target == true:
-			current_state = NpcType.MOVING
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			pass
+			# TODO INTERRUPT SEQUENCE HERE?
+			# SPIKE ATTENTION BUT RESTART SEQUENCE?
+		else:
+			current_state = Enums.NpcState.IDLE
+			if has_active_target == true:
+				current_state = Enums.NpcState.MOVING
 
+func _on_attention_range_body_entered(body: Node3D) -> void:
+	if body.is_in_group("players"):
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			player_listening = true
 
+func _on_attention_range_body_exited(body: Node3D) -> void:
+	if body.is_in_group("players"):
+		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
+			var player_found: bool = false
+			var entities = attention_range.get_overlapping_bodies()
+			for entity in entities:
+				if entity.is_in_group("players"):
+					player_found = true
+					
+			if not player_found:
+				player_listening = false
+		
 # ---- TIMER FUNCTIONS ----
 func _on_look_timer_timeout() -> void:
 	# get new look position
@@ -209,4 +263,3 @@ func _on_wander_timer_timeout() -> void:
 	_get_new_target_position()
 	# begin timer
 	wander_timer.start(_generate_wander_wait())
-	

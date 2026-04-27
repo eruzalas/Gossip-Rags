@@ -27,6 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="19_5o5dd"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attenion_meter_system.gd" id="21_fymcc"]
+[ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
+[ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
+[ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
 [ext_resource type="Script" uid="uid://btvd7wcct4jlg" path="res://scenes/world/portal.gd" id="27_ckok1"]
 [ext_resource type="Resource" uid="uid://c5x2ucmp02m2w" path="res://scenes/components/inventory/Costumes/test_pirate.tres" id="28_2x71e"]
 [ext_resource type="Resource" uid="uid://csm7r8galo5mp" path="res://scenes/components/inventory/Costumes/test_cat.tres" id="29_wnndm"]
@@ -683,11 +686,11 @@ font_size = 40
 script = ExtResource("1_bq33v")
 
 [node name="item_collectable" parent="." unique_id=1933756928 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68702364, -9.154972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.642555, 1, -9.155)
 item = ExtResource("3_x0nq1")
 
 [node name="item_collectable2" parent="." unique_id=1836070800 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2888346, 0.68702364, -9.154972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.879, 1, -17.578)
 item = ExtResource("4_x0nq1")
 
 [node name="Player2" parent="." unique_id=586723739 instance=ExtResource("6_ckok1")]
@@ -707,7 +710,7 @@ script = ExtResource("2_j2gmx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
 
 [node name="Downstairs" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=435304370]
-transform = Transform3D(0.9982858, 0, 0, 0, 0.9982858, 0, 0, 0, 0.9982858, 0.057237864, 0.020216942, -31.027573)
+transform = Transform3D(0.9982858, 0, 0, 0, 0.9982858, 0, 0, 0, 0.9982858, 0.029777527, 9.536743e-07, -30.98516)
 navigation_mesh = SubResource("NavigationMesh_rwifv")
 
 [node name="LeftRamp" type="CSGPolygon3D" parent="Environment (NavMesh)/Downstairs" unique_id=708466330]
@@ -718,7 +721,7 @@ polygon = PackedVector2Array(0, 0, -0.05466652, 0.9630599, 0.4298973, 0.5024553,
 depth = 2.0
 
 [node name="LeftRamp2" type="CSGPolygon3D" parent="Environment (NavMesh)/Downstairs" unique_id=1418845186]
-transform = Transform3D(-4.3711363e-08, 0, -0.99999964, 0, 0.99999964, 0, 0.99999964, 0, -4.3711363e-08, -1.7593232, -0.46301106, 5.556986)
+transform = Transform3D(-4.371136e-08, 0, -0.9999996, 0, 0.9999996, 0, 0.9999996, 0, -4.371136e-08, -1.7593231, -0.46301103, 5.5569854)
 material_overlay = SubResource("StandardMaterial3D_jyr8v")
 use_collision = true
 polygon = PackedVector2Array(0, 0, -0.05466652, 0.9630599, 0.4298973, 0.5024553, 1, 0)
@@ -1515,6 +1518,7 @@ depth = 2.58
 [node name="Upstairs" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=1981887349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.33425, 43.00917, -77.352486)
 navigation_mesh = SubResource("NavigationMesh_ckok1")
+navigation_layers = 4096
 
 [node name="UpstairsFloor" type="CSGCombiner3D" parent="Environment (NavMesh)/Upstairs" unique_id=1440875160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.230024, -21)
@@ -1738,6 +1742,7 @@ depth = 2.58
 [node name="Basement" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=1910384335]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.72669, -43.48345, 79.68603)
 navigation_mesh = SubResource("NavigationMesh_2x71e")
+navigation_layers = 256
 
 [node name="DowntoBase3" type="CSGPolygon3D" parent="Environment (NavMesh)/Basement" unique_id=1368832850]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -42.666306, 5.385212, -61.722633)
@@ -2023,14 +2028,22 @@ shape = SubResource("BoxShape3D_2x71e")
 [node name="FrontHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=971976256]
 transform = Transform3D(1.873399, 0, 0, 0, 1, 0, 0, 0, 1, -4.7890077, 4.7463584, -10.47924)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment (NavMesh)" unique_id=336457830]
-transform = Transform3D(0.9998477, -0.005825733, 0.016451363, 0, 0.9426415, 0.33380687, -0.017452406, -0.33375603, 0.94249797, 0, 19.213358, -13.309075)
-light_color = Color(1, 0.32, 0.32, 1)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment (NavMesh)" unique_id=880974987]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 18, -43.909)
+light_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+light_energy = 0.2
+directional_shadow_mode = 0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment (NavMesh)" unique_id=108510824]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 1, 18, -6.867)
+light_energy = 0.2
+directional_shadow_mode = 0
 
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_k0juu")
 enabled = false
+navigation_layers = 0
 
 [node name="Main Room Layout" type="GridMap" parent="Main Room" unique_id=965549943]
 mesh_library = ExtResource("4_gb53w")
@@ -2044,7 +2057,7 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_qfnet")
 enabled = false
-navigation_layers = 3
+navigation_layers = 0
 
 [node name="Other Room Layout" type="GridMap" parent="Other Room" unique_id=1977802000]
 mesh_library = ExtResource("4_gb53w")
@@ -2057,13 +2070,13 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 [node name="STATIONARY NPCS" type="Node" parent="." unique_id=1871193536]
 
 [node name="stationary NPC 1" parent="." unique_id=981572405 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.175133, 1, -10.552883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.789, 1.5, -2.295)
 
 [node name="stationary NPC 2" parent="." unique_id=1281532514 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.688403, 1, -9.164005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.548, 1.5, -21.152)
 
 [node name="stationary NPC 3" parent="." unique_id=869678440 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.055, 1, -2.563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.398865, 1.5083423, -33.52036)
 
 [node name="GROUP NPCS" type="Node" parent="." unique_id=358091135]
 
@@ -2071,19 +2084,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.055, 1, -2.563)
 script = ExtResource("6_dlabj")
 
 [node name="g1 origin 1" parent="Origin Controller" unique_id=1911756099 instance=ExtResource("7_srmg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.305688, 0, 2.0840988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.986, 1, 1.882)
 group_origin_ID = 1
 gen_NPC_number = 3
 max_NPC_number = 21
 
 [node name="g1 origin 2" parent="Origin Controller" unique_id=1700371811 instance=ExtResource("7_srmg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3577404, 0, -9.700688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.054781, 1, -36.190155)
 group_origin_ID = 1
 gen_NPC_number = 0
 max_NPC_number = 3
 
 [node name="g2 origin 1" parent="Origin Controller" unique_id=1891077425 instance=ExtResource("7_srmg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.093949, 0, -3.4648433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.228, 1, 1.5927088)
 group_origin_ID = 2
 max_NPC_number = 3
 
@@ -2092,26 +2105,32 @@ max_NPC_number = 3
 [node name="WANDER ALL NPCS" type="Node" parent="." unique_id=2012065132]
 
 [node name="wander NPC 1" parent="." unique_id=1893472972 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25243, 1, -7.626)
-npc_type = "wander_all"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.469, 1.5, 1.734)
+npc_type = 1
 
 [node name="wander NPC 2" parent="." unique_id=1293646166 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.676422, 1, 3.7167544)
-npc_type = "wander_all"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.783, 1.5, -10.658)
+npc_type = 1
 
 [node name="wander NPC 3" parent="." unique_id=1910700534 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.304001, 1, -3.9148345)
-npc_type = "wander_all"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.304, 1.5, -35.499)
+npc_type = 1
 
 [node name="wander NPC 4" parent="." unique_id=1312555435 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.294522, 1, 3.725408)
-npc_type = "wander_all"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.767, 1.5, -5.172)
+npc_type = 1
 
 [node name="WANDER ZONE NPCS" type="Node" parent="." unique_id=1848413065]
 
 [node name="wander zone NPC 1" parent="." unique_id=1260027074 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.715305, 1, -3.2989287)
-npc_type = "wander_zone"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66725993, 1.5, -24.521)
+npc_type = 2
+npc_allowed_zone_layers = Array[int]([1])
+
+[node name="GOSSIP NPC BAR 1" parent="." unique_id=1817096426 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, -23)
+npc_type = 4
+gossiper_ID = 1
 npc_allowed_zone_layers = Array[int]([2])
 
 [node name="CameraManager" type="Node3D" parent="." unique_id=957882876]
@@ -2172,6 +2191,7 @@ anchor_bottom = 1.006
 offset_right = 0.15185547
 offset_bottom = 0.11199951
 script = ExtResource("9_6hctx")
+game_time = 60
 
 [node name="Clock Label" type="Label" parent="GUI" unique_id=793086485]
 unique_name_in_owner = true
@@ -2310,20 +2330,123 @@ nine_patch_stretch = true
 texture_under = ExtResource("11_xq18t")
 texture_progress = ExtResource("19_5o5dd")
 
+[node name="Pause Canvas" type="CanvasLayer" parent="." unique_id=423945713]
+process_mode = 3
+
+[node name="Pause Menu" type="Control" parent="Pause Canvas" unique_id=27835547]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_right = 0.15185547
+script = ExtResource("25_26xou")
+
+[node name="Phone Screen" type="TextureRect" parent="Pause Canvas/Pause Menu" unique_id=34987769]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 96.0
+offset_right = -70.0
+offset_bottom = -126.0
+texture = ExtResource("25_wnndm")
+
+[node name="Gossip Collected Text" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=19489082]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 145.0
+offset_right = -106.0
+offset_bottom = -262.0
+bbcode_enabled = true
+text = "[b][color=black]Gossip Collected text goes here blah blah blah...of would you look at that someone has cheated, are you gonna go and snoop? Gonna be a lil snooper and see what's going on? Plot twist it's about you, isn't that intersting...
+
+The cake is a lie...[/color][/b]"
+
+[node name="Resume" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=1176942067]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 438.0
+offset_right = -786.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("26_26xou")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Quit" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=2034798251]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 789.0
+offset_top = 438.0
+offset_right = -113.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("26_26xou")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Quit Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=682952065]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 871.0
+offset_top = 415.0
+offset_right = -187.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][color=black][b]Quit[/b][/color][/center]"
+
+[node name="Resume Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=1151388835]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 202.0
+offset_top = 416.0
+offset_right = -875.0
+offset_bottom = -207.0
+bbcode_enabled = true
+text = "[center][color=black][b]Resume[/b][/color][/center]"
+
 [node name="Suspicion System" type="Node" parent="." unique_id=616305401]
 unique_name_in_owner = true
 script = ExtResource("20_d0ajt")
+wary_thresh = 50
+alert_thresh = 80
+max_thresh = 100
 
 [node name="Attention System" type="Node" parent="." unique_id=1550473888]
 unique_name_in_owner = true
 script = ExtResource("21_fymcc")
+reset_thresh = 30
+sus_thresh = 80
+
+[node name="Game State Manager" type="Node" parent="." unique_id=1281440516]
+unique_name_in_owner = true
+script = ExtResource("27_ckok1")
 
 [node name="item_collectable3" parent="." unique_id=1334551701 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1087246, 0.6399995, -2.728671)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.109, 0.2, -2.729)
 item = ExtResource("28_2x71e")
 
 [node name="item_collectable4" parent="." unique_id=1486121612 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46167, 0.6399995, 0.24675989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.61088, 1, -2.0949178)
 item = ExtResource("29_wnndm")
 
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToUp" to="Environment (NavMesh)/Portals/DownToUp" method="_on_body_entered"]
@@ -2333,3 +2456,5 @@ item = ExtResource("29_wnndm")
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/BackHole" to="Environment (NavMesh)/Portals/BackHole" method="_on_body_entered"]
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/FrontHole" to="Environment (NavMesh)/Portals/FrontHole" method="_on_body_entered"]
 [connection signal="timeout" from="Origin Controller/Flag Timer" to="Origin Controller" method="_on_flag_timer_timeout"]
+[connection signal="pressed" from="Pause Canvas/Pause Menu/Resume" to="Pause Canvas/Pause Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause Canvas/Pause Menu/Quit" to="Pause Canvas/Pause Menu" method="_on_quit_pressed"]

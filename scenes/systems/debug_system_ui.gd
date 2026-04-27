@@ -10,7 +10,6 @@ extends Node
 
 #addtional variables --> Will need adjustment with costumes/players and such to demonstrate debug stats
 var sus: float = 0.0
-var multi: float = 1.0
 var steps: float = 0 #changes per second of time spent in suspicion -- changed to float for decay purposes
 var state: String = ""
 var att_state: String = ""
@@ -62,20 +61,20 @@ func _process(delta: float) -> void:
 		_determine_sus()
 		
 	#Hide Debug menu
-	if Input.is_action_just_pressed("ui_cancel"): #esc key
+	if Input.is_action_just_pressed("debug_menu"): #f1 key
 		sus_debug.visible = visi
 		attention_debug.visible = visi
 		visi = !visi
 	
 #Change Debug UI to show sus level and state
 func _determine_sus():
-	sus = suspicion_system._calculate_sus(multi, sus, steps)
+	sus = suspicion_system._calculate_sus_general(1, sus, steps)
 	state = suspicion_system._state_level(sus)
 	sus_debug.text = "Sus: " + str(sus) + " " + state
 	
 #Change Debug UI to show attention level and state
 func _determine_atten():
-	att = attention_system._calculate_att(action, att)
+	att = attention_system._calculate_att(1, action, att)
 	att_state = attention_system._state_level(att)
 	attention_debug.text = "Attention: " + str(att) + " " + att_state
 
