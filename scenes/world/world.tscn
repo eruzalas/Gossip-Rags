@@ -937,7 +937,7 @@ npc_type = 2
 npc_allowed_zone_layers = Array[int]([2])
 
 [node name="GOSSIP NPC BAR 1" parent="." unique_id=1817096426 instance=ExtResource("5_5qq27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.412167, 1, 1.3818417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8493986, 1.7150288, -9.133203)
 npc_type = 4
 gossiper_ID = 1
 npc_allowed_zone_layers = Array[int]([2])
@@ -1000,7 +1000,7 @@ anchor_bottom = 1.006
 offset_right = 0.15185547
 offset_bottom = 0.11199951
 script = ExtResource("9_6hctx")
-game_time = 60
+game_time = 100
 
 [node name="Clock Label" type="Label" parent="GUI" unique_id=793086485]
 unique_name_in_owner = true
