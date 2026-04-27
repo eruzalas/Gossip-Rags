@@ -12,7 +12,7 @@ class_name SpatialAudio extends AudioStreamPlayer3D
 @export var stop: bool = false 
 @export var debug: bool = false 
 
-@onready var player_character: CharacterBody3D 
+@onready var player_character: CharacterBody3D = get_node("./players")
 @onready var raycasts_coords: Array = [
 	Vector3(0, 0, max_raycast_distance),						# N
 	Vector3(max_raycast_distance, 0, max_raycast_distance),		# NW
