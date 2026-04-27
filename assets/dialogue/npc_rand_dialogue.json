@@ -1,11 +1,23 @@
 {
-	"idle": [
+	"responses": [
+		{
+			"id": "000003",
+			"is_start": false,
+			"is_solo": true,
+			"origin": "cult_group",
+			"bubble_icon": "dialogue_progression.png",
+			"dialogue": "honestly yeah a sacrifice would hit the spot rn.",
+			"audio_file": "talking_audio_003.mp4",
+			"next_id": ""
+		}
+	],
+	"IDLE": [
 		{
 			"id": "000001",
 			"is_start": true,
 			"is_solo": true,
 			"origin": "",
-			"bubble_icon": "normal.png",
+			"bubble_icon": "dialogue_normal.png",
 			"dialogue": "Dude I cannot believe the weather we are having right now :(",
 			"audio_file": "talking_audio_001.mp4",
 			"next_id": ""
@@ -15,42 +27,56 @@
 			"is_start": true,
 			"is_solo": false,
 			"origin": "cult_group",
-			"bubble_icon": "spooky.png",
+			"bubble_icon": "dialogue_normal.png",
 			"dialogue": "Are you feeling like a sacrifice rn?",
 			"audio_file": "talking_audio_002.mp4",
 			"next_id": "000003"
-		},
-		{
-			"id": "000003",
-			"is_start": false,
-			"is_solo": true,
-			"origin": "cult_group",
-			"bubble_icon": "spooky.png",
-			"dialogue": "honestly yeah a sacrifice would hit the spot rn.",
-			"audio_file": "talking_audio_003.mp4",
-			"next_id": ""
 		}
 	],
-	"notice_player": [
+	"WATCHING": [
 		{
 			"id": "000004",
 			"is_start": true,
 			"is_solo": true,
 			"origin": "",
-			"bubble_icon": "normal.png",
+			"bubble_icon": "dialogue_suspicious.png",
 			"dialogue": "Ah I'll tell you later.",
 			"audio_file": "talking_audio_004.mp4",
 			"next_id": ""
 		}
 	],
-	"un-notice player": [
+	"MOVING": [
 		{
 			"id": "000005",
 			"is_start": true,
 			"is_solo": true,
 			"origin": "",
-			"bubble_icon": "normal.png",
+			"bubble_icon": "dialogue_normal.png",
+			"dialogue": "Omg where is the alcohol I swear to gawd",
+			"audio_file": "talking_audio_005.mp4",
+			"next_id": ""
+		}
+	],
+	"INTERRUPTED": [
+		{
+			"id": "000006",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "dialogue_warning.png",
 			"dialogue": "Ok, now that they are gone, where was I...",
+			"audio_file": "talking_audio_005.mp4",
+			"next_id": ""
+		}
+	],
+	"GOSSIPING": [
+		{
+			"id": "000007",
+			"is_start": true,
+			"is_solo": true,
+			"origin": "",
+			"bubble_icon": "dialogue_warning.png",
+			"dialogue": "WHAT THE FUCK...",
 			"audio_file": "talking_audio_005.mp4",
 			"next_id": ""
 		}

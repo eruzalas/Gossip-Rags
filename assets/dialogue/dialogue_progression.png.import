@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3dl0bwcugbdq"
-path="res://.godot/imported/0-5385_rectangle-speech-bubble-png-transparent-png.png-2bb393046415df52902850b417ac6c1c.ctex"
+uid="uid://d38f2ar0hbu5g"
+path="res://.godot/imported/dialogue_progression.png-5377f96f62073cf0cedd4066e2a2eb1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialogue/0-5385_rectangle-speech-bubble-png-transparent-png.png"
-dest_files=["res://.godot/imported/0-5385_rectangle-speech-bubble-png-transparent-png.png-2bb393046415df52902850b417ac6c1c.ctex"]
+source_file="res://assets/dialogue/dialogue_progression.png"
+dest_files=["res://.godot/imported/dialogue_progression.png-5377f96f62073cf0cedd4066e2a2eb1b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6iie4lk0531q"
-path="res://.godot/imported/better speech bubble.png-e2631704083d089411fe6b7da4eef47f.ctex"
+uid="uid://ck04aiqvpfatt"
+path="res://.godot/imported/dialogue_warning.png-cd7b50788ea4f3155e0cab9f8c6235ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialogue/better speech bubble.png"
-dest_files=["res://.godot/imported/better speech bubble.png-e2631704083d089411fe6b7da4eef47f.ctex"]
+source_file="res://assets/dialogue/dialogue_warning.png"
+dest_files=["res://.godot/imported/dialogue_warning.png-cd7b50788ea4f3155e0cab9f8c6235ec.ctex"]
 
 [params]
 
