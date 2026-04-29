@@ -6,11 +6,12 @@ extends CharacterBody3D
 @onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
 
 #---- Movement Base Stats ----
-var base_speed = 10
+var base_speed = 7
 var move_speed = 0 #used to handle speed when running/crouching, inputs required
 var jump_velocity = 000 #base is actually 10
 var acceleration = 35
 var deceleration = 30
+var sprint_speed = 1
 
 #---- Stat Modifiers for Costumes ----
 var speed_modifier: float
@@ -79,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("p1_left", "p1_right", "p1_up", "p1_down")
 
 	if Input.is_action_pressed("p1_sprint") and !Input.is_action_pressed("p1_crouch"):
-		move_speed = (base_speed * speed_modifier) * 1.5
+		move_speed = (base_speed * speed_modifier) * sprint_speed
 	elif Input.is_action_pressed("p1_crouch") and !Input.is_action_pressed("p1_sprint"):
 		move_speed = (base_speed * speed_modifier) * 0.75
 	else :
