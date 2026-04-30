@@ -10,6 +10,8 @@ size = Vector3(1, 1, 0.23046875)
 script = ExtResource("1_54mo8")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=546116164]
+no_depth_test = true
+render_priority = 1
 sprite_frames = ExtResource("2_0jymw")
 animation = &"p1_default"
 
