@@ -2213,9 +2213,9 @@ tea_bar_array = [NodePath("Tea Bar Behind 1/Tea Bar 1"), NodePath("Tea Bar Behin
 
 [node name="Tea Bar Behind 8" type="TextureRect" parent="GUI/Timeline" unique_id=628930362]
 layout_mode = 0
-offset_left = 970.0
+offset_left = 981.99994
 offset_top = 608.0
-offset_right = 1094.0381
+offset_right = 1106.0381
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2236,9 +2236,9 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 7" type="TextureRect" parent="GUI/Timeline" unique_id=1733278570]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 843.99994
 offset_top = 608.0
-offset_right = 956.03796
+offset_right = 968.0379
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2259,9 +2259,9 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 6" type="TextureRect" parent="GUI/Timeline" unique_id=958746726]
 layout_mode = 0
-offset_left = 695.0
+offset_left = 707.0
 offset_top = 608.0
-offset_right = 819.03796
+offset_right = 831.03796
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2282,9 +2282,9 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 5" type="TextureRect" parent="GUI/Timeline" unique_id=1823390236]
 layout_mode = 0
-offset_left = 559.0
+offset_left = 571.0
 offset_top = 608.0
-offset_right = 683.03796
+offset_right = 695.03796
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2305,9 +2305,9 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 4" type="TextureRect" parent="GUI/Timeline" unique_id=702700826]
 layout_mode = 0
-offset_left = 422.00003
+offset_left = 434.0
 offset_top = 608.0
-offset_right = 546.038
+offset_right = 558.03796
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2328,9 +2328,9 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 3" type="TextureRect" parent="GUI/Timeline" unique_id=1670548017]
 layout_mode = 0
-offset_left = 285.0
+offset_left = 297.0
 offset_top = 608.0
-offset_right = 409.038
+offset_right = 421.038
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
@@ -2351,10 +2351,10 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 2" type="TextureRect" parent="GUI/Timeline" unique_id=1106022077]
 layout_mode = 0
-offset_left = 148.0
-offset_top = 570.0
-offset_right = 272.038
-offset_bottom = 627.0
+offset_left = 159.99998
+offset_top = 608.0
+offset_right = 284.03796
+offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
@@ -2369,14 +2369,15 @@ offset_left = 10.0
 offset_top = 4.0
 offset_right = -10.0
 offset_bottom = -30.0
+value = 100.0
 nine_patch_stretch = true
 texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 1" type="TextureRect" parent="GUI/Timeline" unique_id=2061908429]
 layout_mode = 0
-offset_left = 35.000004
+offset_left = 22.999985
 offset_top = 608.0
-offset_right = 159.03773
+offset_right = 147.03772
 offset_bottom = 665.0
 scale = Vector2(1.2, 1.392)
 texture = ExtResource("18_ckok1")
