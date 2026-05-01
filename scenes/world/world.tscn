@@ -1551,6 +1551,10 @@ size = Vector3(2, 3.55, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.48769, -25, -33.677032)
 size = Vector3(0.375, 5, 7.5733643)
 
+[node name="EastSideWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1064266856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.725365, -25, -33.677032)
+size = Vector3(0.375, 5, 7.5733643)
+
 [node name="EastSideWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1332054836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.45311, -24.5, -16.39772)
 size = Vector3(0.375, 4, 27)
