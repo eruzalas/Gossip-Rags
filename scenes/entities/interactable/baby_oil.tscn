@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://oy0r5t2vc8v1" path="res://assets/images/baby_oil_placeholder.jpg" id="1_d3nhl"]
 [ext_resource type="Resource" uid="uid://becsxwu31ayde" path="res://utils/interactable_object_data/baby_oil.tres" id="2_ufwc5"]
 [ext_resource type="Script" uid="uid://ga82yym368yx" path="res://scenes/entities/interactable/baby_oil.gd" id="2_v6h82"]
+[ext_resource type="Texture2D" uid="uid://cyf7pnsfa7v5v" path="res://assets/images/oil_placeholder.jpg" id="4_umlss"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3nhl"]
 size = Vector3(2.1450195, 2, 0.7310791)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umlss"]
+size = Vector3(3.7549133, 1, 3.7792778)
 
 [node name="baby_oil" type="Node3D" unique_id=1184009151]
 
@@ -13,14 +17,22 @@ size = Vector3(2.1450195, 2, 0.7310791)
 script = ExtResource("2_v6h82")
 data = ExtResource("2_ufwc5")
 
-[node name="Sprite3D" type="Sprite3D" parent="Area3D" unique_id=214189048]
+[node name="BabyOil" type="Sprite3D" parent="Area3D" unique_id=214189048]
 offset = Vector2(0, 136.005)
 texture_filter = 0
 texture = ExtResource("1_d3nhl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2139879931]
+[node name="CollisionShapeBabyOil" type="CollisionShape3D" parent="Area3D" unique_id=2139879931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041259766, 0.5, 0.022644043)
 shape = SubResource("BoxShape3D_d3nhl")
+
+[node name="PuddleSprite" type="Sprite3D" parent="Area3D" unique_id=1182729120]
+transform = Transform3D(0.365, 0, 0, 0, -1.5954656e-08, 0.365, 0, -0.365, -1.5954656e-08, 0, 0, 0)
+texture = ExtResource("4_umlss")
+
+[node name="CollisionShapePuddle" type="CollisionShape3D" parent="Area3D" unique_id=1674997271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050338745, 0, 0.014951706)
+shape = SubResource("BoxShape3D_umlss")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

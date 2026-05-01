@@ -8,6 +8,7 @@ const SPEED = 10.0
 const JUMP_VELOCITY = 10
 
 var is_detected: bool = false
+var is_slipping: bool = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -31,6 +32,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	if is_slipping:
+		velocity.x = lerp(velocity.x, direction.x * SPEED, 0.2)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, 0.2)
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 func _on_detected():
 	if is_detected:
@@ -41,3 +49,7 @@ func _on_detected():
 
 func _on_timer_timeout() -> void:
 	temp_text_display_status.visible = true
+	
+func set_slippery(state: bool):
+	is_slipping = state
+	
