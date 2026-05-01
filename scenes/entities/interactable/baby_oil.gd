@@ -32,6 +32,9 @@ func _on_body_exited(body: Node3D) -> void:
 		players_in_range.erase(body)
 
 func _unhandled_input(event: InputEvent) -> void:
+	#IF THE BABY OIL IS GONE IGNORE BUTTON PRESSES
+	if not is_active:
+		return
 	#checks which player pressed and caused the fall
 	for p in players_in_range:
 		var p_name = p.name 
