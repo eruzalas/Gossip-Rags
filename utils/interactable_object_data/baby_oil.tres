@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InteractionData" format=3 uid="uid://becsxwu31ayde"]
+
+[ext_resource type="Script" uid="uid://cyespjckt1gqx" path="res://utils/interactable_object_data/interaction_data.gd" id="1_dcqk8"]
+
+[resource]
+script = ExtResource("1_dcqk8")
+respawn_time = 3.0
+metadata/_custom_type_script = "uid://cyespjckt1gqx"

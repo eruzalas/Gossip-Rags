@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctqqspn6xj3gn"]
 
 [ext_resource type="Texture2D" uid="uid://oy0r5t2vc8v1" path="res://assets/images/baby_oil_placeholder.jpg" id="1_d3nhl"]
+[ext_resource type="Resource" uid="uid://becsxwu31ayde" path="res://utils/interactable_object_data/baby_oil.tres" id="2_ufwc5"]
 [ext_resource type="Script" uid="uid://ga82yym368yx" path="res://scenes/entities/interactable/baby_oil.gd" id="2_v6h82"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3nhl"]
@@ -10,6 +11,7 @@ size = Vector3(2.1450195, 2, 0.7310791)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1666040477]
 script = ExtResource("2_v6h82")
+data = ExtResource("2_ufwc5")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D" unique_id=214189048]
 offset = Vector2(0, 136.005)
