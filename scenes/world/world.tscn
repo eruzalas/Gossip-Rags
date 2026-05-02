@@ -501,7 +501,7 @@ size = Vector3(4, 1, 18.5)
 size = Vector3(18, 1, 25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n78lu"]
-size = Vector3(13.788727, 1, 20.237793)
+size = Vector3(13.877274, 1, 20.480225)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sar2w"]
 size = Vector3(8, 1, 5)
@@ -1853,14 +1853,14 @@ transform = Transform3D(0.99998033, 0, -1.5987212e-13, 0, 0.99998033, 0, 1.59872
 shape = SubResource("BoxShape3D_ecm30")
 
 [node name="GarageFloor" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor" unique_id=1433603234]
-transform = Transform3D(-4.37864e-08, 0, -1.0017138, 0, 1.0017138, 0, 1.0017138, 0, -4.37864e-08, 29.743301, -1.9570659, 31.266684)
+transform = Transform3D(-4.3786397e-08, 0, -1.0017128, 0, 1.0017128, 0, 1.0017128, 0, -4.3786397e-08, 29.743301, -1.9978487, 31.266668)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor/GarageFloor" unique_id=150726813]
-transform = Transform3D(0.78000003, 0, -3.3881318e-21, 0, 1, 0, 6.7762636e-21, 0, 0.81000006, -0.71188927, 2, 7.115036)
+transform = Transform3D(0.81, 0, -1.4152955e-20, 0, 1, 0, 1.389563e-20, 0, 0.825, -0.7119999, 2.0000083, 7.115)
 mesh = SubResource("BoxMesh_ij5nj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor/GarageFloor" unique_id=1888063876]
-transform = Transform3D(1, 0, -7.115077e-19, 0, 1, 0, 7.115077e-19, 0, 1, -0.9400444, 2, 7.088867)
+transform = Transform3D(1, 0, -4.2012834e-19, 0, 1, 0, 4.2012834e-19, 0, 1, -0.9843178, 2, 7.2100906)
 shape = SubResource("BoxShape3D_n78lu")
 
 [node name="LaundryFloor" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor" unique_id=1698504813]
