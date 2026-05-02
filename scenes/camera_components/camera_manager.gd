@@ -66,19 +66,21 @@ func _multiplayer_cam() -> void:
 		camera2.position.x = player2.position.x - camera_bias*position_difference.x / 2.0
 		camera2.position.z = (player2.position.z - camera_bias*position_difference.z / 2.0) + 5
 	
-		camera1.position.y = player1.position.y + 5 
-		camera2.position.y = player2.position.y + 5
+		camera1.position.y = player1.position.y + 4
+		camera2.position.y = player2.position.y + 4
 	
 	else: if(_is_multi_floor()):
 		
 		camera1.position.x = player1.position.x
-		camera1.position.z = player1.position.z + 2
+		camera1.position.z = player1.position.z + 4
 	
 		camera2.position.x = player2.position.x
-		camera2.position.z = player2.position.z + 2
+		camera2.position.z = player2.position.z + 4
 		
-		camera1.position.y = player1.position.y + 3
-		camera2.position.y = player2.position.y + 3
+		camera1.position.y = player1.position.y + 4
+		camera2.position.y = player2.position.y + 4
+		
+		
 
 func _is_multi_floor() -> bool:
 	

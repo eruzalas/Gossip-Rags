@@ -499,7 +499,335 @@ size = Vector3(4, 1, 10)
 vertices = PackedVector3Array(76.26225, 0.19174576, -45.87207, 74.51225, 0.19174576, -45.87207, 74.26225, 0.19174576, -43.87207, 76.26225, 0.19174576, -43.62207, 93.26225, 0.19174576, -37.87207, 68.51225, 0.19174576, -62.37207, 68.51225, 0.19174576, -59.37207, 76.26225, 0.19174576, -59.12207, 93.26225, 0.19174576, -62.12207, 76.26225, 0.19174576, -37.87207, 56.01225, 0.19174576, -54.62207, 56.26225, 0.19174576, -53.87207, 57.01225, 0.19174576, -53.87207, 57.26225, 0.19174576, -54.62207, 58.76225, 0.19174576, -61.62207, 50.51225, 0.19174576, -61.62207, 50.51225, 0.19174576, -54.62207, 58.76225, 0.19174576, -54.62207, 60.51225, 0.19174576, -61.62207, 60.51225, 0.19174576, -59.12207, 63.01225, 0.19174576, -58.87207, 63.01225, 0.19174576, -52.12207, 62.51225, 0.19174576, -51.87207, 67.01225, 0.19174576, -51.12207, 67.51225, 0.19174576, -51.62207, 67.51225, 0.19174576, -57.87207, 67.01225, 0.19174576, -58.12207, 67.01225, 0.19174576, -61.62207, 60.76225, -1.0582542, -52.87207, 61.76225, -1.0582542, -52.87207, 62.01225, -0.55825424, -53.62207, 62.01225, -0.058254242, -54.62207, 60.76225, -0.058254242, -54.62207, 53.01225, 0.19174576, -46.87207, 53.76225, 0.19174576, -46.87207, 54.01225, 0.19174576, -47.62207, 52.76225, 0.19174576, -47.62207, 57.26225, 0.19174576, -47.62207, 57.51225, 0.19174576, -47.12207, 60.26225, 0.19174576, -51.87207, 57.26225, 0.19174576, -52.87207, 56.01225, 0.19174576, -52.87207, 50.51225, 0.19174576, -52.87207, 50.51225, 0.19174576, -47.62207, 59.76225, 0.19174576, -52.12207, 59.76225, 0.19174576, -52.87207, 67.51225, 0.19174576, -43.87207, 67.26225, 0.19174576, -45.87207, 67.01225, 0.19174576, -43.12207, 57.51225, 0.19174576, -43.12207, 60.51225, -4.3082542, -48.37207, 62.01225, -4.3082542, -48.37207, 61.76225, -2.8082542, -50.62207, 60.51225, -2.8082542, -50.62207, 68.51225, 0.19174576, -49.87207, 68.51225, 0.19174576, -47.62207, 74.76225, 0.19174576, -47.62207, 74.76225, 0.19174576, -49.87207, 52.76225, 0.19174576, -45.87207, 54.01225, 0.19174576, -45.87207, 50.51225, 0.19174576, -40.12207, 55.76225, 0.19174576, -40.12207, 55.76225, 0.19174576, -45.87207, 50.51225, 0.19174576, -45.87207, 67.01225, 0.19174576, -37.62207, 67.76225, 0.19174576, -37.87207, 67.76225, 0.19174576, -38.62207, 67.01225, 0.19174576, -38.87207, 63.76225, 0.19174576, -33.62207, 64.01225, 0.19174576, -32.12207, 67.01225, 0.19174576, -33.12207, 52.51225, 0.19174576, -33.62207, 55.76225, 0.19174576, -33.62207, 56.01225, 0.19174576, -34.87207, 55.76225, 0.19174576, -35.87207, 55.76225, 0.19174576, -38.62207, 52.51225, 0.19174576, -38.62207, 57.51225, 0.19174576, -35.87207, 57.51225, 0.19174576, -33.62207, 57.26225, 0.19174576, -34.87207, 68.51225, 0.19174576, -38.87207, 74.76225, 0.19174576, -37.62207, 74.76225, 0.19174576, -42.12207, 68.51225, 0.19174576, -42.12207, 68.51225, 0.19174576, -32.87207, 67.76225, 0.19174576, -32.62207, 67.76225, 0.19174576, -31.87207, 68.51225, 0.19174576, -31.62207, 74.76225, 0.19174576, -30.12207, 74.76225, 0.19174576, -35.87207, 68.51225, 0.19174576, -35.87207, 68.51225, 0.19174576, -30.12207, 67.01225, 0.19174576, -31.62207, 68.51225, 0.19174576, -28.12207, 67.01225, 0.19174576, -28.62207, 68.26225, 0.19174576, -27.12207, 69.51225, 0.19174576, -27.37207, 69.51225, 0.19174576, -28.12207, 64.01225, 0.19174576, -25.62207, 68.26225, 0.19174576, -25.62207, 69.76225, 0.19174576, -24.62207, 74.76225, 0.19174576, -24.62207, 74.76225, 0.19174576, -28.62207, 69.76225, 0.19174576, -28.62207)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 3, 0), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(7, 8, 0), PackedInt32Array(0, 8, 4), PackedInt32Array(4, 9, 3), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(13, 10, 14), PackedInt32Array(16, 15, 10), PackedInt32Array(10, 15, 14), PackedInt32Array(14, 17, 13), PackedInt32Array(20, 19, 18), PackedInt32Array(23, 22, 21), PackedInt32Array(26, 25, 20), PackedInt32Array(20, 25, 21), PackedInt32Array(21, 25, 24), PackedInt32Array(21, 24, 23), PackedInt32Array(26, 20, 27), PackedInt32Array(27, 20, 18), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(31, 28, 32), PackedInt32Array(33, 36, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(39, 38, 37), PackedInt32Array(12, 40, 11), PackedInt32Array(11, 40, 41), PackedInt32Array(36, 43, 42), PackedInt32Array(40, 45, 44), PackedInt32Array(44, 39, 40), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 37), PackedInt32Array(41, 37, 35), PackedInt32Array(35, 36, 41), PackedInt32Array(41, 36, 42), PackedInt32Array(39, 22, 23), PackedInt32Array(46, 47, 2), PackedInt32Array(2, 47, 1), PackedInt32Array(47, 48, 23), PackedInt32Array(23, 48, 39), PackedInt32Array(39, 48, 38), PackedInt32Array(38, 48, 49), PackedInt32Array(47, 46, 48), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51), PackedInt32Array(57, 56, 54), PackedInt32Array(54, 56, 55), PackedInt32Array(34, 59, 33), PackedInt32Array(33, 59, 58), PackedInt32Array(59, 61, 58), PackedInt32Array(58, 61, 60), PackedInt32Array(59, 62, 61), PackedInt32Array(60, 63, 58), PackedInt32Array(65, 64, 66), PackedInt32Array(66, 64, 67), PackedInt32Array(67, 64, 68), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 64), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 71), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 71), PackedInt32Array(67, 68, 48), PackedInt32Array(48, 68, 77), PackedInt32Array(48, 77, 49), PackedInt32Array(79, 77, 78), PackedInt32Array(78, 77, 68), PackedInt32Array(79, 73, 77), PackedInt32Array(77, 73, 74), PackedInt32Array(66, 80, 65), PackedInt32Array(65, 80, 81), PackedInt32Array(83, 82, 80), PackedInt32Array(80, 82, 81), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 87), PackedInt32Array(87, 84, 88), PackedInt32Array(90, 89, 84), PackedInt32Array(84, 89, 88), PackedInt32Array(88, 91, 87), PackedInt32Array(86, 92, 85), PackedInt32Array(85, 92, 70), PackedInt32Array(70, 92, 69), PackedInt32Array(93, 95, 94), PackedInt32Array(97, 96, 93), PackedInt32Array(93, 96, 95), PackedInt32Array(95, 99, 94), PackedInt32Array(94, 99, 98), PackedInt32Array(92, 94, 69), PackedInt32Array(69, 94, 98), PackedInt32Array(97, 103, 96), PackedInt32Array(96, 103, 100), PackedInt32Array(100, 103, 102), PackedInt32Array(100, 102, 101)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckok1"]
+[sub_resource type="BoxMesh" id="BoxMesh_ij5nj"]
+size = Vector3(18, 1, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n78lu"]
+size = Vector3(18, 1, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0n6td"]
+size = Vector3(13, 1, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmoad"]
+size = Vector3(12, 1, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mb8w1"]
+size = Vector3(6.7, 1, 1.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oo0aq"]
+size = Vector3(13, 1, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4278"]
+size = Vector3(12, 1, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyio1"]
+size = Vector3(6.7, 1, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdkuk"]
+size = Vector3(10.5, 1, 23)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mrxq0"]
+size = Vector3(2.7, 1, 19)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i1y2t"]
+size = Vector3(2.7, 1, 3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s64j0"]
+size = Vector3(8.5, 1, 6.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1o6i5"]
+size = Vector3(10.5, 1, 23)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yr5cl"]
+size = Vector3(2.7, 1, 19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pkfnk"]
+size = Vector3(2.7, 1, 3.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghkdt"]
+size = Vector3(8.5, 1, 6.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtcuk"]
+size = Vector3(5.1919556, 1, 11.613831)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qjyj0"]
+size = Vector3(5.1919556, 1, 11.613831)
+
+[sub_resource type="BoxMesh" id="BoxMesh_do88p"]
+size = Vector3(7.4, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nlt47"]
+size = Vector3(7.354004, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6a7tq"]
+size = Vector3(7.354004, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l34gv"]
+size = Vector3(7.354004, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qot8"]
+size = Vector3(6.887329, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sfox1"]
+size = Vector3(6.887329, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmgud"]
+size = Vector3(11.495117, 5, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_le7yh"]
+size = Vector3(11.495117, 5, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wfk0w"]
+size = Vector3(5.758789, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qitea"]
+size = Vector3(5.758789, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6xqbw"]
+size = Vector3(0.375, 4, 11.226074)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jobc"]
+size = Vector3(0.375, 4, 11.226074)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3kq1"]
+size = Vector3(0.375, 5, 11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_di5vm"]
+size = Vector3(0.375, 5, 11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7tufn"]
+size = Vector3(11.924927, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hee0g"]
+size = Vector3(11.924927, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j8f2q"]
+size = Vector3(0.375, 4, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pnq3x"]
+size = Vector3(0.375, 4, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8b617"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo74w"]
+size = Vector3(0.375, 4, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_425aq"]
+size = Vector3(0.375, 4, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_le7yh"]
+size = Vector3(0.375, 1.25, 2.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1xiqq"]
+size = Vector3(0.375, 4, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3r5j"]
+size = Vector3(0.375, 4, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_icsua"]
+size = Vector3(0.475, 4, 8.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bj2ac"]
+size = Vector3(0.475, 4, 8.1171875)
+
+[sub_resource type="BoxMesh" id="BoxMesh_axy21"]
+size = Vector3(7.3389893, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_42xbh"]
+size = Vector3(7.3389893, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qitea"]
+size = Vector3(0.375, 4, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jobc"]
+size = Vector3(0.375, 4, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3kq1"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_di5vm"]
+size = Vector3(0.375, 4, 1.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tufn"]
+size = Vector3(0.375, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xiqq"]
+size = Vector3(0.375, 1.25, 2.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0grg"]
+size = Vector3(7, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hg63j"]
+size = Vector3(7, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d51ap"]
+size = Vector3(0.375, 4, 23)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdwnc"]
+size = Vector3(0.375, 4, 23)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cnv4p"]
+size = Vector3(18, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6p3e"]
+size = Vector3(18, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y0kmp"]
+size = Vector3(0.375, 4, 3.2724)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vn2as"]
+size = Vector3(0.375, 4, 3.2724)
+
+[sub_resource type="BoxMesh" id="BoxMesh_umxri"]
+size = Vector3(8.133362, 5, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03pw5"]
+size = Vector3(8.133362, 5, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xox43"]
+size = Vector3(8.133362, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8aho"]
+size = Vector3(8.133362, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n3r5j"]
+size = Vector3(1.55, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bj2ac"]
+size = Vector3(4.3, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42xbh"]
+size = Vector3(2.1, 1.22, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0grg"]
+size = Vector3(1.55, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdwnc"]
+size = Vector3(4.3, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnv4p"]
+size = Vector3(2.1, 1.22, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bise0"]
+size = Vector3(0.375, 5, 7.5733643)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jo2eh"]
+size = Vector3(0.375, 5, 7.5733643)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7bpp"]
+size = Vector3(0.375, 5, 7.5733643)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbjsl"]
+size = Vector3(0.375, 5, 7.5733643)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l6p3e"]
+size = Vector3(0.375, 4, 19.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vn2as"]
+size = Vector3(0.375, 4, 4.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_03pw5"]
+size = Vector3(0.375, 1.22, 3.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xox43"]
+size = Vector3(0.375, 4, 19.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bise0"]
+size = Vector3(0.375, 4, 4.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7bpp"]
+size = Vector3(0.375, 1.22, 3.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbjsl"]
+size = Vector3(0.375, 4, 4.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5vtr0"]
+size = Vector3(0.375, 4, 3.85)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xmq5n"]
+size = Vector3(0.375, 4, 2.16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ladsi"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7qc1y"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dobo0"]
+size = Vector3(0.375, 4, 4.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ppj3"]
+size = Vector3(0.375, 4, 3.85)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpqd7"]
+size = Vector3(0.375, 4, 2.16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o0evn"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qytxv"]
+size = Vector3(0, 1.3912888, 3.8092804)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ckdd"]
+size = Vector3(0.375, 4, 4.383667)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vtr0"]
+size = Vector3(0.375, 4, 4.383667)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cv01b"]
+size = Vector3(6, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_61cyd"]
+size = Vector3(2.15, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7frv1"]
+size = Vector3(2.1, 1.22, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikqac"]
+size = Vector3(6, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bad7w"]
+size = Vector3(2.15, 4, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmesd"]
+size = Vector3(2.1, 1.22, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2t505"]
+size = Vector3(7.371582, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k375o"]
+size = Vector3(7.4, 4, 0.375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e58rx"]
+size = Vector3(0.375, 4, 0.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4eul6"]
+size = Vector3(0.375, 4, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8caq"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqfdu"]
+size = Vector3(0.375, 4, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cp2s"]
+size = Vector3(0.375, 4, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2oqoe"]
+size = Vector3(0.375, 1.22, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmq5n"]
+size = Vector3(0.375, 6, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1e8o5"]
+size = Vector3(0.375, 6, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0giv"]
+size = Vector3(0.375, 6, 8.345703)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ladsi"]
+size = Vector3(0.375, 6, 8.345703)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_2x71e"]
 vertices = PackedVector3Array(-58.500103, 4.917328, -55.124912, -58.750103, 4.917328, -62.124912, -59.000103, 4.917328, -62.624912, -58.750103, 4.917328, -48.374912, -58.500103, 4.917328, -54.874912, -43.750103, 4.917328, -47.624912, -34.000103, 4.917328, -47.874912, -34.000103, 4.917328, -48.374912, -44.250103, 4.917328, -47.874912, -48.250103, 4.917328, -62.374912, -47.500103, 4.917328, -62.374912, -34.750103, 4.917328, -62.624912, -58.750103, 4.917328, -47.624912, -48.000103, 4.917328, -55.374912, -47.750103, 4.917328, -54.874912, -44.000103, 4.917328, -34.374912, -43.750103, 4.917328, -33.874912, -58.500103, 4.917328, -34.124912, -59.000103, 4.917328, -33.874912, -57.750103, 0.9173279, -61.374912, -57.750103, 0.9173279, -56.124912, -49.000103, 0.9173279, -56.124912, -49.000103, 0.9173279, -61.374912, -45.000103, 0.9173279, -58.624912, -45.250103, 0.9173279, -61.374912, -46.750103, 0.9173279, -61.374912, -46.750103, 0.9173279, -54.124912, -35.000103, 0.9173279, -61.374912, -37.250103, 1.1673279, -59.624912, -37.250103, 0.9173279, -58.624912, -35.000103, 0.9173279, -49.124912, -48.500103, 0.9173279, -53.874912, -48.250103, 0.9173279, -49.124912, -44.250103, 4.667328, -61.374912, -44.250103, 4.667328, -59.624912, -36.321533, 0.9173279, -61.374912, -44.000103, 0.9173279, -61.124912, -44.000103, 0.9173279, -59.874912, -41.000103, 0.9173279, -59.874912, -41.000103, 0.9173279, -61.124912, -57.750103, 0.9173279, -53.874912, -57.750103, 0.9173279, -49.124912, -57.750103, 0.9173279, -46.874912, -57.750103, 0.9173279, -35.124912, -45.000103, 0.9173279, -35.124912, -45.000103, 0.9173279, -46.874912)
@@ -1414,206 +1742,567 @@ polygon = PackedVector2Array(-6, -5, 1.7509446, -5.433709, 1.7267838, 1.7915728)
 depth = 2.58
 
 [node name="Upstairs" type="NavigationRegion3D" parent="Environment (NavMesh)" unique_id=1981887349]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.33425, 43.00917, -77.352486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.333046, 43.009773, -63.37487)
 navigation_mesh = SubResource("NavigationMesh_ckok1")
 navigation_layers = 4096
 
-[node name="UpstairsFloor" type="CSGCombiner3D" parent="Environment (NavMesh)/Upstairs" unique_id=1440875160]
+[node name="UpstairsFloor" type="Node3D" parent="Environment (NavMesh)/Upstairs" unique_id=1805733035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.230024, -21)
-material_overlay = SubResource("StandardMaterial3D_ckok1")
-use_collision = true
 
-[node name="GarageBalconyFloor" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=55533473]
+[node name="GarageBalconyFloor" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=40101446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6709, -27, -29.02877)
-size = Vector3(18, 1, 25)
 
-[node name="Inside1" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=1665853289]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/GarageBalconyFloor" unique_id=424371464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7077637)
+mesh = SubResource("BoxMesh_ij5nj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/GarageBalconyFloor" unique_id=1769219299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7077637)
+shape = SubResource("BoxShape3D_n78lu")
+
+[node name="Inside1" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=106722956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.32739, -27, -16.385254)
-size = Vector3(12.668457, 1, 27)
 
-[node name="Inside2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=371467558]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=1293260708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14236164, 0, -4.4910583)
+mesh = SubResource("BoxMesh_0n6td")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=2018444053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01250267, 0, 8.470818)
+mesh = SubResource("BoxMesh_bmoad")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=61330922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8628216, 0, 12.940838)
+mesh = SubResource("BoxMesh_mb8w1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=1682976367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14236164, 0, -4.4910583)
+shape = SubResource("BoxShape3D_oo0aq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=446314122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01250267, 0, 8.470818)
+shape = SubResource("BoxShape3D_m4278")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside1" unique_id=1435329192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8628216, 0, 12.940838)
+shape = SubResource("BoxShape3D_nyio1")
+
+[node name="Inside2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=1496168732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.51477, -27, -27.12207)
-size = Vector3(13, 1, 30)
 
 [node name="Hole" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1675139864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8424563, 0, -7.4388275)
+visible = false
 operation = 2
 size = Vector3(2.6064453, 1, 6.3832703)
 
-[node name="Inside3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=1959430420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.42804, -27, -32.5)
-size = Vector3(4.8848877, 1, 18)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1630629032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.715514, 0, -2.6639023)
+mesh = SubResource("BoxMesh_mdkuk")
 
-[node name="Floor" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=518168768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.76074, -27, -39.83792)
-size = Vector3(7.782715, 1, 4)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1198135564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.886543, 0, 5.747261)
+mesh = SubResource("BoxMesh_mrxq0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1114003672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8466454, 0, -12.387299)
+mesh = SubResource("BoxMesh_i1y2t")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=917958423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64114034, 0, 11.985374)
+mesh = SubResource("BoxMesh_s64j0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1394524613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.715514, 0, -2.6639023)
+shape = SubResource("BoxShape3D_1o6i5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=825016289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.886543, 0, 5.747261)
+shape = SubResource("BoxShape3D_yr5cl")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=1088772762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8466454, 0, -12.387299)
+shape = SubResource("BoxShape3D_pkfnk")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside2" unique_id=3999604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64114034, 0, 11.985374)
+shape = SubResource("BoxShape3D_ghkdt")
+
+[node name="Inside3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor" unique_id=2018688258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.274506, -27, -35.693085)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside3" unique_id=1097647193]
+shape = SubResource("BoxShape3D_jtcuk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsFloor/Inside3" unique_id=193071164]
+mesh = SubResource("BoxMesh_qjyj0")
 
 [node name="UpstairsWalls" type="CSGCombiner3D" parent="Environment (NavMesh)/Upstairs" unique_id=59177937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.230024, -21)
 use_collision = true
 
-[node name="EnsuiteWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2129716413]
+[node name="EnsuiteWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=821185939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.57629, -24.5, -8.311615)
-size = Vector3(7.354004, 4, 0.375)
 
-[node name="EnsuiteWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1428525562]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EnsuiteWall" unique_id=265730371]
+mesh = SubResource("BoxMesh_do88p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EnsuiteWall" unique_id=1354965636]
+shape = SubResource("BoxShape3D_nlt47")
+
+[node name="EnsuiteWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1449577174]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.57629, -24.5, -15.741898)
-size = Vector3(7.354004, 4, 0.375)
 
-[node name="FrontWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=717465058]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EnsuiteWall2" unique_id=942047768]
+shape = SubResource("BoxShape3D_6a7tq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EnsuiteWall2" unique_id=1107623461]
+mesh = SubResource("BoxMesh_l34gv")
+
+[node name="FrontWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1908860081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.23049, -24.5, -2.7341232)
-size = Vector3(6.887329, 4, 0.375)
 
-[node name="FrontWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1372279774]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/FrontWall2" unique_id=1691084307]
+mesh = SubResource("BoxMesh_2qot8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/FrontWall2" unique_id=2078670605]
+shape = SubResource("BoxShape3D_sfox1")
+
+[node name="FrontWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=730023836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.249695, -25, -0.70417786)
-size = Vector3(11.495117, 5, 0.375)
 
-[node name="BalconyWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1298779531]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/FrontWall" unique_id=1746172782]
+shape = SubResource("BoxShape3D_nmgud")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/FrontWall" unique_id=890242395]
+mesh = SubResource("BoxMesh_le7yh")
+
+[node name="BalconyWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=656273649]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.904625, -24.5, -3.7090378)
-size = Vector3(5.758789, 4, 0.375)
 
-[node name="SideWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1160797761]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BalconyWall" unique_id=1730853397]
+mesh = SubResource("BoxMesh_wfk0w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BalconyWall" unique_id=2001892451]
+shape = SubResource("BoxShape3D_qitea")
+
+[node name="SideWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1223958020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.194794, -24.5, -6.113037)
-size = Vector3(0.375, 4, 11.226074)
 
-[node name="SideWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=209859951]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall" unique_id=408800877]
+mesh = SubResource("BoxMesh_6xqbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall" unique_id=1971309584]
+shape = SubResource("BoxShape3D_6jobc")
+
+[node name="SideWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2084805396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.67749, -25, -6.4050903)
-size = Vector3(0.375, 5, 11)
 
-[node name="WestBalconyWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=924039707]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall2" unique_id=14092236]
+shape = SubResource("BoxShape3D_f3kq1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall2" unique_id=641031545]
+mesh = SubResource("BoxMesh_di5vm")
+
+[node name="WestBalconyWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1049185056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.449097, -24.5, -11.91404)
-size = Vector3(11.924927, 4, 0.375)
 
-[node name="WestBalconyWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=500709172]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall" unique_id=421273978]
+mesh = SubResource("BoxMesh_7tufn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall" unique_id=255172001]
+shape = SubResource("BoxShape3D_hee0g")
+
+[node name="WestBalconyWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=266258814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.680046, -24.5, -15.129883)
-size = Vector3(0.375, 4, 6)
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=2021353783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0108833, 0.9179306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.88295364, 0.9179306)
+visible = false
 operation = 2
-size = Vector3(1, 3, 2)
+size = Vector3(1, 3.2558594, 2)
 
-[node name="WestBalconyWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2098692084]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=183765889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.62632)
+mesh = SubResource("BoxMesh_j8f2q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=194825344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.589325)
+mesh = SubResource("BoxMesh_pnq3x")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=1486476925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3892403, 0.9569092)
+mesh = SubResource("BoxMesh_8b617")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=918076773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.62632)
+shape = SubResource("BoxShape3D_wo74w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=1798843328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.589325)
+shape = SubResource("BoxShape3D_425aq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall2" unique_id=241613845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3765411, 0.9569092)
+shape = SubResource("BoxShape3D_le7yh")
+
+[node name="WestBalconyWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1738648106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.680046, -24.5, -15.152832)
-size = Vector3(0.375, 4, 6)
 
-[node name="Bedroom1Wall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1880732423]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall3" unique_id=1819503511]
+mesh = SubResource("BoxMesh_1xiqq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/WestBalconyWall3" unique_id=1458632100]
+shape = SubResource("BoxShape3D_n3r5j")
+
+[node name="Bedroom1Wall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=719319332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.562035, -24.5, -37.05269)
-size = Vector3(0.475, 4, 8.1171875)
 
-[node name="Bedroom2Wall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=964976159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.181744, -24.5, -18.340004)
-size = Vector3(7.3389893, 4, 0.375)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall" unique_id=1213929428]
+mesh = SubResource("BoxMesh_icsua")
 
-[node name="Bedroom2Wall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=274186898]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall" unique_id=1348392805]
+shape = SubResource("BoxShape3D_bj2ac")
+
+[node name="Bedroom2Wall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=717893301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.190727, -24.5, -18.340004)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall" unique_id=1546487397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004205227, 0.004360199, 0)
+mesh = SubResource("BoxMesh_axy21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall" unique_id=336516115]
+shape = SubResource("BoxShape3D_42xbh")
+
+[node name="Bedroom2Wall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2046573832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.677013, -24.5, -22.049011)
-size = Vector3(0.375, 4, 7.015503)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=2075343906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1.5)
+visible = false
 operation = 2
 size = Vector3(1, 3.55, 2)
 
-[node name="Bedroom2Wall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1929305071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.391384, -24.5, -25.714058)
-size = Vector3(7, 4, 0.375)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=1895555523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0525436)
+mesh = SubResource("BoxMesh_qitea")
 
-[node name="SideWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=715191468]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=1968935904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5018692)
+mesh = SubResource("BoxMesh_6jobc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=1487540494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3896675, 1.4961624)
+mesh = SubResource("BoxMesh_f3kq1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=548817051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0525436)
+shape = SubResource("BoxShape3D_di5vm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=146201278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5018692)
+shape = SubResource("BoxShape3D_7tufn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall2" unique_id=445117896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3759766, 1.4961624)
+shape = SubResource("BoxShape3D_1xiqq")
+
+[node name="Bedroom2Wall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1248513023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.362328, -24.5, -25.714058)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall3" unique_id=849669056]
+mesh = SubResource("BoxMesh_n0grg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom2Wall3" unique_id=604742328]
+shape = SubResource("BoxShape3D_hg63j")
+
+[node name="SideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=594240297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.715, -24.5, -29.9917)
-size = Vector3(0.375, 4, 23)
 
-[node name="BackWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1548475965]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall3" unique_id=47317687]
+shape = SubResource("BoxShape3D_d51ap")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/SideWall3" unique_id=1240550602]
+mesh = SubResource("BoxMesh_mdwnc")
+
+[node name="BackWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1565609596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.90148, -24.5, -41.319946)
-size = Vector3(18, 4, 0.375)
 
-[node name="BackSideWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=476021702]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall" unique_id=2095247292]
+mesh = SubResource("BoxMesh_cnv4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall" unique_id=1951102242]
+shape = SubResource("BoxShape3D_l6p3e")
+
+[node name="BackSideWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1305360250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.70247, -24.5, -39.48961)
-size = Vector3(0.375, 4, 3.2724)
 
-[node name="BackWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1775722449]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackSideWall" unique_id=525834243]
+mesh = SubResource("BoxMesh_y0kmp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackSideWall" unique_id=227393589]
+shape = SubResource("BoxShape3D_vn2as")
+
+[node name="BackWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1295428027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.59451, -25, -37.66056)
-size = Vector3(8.133362, 5, 0.375)
 
-[node name="BackWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1863264283]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall2" unique_id=927294855]
+mesh = SubResource("BoxMesh_umxri")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall2" unique_id=1468105400]
+shape = SubResource("BoxShape3D_03pw5")
+
+[node name="BackWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1110198668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.59451, -24.5, -29.727036)
-size = Vector3(8.133362, 4, 0.375)
 
-[node name="BackWall4" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=83474720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.59451, -24.5, -25.727036)
-size = Vector3(8.133362, 4, 0.375)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall3" unique_id=157492780]
+mesh = SubResource("BoxMesh_xox43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall3" unique_id=1484236499]
+shape = SubResource("BoxShape3D_y8aho")
+
+[node name="BackWall4" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=735849740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.59451, -24.5, -25.712906)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=645929668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 0)
+visible = false
 operation = 2
 size = Vector3(2, 3.55, 1)
 
-[node name="EastSideWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=262056264]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.48769, -25, -33.677032)
-size = Vector3(0.375, 5, 7.5733643)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=667879790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2844534, 0, 0)
+mesh = SubResource("BoxMesh_n3r5j")
 
-[node name="EastSideWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1064266856]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=767670222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6574383, 0, 0)
+mesh = SubResource("BoxMesh_bj2ac")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=812341234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4844179, 1.3897476, 0)
+mesh = SubResource("BoxMesh_42xbh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=199371545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2844534, 0, 0)
+shape = SubResource("BoxShape3D_n0grg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=449864034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6574383, 0, 0)
+shape = SubResource("BoxShape3D_mdwnc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/BackWall4" unique_id=711235430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4844179, 1.3897476, 0)
+shape = SubResource("BoxShape3D_cnv4p")
+
+[node name="EastSideWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=158639700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.47172, -25, -33.677032)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall" unique_id=1081618984]
+mesh = SubResource("BoxMesh_bise0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall" unique_id=2086283772]
+shape = SubResource("BoxShape3D_jo2eh")
+
+[node name="EastSideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1919556592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.725365, -25, -33.677032)
-size = Vector3(0.375, 5, 7.5733643)
 
-[node name="EastSideWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1332054836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.45311, -24.5, -16.39772)
-size = Vector3(0.375, 4, 27)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall3" unique_id=1034372479]
+mesh = SubResource("BoxMesh_h7bpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall3" unique_id=1685935287]
+shape = SubResource("BoxShape3D_gbjsl")
+
+[node name="EastSideWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2005081227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.46607, -24.5, -16.39772)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=119718034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2795792, -7.395958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.98804474, -7.395958)
+visible = false
 operation = 2
 size = Vector3(1, 3.5, 3)
 
-[node name="MasterBedroomWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2128439072]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=1854942159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8567429)
+mesh = SubResource("BoxMesh_l6p3e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=349094659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.150169)
+mesh = SubResource("BoxMesh_vn2as")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=89599773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3908157, -7.3869247)
+mesh = SubResource("BoxMesh_03pw5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=1110219267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8567429)
+shape = SubResource("BoxShape3D_xox43")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=268328388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.150169)
+shape = SubResource("BoxShape3D_bise0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/EastSideWall2" unique_id=1611020823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3908157, -7.3869247)
+shape = SubResource("BoxShape3D_h7bpp")
+
+[node name="MasterBedroomWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1363073614]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.71083, -24.5, -15.113647)
-size = Vector3(0.375, 4, 14)
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=273621479]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2486305, 3.8125763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.97167206, 3.8125763)
+visible = false
 operation = 2
 size = Vector3(1, 3.5, 2)
 
 [node name="Door2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=1401168082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2486305, -2.049553)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9793968, -2.049553)
+visible = false
 operation = 2
 size = Vector3(1, 3.5, 2)
 
-[node name="MasterBedroomWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1736181707]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.71083, -24.5, -27.719788)
-size = Vector3(0.375, 4, 4.383667)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=1839977333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.065651)
+mesh = SubResource("BoxMesh_gbjsl")
 
-[node name="Bedroom1Wall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1454984753]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=189285864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8888016)
+mesh = SubResource("BoxMesh_5vtr0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=1695704429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9080963)
+mesh = SubResource("BoxMesh_xmq5n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=293272129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3912468, -2.0813446)
+mesh = SubResource("BoxMesh_ladsi")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=802882890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3912888, 3.8092804)
+mesh = SubResource("BoxMesh_7qc1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=454986240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.065651)
+shape = SubResource("BoxShape3D_dobo0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=1050166612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8888016)
+shape = SubResource("BoxShape3D_1ppj3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=699332661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9080963)
+shape = SubResource("BoxShape3D_tpqd7")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=592979594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3912468, -2.0813446)
+shape = SubResource("BoxShape3D_o0evn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall" unique_id=730772206]
+shape = SubResource("BoxShape3D_qytxv")
+
+[node name="MasterBedroomWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1363814425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.71083, -24.5, -27.719788)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall3" unique_id=364168708]
+mesh = SubResource("BoxMesh_8ckdd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall3" unique_id=985124458]
+shape = SubResource("BoxShape3D_5vtr0")
+
+[node name="Bedroom1Wall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2065121685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.839485, -24.5, -32.772644)
-size = Vector3(9.875488, 4, 0.375)
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1731735656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7985277, -1.2870102, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7985277, -1.0072784, 0)
+visible = false
 operation = 2
 size = Vector3(2, 3.55, 1)
 
-[node name="MasterBedroomWall2" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1043518048]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.61304, -24.5, -22)
-size = Vector3(7.371582, 4, 0.375)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1893663771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.214213, 0, 0)
+mesh = SubResource("BoxMesh_cv01b")
 
-[node name="ToiletWall" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2082469377]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1098701455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8811805, 0, 0)
+mesh = SubResource("BoxMesh_61cyd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1069594994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7945764, 1.3890152, 0)
+mesh = SubResource("BoxMesh_7frv1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=526649870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.214213, 0, 0)
+shape = SubResource("BoxShape3D_ikqac")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1998191264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8811805, 0, 0)
+shape = SubResource("BoxShape3D_bad7w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/Bedroom1Wall3" unique_id=1406741361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7945764, 1.3890152, 0)
+shape = SubResource("BoxShape3D_mmesd")
+
+[node name="MasterBedroomWall2" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=84563581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.56736, -24.5, -22)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall2" unique_id=22087221]
+shape = SubResource("BoxShape3D_2t505")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/MasterBedroomWall2" unique_id=434644228]
+mesh = SubResource("BoxMesh_k375o")
+
+[node name="ToiletWall" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=2009430510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, -24.5, -5.499161)
-size = Vector3(0.375, 4, 5.241211)
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=2041589509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2995796, -1.230011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9678421, -1.230011)
+visible = false
 operation = 2
 size = Vector3(1, 3.5, 2)
 
-[node name="UpstairsWall4" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1244071114]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.69776, -30.255646, -32.206528)
-size = Vector3(0.375, 6, 8)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=1393439014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6050262)
+mesh = SubResource("BoxMesh_e58rx")
 
-[node name="UpstairsWall3" type="CSGBox3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1116127528]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.69211, -30.28828, -31.93612)
-size = Vector3(0.375, 6, 8.345703)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=493137054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2699928)
+mesh = SubResource("BoxMesh_4eul6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=1919782719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3906708, -1.2353592)
+mesh = SubResource("BoxMesh_h8caq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=105343411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6050262)
+shape = SubResource("BoxShape3D_bqfdu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=1133131928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2699928)
+shape = SubResource("BoxShape3D_0cp2s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/ToiletWall" unique_id=180379669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3906708, -1.2353592)
+shape = SubResource("BoxShape3D_2oqoe")
+
+[node name="UpstairsWall4" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=555166314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.86366, -30.255646, -33.66369)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/UpstairsWall4" unique_id=1037904688]
+shape = SubResource("BoxShape3D_xmq5n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/UpstairsWall4" unique_id=182134179]
+mesh = SubResource("BoxMesh_1e8o5")
+
+[node name="UpstairsWall3" type="StaticBody3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1168284066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.69211, -30.28828, -34.09021)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/UpstairsWall3" unique_id=1267581869]
+mesh = SubResource("BoxMesh_k0giv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls/UpstairsWall3" unique_id=906555232]
+shape = SubResource("BoxShape3D_ladsi")
 
 [node name="DowntoUp3" type="CSGPolygon3D" parent="Environment (NavMesh)/Upstairs/UpstairsWalls" unique_id=1477786906]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 62.386, -26.008892, -31.957573)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 62.628403, -26.008892, -35.772774)
 use_collision = true
 polygon = PackedVector2Array(-5.0092564, -5.3619194, 1.9703865, -5.324619, 1.9980049, -0.4901271)
 depth = 2.58
@@ -1879,11 +2568,11 @@ script = ExtResource("27_ckok1")
 connect_portal = NodePath("../UpToDownDestination")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/UpToDown" unique_id=1673387792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.186752, 42.050358, -75.8572)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.79537, 41.7034, -64.90633)
 shape = SubResource("SphereShape3D_rwifv")
 
 [node name="DownToUpDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=1097321146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.801256, 42.26914, -106.007065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.801256, 42.417675, -94.835884)
 
 [node name="UpToDownDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=2056092478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7545075, 2.4404507, -32.356186)
@@ -1897,12 +2586,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.870265, 0.11938918, -38.586
 [node name="BackHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=602506108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.451176, 6.623755, -31.717344)
 
+[node name="FrontHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=971976256]
+transform = Transform3D(1.873399, 0, 0, 0, 1, 0, 0, 0, 1, -4.7890077, 4.7463584, -10.47924)
+
 [node name="BackHole" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=394167414 node_paths=PackedStringArray("connect_portal")]
 script = ExtResource("27_ckok1")
 connect_portal = NodePath("../BackHoleDestination")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/BackHole" unique_id=1120729149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.296484, 40.699535, -106.97395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.296484, 40.699535, -92.85126)
 shape = SubResource("BoxShape3D_ckok1")
 
 [node name="FrontHole" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1238966522 node_paths=PackedStringArray("connect_portal")]
@@ -1911,11 +2603,8 @@ script = ExtResource("27_ckok1")
 connect_portal = NodePath("../FrontHoleDestination")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/FrontHole" unique_id=1860156978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.336754, 41.338585, -79.31813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.336754, 41.338585, -65.35118)
 shape = SubResource("BoxShape3D_2x71e")
-
-[node name="FrontHoleDestination" type="Marker3D" parent="Environment (NavMesh)/Portals" unique_id=971976256]
-transform = Transform3D(1.873399, 0, 0, 0, 1, 0, 0, 0, 1, -4.7890077, 4.7463584, -10.47924)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment (NavMesh)" unique_id=880974987]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 18, -43.909)
@@ -2037,12 +2726,12 @@ texture = SubResource("ViewportTexture_rwifv")
 [node name="Viewport1" type="SubViewport" parent="CameraManager" unique_id=1040274272]
 
 [node name="Player1Cam" type="Camera3D" parent="CameraManager/Viewport1" unique_id=812204678]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -22.219776, 4.218769, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, -22.211277, 4.218769, 0)
 
 [node name="Viewport2" type="SubViewport" parent="CameraManager" unique_id=1234397570]
 
 [node name="Player2Cam" type="Camera3D" parent="CameraManager/Viewport2" unique_id=871099603]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -20.414143, 4.218769, 0)
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, -20.414143, 4.218769, 0)
 
 [node name="Systems Debug UI" type="Control" parent="." unique_id=1491472664]
 layout_mode = 3
