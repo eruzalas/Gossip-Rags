@@ -35,12 +35,13 @@ func _process(_delta: float) -> void:
 			current_increment_value = 0
 	
 func _collect_gossip(passed_npc: Npc, listening_status: bool):
-	if listening_status == true:
-		gossip_collection_timer.start(_get_total_leeway_seconds())
-		player_listening = true
-	else:
-		gossip_collection_timer.stop()
-		player_listening = false
+	if passed_npc.gossiper_ID == npc.gossiper_ID:
+		if listening_status == true:
+			gossip_collection_timer.start(_get_total_leeway_seconds())
+			player_listening = true
+		else:
+			gossip_collection_timer.stop()
+			player_listening = false
 
 func _get_total_leeway_seconds() -> float:
 	var total_seconds = 0
