@@ -34,7 +34,8 @@ var yoink: bool = false #if player is trying to grab attentionm - handle via sig
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	SignalBus.caused_attention.connect(_on_caused_attention)
+	print("DEBUG: Manager connected to SignalBus")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,4 +76,15 @@ func _determine_att_level(which_player: int, action: float):
 		player_att = p_2_att_level
 		player_att = attention_system._calculate_att(1, action, player_att)
 		p_2_att_level = player_att
+	
+
+func _on_caused_attention(player: Node, attention_value: float):
+	print("DEBUG: manager received signal ")
+	
+	var p_id = 1 if player == player_1 else 2 #determine ID based on which player node was passed
+	_determine_att_level(p_id, attention_value) #math logic
+	
+	#just a check in the console so that we know its working
+	print("Player ", p_id, " attention is now: ",
+	p_1_att_level if p_id == 1 else p_2_att_level)
 	
