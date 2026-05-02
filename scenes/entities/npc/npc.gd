@@ -15,6 +15,9 @@ class_name Npc
 @onready var wander_timer: Timer = $"Wander Timer"
 @onready var gossiper_component: Node = $GossiperComponent
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var lorenzo_s_car: Sprite3D = $"Lorenzo's Car"
+@onready var lorenzo_s_explosion: Sprite3D = $"Lorenzo's Explosion"
 
 # export vars
 @export var debug_mode: bool = true
@@ -59,6 +62,8 @@ const TURN_SPEED = 3.0
 
 # initialisation
 func _ready():
+	lorenzo_s_car.visible = false
+	lorenzo_s_explosion.visible = false
 	players = get_tree().get_nodes_in_group("players")
 	
 	# check if signal already connected - connect if not
@@ -80,8 +85,7 @@ func _ready():
 	if npc_type == Enums.NpcType.GOSSIPER:
 		gossiper_component.gossiping_active.connect(_set_gossiping)
 		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
-
-
+	
 func _physics_process(delta: float) -> void:
 	# TODO: fix this up so look should be set in startup
 		# I tried to fix this one night, but had problems and I can't remember what problems lol
@@ -241,6 +245,11 @@ func _on_bangarang_range_body_entered(body: Node3D) -> void:
 			current_state = Enums.NpcState.WATCHING
 			# TODO INTERRUPT SEQUENCE HERE?
 			# SPIKE ATTENTION BUT RESTART SEQUENCE?
+			
+		
+		if npc_type == Enums.NpcType.SPECIAL:
+			animation_player.play("lorenzo getting hit by a car")
+	
 
 func _on_bangarang_range_body_exited(body: Node3D) -> void:
 	if body.is_in_group("players"):
