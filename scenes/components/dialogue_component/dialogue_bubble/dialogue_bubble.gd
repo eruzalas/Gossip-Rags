@@ -15,6 +15,8 @@ var original_position: Vector2
 # signals
 signal is_transparent
 
+const display_delay: float = 4
+
 func _ready() -> void:
 	rate_of_transparency = MAX_OPACITY / (base_transparency_speed * 60)
 	original_position = position
@@ -27,8 +29,13 @@ func _process(_delta: float) -> void:
 		if modulate.a < 0:
 			emit_signal("is_transparent", self)
 
-func _set_text(dialogue: String):
-	rich_text_label.text = dialogue
+func _set_text(text: String, display_as_typewriter: bool = false, typewriter_duration: float = 0.0) -> void:
+	rich_text_label.text = text
+	if display_as_typewriter:
+		rich_text_label.text = text
+		rich_text_label.visible_ratio = 0.0
+		var typewriter_tween = create_tween()
+		typewriter_tween.tween_property(rich_text_label, "visible_ratio", 1.0, typewriter_duration)
 
 func _set_texture(path: String):
 	var texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
@@ -37,20 +44,9 @@ func _set_texture(path: String):
 	add_theme_stylebox_override("panel", new_style_box)
 	#dialogue_bubble.texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
 
-# update position and transparency based off index of child
-# the index which is passed in is the reverse of the child list!
-func _update_off_index(index: int = 0) -> void:
-	# get transparency speed
-	var new_speed = base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)
-	if new_speed < 0.0:
-		new_speed = 0.0
-	# update rate
-	rate_of_transparency = MAX_OPACITY / (new_speed * 60)
-	# update ycoord
-	position.y = original_position.y - (50 * index)
-
 func _update_transparency(index: int = 0) -> void:
-	var new_speed = base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)
+	var new_speed = (base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)) + display_delay
+
 	if new_speed < 0.0:
 		new_speed = 0.0
 	# update rate

@@ -12,8 +12,9 @@ var can_speak: bool = true
 var previous_npc_status: Enums.NpcState = Enums.NpcState.IDLE
 var current_npc_status: Enums.NpcState = Enums.NpcState.IDLE
 
-const MIN_WAIT: float = 1.0
-const MAX_WAIT: float = 10.0
+const MIN_WAIT: float = 10.0
+const MAX_WAIT: float = 20.0
+const SECONDS_PER_CHARACTER = 0.1
 
 func _ready() -> void:
 	randomize()
@@ -36,22 +37,27 @@ func _remove_bubble(child):
 	child.queue_free()
 
 func _add_bubble(dialogue: Dictionary) -> void:
+	var v_box_children = v_box_container.get_children()
+	if v_box_children.size() > 0:
+		_remove_bubble(v_box_children[0])
+	
 	var bubble = dialogue_bubble_prefab.instantiate()
 	
 	v_box_container.add_child(bubble)
-	bubble._set_text(dialogue["dialogue"])
+	var typewriter_delay = SECONDS_PER_CHARACTER * dialogue["dialogue"].length()
+	bubble._set_text(dialogue["dialogue"], true, (typewriter_delay/2))
 	bubble._set_texture(dialogue["bubble_icon"])
 	bubble.can_disappear = true
+	bubble.base_transparency_speed = typewriter_delay
 	bubble.is_transparent.connect(_remove_bubble)
 	_update_all_bubbles()
 
 func _update_all_bubbles() -> void:
-	var children = get_children()
+	var children = v_box_container.get_children()
 	var index = 0
 	for child in children:
-		if child is PanelContainer:
-			child._update_transparency((children.size() - 1) - index)
-			index += 1
+		child._update_transparency((children.size() - 1) - index)
+		index += 1
 
 func _set_status(new_status: Enums.NpcState) -> void:
 	previous_npc_status = current_npc_status
