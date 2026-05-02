@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://c5lq4d4cfmry7"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_viibj"]
+[ext_resource type="Texture2D" uid="uid://g5wuhgj8xehk" path="res://assets/testsprites/costumes_AM/dinosaur.png" id="2_gt3bk"]
+
+[resource]
+script = ExtResource("1_viibj")
+name = "inflatable_dino"
+texture = ExtResource("2_gt3bk")
+speed_modifier = 0.8
+accel_modifier = 0.7
+decel_modifier = 1.5
+attention_modifier = 1.5
+costume_ID = 7
+metadata/_custom_type_script = "uid://df08msjn6bry6"
