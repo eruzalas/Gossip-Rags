@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var player_inventory: inventory = preload("res://scenes/components/inventory/player2_inventory.tres")
 
 #---- Movement Base Stats ----
-var base_speed = 10
+var base_speed = 7
 var move_speed = 0 #used to handle speed when running/crouching, inputs required
 var jump_velocity = 000 #base is actually 10
 var acceleration = 35
@@ -132,7 +132,7 @@ func toggle_selected():
 	
 ##very badly assigns costumes based on a keyed ID system (ID = position in array)
 func update_sprite():
-	var sprite = ["p2_default","p2_banana_costume","p2_motorbike_helmet_costume","p2_pirate_costume","p2_cat"]
+	var sprite = ["p2_default","p2_banana","p2_motorbike_helmet","p2_pirate","p2_cat","p2_nurse","p2_cult","p2_dino","p2_ghost","p2_ninja","p2_angel","p2_horse"]
 	var selected = 0 #
 	for i in range (player_inventory.size()):
 		if (!player_inventory.equipment[i]):

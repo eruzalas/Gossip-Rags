@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://bmnkcdyb02qaa"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_12ocn"]
+[ext_resource type="Texture2D" uid="uid://dw701jwa5xxle" path="res://assets/testsprites/costumes_AM/ghost.png" id="2_lnk0j"]
+
+[resource]
+script = ExtResource("1_12ocn")
+name = "ghost"
+texture = ExtResource("2_lnk0j")
+speed_modifier = 1.1
+accel_modifier = 1.2
+decel_modifier = 1.5
+suspicion_modifier = 1.5
+costume_ID = 8
+metadata/_custom_type_script = "uid://df08msjn6bry6"

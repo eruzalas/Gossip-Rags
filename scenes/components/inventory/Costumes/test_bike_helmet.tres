@@ -7,10 +7,9 @@
 script = ExtResource("1_tj408")
 name = "motorcycle"
 texture = ExtResource("2_p3q60")
-speed_modifier = -2.0
+speed_modifier = -1.8
 accel_modifier = 1.5
 decel_modifier = 0.8
-suspicion_modifier = 0.2
 attention_modifier = 1.0
 costume_ID = 2
 metadata/_custom_type_script = "uid://df08msjn6bry6"
