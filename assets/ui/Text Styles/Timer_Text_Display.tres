@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bx1kvusdwgg50"]
+
+[ext_resource type="FontFile" uid="uid://b6xyynyo4hyfu" path="res://assets/ui/Fonts/BagelFatOne-Regular.ttf" id="1_3i2vw"]
+
+[resource]
+font = ExtResource("1_3i2vw")
+font_size = 40
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.4627451)
+stacked_outline_count = 2
+stacked_outline_0/size = 9
+stacked_outline_1/size = 6
+stacked_outline_1/color = Color(0.3764706, 0.20784314, 0.87058824, 1)

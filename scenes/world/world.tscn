@@ -11,15 +11,22 @@
 [ext_resource type="PackedScene" uid="uid://c56ttmud00t6d" path="res://scenes/entities/move_test/player2.tscn" id="6_ckok1"]
 [ext_resource type="Script" uid="uid://dxt0saqc8n3fm" path="res://utils/controllers/origin_controller.gd" id="6_dlabj"]
 [ext_resource type="PackedScene" uid="uid://ctqlardy4ps7h" path="res://scenes/entities/npc/npc_origin_point.tscn" id="7_srmg5"]
+[ext_resource type="Material" uid="uid://puxa6kq061m5" path="res://assets/Environment/Placeholder_wood_medium_material.tres" id="8_26xou"]
 [ext_resource type="Script" uid="uid://xowdms5vesjr" path="res://scenes/systems/debug_system_ui.gd" id="8_t634p"]
+[ext_resource type="Material" uid="uid://cobothw7f4oj8" path="res://assets/Environment/Placeholder_Stone_wall_material.tres" id="9_5o5dd"]
 [ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="9_6hctx"]
+[ext_resource type="Material" uid="uid://ckc3snraakq3d" path="res://assets/Environment/Placeholder_wall_material.tres" id="9_jyr8v"]
+[ext_resource type="Material" uid="uid://vr6b010y2ns" path="res://assets/Environment/Placeholder_Grass_material.tres" id="10_5o5dd"]
 [ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="10_ues17"]
+[ext_resource type="Material" uid="uid://cgtxxnjmblabo" path="res://assets/Environment/Placeholder_wood_dull_material.tres" id="11_d0ajt"]
 [ext_resource type="Script" uid="uid://baox6kivo6tru" path="res://scenes/camera_components/camera_manager.gd" id="12_rwifv"]
 [ext_resource type="Shader" uid="uid://vdffugcut0q" path="res://scenes/camera_components/splitsceen_shader.gdshader" id="13_ckok1"]
 [ext_resource type="Texture2D" uid="uid://c3n8ifsusry8v" path="res://assets/ui/Tea_Bar_Under_PH.png" id="18_ckok1"]
 [ext_resource type="Texture2D" uid="uid://b06qqajsoxs5g" path="res://assets/ui/Placeholder_Tea_Bar__Progress_2.png" id="19_2x71e"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attenion_meter_system.gd" id="21_fymcc"]
+[ext_resource type="Texture2D" uid="uid://dkpuief350v3a" path="res://assets/ui/Timer_Background.png" id="22_d0ajt"]
+[ext_resource type="LabelSettings" uid="uid://bx1kvusdwgg50" path="res://assets/ui/Text Styles/Timer_Text_Display.tres" id="23_fymcc"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
@@ -31,11 +38,11 @@
 vertices = PackedVector3Array(-9.5, 0.7881422, -22.252735, -9.25, 0.7881422, -21.502735, -8.5, 0.7881422, -21.502735, -8.25, 0.7881422, -22.252735, -12.5, 0.7881422, -23.502735, -4, 0.7881422, -25.502735, -4, 0.7881422, -33.502735, -12.5, 0.7881422, -33.502735, -13.25, 0.7881422, -23.252735, -13.25, 0.7881422, -22.502735, -3.5, 0.7881422, -22.252735, -3.5, 0.7881422, -25.252735, -2.5, 0.7881422, -33.502735, -2.5, 0.7881422, -32.502735, -1, 0.7881422, -32.502735, -1, 0.7881422, -33.502735, 0.5, 0.7881422, -26.502735, 1.25, 0.7881422, -26.502735, 3.75, 0.7881422, -26.752735, 4, 0.7881422, -31.502735, 0.5, 0.7881422, -33.502735, 12.25, -5.211858, -31.752735, 12.25, -5.211858, -33.502735, 5.375, 0.5381422, -31.544401, 4.90625, 0.7881422, -33.502735, 12.5, 0.7881422, -28.502735, 12.5, 0.7881422, -27.752735, 13.25, 0.7881422, -27.502735, 13.25, 0.7881422, -28.752735, 21.5, 0.7881422, -33.502735, 20.5, 0.7881422, -15.502735, 21.5, 0.7881422, -15.502735, 14.25, 0.7881422, -15.502735, 14.5, 0.7881422, -14.752735, 20.25, 0.7881422, -14.752735, 13.25, 0.7881422, -15.502735, 13.25, 0.7881422, -33.502735, 1.5, 0.7881422, -25.252735, 0.25, 0.7881422, -25.252735, -1, 1.0381422, -25.502735, -1, 6.538142, -31.502735, -2.5, 6.538142, -31.502735, -2.5, 1.0381422, -25.502735, 5, 0.7881422, -22.252735, 5, 0.7881422, -25.252735, -2.5, 0.7881422, -31.252735, -2.5, 0.7881422, -28.002735, -1.25, 0.7881422, -28.002735, -1.25, 0.7881422, -31.252735, 11.75, 0.7881422, -27.502735, 11.75, 0.7881422, -28.752735, 5.5, 0.7881422, -29.752735, 5.5, 0.7881422, -25.502735, 11.75, 0.7881422, -29.752735, 11.75, 0.7881422, -22.252735, -14.25, 0.7881422, -22.252735, -17.5, 0.7881422, -23.502735, -12.25, 0.7881422, -8.752735, -11.75, 0.7881422, -9.002735, -11.75, 0.7881422, -12.002735, -14.25, 0.7881422, -12.252735, -15.5, 0.7881422, -17.502735, -15.25, 0.7881422, -16.252735, -17.75, 0.7881422, -16.002735, -17.5, 0.7881422, -17.502735, -17.75, 0.7881422, 1.2472649, -12.25, 0.7881422, 1.2472649, -9.5, 0.7881422, -12.752735, -8.75, 0.7881422, -12.752735, -8.5, 0.7881422, -13.502735, -9.75, 0.7881422, -13.502735, 1.25, 0.7881422, -15.252735, 1.25, 0.7881422, -19.502735, -8.25, 0.7881422, -20.502735, -9.5, 0.7881422, -20.502735, 1.25, 0.7881422, -20.502735, 2, 0.7881422, -15.502735, 2, 0.7881422, -19.252735, 1.25, 0.7881422, -13.502735, -12.5, 0.7881422, -20.502735, -12.5, 0.7881422, -13.502735, 7, 0.7881422, -13.502735, 7.25, 0.7881422, -12.752735, 9, 0.7881422, -12.752735, 9.25, 0.7881422, -13.502735, 2.75, 0.7881422, -19.502735, 2.75, 0.7881422, -15.252735, 11.75, 0.7881422, -13.502735, 11.75, 0.7881422, -20.502735, 2.75, 0.7881422, -20.502735, 2.75, 0.7881422, -13.502735, 13.25, 0.7881422, -10.502735, 12.5, 0.7881422, -10.252735, 12.5, 0.7881422, -7.502735, 13.25, 0.7881422, -7.002735, 21.75, 0.7881422, -7.002735, 21.75, 0.7881422, -14.002735, 20.5, 0.7881422, -14.002735, 14.25, 0.7881422, -14.002735, 13.25, 0.7881422, -14.002735, -8.5, 0.7881422, -12.002735, -9.75, 0.7881422, -11.752735, -9.5, 0.7881422, -8.752735, -10.5, 0.7881422, -7.502735, -10.5, 0.7881422, 0.49726486, -8.5, 0.7881422, -7.502735, -9.5, 0.7881422, -7.752735, -8.5, 0.7881422, -9.002735, -4.75, 0.7881422, -9.002735, -4.75, 0.7881422, -12.002735, -3.25, 0.7881422, -12.002735, -3.25, 0.7881422, -9.002735, -2, 0.7881422, -8.752735, -1, 0.7881422, -9.002735, 1.25, 0.7881422, -9.002735, 1.25, 0.7881422, -12.002735, -0.75, 0.7881422, 0.49726486, -0.75, 0.7881422, -1.2527351, -2.25, 0.7881422, -7.502735, -1.25, 0.7881422, -7.752735, 1.25, 0.7881422, -7.502735, 1.25, 0.7881422, -1.5027351, 1.5, 0.7881422, -4.502735, 9.25, 0.7881422, -12.002735, 7, 0.7881422, -12.002735, 11.75, 0.7881422, -7.252735, 11.75, 0.7881422, -10.502735, 11.75, 0.7881422, -12.002735, 7, 0.7881422, -1.2527351, 11.75, 0.7881422, 0.49726486, 2.75, 0.7881422, -12.002735, 2.75, 0.7881422, -5.002735, 5.25, 0.7881422, -1.5027351, 7, 0.7881422, 0.49726486, 13.25, 0.7881422, 6.247265, 12.5, 0.7881422, 6.497265, 12.5, 0.7881422, 10.747265, 21.75, 0.7881422, 10.747265, 2.5, 0.7881422, -4.502735, 1.75, 0.7881422, -1.2527351, 4.75, 0.7881422, -1.2527351, 4.75, 0.7881422, 1.4972649, 1.75, 0.7881422, 1.4972649, 5.25, 0.7881422, 2.2472649, 1, 0.7881422, 2.2472649, -1.5, 0.7881422, 5.247265, 7.75, 0.7881422, 5.247265, -1.5, 0.7881422, 2.2472649, 7.75, 0.7881422, 2.2472649, 0.25, 6.788142, -0.50273514, 0.25, 6.788142, 1.2472649, 6, 6.788142, 1.2472649, 6, 6.788142, -0.50273514, -8.5, 0.7881422, 6.997265, -8.5, 0.7881422, 6.247265, -9, 0.7881422, 5.997265, -9, 0.7881422, 7.247265, -11.75, 0.7881422, 2.2472649, -9, 0.7881422, 2.2472649, -9, 0.7881422, 10.747265, -17.75, 0.7881422, 10.747265, -7.75, 0.2881422, 5.997265, -7.75, 0.2881422, 7.247265, -2.5, 0.038142204, 5.997265, -2.5, 0.038142204, 2.2472649, -7.75, 0.038142204, 2.2472649, -1, 0.038142204, 10.997265, -0.75, 0.038142204, 6.247265, -7.75, 0.038142204, 10.997265, 11.75, 0.038142204, 2.2472649, 8.75, 0.038142204, 2.2472649, 8.5, 0.038142204, 6.247265, 11.5, 0.2881422, 10.997265)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(8, 4, 9), PackedInt32Array(9, 4, 0), PackedInt32Array(11, 10, 5), PackedInt32Array(5, 10, 3), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(20, 24, 19), PackedInt32Array(19, 24, 23), PackedInt32Array(23, 24, 21), PackedInt32Array(21, 24, 22), PackedInt32Array(25, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(28, 29, 27), PackedInt32Array(27, 29, 30), PackedInt32Array(30, 29, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 30), PackedInt32Array(30, 32, 27), PackedInt32Array(32, 35, 27), PackedInt32Array(28, 36, 29), PackedInt32Array(17, 37, 16), PackedInt32Array(16, 37, 38), PackedInt32Array(42, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(42, 39, 11), PackedInt32Array(11, 39, 38), PackedInt32Array(11, 38, 10), PackedInt32Array(37, 44, 43), PackedInt32Array(37, 43, 38), PackedInt32Array(38, 43, 10), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46), PackedInt32Array(26, 49, 25), PackedInt32Array(25, 49, 50), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(51, 53, 50), PackedInt32Array(44, 52, 43), PackedInt32Array(43, 52, 54), PackedInt32Array(54, 52, 49), PackedInt32Array(9, 55, 8), PackedInt32Array(8, 55, 56), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(62, 61, 60), PackedInt32Array(60, 61, 55), PackedInt32Array(60, 63, 62), PackedInt32Array(61, 64, 55), PackedInt32Array(55, 64, 56), PackedInt32Array(60, 57, 63), PackedInt32Array(63, 57, 66), PackedInt32Array(63, 66, 65), PackedInt32Array(67, 70, 68), PackedInt32Array(68, 70, 69), PackedInt32Array(70, 74, 69), PackedInt32Array(69, 74, 73), PackedInt32Array(69, 73, 71), PackedInt32Array(71, 73, 72), PackedInt32Array(2, 73, 1), PackedInt32Array(1, 73, 74), PackedInt32Array(73, 75, 72), PackedInt32Array(76, 71, 77), PackedInt32Array(77, 71, 72), PackedInt32Array(71, 78, 69), PackedInt32Array(80, 79, 70), PackedInt32Array(70, 79, 74), PackedInt32Array(82, 81, 83), PackedInt32Array(83, 81, 84), PackedInt32Array(84, 81, 86), PackedInt32Array(84, 86, 85), PackedInt32Array(85, 86, 77), PackedInt32Array(86, 76, 77), PackedInt32Array(87, 84, 88), PackedInt32Array(88, 84, 85), PackedInt32Array(88, 85, 89), PackedInt32Array(81, 90, 86), PackedInt32Array(92, 91, 93), PackedInt32Array(93, 91, 94), PackedInt32Array(97, 96, 95), PackedInt32Array(91, 99, 98), PackedInt32Array(91, 98, 33), PackedInt32Array(34, 97, 33), PackedInt32Array(33, 97, 91), PackedInt32Array(91, 97, 94), PackedInt32Array(94, 97, 95), PackedInt32Array(68, 100, 67), PackedInt32Array(67, 100, 101), PackedInt32Array(101, 100, 102), PackedInt32Array(106, 105, 103), PackedInt32Array(103, 105, 104), PackedInt32Array(59, 101, 58), PackedInt32Array(58, 101, 102), PackedInt32Array(100, 109, 107), PackedInt32Array(107, 109, 108), PackedInt32Array(106, 102, 107), PackedInt32Array(107, 102, 100), PackedInt32Array(112, 111, 113), PackedInt32Array(113, 111, 110), PackedInt32Array(114, 113, 115), PackedInt32Array(115, 113, 110), PackedInt32Array(106, 107, 105), PackedInt32Array(117, 116, 118), PackedInt32Array(118, 116, 105), PackedInt32Array(105, 116, 104), PackedInt32Array(118, 112, 119), PackedInt32Array(119, 112, 113), PackedInt32Array(119, 120, 118), PackedInt32Array(118, 120, 122), PackedInt32Array(118, 122, 121), PackedInt32Array(118, 121, 117), PackedInt32Array(83, 123, 82), PackedInt32Array(82, 123, 124), PackedInt32Array(124, 123, 126), PackedInt32Array(124, 126, 125), PackedInt32Array(123, 127, 126), PackedInt32Array(93, 125, 92), PackedInt32Array(92, 125, 126), PackedInt32Array(130, 124, 131), PackedInt32Array(131, 124, 125), PackedInt32Array(131, 125, 128), PackedInt32Array(128, 125, 129), PackedInt32Array(128, 132, 131), PackedInt32Array(129, 133, 128), PackedInt32Array(135, 134, 136), PackedInt32Array(136, 134, 137), PackedInt32Array(94, 95, 134), PackedInt32Array(134, 95, 137), PackedInt32Array(121, 122, 138), PackedInt32Array(139, 121, 140), PackedInt32Array(140, 121, 132), PackedInt32Array(132, 121, 138), PackedInt32Array(132, 138, 131), PackedInt32Array(142, 139, 141), PackedInt32Array(141, 139, 140), PackedInt32Array(142, 141, 143), PackedInt32Array(142, 143, 144), PackedInt32Array(144, 143, 146), PackedInt32Array(144, 146, 145), PackedInt32Array(145, 147, 144), PackedInt32Array(143, 148, 146), PackedInt32Array(152, 151, 149), PackedInt32Array(149, 151, 150), PackedInt32Array(155, 154, 153), PackedInt32Array(153, 156, 155), PackedInt32Array(155, 156, 157), PackedInt32Array(157, 158, 155), PackedInt32Array(156, 159, 157), PackedInt32Array(157, 159, 65), PackedInt32Array(65, 159, 160), PackedInt32Array(157, 65, 66), PackedInt32Array(154, 161, 153), PackedInt32Array(153, 161, 162), PackedInt32Array(162, 161, 163), PackedInt32Array(161, 165, 163), PackedInt32Array(163, 165, 164), PackedInt32Array(167, 166, 163), PackedInt32Array(163, 166, 162), PackedInt32Array(162, 166, 168), PackedInt32Array(170, 169, 171), PackedInt32Array(171, 169, 172), PackedInt32Array(167, 171, 166), PackedInt32Array(166, 171, 172)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26xou"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyr8v"]
+albedo_color = Color(0.54509807, 0.26666668, 0.09411765, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5o5dd"]
+albedo_color = Color(0.54509807, 0.26666668, 0.09411765, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwifv"]
 
@@ -43,9 +50,11 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 size = Vector3(0.176, 1, 4.444)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jyr8v"]
+material = ExtResource("9_5o5dd")
 size = Vector3(0.176, 1, 4.444)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5o5dd"]
+material = ExtResource("9_5o5dd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0ajt"]
 size = Vector3(0.176, 1, 4)
@@ -54,38 +63,45 @@ size = Vector3(0.176, 1, 4)
 size = Vector3(0.176, 1, 3.9594727)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lbnhc"]
+material = ExtResource("9_5o5dd")
 size = Vector3(0.176, 1, 3.96)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sygq6"]
 size = Vector3(9.827148, 4, 0.176)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0wrxw"]
+material = ExtResource("11_d0ajt")
 size = Vector3(9.827148, 4, 0.176)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0ajt"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(0.54901963, 0.3529412, 0.24313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmg7y"]
+material = ExtResource("11_d0ajt")
 size = Vector3(0.176, 4, 25.78003)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqe8x"]
 size = Vector3(0.176, 4, 25.78003)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6ebim"]
+material = ExtResource("9_jyr8v")
 size = Vector3(12.17, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbnhc"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_vl1dq"]
+material = ExtResource("9_jyr8v")
 size = Vector3(7, 6, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hx1je"]
@@ -100,6 +116,7 @@ size = Vector3(1, 6, 2.058)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sygq6"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -117,15 +134,19 @@ size = Vector3(1, 6, 2.058)
 size = Vector3(6.521, 0.65, 2.058)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ln07"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yr5cl"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 16.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x77xw"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 5.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pkfnk"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 2.5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5obl8"]
@@ -144,18 +165,22 @@ size = Vector3(0.375, 2.5, 5)
 size = Vector3(0.375, 2.5, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oo0aq"]
+material = ExtResource("9_jyr8v")
 size = Vector3(26.11914, 6, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_olhon"]
 size = Vector3(26.11914, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m4278"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 9.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nyio1"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 10.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0in2"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 2.5, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdkuk"]
@@ -171,26 +196,31 @@ size = Vector3(0.375, 2.5, 3)
 size = Vector3(2.9785156, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mx70"]
+material = ExtResource("9_jyr8v")
 size = Vector3(2.9785156, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wrxw"]
 transparency = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ghkdt"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 2.5, 4.417)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s64j0"]
 size = Vector3(0.375, 2.5, 4.417)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1cxds"]
+material = ExtResource("9_jyr8v")
 size = Vector3(1.3741455, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmg7y"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -202,15 +232,18 @@ size = Vector3(1.3741455, 6, 0.375)
 size = Vector3(0.375, 6, 9.214966)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kx0xk"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 9.214966)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fxch"]
 size = Vector3(9.853027, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v0p3"]
+material = ExtResource("9_jyr8v")
 size = Vector3(9.853027, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fqf7g"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.372, 6, 19.621582)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jum6b"]
@@ -222,6 +255,7 @@ size = Vector3(1.5, 6, 0.375)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqe8x"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -242,6 +276,7 @@ size = Vector3(1.5, 6, 0.375)
 size = Vector3(9.438, 1, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l4ul6"]
+material = ExtResource("9_jyr8v")
 size = Vector3(5, 6, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q3hpu"]
@@ -251,6 +286,7 @@ size = Vector3(5, 6, 0.375)
 size = Vector3(0.375, 6, 7.6313477)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4jq4u"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 7.6313477)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnq3x"]
@@ -263,16 +299,19 @@ size = Vector3(0.5, 6, 0.375)
 size = Vector3(2.1, 2.45, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pww7v"]
+material = ExtResource("9_jyr8v")
 size = Vector3(2.4, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sh7a8"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_nlt47"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.5, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6a7tq"]
@@ -287,6 +326,7 @@ size = Vector3(10, 4, 0.176)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fymcc"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(0.54901963, 0.3529412, 0.24313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -295,13 +335,16 @@ distance_fade_max_distance = 12.0
 size = Vector3(0.176, 4, 27.797852)
 
 [sub_resource type="BoxMesh" id="BoxMesh_phx5y"]
+material = ExtResource("11_d0ajt")
 
 [sub_resource type="BoxMesh" id="BoxMesh_hx1je"]
+material = ExtResource("9_jyr8v")
 size = Vector3(5.46, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mx70"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -310,6 +353,7 @@ distance_fade_max_distance = 12.0
 size = Vector3(2.5, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o8ut"]
+material = ExtResource("9_jyr8v")
 size = Vector3(2.1, 2.5, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ln07"]
@@ -325,16 +369,19 @@ size = Vector3(2.1, 2.5, 0.375)
 size = Vector3(2.1, 2.5, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5obl8"]
+material = ExtResource("9_jyr8v")
 size = Vector3(10, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cxds"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_1n8ra"]
+material = ExtResource("9_jyr8v")
 size = Vector3(2, 2.5, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eles"]
@@ -344,18 +391,22 @@ size = Vector3(10, 6, 0.375)
 size = Vector3(2, 2.5, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_554ci"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 4.02417)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hph6x"]
 size = Vector3(0.375, 6, 4.02417)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0n6td"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 1.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bmoad"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mb8w1"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 2.5, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oo0aq"]
@@ -373,6 +424,7 @@ size = Vector3(3.5, 6, 0.375)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2m0ga"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -393,19 +445,23 @@ size = Vector3(20.5, 6, 0.375)
 size = Vector3(2.1, 2.5, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mdkuk"]
+material = ExtResource("9_jyr8v")
 size = Vector3(4.5, 6, 0.375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ebim"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_mrxq0"]
+material = ExtResource("9_jyr8v")
 size = Vector3(3, 6, 0.375)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i1y2t"]
+material = ExtResource("9_jyr8v")
 size = Vector3(4, 2.52, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghkdt"]
@@ -423,6 +479,7 @@ size = Vector3(2.95, 6, 0.375)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl1dq"]
 transparency = 1
 depth_draw_mode = 1
+albedo_color = Color(1, 0.9411765, 0.84313726, 1)
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
@@ -440,6 +497,7 @@ size = Vector3(2.1, 2.5, 0.375)
 size = Vector3(0.375, 6, 4.9648438)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kngxi"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 4.9648438)
 
 [sub_resource type="BoxMesh" id="BoxMesh_26xou"]
@@ -452,9 +510,11 @@ size = Vector3(7.4379883, 6, 0.375)
 size = Vector3(0.375, 6, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0ajt"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 8.346)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fymcc"]
+material = ExtResource("9_jyr8v")
 size = Vector3(0.375, 6, 8.345703)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbnhc"]
@@ -464,9 +524,11 @@ size = Vector3(0.375, 6, 8.345703)
 size = Vector3(26, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nqe8x"]
+material = ExtResource("10_5o5dd")
 size = Vector3(26, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sh7a8"]
+material = ExtResource("10_5o5dd")
 size = Vector3(10, 0.79907227, 21)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mx70"]
@@ -476,9 +538,11 @@ size = Vector3(10, 0.79907227, 21)
 size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2m0ga"]
+material = ExtResource("10_5o5dd")
 size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ovomx"]
+material = ExtResource("10_5o5dd")
 size = Vector3(10, 1, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kx0xk"]
@@ -488,9 +552,11 @@ size = Vector3(10, 1, 7)
 size = Vector3(4, 1, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jum6b"]
+material = ExtResource("10_5o5dd")
 size = Vector3(4, 1, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q3hpu"]
+material = ExtResource("10_5o5dd")
 size = Vector3(4, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4jq4u"]
@@ -500,18 +566,22 @@ size = Vector3(4, 1, 5)
 size = Vector3(10, 1, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7rtjl"]
+material = ExtResource("11_d0ajt")
 size = Vector3(10, 1, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hph6x"]
+material = ExtResource("11_d0ajt")
 size = Vector3(4, 1, 23)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kngxi"]
 size = Vector3(4, 1, 23)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wo74w"]
+material = ExtResource("11_d0ajt")
 size = Vector3(18, 1, 26)
 
 [sub_resource type="BoxMesh" id="BoxMesh_425aq"]
+material = ExtResource("11_d0ajt")
 size = Vector3(4, 1, 18.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ayaol"]
@@ -524,9 +594,11 @@ size = Vector3(4, 1, 18.5)
 size = Vector3(20, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j0rhc"]
+material = ExtResource("9_5o5dd")
 size = Vector3(20, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sar2w"]
+material = ExtResource("11_d0ajt")
 size = Vector3(8, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_phx5y"]
@@ -536,6 +608,7 @@ size = Vector3(8, 1, 5)
 size = Vector3(4, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5aamg"]
+material = ExtResource("8_26xou")
 size = Vector3(4, 1, 10)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ckok1"]
@@ -672,9 +745,6 @@ shader_parameter/is_p1_top = false
 [sub_resource type="LabelSettings" id="LabelSettings_lbnhc"]
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_sygq6"]
-font_size = 40
-
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_bq33v")
 
@@ -695,6 +765,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78385425, 0)
 [node name="Optimisation Metric Display" type="CanvasLayer" parent="." unique_id=1770815078]
 
 [node name="FPS" type="Label" parent="Optimisation Metric Display" unique_id=592562783]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_j2gmx")
@@ -708,7 +779,7 @@ navigation_mesh = SubResource("NavigationMesh_rwifv")
 
 [node name="LeftRamp" type="CSGPolygon3D" parent="Environment (NavMesh)/Downstairs" unique_id=708466330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4445915, -0.46301126, 7.5161896)
-material_overlay = SubResource("StandardMaterial3D_26xou")
+material_overlay = ExtResource("8_26xou")
 use_collision = true
 polygon = PackedVector2Array(0, 0, -0.05466652, 0.9630599, 0.4298973, 0.5024553, 1, 0)
 depth = 2.0
@@ -719,6 +790,7 @@ material_overlay = SubResource("StandardMaterial3D_jyr8v")
 use_collision = true
 polygon = PackedVector2Array(0, 0, -0.05466652, 0.9630599, 0.4298973, 0.5024553, 1, 0)
 depth = 10.0
+material = ExtResource("8_26xou")
 
 [node name="RightRamp" type="CSGPolygon3D" parent="Environment (NavMesh)/Downstairs" unique_id=214150060]
 transform = Transform3D(-0.9999994, 0, 8.74227e-08, 0, 0.9999994, 0, -8.74227e-08, 0, -0.9999994, 12.438203, -0.46301082, 6.0454135)
@@ -726,6 +798,7 @@ material_overlay = SubResource("StandardMaterial3D_5o5dd")
 use_collision = true
 polygon = PackedVector2Array(-0.064798355, 0.012043834, -0.06458855, 0.9657593, 0.4298973, 0.5024553, 1, 0)
 depth = 5.28
+material = ExtResource("8_26xou")
 
 [node name="DownstairsWalls" type="CSGCombiner3D" parent="Environment (NavMesh)/Downstairs" unique_id=1500489883]
 material_overlay = SubResource("StandardMaterial3D_rwifv")
@@ -900,6 +973,7 @@ shape = SubResource("BoxShape3D_mb8w1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41226578, 3.5, -34.308266)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackWall" unique_id=1327768187]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9981057, 0, 0, 0)
 mesh = SubResource("BoxMesh_oo0aq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackWall" unique_id=15633073]
@@ -1385,6 +1459,7 @@ mesh = SubResource("BoxMesh_nqe8x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, -0.8247552, 13)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor/FrontYard" unique_id=691392864]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 mesh = SubResource("BoxMesh_sh7a8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsFloor/FrontYard" unique_id=240411883]
@@ -1501,6 +1576,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5
 use_collision = true
 polygon = PackedVector2Array(-5.0092564, -5.3619194, 2, -5, 2, 1)
 depth = 2.58
+material = ExtResource("8_26xou")
 
 [node name="DowntoBase2" type="CSGPolygon3D" parent="Environment (NavMesh)/Downstairs" unique_id=890065236]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.7001286, -1.2910538, -33.85688)
@@ -2034,6 +2110,7 @@ directional_shadow_mode = 0
 
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_k0juu")
 enabled = false
 navigation_layers = 0
@@ -2178,6 +2255,7 @@ text = "Attention: "
 label_settings = SubResource("LabelSettings_lbnhc")
 
 [node name="GUI" type="Control" parent="." unique_id=778842495]
+texture_filter = 3
 layout_mode = 3
 anchor_right = 0.9990001
 anchor_bottom = 1.006
@@ -2186,38 +2264,59 @@ offset_bottom = 0.11199951
 script = ExtResource("9_6hctx")
 game_time = 60
 
+[node name="TextureRect" type="TextureRect" parent="GUI" unique_id=284037423]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.23193
+offset_top = 23.0
+offset_right = -82.23193
+offset_bottom = 63.0
+grow_horizontal = 0
+texture = ExtResource("22_d0ajt")
+expand_mode = 1
+
 [node name="Clock Label" type="Label" parent="GUI" unique_id=793086485]
 unique_name_in_owner = true
+texture_filter = 3
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.096
-anchor_bottom = 0.097
-offset_left = 896.0
-offset_top = 2.0
-offset_right = 1044.504
-offset_bottom = 1.7559967
-text = "Time: "
-label_settings = SubResource("LabelSettings_sygq6")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.23193
+offset_right = -82.23193
+offset_bottom = 59.0
+grow_horizontal = 0
+text = "1:23"
+label_settings = ExtResource("23_fymcc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="InGame Clock" type="Timer" parent="GUI" unique_id=1380480472]
 unique_name_in_owner = true
 
 [node name="Timeline" type="Control" parent="GUI" unique_id=264530449 node_paths=PackedStringArray("tea_bar_array")]
 layout_mode = 1
-anchor_right = 0.9990001
+anchor_top = 0.42800003
+anchor_right = 1.0020001
 anchor_bottom = 1.0
-offset_right = 0.1508789
+offset_top = -465.06143
+offset_right = -5.603882
 offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("10_ues17")
 tea_bar_array = [NodePath("Tea Bar Behind 1/Tea Bar 1"), NodePath("Tea Bar Behind 2/Tea Bar 2"), NodePath("Tea Bar Behind 3/Tea Bar 3"), NodePath("Tea Bar Behind 4/Tea Bar 4"), NodePath("Tea Bar Behind 5/Tea Bar 5"), NodePath("Tea Bar Behind 6/Tea Bar 6"), NodePath("Tea Bar Behind 7/Tea Bar 7"), NodePath("Tea Bar Behind 8/Tea Bar 8")]
 
 [node name="Tea Bar Behind 8" type="TextureRect" parent="GUI/Timeline" unique_id=628930362]
 layout_mode = 0
-offset_left = 981.99994
-offset_top = 608.0
-offset_right = 1106.0381
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 1530.0
+offset_top = 1022.0
+offset_right = 1654.0382
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2236,11 +2335,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 7" type="TextureRect" parent="GUI/Timeline" unique_id=1733278570]
 layout_mode = 0
-offset_left = 843.99994
-offset_top = 608.0
-offset_right = 968.0379
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 1333.0
+offset_top = 1022.0
+offset_right = 1457.038
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2259,11 +2358,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 6" type="TextureRect" parent="GUI/Timeline" unique_id=958746726]
 layout_mode = 0
-offset_left = 707.0
-offset_top = 608.0
-offset_right = 831.03796
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 1132.0
+offset_top = 1022.0
+offset_right = 1256.038
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2271,22 +2370,22 @@ expand_mode = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
+anchor_right = 1.001
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 4.0
-offset_right = -10.0
+offset_right = -10.124046
 offset_bottom = -30.0
 nine_patch_stretch = true
 texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 5" type="TextureRect" parent="GUI/Timeline" unique_id=1823390236]
 layout_mode = 0
-offset_left = 571.0
-offset_top = 608.0
-offset_right = 695.03796
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 935.0
+offset_top = 1022.0
+offset_right = 1059.0381
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2305,11 +2404,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 4" type="TextureRect" parent="GUI/Timeline" unique_id=702700826]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 608.0
-offset_right = 558.03796
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 738.0
+offset_top = 1022.0
+offset_right = 862.03796
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2328,11 +2427,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 3" type="TextureRect" parent="GUI/Timeline" unique_id=1670548017]
 layout_mode = 0
-offset_left = 297.0
-offset_top = 608.0
-offset_right = 421.038
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 541.0
+offset_top = 1022.0
+offset_right = 665.03796
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2351,11 +2450,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 2" type="TextureRect" parent="GUI/Timeline" unique_id=1106022077]
 layout_mode = 0
-offset_left = 159.99998
-offset_top = 608.0
-offset_right = 284.03796
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 344.0
+offset_top = 1022.0
+offset_right = 468.03796
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2374,11 +2473,11 @@ texture_progress = ExtResource("19_2x71e")
 
 [node name="Tea Bar Behind 1" type="TextureRect" parent="GUI/Timeline" unique_id=2061908429]
 layout_mode = 0
-offset_left = 22.999985
-offset_top = 608.0
-offset_right = 147.03772
-offset_bottom = 665.0
-scale = Vector2(1.2, 1.392)
+offset_left = 147.0
+offset_top = 1022.0
+offset_right = 271.03772
+offset_bottom = 1079.0
+scale = Vector2(1.724, 2)
 texture = ExtResource("18_ckok1")
 expand_mode = 1
 
@@ -2400,6 +2499,8 @@ process_mode = 3
 
 [node name="Pause Menu" type="Control" parent="Pause Canvas" unique_id=27835547]
 process_mode = 3
+visible = false
+texture_filter = 1
 layout_mode = 3
 anchor_right = 0.9990001
 anchor_bottom = 1.0
@@ -2422,14 +2523,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 104.0
-offset_top = 145.0
-offset_right = -106.0
-offset_bottom = -262.0
+offset_left = 291.82935
+offset_top = 219.0
+offset_right = -293.82935
+offset_bottom = -336.0
 bbcode_enabled = true
-text = "[b][color=black]Gossip Collected text goes here blah blah blah...of would you look at that someone has cheated, are you gonna go and snoop? Gonna be a lil snooper and see what's going on? Plot twist it's about you, isn't that intersting...
+text = "[font_size=\"30\"][b][color=black]Gossip Collected text goes here blah blah blah...of would you look at that someone has cheated, are you gonna go and snoop? Gonna be a lil snooper and see what's going on? Plot twist it's about you, isn't that intersting...
 
-The cake is a lie...[/color][/b]"
+The cake is a lie...[/color][/b][/font_size]"
 
 [node name="Resume" type="TextureButton" parent="Pause Canvas/Pause Menu" unique_id=1176942067]
 process_mode = 3
@@ -2437,10 +2538,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 116.0
-offset_top = 438.0
-offset_right = -786.0
-offset_bottom = -157.0
+offset_left = 292.0
+offset_top = 723.0
+offset_right = -1226.2319
+offset_bottom = -207.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("26_26xou")
@@ -2453,10 +2554,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 789.0
-offset_top = 438.0
-offset_right = -113.0
-offset_bottom = -157.0
+offset_left = 1216.0
+offset_top = 714.0
+offset_right = -302.23193
+offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("26_26xou")
@@ -2468,26 +2569,28 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 871.0
-offset_top = 415.0
-offset_right = -187.0
-offset_bottom = -210.0
+offset_left = 1314.0
+offset_top = 759.5
+offset_right = -392.45837
+offset_bottom = -265.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[center][color=black][b]Quit[/b][/color][/center]"
+text = "[center][color=black][font_size=\"40px\"][b]Quit[/b][/font_size][/color][/center]"
+fit_content = true
+scroll_active = false
 
 [node name="Resume Label" type="RichTextLabel" parent="Pause Canvas/Pause Menu" unique_id=1151388835]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 202.0
-offset_top = 416.0
-offset_right = -875.0
-offset_bottom = -207.0
+offset_left = 292.0
+offset_top = 768.0
+offset_right = -1226.2319
+offset_bottom = -256.0
 bbcode_enabled = true
-text = "[center][color=black][b]Resume[/b][/color][/center]"
+text = "[center][color=black][font_size=\"40px\"][b]Resume[/b][/font_size][/color][/center]"
 
 [node name="Suspicion System" type="Node" parent="." unique_id=616305401]
 unique_name_in_owner = true
