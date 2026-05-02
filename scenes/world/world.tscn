@@ -87,15 +87,17 @@ size = Vector3(0.176, 2, 25.78003)
 [sub_resource type="BoxMesh" id="BoxMesh_6ebim"]
 size = Vector3(12.17, 6, 0.375)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx0xk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vl1dq"]
+size = Vector3(7, 6, 0.375)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbnhc"]
 transparency = 1
 depth_draw_mode = 1
 distance_fade_mode = 1
 distance_fade_min_distance = 2.0
 distance_fade_max_distance = 12.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_vl1dq"]
-size = Vector3(7, 6, 0.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hx1je"]
 size = Vector3(12.17, 4, 0.375)
@@ -1079,7 +1081,7 @@ size = Vector3(5, 6.482544, 1.0571289)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontWall" unique_id=618847431]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, -5.938414, -1.0017171, 0)
 mesh = SubResource("BoxMesh_6ebim")
-surface_material_override/0 = SubResource("StandardMaterial3D_lbnhc")
+surface_material_override/0 = SubResource("StandardMaterial3D_kx0xk")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontWall" unique_id=722097143]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 8.650115, -0.9885204, -0.01332283)
@@ -2550,7 +2552,7 @@ script = ExtResource("27_ckok1")
 connect_portal = NodePath("../DownToBasementDestination")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/DownToBasement" unique_id=138554608]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036824942, -0.6274235, 0.0038388968)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.357604, -0.7174368, 0.0038375854)
 shape = SubResource("SphereShape3D_rwifv")
 
 [node name="BasementToDown" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1524305490 node_paths=PackedStringArray("connect_portal")]
@@ -2559,7 +2561,7 @@ script = ExtResource("27_ckok1")
 connect_portal = NodePath("../BasementToDownDestination")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Portals/BasementToDown" unique_id=60423699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.723007, -44.110878, 79.689865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.408817, -44.110878, 79.689865)
 shape = SubResource("SphereShape3D_rwifv")
 
 [node name="UpToDown" type="Area3D" parent="Environment (NavMesh)/Portals" unique_id=1690729533 node_paths=PackedStringArray("connect_portal")]
