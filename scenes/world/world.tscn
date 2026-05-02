@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="18_jyr8v"]
 [ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="19_5o5dd"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
-[ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
+[ext_resource type="Script" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
@@ -3068,6 +3068,7 @@ item = ExtResource("29_wnndm")
 
 [node name="baby_oil" parent="." unique_id=1184009151 instance=ExtResource("34_fymcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4885087, -0.16634738, 0)
+
 [node name="item_collectable5" parent="." unique_id=1732482437 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8503275, 0.075511456, 2.306306)
 item = ExtResource("34_sh7a8")

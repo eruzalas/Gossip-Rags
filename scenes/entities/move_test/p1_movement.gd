@@ -132,7 +132,7 @@ func toggle_selected():
 	
 ##very badly assigns costumes based on a keyed ID system (ID = position in array)
 func update_sprite():
-	var sprite = ["p1_default","p1_banana","p1_motorbike_helmet","p1_pirate","p1_cat","p1_nurse","p1_cult","p1_dino","p1_ghost","p1_ninja","p1_angel","p1_horse"]
+	var sprite = ["p1_default","p1_banana","p1_motorbike","p1_pirate","p1_cat","p1_nurse","p1_cult","p1_dino","p1_ghost","p1_ninja","p1_angel","p1_horse"]
 	var selected = 0 #
 	for i in range (player_inventory.size()):
 		if (!player_inventory.equipment[i]):
