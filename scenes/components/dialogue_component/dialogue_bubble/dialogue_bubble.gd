@@ -11,11 +11,10 @@ var rate_of_transparency: float = 0
 var can_disappear: bool = false
 var base_transparency_speed: float = 4.0
 var original_position: Vector2
+var typewriter_tween: Tween
 
 # signals
 signal is_transparent
-
-const display_delay: float = 4
 
 func _ready() -> void:
 	rate_of_transparency = MAX_OPACITY / (base_transparency_speed * 60)
@@ -34,8 +33,12 @@ func _set_text(text: String, display_as_typewriter: bool = false, typewriter_dur
 	if display_as_typewriter:
 		rich_text_label.text = text
 		rich_text_label.visible_ratio = 0.0
-		var typewriter_tween = create_tween()
+		typewriter_tween = create_tween()
 		typewriter_tween.tween_property(rich_text_label, "visible_ratio", 1.0, typewriter_duration)
+		typewriter_tween.finished.connect(_start_disappear)
+
+func _start_disappear() -> void:
+	can_disappear = true
 
 func _set_texture(path: String):
 	var texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
@@ -45,7 +48,7 @@ func _set_texture(path: String):
 	#dialogue_bubble.texture = load(ResourcePaths.dialogue_bubble_texture_path + path)
 
 func _update_transparency(index: int = 0) -> void:
-	var new_speed = (base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)) + display_delay
+	var new_speed = base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)
 
 	if new_speed < 0.0:
 		new_speed = 0.0

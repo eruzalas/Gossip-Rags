@@ -47,8 +47,6 @@ func _add_bubble(dialogue: Dictionary) -> void:
 	var typewriter_delay = SECONDS_PER_CHARACTER * dialogue["dialogue"].length()
 	bubble._set_text(dialogue["dialogue"], true, (typewriter_delay/2))
 	bubble._set_texture(dialogue["bubble_icon"])
-	bubble.can_disappear = true
-	bubble.base_transparency_speed = typewriter_delay
 	bubble.is_transparent.connect(_remove_bubble)
 	_update_all_bubbles()
 
