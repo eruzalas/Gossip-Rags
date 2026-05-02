@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cf8vaaj8g3xmh"]
 
 [ext_resource type="Texture2D" uid="uid://2i4nliug8vda" path="res://assets/dialogue/dialogue_normal.png" id="1_7nr3g"]
-[ext_resource type="Script" uid="uid://423dwsstb15f" path="res://scenes/components/dialogue_component/dialogue_bubble.gd" id="2_7nr3g"]
+[ext_resource type="Script" uid="uid://423dwsstb15f" path="res://scenes/components/dialogue_component/dialogue_bubble/dialogue_bubble.gd" id="2_7nr3g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nr3g"]
 texture = ExtResource("1_7nr3g")
@@ -12,15 +12,15 @@ texture_margin_bottom = 10.0
 
 [node name="DialogueBubble" type="PanelContainer" unique_id=1158154028]
 texture_filter = 1
-custom_minimum_size = Vector2(100, 20)
+custom_minimum_size = Vector2(400, 20)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -46.0
-offset_right = 74.0
+offset_left = -200.0
+offset_top = -76.0
+offset_right = 200.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_7nr3g")
@@ -30,10 +30,15 @@ script = ExtResource("2_7nr3g")
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
 bbcode_enabled = true
 text = "HELLO WORLD"
 fit_content = true
-autowrap_mode = 0
+scroll_active = false
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -48,37 +48,39 @@ func _singleplayer_cam() -> void:
 func _multiplayer_cam() -> void:
 
 	var position_difference: Vector3 = _compute_position_difference_in_world()
-
+	var camera_bias: float = clamp(_camera_bias(position_difference), 0.67, 1.00)
+	
+	#print(_compute_horizontal_length(position_difference))
+	#print(camera_bias)
+	#Uncomment if need to debug
+	
 	var distance: float = clamp(_compute_horizontal_length(position_difference), 0, max_separation)
 
 	position_difference = position_difference.normalized() * distance
 	
-	
-	
-	_multi_floor_screen_resize()
-	
 	if(!_is_multi_floor()):
 	
-		camera1.position.x = player1.position.x + position_difference.x / 2.0
-		camera1.position.z = (player1.position.z + position_difference.z / 2.0) + 5
+		camera1.position.x = player1.position.x + camera_bias*position_difference.x / 2.0
+		camera1.position.z = (player1.position.z + camera_bias*position_difference.z / 2.0) + 5
 	
-		camera2.position.x = player2.position.x - position_difference.x / 2.0
-		camera2.position.z = (player2.position.z - position_difference.z / 2.0) + 5
-		
-		camera1.position.y = player1.position.y + 5 
-		camera2.position.y = player2.position.y + 5
+		camera2.position.x = player2.position.x - camera_bias*position_difference.x / 2.0
+		camera2.position.z = (player2.position.z - camera_bias*position_difference.z / 2.0) + 5
+	
+		camera1.position.y = player1.position.y + 4
+		camera2.position.y = player2.position.y + 4
 	
 	else: if(_is_multi_floor()):
 		
 		camera1.position.x = player1.position.x
-		camera1.position.z = player1.position.z + 2
+		camera1.position.z = player1.position.z + 4
 	
 		camera2.position.x = player2.position.x
-		camera2.position.z = player2.position.z + 2
+		camera2.position.z = player2.position.z + 4
 		
-		camera1.position.y = player1.position.y + 3
-		camera2.position.y = player2.position.y + 3
-
+		camera1.position.y = player1.position.y + 4
+		camera2.position.y = player2.position.y + 4
+		
+		
 
 func _is_multi_floor() -> bool:
 	
@@ -86,6 +88,16 @@ func _is_multi_floor() -> bool:
 		return true
 	
 	return false
+
+func _camera_bias(position_difference: Vector3) -> float:
+	var distance: float = _compute_horizontal_length(position_difference)
+	var bias: float = 1.00
+	
+	if(distance > max_separation):
+		distance = (distance - max_separation)/100
+		bias -= distance
+	
+	return bias
 
 func _multi_floor_screen_resize() -> void:
 	var screen_size: Vector2 = _get_screen_size() 
