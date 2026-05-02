@@ -28,7 +28,7 @@ animations = [{
 "texture": ExtResource("1_x8np7")
 }],
 "loop": true,
-"name": &"p2_banana_costume",
+"name": &"p2_banana",
 "speed": 5.0
 }, {
 "frames": [{
@@ -84,7 +84,7 @@ animations = [{
 "texture": ExtResource("3_jfo0h")
 }],
 "loop": true,
-"name": &"p2_motorbike_helmet_costume",
+"name": &"p2_motorbike",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,6 +108,6 @@ animations = [{
 "texture": ExtResource("4_arfia")
 }],
 "loop": true,
-"name": &"p2_pirate_costume",
+"name": &"p2_pirate",
 "speed": 5.0
 }]

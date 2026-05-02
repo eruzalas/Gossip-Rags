@@ -84,7 +84,7 @@ animations = [{
 "texture": ExtResource("3_l4l67")
 }],
 "loop": true,
-"name": &"p1_motorbike_helmet",
+"name": &"p1_motorbike",
 "speed": 5.0
 }, {
 "frames": [{
