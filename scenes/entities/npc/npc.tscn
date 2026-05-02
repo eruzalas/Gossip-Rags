@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
-[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_group.png" id="1_p5uw1"]
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_GROUP.png" id="1_p5uw1"]
 [ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
-[ext_resource type="PackedScene" uid="uid://0ejoi0soyt7e" path="res://scenes/components/dialogue_component/dialogue_renderer.tscn" id="3_xjnpb"]
 [ext_resource type="PackedScene" uid="uid://vr7io76ls44b" path="res://scenes/components/gossiper_component/gossiper_component.tscn" id="4_67e1k"]
+[ext_resource type="PackedScene" uid="uid://b3dubb4n11c7x" path="res://scenes/components/dialogue_component/dialogue_component.tscn" id="5_hg1eu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr72c"]
 size = Vector3(1, 2, 1)
@@ -61,11 +61,16 @@ debug_enabled = true
 
 [node name="Wander Timer" type="Timer" parent="." unique_id=2124301048]
 
-[node name="DialogueRenderer" parent="." unique_id=494158148 instance=ExtResource("3_xjnpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0308096, 0)
+[node name="GossiperComponent" parent="." unique_id=2127790051 instance=ExtResource("4_67e1k")]
+
+[node name="BetterDialogueRenderer" parent="." unique_id=2046033682 instance=ExtResource("5_hg1eu")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.2080808, 0)
 texture = SubResource("ViewportTexture_67e1k")
 
-[node name="GossiperComponent" parent="." unique_id=2127790051 instance=ExtResource("4_67e1k")]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=590299126]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.5, 0)
+target_position = Vector3(0, -2, 0)
+debug_shape_custom_color = Color(0, 0.2, 0.7176471, 1)
 
 [connection signal="body_entered" from="Bangarang Range" to="." method="_on_bangarang_range_body_entered"]
 [connection signal="body_exited" from="Bangarang Range" to="." method="_on_bangarang_range_body_exited"]

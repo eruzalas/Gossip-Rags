@@ -2,10 +2,7 @@ extends Node
 
 @onready var npc: Npc = $".."
 @onready var attention_range: Area3D = $"../Attention Range"
-@onready var timeline: Control = $"../../GUI/Timeline"
-@onready var in_game_clock: Timer = %"InGame Clock"
 @onready var internal_activation_timer: Timer = $"Internal Activation Timer"
-@onready var dialogue_renderer: Sprite3D = $"../DialogueRenderer"
 @onready var gossip_collection_timer: Timer = $"Gossip Collection Timer"
 
 var gossiper_dialogue: Array
@@ -37,7 +34,7 @@ func _process(_delta: float) -> void:
 			SignalBus.incremented_timeline.emit(npc.gossiper_ID - 1, current_increment_value)
 			current_increment_value = 0
 	
-func _collect_gossip(npc: Npc, listening_status: bool):
+func _collect_gossip(passed_npc: Npc, listening_status: bool):
 	if listening_status == true:
 		gossip_collection_timer.start(_get_total_leeway_seconds())
 		player_listening = true
