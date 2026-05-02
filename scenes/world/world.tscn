@@ -11,8 +11,11 @@
 [ext_resource type="Script" uid="uid://dxt0saqc8n3fm" path="res://utils/controllers/origin_controller.gd" id="6_dlabj"]
 [ext_resource type="PackedScene" uid="uid://ctqlardy4ps7h" path="res://scenes/entities/npc/npc_origin_point.tscn" id="7_srmg5"]
 [ext_resource type="Script" uid="uid://xowdms5vesjr" path="res://scenes/systems/debug_system_ui.gd" id="8_t634p"]
+[ext_resource type="PackedScene" uid="uid://dyp13o86p7tnx" path="res://scenes/world/house_sections/Upstairs.tscn" id="9_0wrxw"]
 [ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="9_6hctx"]
+[ext_resource type="PackedScene" uid="uid://d05tionw721ec" path="res://scenes/world/house_sections/GroundFloor.tscn" id="10_cmg7y"]
 [ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="10_ues17"]
+[ext_resource type="PackedScene" uid="uid://bmoac4knuqpb0" path="res://scenes/world/house_sections/Basement.tscn" id="11_nqe8x"]
 [ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="11_xq18t"]
 [ext_resource type="Script" uid="uid://baox6kivo6tru" path="res://scenes/camera_components/camera_manager.gd" id="12_rwifv"]
 [ext_resource type="Texture2D" uid="uid://b21m8xm8fejjv" path="res://assets/ui/placeholder_progress_fill_1.png" id="12_x0nq1"]
@@ -2605,6 +2608,15 @@ light_energy = 0.2
 directional_shadow_mode = 0
 
 [node name="Environment" type="Node3D" parent="." unique_id=2120530498]
+
+[node name="UpstairsFloor" parent="Environment" unique_id=626842694 instance=ExtResource("9_0wrxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.05828, 22.05529, -101.23169)
+
+[node name="GroundFloor" parent="Environment" unique_id=2120701289 instance=ExtResource("10_cmg7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.196655, 0, 0)
+
+[node name="Basement" parent="Environment" unique_id=743754546 instance=ExtResource("11_nqe8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.55513, 0, 0)
 
 [node name="STATIONARY NPCS" type="Node" parent="." unique_id=1871193536]
 

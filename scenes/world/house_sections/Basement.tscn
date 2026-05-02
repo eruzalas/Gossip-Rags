@@ -95,7 +95,7 @@ size = Vector3(15.092, 1, 15)
 [node name="Basement" type="NavigationRegion3D" parent="." unique_id=712694803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.727, 0, 104.686)
 navigation_mesh = SubResource("NavigationMesh_c2ooe")
-navigation_layers = 256
+navigation_layers = 65536
 
 [node name="DowntoBase3" type="CSGPolygon3D" parent="Basement" unique_id=900036073]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -42.666306, 5.385212, -61.722633)
