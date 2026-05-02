@@ -2711,6 +2711,36 @@ npc_allowed_zone_layers = Array[int]([1])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, -23)
 npc_type = 4
 gossiper_ID = 1
+npc_allowed_zone_layers = Array[int]([1])
+
+[node name="GOSSIP NPC BAR 2" parent="." unique_id=1562508470 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.5, -15)
+npc_type = 4
+gossiper_ID = 2
+npc_allowed_zone_layers = Array[int]([1])
+
+[node name="GOSSIP NPC BAR 3" parent="." unique_id=125182183 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 43.7, -86)
+npc_type = 4
+gossiper_ID = 3
+npc_allowed_zone_layers = Array[int]([13])
+
+[node name="GOSSIP NPC BAR 4" parent="." unique_id=267999522 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -42.051, 65)
+npc_type = 4
+gossiper_ID = 4
+npc_allowed_zone_layers = Array[int]([9])
+
+[node name="GOSSIP NPC BAR 5" parent="." unique_id=219192584 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5, -38)
+npc_type = 4
+gossiper_ID = 5
+npc_allowed_zone_layers = Array[int]([2])
+
+[node name="GOSSIP NPC BAR 6" parent="." unique_id=766525897 instance=ExtResource("5_5qq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.551, 1.5, -27)
+npc_type = 4
+gossiper_ID = 6
 npc_allowed_zone_layers = Array[int]([2])
 
 [node name="CameraManager" type="Node3D" parent="." unique_id=957882876]

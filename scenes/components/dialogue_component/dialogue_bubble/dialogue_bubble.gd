@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var dialogue_bubble: PanelContainer = $"."
 
 # consts
-const MAX_OPACITY: int = 1.0
+const MAX_OPACITY: float = 1.0
 const LINEAR_TRANSPARENCY_DECREASE: float = 0.5
 
 # runtime vars
@@ -15,13 +15,11 @@ var original_position: Vector2
 # signals
 signal is_transparent
 
-
 func _ready() -> void:
 	rate_of_transparency = MAX_OPACITY / (base_transparency_speed * 60)
 	original_position = position
-
-
-func _process(delta: float) -> void:
+	
+func _process(_delta: float) -> void:
 	if can_disappear:
 		# reduce modulate for itself and children by rate of transparency
 		modulate.a -= rate_of_transparency
@@ -50,3 +48,10 @@ func _update_off_index(index: int = 0) -> void:
 	rate_of_transparency = MAX_OPACITY / (new_speed * 60)
 	# update ycoord
 	position.y = original_position.y - (50 * index)
+
+func _update_transparency(index: int = 0) -> void:
+	var new_speed = base_transparency_speed - (index * LINEAR_TRANSPARENCY_DECREASE)
+	if new_speed < 0.0:
+		new_speed = 0.0
+	# update rate
+	rate_of_transparency = MAX_OPACITY / (new_speed * 60)

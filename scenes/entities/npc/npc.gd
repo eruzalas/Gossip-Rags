@@ -5,9 +5,6 @@ class_name Npc
 	# https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 
 # -- references --
-# external to NPC
-@onready var player = get_tree().get_first_node_in_group("players")
-
 # internal to NPC
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var text_display: MeshInstance3D = $"Test Display Text"
@@ -16,8 +13,8 @@ class_name Npc
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
-@onready var dialogue_renderer: Sprite3D = $DialogueRenderer
 @onready var gossiper_component: Node = $GossiperComponent
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
 
 # export vars
 @export var debug_mode: bool = true
@@ -40,6 +37,8 @@ var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
 
+var players: Array
+
 var current_state = Enums.NpcState.IDLE:
 	set(value):
 		if current_state != value:
@@ -60,6 +59,8 @@ const TURN_SPEED = 3.0
 
 # initialisation
 func _ready():
+	players = get_tree().get_nodes_in_group("players")
+	
 	# check if signal already connected - connect if not
 	if !nav_agent.velocity_computed.is_connected(Callable(_on_navigation_agent_3d_velocity_computed)):
 		nav_agent.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
@@ -115,11 +116,28 @@ func _physics_process(delta: float) -> void:
 		_look_at_position(next_pos, delta)
 		
 	elif current_state == Enums.NpcState.WATCHING:
-		_look_at_position(player.global_transform.origin, delta)
+		_look_at_closest_player(delta)
+		
+		if ray_cast_3d.is_colliding():
+			current_state = Enums.NpcState.ALERTED
 		
 	elif current_state == Enums.NpcState.IDLE:
 		_look_at_position(target_look_position, delta)
 		
+	elif current_state == Enums.NpcState.ALERTED:
+		_look_at_closest_player(delta)
+		
+		if !ray_cast_3d.is_colliding():
+			current_state = Enums.NpcState.WATCHING
+		
+
+func _look_at_closest_player(delta: float) -> void:
+	var the_best_player_who_is_closest = players[0]
+	for player in players:
+		if global_position.distance_to(player.global_position) < global_position.distance_to(the_best_player_who_is_closest.global_position):
+			the_best_player_who_is_closest = player
+	_look_at_position(the_best_player_who_is_closest.global_transform.origin, delta)
+
 
 func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
 	var extracted_pos = gossip["path_position"]
@@ -202,6 +220,7 @@ func _look_at_position(target_position: Vector3, delta: float, turn_speed: float
 
 func _generate_wander_wait():
 	# maybe add calculation off suspicion/attention?
+	#return randf_range(min_wander_wait, max_wander_wait - (suspicion_system.sus_level / 2))
 	return randf_range(min_wander_wait, max_wander_wait)
 
 func _set_gossiping(status: bool):
@@ -259,7 +278,9 @@ func _on_look_timer_timeout() -> void:
 	look_timer.start(randf_range(min_look_time_elapsed, max_look_time_elapsed))
 	
 func _on_wander_timer_timeout() -> void:
-	# get new wander position
-	_get_new_target_position()
+	if current_state != Enums.NpcState.WATCHING && !current_state != Enums.NpcState.ALERTED:
+		# get new wander position
+		_get_new_target_position()
+		
 	# begin timer
 	wander_timer.start(_generate_wander_wait())
