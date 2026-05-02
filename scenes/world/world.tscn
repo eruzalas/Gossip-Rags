@@ -2218,12 +2218,12 @@ texture = SubResource("ViewportTexture_rwifv")
 [node name="Viewport1" type="SubViewport" parent="CameraManager" unique_id=1040274272]
 
 [node name="Player1Cam" type="Camera3D" parent="CameraManager/Viewport1" unique_id=812204678]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -22.219776, 4.218769, 0)
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, -22.219776, 4.218769, 0)
 
 [node name="Viewport2" type="SubViewport" parent="CameraManager" unique_id=1234397570]
 
 [node name="Player2Cam" type="Camera3D" parent="CameraManager/Viewport2" unique_id=871099603]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -20.414143, 4.218769, 0)
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, -20.414143, 4.218769, 0)
 
 [node name="Systems Debug UI" type="Control" parent="." unique_id=1491472664]
 layout_mode = 3
