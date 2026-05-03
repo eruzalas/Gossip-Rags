@@ -61,6 +61,8 @@ debug_enabled = true
 
 [node name="Wander Timer" type="Timer" parent="." unique_id=2124301048]
 
+[node name="Sus_Attention Timer" type="Timer" parent="." unique_id=298728468]
+
 [node name="GossiperComponent" parent="." unique_id=2127790051 instance=ExtResource("4_67e1k")]
 
 [node name="BetterDialogueRenderer" parent="." unique_id=2046033682 instance=ExtResource("5_hg1eu")]
@@ -78,3 +80,4 @@ debug_shape_custom_color = Color(0, 0.2, 0.7176471, 1)
 [connection signal="body_exited" from="Attention Range" to="." method="_on_attention_range_body_exited"]
 [connection signal="timeout" from="Look Timer" to="." method="_on_look_timer_timeout"]
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]
+[connection signal="timeout" from="Sus_Attention Timer" to="." method="_on_sus_attention_timer_timeout"]

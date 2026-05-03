@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="18_jyr8v"]
 [ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="19_5o5dd"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
-[ext_resource type="Script" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
+[ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
@@ -1043,6 +1043,12 @@ shader_parameter/is_p1_top = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbnhc"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1cxds"]
+font_size = 180
+font_color = Color(1, 0.41568628, 1, 1)
+outline_size = 10
+outline_color = Color(0.6968401, 3.5039186e-05, 0.5270324, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sygq6"]
 font_size = 40
@@ -3078,6 +3084,37 @@ offset_right = 220.0
 offset_bottom = 90.0
 text = "Attention: "
 label_settings = SubResource("LabelSettings_lbnhc")
+
+[node name="Player1 SUS ATT" type="Label" parent="Systems Debug UI" unique_id=1457189175]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 133.0
+offset_right = 575.0
+offset_bottom = 183.0
+text = "Player1: "
+label_settings = SubResource("LabelSettings_lbnhc")
+
+[node name="Player2 SUS ATT" type="Label" parent="Systems Debug UI" unique_id=82844547]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 199.0
+offset_right = 558.0
+offset_bottom = 264.0
+text = "Player2: "
+label_settings = SubResource("LabelSettings_lbnhc")
+
+[node name="RESET ALERT" type="Label" parent="Systems Debug UI" unique_id=729856455]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 139.0
+offset_top = 355.0
+offset_right = 1755.0
+offset_bottom = 793.0
+text = "ATTENTION RESET!"
+label_settings = SubResource("LabelSettings_1cxds")
 
 [node name="GUI" type="Control" parent="." unique_id=778842495]
 layout_mode = 3

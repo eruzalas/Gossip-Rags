@@ -27,16 +27,16 @@ func _state_level(sus_precent: float):
 	
 	if(sus_precent < wary_thresh):
 		state = "calm"
-		print("state: " + state)
+		#print("state: " + state)
 	elif(sus_precent >= wary_thresh && sus_precent < alert_thresh):
 		state = "wary"
-		print("state: " + state)
+		#print("state: " + state)
 	elif(sus_precent >= alert_thresh && sus_precent < max_thresh):
 		state = "alert"
-		print("state: " + state)
+		#print("state: " + state)
 	elif(sus_precent >= max_thresh):
 		state = "maxed"
-		print("state: " + state)
+		#print("state: " + state)
 		
 	return state
 	
