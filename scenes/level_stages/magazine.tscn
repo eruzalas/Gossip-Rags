@@ -6,16 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b2l68uswvb46x" path="res://assets/magazine/jared_placeholder.png" id="4_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://dvaev7i2552ty" path="res://assets/magazine/sarah_placeholder.png" id="5_m0tqb"]
 
-[node name="Magazine" type="Control" unique_id=1563975259]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Magazine" type="Node2D" unique_id=80378607]
 
 [node name="Magazine Page" type="TextureRect" parent="." unique_id=553412869]
-layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.006
@@ -27,7 +20,6 @@ texture = ExtResource("1_2evbi")
 expand_mode = 1
 
 [node name="Evidence Tray" type="TextureRect" parent="." unique_id=207898057]
-layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.006
@@ -39,7 +31,6 @@ texture = ExtResource("2_gqbng")
 expand_mode = 1
 
 [node name="Label Maker" type="TextureButton" parent="." unique_id=49971375]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -67,7 +58,6 @@ bbcode_enabled = true
 text = "[font_size=24][center][color=black][b]Add evidence[/b][/color][/center][/font_size]"
 
 [node name="Evidence 1" type="TextureRect" parent="." unique_id=1411384636]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.052
 anchor_top = 0.056
@@ -81,7 +71,6 @@ texture = ExtResource("4_wkjyd")
 expand_mode = 1
 
 [node name="Evidence 4" type="TextureRect" parent="." unique_id=1897306451]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.052
 anchor_top = 0.056
@@ -95,7 +84,6 @@ texture = ExtResource("5_m0tqb")
 expand_mode = 1
 
 [node name="Evidence 2" type="RichTextLabel" parent="." unique_id=1438384014]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
 anchor_top = 0.052
@@ -109,7 +97,6 @@ bbcode_enabled = true
 text = "[font_size=32][center][color=black][b]Pregnancy[/b][/color][/center][/font_size]"
 
 [node name="Evidence 3" type="RichTextLabel" parent="." unique_id=538548319]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
 anchor_top = 0.052
@@ -123,7 +110,6 @@ bbcode_enabled = true
 text = "[font_size=24][center][color=black][b]Chocolates & Flowers[/b][/color][/center][/font_size]"
 
 [node name="Evidence 5" type="RichTextLabel" parent="." unique_id=1066915609]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
 anchor_top = 0.052
