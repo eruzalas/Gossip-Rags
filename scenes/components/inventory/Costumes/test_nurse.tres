@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://cfg02eyermpkh"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_e8rd0"]
+[ext_resource type="Texture2D" uid="uid://b4ltlcc5gwrml" path="res://assets/testsprites/costumes_AM/nurse.png" id="2_gcuxr"]
+
+[resource]
+script = ExtResource("1_e8rd0")
+name = "nurse"
+texture = ExtResource("2_gcuxr")
+speed_modifier = 0.6
+accel_modifier = 1.0
+decel_modifier = 1.2
+suspicion_modifier = 1.1
+attention_modifier = 10.0
+costume_ID = 5
+metadata/_custom_type_script = "uid://df08msjn6bry6"

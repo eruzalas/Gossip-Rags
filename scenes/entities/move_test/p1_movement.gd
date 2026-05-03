@@ -6,11 +6,12 @@ extends CharacterBody3D
 @onready var player_inventory: inventory = preload("res://scenes/components/inventory/player_inventory.tres")
 
 #---- Movement Base Stats ----
-var base_speed = 10
+var base_speed = 7
 var move_speed = 0 #used to handle speed when running/crouching, inputs required
 var jump_velocity = 000 #base is actually 10
 var acceleration = 35
 var deceleration = 30
+var sprint_speed = 1
 
 #---- Stat Modifiers for Costumes ----
 var speed_modifier: float
@@ -79,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("p1_left", "p1_right", "p1_up", "p1_down")
 
 	if Input.is_action_pressed("p1_sprint") and !Input.is_action_pressed("p1_crouch"):
-		move_speed = (base_speed * speed_modifier) * 1.5
+		move_speed = (base_speed * speed_modifier) * sprint_speed
 	elif Input.is_action_pressed("p1_crouch") and !Input.is_action_pressed("p1_sprint"):
 		move_speed = (base_speed * speed_modifier) * 0.75
 	else :
@@ -131,7 +132,7 @@ func toggle_selected():
 	
 ##very badly assigns costumes based on a keyed ID system (ID = position in array)
 func update_sprite():
-	var sprite = ["p1_default","p1_banana","p1_motorbike_helmet","p1_pirate","p1_cat"]
+	var sprite = ["p1_default","p1_banana","p1_motorbike","p1_pirate","p1_cat","p1_nurse","p1_cult","p1_dino","p1_ghost","p1_ninja","p1_angel","p1_horse"]
 	var selected = 0 #
 	for i in range (player_inventory.size()):
 		if (!player_inventory.equipment[i]):

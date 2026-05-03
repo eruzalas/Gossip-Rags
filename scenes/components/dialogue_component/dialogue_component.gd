@@ -1,114 +1,91 @@
-extends Node
-@onready var dialogue_renderer: Sprite3D = $"../.."
-@onready var dialogue_timer: Timer = $"../DialogueTimer"
+extends Sprite3D
 
-# debug_mode = prints all processing lines for traceability (also incl the temp tests I have added to demo functionality)
-@export var debug_mode: bool = true
+@onready var timer: Timer = $SubViewport/Timer
+@onready var v_box_container: VBoxContainer = $SubViewport/VBoxContainer
+@onready var npc: Npc = $".."
+@onready var gossiper_component: Node = $"../GossiperComponent"
 
-const MIN_WAIT: float = 1.0
-const MAX_WAIT: float = 10.0
-
-var status: Enums.NpcState = Enums.NpcState.IDLE
-var previous_status: Enums.NpcState
-
+var dialogue_bubble_prefab = preload("res://scenes/components/dialogue_component/dialogue_bubble/dialogue_bubble.tscn")
 var current_dialogue
-var dialogue_timeout = 1
-var max_width_dialogue_box = 400
-var bubble
-var can_speak_randomly: bool = true
+var can_speak: bool = true
 
-var dialogue_bubble_prefab = preload("res://scenes/components/dialogue_component/dialogue_bubble.tscn")
+var previous_npc_status: Enums.NpcState = Enums.NpcState.IDLE
+var current_npc_status: Enums.NpcState = Enums.NpcState.IDLE
+
+const MIN_WAIT: float = 10.0
+const MAX_WAIT: float = 20.0
+const SECONDS_PER_CHARACTER = 0.1
 
 func _ready() -> void:
 	randomize()
+	timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+	npc.npc_status_changed.connect(_set_status)
 	
-	dialogue_renderer.get_parent().npc_status_changed.connect(_set_status)
-		
-	if debug_mode:
-		#dialogue_timer.start(dialogue_timeout)
-		print("DEBUG MODE ACTIVE")
-		
-	
-	#dialogue_timer.start(randf_range(min_dialogue_wait, max_dialogue_wait))
+	if npc.npc_type == Enums.NpcType.GOSSIPER:
+		can_speak = false
+		gossiper_component.current_gossip.connect(_add_bubble)
+		gossiper_component.gossiping_active.connect(_set_gossiping)
 
-
-func _set_status(new_status: Enums.NpcState) -> void:
-	status = new_status
-	
-	if status != Enums.NpcState.GOSSIPING:
-		if status == Enums.NpcState.WATCHING:
-			dialogue_timer.start(0.1)
-			# TODO: fix this popup bullshit
-		else:
-			dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
-		
-
-func _process(delta: float) -> void:
-	pass
-
-func _set_gossiping(status: bool) -> void:
-	can_speak_randomly = !status
-	if can_speak_randomly:
-		dialogue_timer.start(randf_range(MIN_WAIT, MAX_WAIT))
+func _set_gossiping(passed_status: bool) -> void:
+	can_speak = !passed_status
+	if can_speak:
+		timer.start(randf_range(MIN_WAIT, MAX_WAIT))
 	else:
-		dialogue_timer.stop()
-
-func _display_gossip(gossip: Dictionary):
-	_add_bubble(gossip)
+		timer.stop()
 
 func _remove_bubble(child):
 	child.queue_free()
-	_update_bubble_positions()
 
 func _add_bubble(dialogue: Dictionary) -> void:
+	var v_box_children = v_box_container.get_children()
+	if v_box_children.size() > 0:
+		_remove_bubble(v_box_children[0])
+	
 	var bubble = dialogue_bubble_prefab.instantiate()
-	#bubble.base_transparency_speed = dialogue_renderer.base_transparency_speed
 	
-	add_child(bubble)
-	bubble._set_text(dialogue["dialogue"])
+	v_box_container.add_child(bubble)
+	var typewriter_delay = SECONDS_PER_CHARACTER * dialogue["dialogue"].length()
+	bubble._set_text(dialogue["dialogue"], true, (typewriter_delay/2))
 	bubble._set_texture(dialogue["bubble_icon"])
-	# this will need to be changed depending on if dialogue is active due to player staring?
-	# TODO: REVIEW THIS
-	if can_speak_randomly:
-		bubble.can_disappear = true
-	# make component listen to the child transparency calls
 	bubble.is_transparent.connect(_remove_bubble)
-	# set initial position
-	_update_bubble_positions()
+	_update_all_bubbles()
 
-func _update_bubble_positions() -> void:
-	var children = get_children()
-	if children.size() > 1:
-		var index = 0
-		for child in children:
-			child._update_off_index((children.size() - 1) - index)
-			index += 1
-	else:
-		children[0]._update_off_index()
+func _update_all_bubbles() -> void:
+	var children = v_box_container.get_children()
+	var index = 0
+	for child in children:
+		child._update_transparency((children.size() - 1) - index)
+		index += 1
 
-
-func _on_dialogue_timer_timeout() -> void:
-	if previous_status != null && status == previous_status:
-		_get_and_display_dialogue()
-	previous_status = status
+func _set_status(new_status: Enums.NpcState) -> void:
+	previous_npc_status = current_npc_status
+	current_npc_status = new_status
 	
-func _get_and_display_dialogue() -> void:
-	# if not initialised - get random dialogue
+	if current_npc_status == Enums.NpcState.WATCHING:
+		current_npc_status = previous_npc_status
+	
+	elif new_status == Enums.NpcState.ALERTED:
+		_lorenzo_gets_the_dialogue()
+		_add_bubble(current_dialogue)
+		can_speak = false
+	
+	else:
+		can_speak = true
+
+func _on_timer_timeout() -> void:
+	if can_speak:
+		_lorenzo_gets_the_dialogue()
+		_add_bubble(current_dialogue)
+
+# virtual lorenzo has to grab dialogue - if this breaks blame lorenzo
+func _lorenzo_gets_the_dialogue() -> void:
 	if current_dialogue == null:
-		current_dialogue = DialogueProcessor._get_random_npc_dialogue(status)
-		
+		current_dialogue = DialogueProcessor._get_random_npc_dialogue(npc.current_state)
 	# if initialised, but next_id is not "" - get next dialogue
 	elif current_dialogue["next_id"] != "":
 		current_dialogue = DialogueProcessor._get_next_dialogue(current_dialogue["next_id"])
 		
 	# else (aka is initialised and does not have a next_id) - get random dialogue
 	else:
-		current_dialogue = DialogueProcessor._get_random_npc_dialogue(status)
+		current_dialogue = DialogueProcessor._get_random_npc_dialogue(npc.current_state)
 	
-	if debug_mode:
-		print(current_dialogue["dialogue"])
-	
-	_add_bubble(current_dialogue)
-	
-	if debug_mode:
-		dialogue_timer.start(dialogue_timeout)

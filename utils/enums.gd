@@ -6,6 +6,7 @@ enum NpcState {
 	MOVING,
 	GOSSIPING,
 	INTERRUPTED,
+	ALERTED,
 }
 
 enum NpcType {

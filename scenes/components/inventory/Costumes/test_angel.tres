@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://bogs2cjkga3q4"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_6rlj4"]
+[ext_resource type="Texture2D" uid="uid://d2etyu5en3l8a" path="res://assets/testsprites/costumes_AM/angel.png" id="2_pxf0l"]
+
+[resource]
+script = ExtResource("1_6rlj4")
+name = "angel"
+texture = ExtResource("2_pxf0l")
+speed_modifier = 1.0
+accel_modifier = 1.2
+decel_modifier = 1.1
+suspicion_modifier = 0.3
+attention_modifier = 0.8
+costume_ID = 10
+metadata/_custom_type_script = "uid://df08msjn6bry6"

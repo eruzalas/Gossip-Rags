@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://btava38i3c5rt"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_ciocw"]
+[ext_resource type="Texture2D" uid="uid://cfkkalitop5fn" path="res://assets/testsprites/costumes_AM/horse.png" id="2_r0lqg"]
+
+[resource]
+script = ExtResource("1_ciocw")
+name = "horse_head"
+texture = ExtResource("2_r0lqg")
+speed_modifier = 1.4
+jump_height_modifier = 1.5
+accel_modifier = 1.2
+decel_modifier = 0.2
+attention_modifier = 1.4
+costume_ID = 11
+metadata/_custom_type_script = "uid://df08msjn6bry6"
