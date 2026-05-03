@@ -51,37 +51,54 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwifv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_26xou"]
+[sub_resource type="BoxMesh" id="BoxMesh_jyr8v"]
 size = Vector3(0.176, 1, 4.444)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmg7y"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cxds"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
 shader_parameter/opacity = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cxds"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jyr8v"]
-material = SubResource("ShaderMaterial_1cxds")
-size = Vector3(0.176, 1, 4.444)
+[sub_resource type="BoxShape3D" id="BoxShape3D_26xou"]
+size = Vector3(0.176, 1.256958, 4.444)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5o5dd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_d0ajt"]
-size = Vector3(0.176, 1, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fymcc"]
-size = Vector3(0.176, 1, 3.9594727)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqf7g"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_lbnhc"]
 size = Vector3(0.176, 1, 3.96)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpffo"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0ajt"]
+size = Vector3(0.176, 1.1875, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fymcc"]
+size = Vector3(0.176, 1.2148438, 3.9594727)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sygq6"]
 size = Vector3(9.827148, 2, 0.176)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0wrxw"]
 size = Vector3(9.827148, 4, 0.176)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kngxi"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmg7y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmg7y"]
 size = Vector3(0.176, 4, 25.78003)
@@ -116,8 +133,26 @@ size = Vector3(7, 4, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_n78lu"]
 size = Vector3(1, 6, 2.058)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhssw"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf0uk"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_1o6i5"]
 size = Vector3(6.521, 0.65, 2.058)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2kh8"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7o8ut"]
 size = Vector3(1, 4, 2.058)
@@ -131,7 +166,7 @@ size = Vector3(6.521, 0.65, 2.058)
 [sub_resource type="BoxMesh" id="BoxMesh_4ln07"]
 size = Vector3(0.375, 6, 8)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqf7g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnqnj"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -140,11 +175,35 @@ shader_parameter/opacity = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_yr5cl"]
 size = Vector3(0.375, 6, 16.15)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lp0r"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_x77xw"]
 size = Vector3(0.375, 6, 5.3)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj3jo"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_pkfnk"]
 size = Vector3(0.375, 2.5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3x8u"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l72hy"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5obl8"]
 size = Vector3(0.375, 4, 8)
@@ -170,11 +229,29 @@ size = Vector3(26.11914, 4, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_m4278"]
 size = Vector3(0.375, 6, 9.25)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mx70"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_nyio1"]
 size = Vector3(0.375, 6, 10.4)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovomx"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_n0in2"]
 size = Vector3(0.375, 2.5, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx0xk"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdkuk"]
 size = Vector3(0.375, 4, 9.25)
@@ -191,8 +268,20 @@ size = Vector3(2.9785156, 4, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_7mx70"]
 size = Vector3(2.9785156, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fxch"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_ghkdt"]
 size = Vector3(0.375, 2.5, 4.417)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4v0p3"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s64j0"]
 size = Vector3(0.375, 1, 4.417)
@@ -200,7 +289,7 @@ size = Vector3(0.375, 1, 4.417)
 [sub_resource type="BoxMesh" id="BoxMesh_1cxds"]
 size = Vector3(1.3741455, 6, 0.375)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mx70"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6eles"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -215,8 +304,11 @@ size = Vector3(0.375, 4, 9.214966)
 [sub_resource type="BoxMesh" id="BoxMesh_kx0xk"]
 size = Vector3(0.375, 6, 9.214966)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmg7y"]
-transparency = 1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_124cm"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fxch"]
 size = Vector3(9.853027, 4, 0.375)
@@ -233,11 +325,29 @@ size = Vector3(0.372, 4, 19.621582)
 [sub_resource type="BoxMesh" id="BoxMesh_jtcuk"]
 size = Vector3(1.5, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ebim"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_k6jmd"]
 size = Vector3(1.5, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vl1dq"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_pyabd"]
 size = Vector3(9.438, 1, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx1je"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qjyj0"]
 size = Vector3(1.5, 4, 0.375)
@@ -272,7 +382,7 @@ size = Vector3(2.1, 1, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_pww7v"]
 size = Vector3(2.4, 6, 0.375)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fxch"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij5nj"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -281,8 +391,20 @@ shader_parameter/opacity = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_nlt47"]
 size = Vector3(0.5, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n78lu"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_6a7tq"]
 size = Vector3(2.1, 2.45, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1o6i5"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sar2w"]
 size = Vector3(12, 2, 0.176)
@@ -290,7 +412,7 @@ size = Vector3(12, 2, 0.176)
 [sub_resource type="BoxMesh" id="BoxMesh_goy61"]
 size = Vector3(10, 4, 0.176)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4v0p3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o8ut"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -304,7 +426,7 @@ size = Vector3(0.176, 2, 27.797852)
 [sub_resource type="BoxMesh" id="BoxMesh_hx1je"]
 size = Vector3(5.46, 6, 0.375)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovomx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5636"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -312,6 +434,12 @@ shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o8ut"]
 size = Vector3(2.1, 2.5, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jhdiv"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ln07"]
 size = Vector3(8, 4, 0.375)
@@ -322,8 +450,20 @@ size = Vector3(2.1, 1, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_5obl8"]
 size = Vector3(10, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ln07"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_1n8ra"]
 size = Vector3(2, 2.5, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yr5cl"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eles"]
 size = Vector3(8, 4, 0.375)
@@ -334,13 +474,19 @@ size = Vector3(2, 1, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_554ci"]
 size = Vector3(0.375, 6, 4.02417)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x77xw"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hph6x"]
 size = Vector3(0.375, 4, 4.02417)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a5636"]
 size = Vector3(3.5, 6, 0.375)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx0xk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkfnk"]
 render_priority = 0
 shader = ExtResource("9_cmg7y")
 shader_parameter/base_color = Color(1, 1, 1, 1)
@@ -349,8 +495,20 @@ shader_parameter/opacity = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_jhdiv"]
 size = Vector3(20.5, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5obl8"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_olhon"]
 size = Vector3(2.1, 2.5, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1n8ra"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0in2"]
 size = Vector3(3.5, 4, 0.375)
@@ -364,8 +522,20 @@ size = Vector3(2.1, 1, 0.375)
 [sub_resource type="BoxMesh" id="BoxMesh_ayaol"]
 size = Vector3(2.95, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0n6td"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_ecm30"]
 size = Vector3(2.1, 2.5, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmoad"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l34gv"]
 size = Vector3(2.95, 4, 0.375)
@@ -373,26 +543,50 @@ size = Vector3(2.95, 4, 0.375)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2qot8"]
 size = Vector3(2.1, 1, 0.375)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5aamg"]
-size = Vector3(0.375, 4, 4.9648438)
-
 [sub_resource type="BoxMesh" id="BoxMesh_kngxi"]
 size = Vector3(0.375, 6, 4.9648438)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mb8w1"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5aamg"]
+size = Vector3(0.375, 4, 4.9648438)
 
 [sub_resource type="BoxMesh" id="BoxMesh_26xou"]
 size = Vector3(7.4379883, 6, 0.375)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oo0aq"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyr8v"]
 size = Vector3(7.4379883, 4, 0.375)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5o5dd"]
-size = Vector3(0.375, 4.0512695, 8.416931)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0ajt"]
 size = Vector3(0.375, 6, 8.346)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olhon"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5o5dd"]
+size = Vector3(0.375, 4.0512695, 8.416931)
+
 [sub_resource type="BoxMesh" id="BoxMesh_fymcc"]
 size = Vector3(0.375, 6, 8.345703)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4278"]
+render_priority = 0
+shader = ExtResource("9_cmg7y")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbnhc"]
 size = Vector3(0.375, 4, 8.345703)
@@ -1017,8 +1211,11 @@ shader_parameter/is_p1_top = false
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rwifv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k6jmd"]
-size = Vector3(0.2, 1, 2.259)
+[sub_resource type="SphereShape3D" id="SphereShape3D_cmg7y"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nqe8x"]
+radius = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbnhc"]
 font_size = 32
@@ -1086,12 +1283,13 @@ use_collision = true
 transform = Transform3D(0.99999946, 0, 0, 0, 0.99999946, 0, 0, 0, 0.99999946, 12.587891, 1.0561523, 3.7221832)
 script = ExtResource("9_nqe8x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence" unique_id=1884012044]
-shape = SubResource("BoxShape3D_26xou")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence" unique_id=1666874067]
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_jyr8v")
+surface_material_override/0 = SubResource("ShaderMaterial_1cxds")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence" unique_id=1884012044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128479, 0)
+shape = SubResource("BoxShape3D_26xou")
 
 [node name="FrontFence2_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1627498614 groups=["transparent_walls"]]
 transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -8.412104, 0.99999994, 6.5123863)
@@ -1099,21 +1297,21 @@ script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=1826766502]
 transform = Transform3D(0.17599997, 0, 0, 0, 0.9999999, 0, 0, 0, 3.9999995, 0, 0, -2.9948378)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_5o5dd")
+surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=1984128254]
+transform = Transform3D(0.99999946, 0, 0, 0, 0.99999946, 0, 0, 0, 0.99999946, 0, 0.003294468, 2.9896216)
+mesh = SubResource("BoxMesh_lbnhc")
+surface_material_override/0 = SubResource("ShaderMaterial_hpffo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=2137387242]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.9948378)
+transform = Transform3D(0.9999957, 0, 0, 0, 0.9999957, 0, 0, 0, 0.9999957, 0, 0.09375, -2.9948378)
 shape = SubResource("BoxShape3D_d0ajt")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=188002259]
-transform = Transform3D(0.9999895, 0, 0, 0, 0.9999895, 0, 0, 0, 0.9999895, 0, 0, 2.9899893)
+transform = Transform3D(0.9999864, 0, 0, 0, 0.9999864, 0, 0, 0, 0.9999864, 0, 0.10742056, 2.9899883)
 shape = SubResource("BoxShape3D_fymcc")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=1984128254]
-transform = Transform3D(0.9999995, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 0, 0.003294468, 2.9896219)
-material_override = SubResource("ShaderMaterial_cmg7y")
-mesh = SubResource("BoxMesh_lbnhc")
 
 [node name="BackyardFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=876217206 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.586426, 2.5, 11.403454)
@@ -1125,12 +1323,11 @@ shape = SubResource("BoxShape3D_sygq6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardFence" unique_id=1740395634]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_0wrxw")
+surface_material_override/0 = SubResource("ShaderMaterial_kngxi")
 
-[node name="BackyardFence2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=130217001 groups=["transparent_walls"]]
+[node name="BackyardFence2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=130217001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.407684, 2.5, -1.5864258)
-script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardFence2" unique_id=21451758]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
@@ -1181,18 +1378,18 @@ size = Vector3(4.4432373, 5.8253174, 2.4777832)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall" unique_id=640617154]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, -2.8064122, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_n78lu")
+surface_material_override/0 = SubResource("ShaderMaterial_dhssw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall" unique_id=1822186311]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 2.705534, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_n78lu")
+surface_material_override/0 = SubResource("ShaderMaterial_cf0uk")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall" unique_id=1146716441]
 transform = Transform3D(0.9999995, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 0, 1.2654479, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_1o6i5")
+surface_material_override/0 = SubResource("ShaderMaterial_j2kh8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall" unique_id=1627342290]
 transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, -2.8064122, -1, 0)
@@ -1224,33 +1421,28 @@ size = Vector3(1, 3.5, 4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=891594969]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 13.4464655)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_4ln07")
-surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+surface_material_override/0 = SubResource("ShaderMaterial_hnqnj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=251380110]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, -2.6329536)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_yr5cl")
-surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+surface_material_override/0 = SubResource("ShaderMaterial_7lp0r")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=1146844831]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, -15.3773365)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_x77xw")
-surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+surface_material_override/0 = SubResource("ShaderMaterial_tj3jo")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=655278051]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, 0, 0.5004885, 7.4447746)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_pkfnk")
-surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+surface_material_override/0 = SubResource("ShaderMaterial_j3x8u")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=1847664221]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.39999998, 0, 0, 0, 0.99999994, 0, 0.5102017, -11.417959)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_pkfnk")
-surface_material_override/0 = SubResource("ShaderMaterial_fqf7g")
+surface_material_override/0 = SubResource("ShaderMaterial_l72hy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=79974032]
 transform = Transform3D(0.9999969, 0, 0, 0, 0.9999969, 0, 0, 0, 0.9999969, 0, -1, 13.446465)
@@ -1272,9 +1464,8 @@ shape = SubResource("BoxShape3D_bmoad")
 transform = Transform3D(0.99999, 0, 0, 0, 0.99999, 0, 0, 0, 0.99999, 0, 0.5237253, -11.7216015)
 shape = SubResource("BoxShape3D_mb8w1")
 
-[node name="BackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1131530604 groups=["transparent_walls"]]
+[node name="BackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1131530604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41226578, 3.5, -34.308266)
-script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackWall" unique_id=1327768187]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
@@ -1297,18 +1488,20 @@ size = Vector3(1, 3.5, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall" unique_id=1401878517]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 6.1466217)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_m4278")
+surface_material_override/0 = SubResource("ShaderMaterial_7mx70")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall" unique_id=1456781455]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, -5.7096577)
 material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_nyio1")
+surface_material_override/0 = SubResource("ShaderMaterial_ovomx")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall" unique_id=890054942]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.39999998, 0, 0, 0, 0.99999994, 0, 0.49346042, 0.51470184)
 material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_n0in2")
+surface_material_override/0 = SubResource("ShaderMaterial_kx0xk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall" unique_id=1525616842]
 transform = Transform3D(0.9999957, 0, 0, 0, 0.9999957, 0, 0, 0, 0.9999957, 0, -1, 6.1466217)
@@ -1334,6 +1527,7 @@ shape = SubResource("BoxShape3D_sh7a8")
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
 material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_7mx70")
+surface_material_override/0 = SubResource("ShaderMaterial_5fxch")
 
 [node name="LeftSideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1722187974 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.314469, 3.5, -10.682159)
@@ -1347,8 +1541,8 @@ size = Vector3(1, 3.5322266, 4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall3" unique_id=113357976]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, 0, 0.47814465, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_ghkdt")
+surface_material_override/0 = SubResource("ShaderMaterial_4v0p3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall3" unique_id=2063182246]
 transform = Transform3D(0.99999744, 0, 0, 0, 0.99999744, 0, 0, 0, 0.99999744, 0, 0.49484754, 0)
@@ -1360,9 +1554,8 @@ script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/Foyer1Wall2" unique_id=748773193]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_1cxds")
-surface_material_override/0 = SubResource("ShaderMaterial_7mx70")
+surface_material_override/0 = SubResource("ShaderMaterial_6eles")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/Foyer1Wall2" unique_id=257245203]
 transform = Transform3D(0.9999908, 0, 0, 0, 0.9999908, 0, 0, 0, 0.9999908, 0, -0.9999962, 0)
@@ -1378,13 +1571,11 @@ shape = SubResource("BoxShape3D_ovomx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/Foyer1Wall" unique_id=51133926]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_kx0xk")
-surface_material_override/0 = SubResource("StandardMaterial3D_cmg7y")
+surface_material_override/0 = SubResource("ShaderMaterial_124cm")
 
-[node name="GarageWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=499810386 groups=["transparent_walls"]]
+[node name="GarageWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=499810386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.569494, 3.5, -34.30719)
-script = ExtResource("9_nqe8x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall" unique_id=1003708922]
 transform = Transform3D(0.9999968, 0, 0, 0, 0.9999968, 0, 0, 0, 0.9999968, 0, -1, 0)
@@ -1395,9 +1586,8 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0,
 material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_4v0p3")
 
-[node name="GarageWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=120307788 groups=["transparent_walls"]]
+[node name="GarageWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=120307788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.300573, 3.5, -24.30382)
-script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall2" unique_id=1705195933]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
@@ -1420,18 +1610,18 @@ size = Vector3(7, 5, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall3" unique_id=382489477]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, -4.2614965, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_jtcuk")
+surface_material_override/0 = SubResource("ShaderMaterial_6ebim")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall3" unique_id=1916726416]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 4.258259, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_k6jmd")
+surface_material_override/0 = SubResource("ShaderMaterial_vl1dq")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall3" unique_id=497629704]
 transform = Transform3D(0.9999996, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999996, 0, 0.495476, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_pyabd")
+surface_material_override/0 = SubResource("ShaderMaterial_hx1je")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall3" unique_id=397570257]
 transform = Transform3D(0.9999964, 0, 0, 0, 0.9999964, 0, 0, 0, 0.9999964, -4.2614956, -1, 0)
@@ -1445,9 +1635,8 @@ shape = SubResource("BoxShape3D_do88p")
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.4932816, 0)
 shape = SubResource("BoxShape3D_j8f2q")
 
-[node name="LaundryBackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1153420156 groups=["transparent_walls"]]
+[node name="LaundryBackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1153420156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3.5, -24.289995)
-script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryBackWall" unique_id=1452007069]
 transform = Transform3D(1.385, 0, 0, 0, 0.67, 0, 0, 0, 1, -1.0017176, -1.0017171, 0)
@@ -1458,9 +1647,8 @@ mesh = SubResource("BoxMesh_l4ul6")
 transform = Transform3D(0.9999858, 0, 0, 0, 0.9999858, 0, 0, 0, 0.9999858, -0.9999895, -0.9999974, 0)
 shape = SubResource("BoxShape3D_q3hpu")
 
-[node name="LaundryLeftWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=573444080 groups=["transparent_walls"]]
+[node name="LaundryLeftWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=573444080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.310852, 3.5, -20.341888)
-script = ExtResource("9_nqe8x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryLeftWall" unique_id=778508565]
 transform = Transform3D(0.9999798, 0, 0, 0, 0.9999798, 0, 0, 0, 0.9999798, -2.0034351, -1, 0)
@@ -1495,21 +1683,18 @@ shape = SubResource("BoxShape3D_ckeh6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryFrontWall" unique_id=998757876]
 transform = Transform3D(1.7699995, 0, 0, 0, 0.6699999, 0, 0, 0, 0.9999999, -2.219905, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_pww7v")
-surface_material_override/0 = SubResource("ShaderMaterial_5fxch")
+surface_material_override/0 = SubResource("ShaderMaterial_ij5nj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryFrontWall" unique_id=1413977751]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 2.2158442, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_nlt47")
-surface_material_override/0 = SubResource("ShaderMaterial_5fxch")
+surface_material_override/0 = SubResource("ShaderMaterial_n78lu")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryFrontWall" unique_id=1564481592]
 transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 1, 0.960762, 0.5100477, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_6a7tq")
-surface_material_override/0 = SubResource("ShaderMaterial_5fxch")
+surface_material_override/0 = SubResource("ShaderMaterial_1o6i5")
 
 [node name="BackyardWestFrontFence3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1710526398 groups=["transparent_walls"]]
 transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, -13.5, 2.5, 11.391009)
@@ -1521,13 +1706,11 @@ shape = SubResource("BoxShape3D_sar2w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardWestFrontFence3" unique_id=1547356983]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.0017166, -1.0017174, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_goy61")
-surface_material_override/0 = SubResource("ShaderMaterial_4v0p3")
+surface_material_override/0 = SubResource("ShaderMaterial_7o8ut")
 
-[node name="BackyardWestFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1997808974 groups=["transparent_walls"]]
+[node name="BackyardWestFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1997808974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.40085, 2.5, -2.6060762)
-script = ExtResource("9_nqe8x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardWestFence" unique_id=1909417515]
 transform = Transform3D(0.99999654, 0, 0, 0, 0.99999654, 0, 0, 0, 0.99999654, -2.0034351, -0.99999964, 0)
@@ -1550,14 +1733,13 @@ size = Vector3(2, 3.5576172, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall1" unique_id=926145763]
 transform = Transform3D(1.4649999, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0.048703194, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_hx1je")
-surface_material_override/0 = SubResource("ShaderMaterial_ovomx")
+surface_material_override/0 = SubResource("ShaderMaterial_a5636")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall1" unique_id=1813833723]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.39999998, 0, 0, 0, 0.99999994, -5.006242, 0.50152564, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_7o8ut")
+surface_material_override/0 = SubResource("ShaderMaterial_jhdiv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall1" unique_id=842068470]
 transform = Transform3D(0.99998003, 0, 0, 0, 0.99998003, 0, 0, 0, 0.99998003, 0.020488262, -0.99998593, 0)
@@ -1579,13 +1761,13 @@ size = Vector3(2, 3.534546, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall" unique_id=706672822]
 transform = Transform3D(0.79499996, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, -5.212501, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_5obl8")
+surface_material_override/0 = SubResource("ShaderMaterial_4ln07")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall" unique_id=1433957983]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, -10.202305, 0.49711633, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_1n8ra")
+surface_material_override/0 = SubResource("ShaderMaterial_yr5cl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall" unique_id=1668051944]
 transform = Transform3D(0.99999535, 0, 0, 0, 0.99999535, 0, 0, 0, 0.99999535, -5.2052717, -1, 0)
@@ -1601,8 +1783,8 @@ script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall3" unique_id=829963425]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.6699999, 0, 0, 0, 0.9999999, 1.0017171, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_554ci")
+surface_material_override/0 = SubResource("ShaderMaterial_x77xw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall3" unique_id=1146843567]
 transform = Transform3D(0.9999895, 0, 0, 0, 0.9999895, 0, 0, 0, 0.9999895, 1.0017171, -0.99999714, 0)
@@ -1620,21 +1802,18 @@ size = Vector3(2, 3.5, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3" unique_id=1188474120]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, -11.256572, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_a5636")
-surface_material_override/0 = SubResource("ShaderMaterial_kx0xk")
+surface_material_override/0 = SubResource("ShaderMaterial_pkfnk")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3" unique_id=546756783]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 2.763393, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_jhdiv")
-surface_material_override/0 = SubResource("ShaderMaterial_kx0xk")
+surface_material_override/0 = SubResource("ShaderMaterial_5obl8")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3" unique_id=152123131]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, -8.499817, 0.4956336, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_olhon")
-surface_material_override/0 = SubResource("ShaderMaterial_kx0xk")
+surface_material_override/0 = SubResource("ShaderMaterial_1n8ra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3" unique_id=1458749788]
 transform = Transform3D(0.99999714, 0, 0, 0, 0.99999714, 0, 0, 0, 0.99999714, -11.256571, -1, 0)
@@ -1660,13 +1839,13 @@ size = Vector3(2, 3.5, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall" unique_id=1049695796]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 1.3874104, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_ayaol")
+surface_material_override/0 = SubResource("ShaderMaterial_0n6td")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall" unique_id=673063889]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, -1.1051474, 0.50489783, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_ecm30")
+surface_material_override/0 = SubResource("ShaderMaterial_bmoad")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall" unique_id=1122175567]
 transform = Transform3D(0.99999213, 0, 0, 0, 0.99999213, 0, 0, 0, 0.99999213, 1.3874104, -1, 0)
@@ -1680,14 +1859,14 @@ shape = SubResource("BoxShape3D_2qot8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6749573, 3.5, -28.332272)
 script = ExtResource("9_nqe8x")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall2" unique_id=1842876901]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.6699999, 0, 0, 0, 0.9999999, 0, -1.0017171, 0)
+mesh = SubResource("BoxMesh_kngxi")
+surface_material_override/0 = SubResource("ShaderMaterial_mb8w1")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall2" unique_id=288740527]
 transform = Transform3D(0.9999967, 0, 0, 0, 0.9999967, 0, 0, 0, 0.9999967, 0, -1, 0)
 shape = SubResource("BoxShape3D_5aamg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall2" unique_id=1842876901]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
-mesh = SubResource("BoxMesh_kngxi")
 
 [node name="BasementStairWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=75949105 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.582119, 3.5069718, -30.62582)
@@ -1695,8 +1874,8 @@ script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BasementStairWall" unique_id=739115664]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_26xou")
+surface_material_override/0 = SubResource("ShaderMaterial_oo0aq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BasementStairWall" unique_id=885788323]
 transform = Transform3D(0.9999977, 0, 0, 0, 0.9999977, 0, 0, 0, 0.9999977, 0, -1, 0)
@@ -1706,14 +1885,14 @@ shape = SubResource("BoxShape3D_jyr8v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30223668, 3.4502835, -30.206526)
 script = ExtResource("9_nqe8x")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall" unique_id=1406876196]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.6699999, 0, 0, 0, 0.9999999, 0, -0.9551294, 0.23853683)
+mesh = SubResource("BoxMesh_d0ajt")
+surface_material_override/0 = SubResource("ShaderMaterial_olhon")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall" unique_id=1341935665]
 transform = Transform3D(0.99998593, 0, 0, 0, 0.99998593, 0, 0, 0, 0.99998593, 0, -0.9743633, 0.20845795)
 shape = SubResource("BoxShape3D_5o5dd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall" unique_id=1406876196]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -0.9551294, 0.23853683)
-material_override = SubResource("ShaderMaterial_cmg7y")
-mesh = SubResource("BoxMesh_d0ajt")
 
 [node name="UpstairsWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1125407588 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3078928, 3.5, -29.936121)
@@ -1721,8 +1900,8 @@ script = ExtResource("9_nqe8x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall2" unique_id=2013863762]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
-material_override = SubResource("ShaderMaterial_cmg7y")
 mesh = SubResource("BoxMesh_fymcc")
+surface_material_override/0 = SubResource("ShaderMaterial_m4278")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall2" unique_id=779339619]
 transform = Transform3D(0.99999607, 0, 0, 0, 0.99999607, 0, 0, 0, 0.99999607, 0, -1, 0)
@@ -2883,25 +3062,22 @@ texture = SubResource("ViewportTexture_rwifv")
 [node name="Player1Cam" type="Camera3D" parent="CameraManager/Viewport1" unique_id=812204678]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, -27.217651, 4.218769, 0)
 
-[node name="Area3D" type="Area3D" parent="CameraManager/Viewport1/Player1Cam" unique_id=458758663 groups=["transparent_walls"]]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="CameraManager/Viewport1/Player1Cam" unique_id=1191873235 node_paths=PackedStringArray("target_player")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_cmg7y")
+target_position = Vector3(0, -1, -3)
 script = ExtResource("17_sh7a8")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraManager/Viewport1/Player1Cam/Area3D" unique_id=1979211479]
-transform = Transform3D(5, 0, 0, 0, 3.830221, -1.6069695, 0, 3.213939, 1.9151105, 0, -0.9962115, -5.035655)
-shape = SubResource("BoxShape3D_k6jmd")
+target_player = NodePath("../../../../Player1")
 
 [node name="Viewport2" type="SubViewport" parent="CameraManager" unique_id=1234397570]
 
 [node name="Player2Cam" type="Camera3D" parent="CameraManager/Viewport2" unique_id=871099603]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, -24.2618, 4.218769, 0)
 
-[node name="Area3D2" type="Area3D" parent="CameraManager/Viewport2/Player2Cam" unique_id=1912124407]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 2.9802322e-08, 1, 0.0046806335, 0, 0)
+[node name="ShapeCast3D" type="ShapeCast3D" parent="CameraManager/Viewport2/Player2Cam" unique_id=83817612 node_paths=PackedStringArray("target_player")]
+shape = SubResource("SphereShape3D_nqe8x")
 script = ExtResource("17_sh7a8")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraManager/Viewport2/Player2Cam/Area3D2" unique_id=815424685]
-transform = Transform3D(5, 0, 0, 0, 3.830221, -1.6069695, 0, 3.213939, 1.9151105, 0, -0.9962115, -5.035655)
-shape = SubResource("BoxShape3D_k6jmd")
+target_player = NodePath("../../../../Player2")
 
 [node name="Systems Debug UI" type="Control" parent="." unique_id=1491472664]
 layout_mode = 3
@@ -3207,9 +3383,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4885087, -0.16634738, 0)
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/BackHole" to="Environment (NavMesh)/Portals/BackHole" method="_on_body_entered"]
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/FrontHole" to="Environment (NavMesh)/Portals/FrontHole" method="_on_body_entered"]
 [connection signal="timeout" from="Origin Controller/Flag Timer" to="Origin Controller" method="_on_flag_timer_timeout"]
-[connection signal="body_entered" from="CameraManager/Viewport1/Player1Cam/Area3D" to="CameraManager/Viewport1/Player1Cam/Area3D" method="_on_body_entered"]
-[connection signal="body_exited" from="CameraManager/Viewport1/Player1Cam/Area3D" to="CameraManager/Viewport1/Player1Cam/Area3D" method="_on_body_exited"]
-[connection signal="body_entered" from="CameraManager/Viewport2/Player2Cam/Area3D2" to="CameraManager/Viewport2/Player2Cam/Area3D2" method="_on_body_entered"]
-[connection signal="body_exited" from="CameraManager/Viewport2/Player2Cam/Area3D2" to="CameraManager/Viewport2/Player2Cam/Area3D2" method="_on_body_exited"]
 [connection signal="pressed" from="Pause Canvas/Pause Menu/Resume" to="Pause Canvas/Pause Menu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Canvas/Pause Menu/Quit" to="Pause Canvas/Pause Menu" method="_on_quit_pressed"]
