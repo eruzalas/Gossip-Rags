@@ -1062,6 +1062,15 @@ size = Vector3(8.176025, 1, 8.40625)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2x71e"]
 size = Vector3(11.655533, 1, 12)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0giv"]
+size = Vector3(26, 1, 41)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qc1y"]
+size = Vector3(47, 1, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdc15"]
+size = Vector3(26, 1, 42)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_k0juu"]
 vertices = PackedVector3Array(-5.8, 0.40000004, -10.6, -4.3999996, 0.40000004, -11, -4.3999996, 0.40000004, -11.8, -14.8, 0.40000004, -11.8, -4, 0.40000004, -6, -4.2, 0.40000004, -7.7999997, -5.2, 0.40000004, -7.7999997, -5, 0.40000004, -5.2, -14.8, 0.40000004, -1.3999996, -11, 0.40000004, -1.3999996, -10.6, 0.40000004, -2.8000002, -6, 0.40000004, -8.6, -8.4, 0.40000004, -2.8000002, -5, 0.40000004, -3.8000002, -3.5999994, 0.40000004, -11, -3, 0.40000004, -8.4, -2.3999996, 0.40000004, -5.8, -2.8000002, 0.40000004, -10.2, 2.2000008, 0.40000004, -8.6, 3.6000004, 0.40000004, -9, 3.6000004, 0.40000004, -11.8, 2, 0.40000004, -7, 13.4, 0.40000004, -9, 14.200001, 0.40000004, -8, 16.2, 0.40000004, -8.4, 16, 0.40000004, -11.8, 5, 0.40000004, -8.6, 11.800001, 0.40000004, -9, 11, 0.40000004, -8.2, 5, 0.40000004, -6.6, 11, 0.40000004, -6.6, 10.6, 0.40000004, 3, 9.6, 0.40000004, 3.2000008, 9.6, 0.40000004, 5, 14.200001, 0.40000004, -6.7999997, 16.8, 0.40000004, -7.7999997, 13.6, 0.40000004, -6, 11.6, 0.40000004, -6, 10.6, 0.40000004, 0.19999981, 11.200001, 0.40000004, 2.2000008, 16, 0.40000004, 5, 16, 0.40000004, 1.8000002, 18, 0.40000004, -7.7999997, 11.200001, 0.40000004, 0.8000002, 16.8, 0.40000004, 1, 18, 0.40000004, 1, -2.3999996, 0.40000004, -3, -3.3999996, 0.40000004, -2.8000002, -3.3999996, 0.40000004, 0, -2.1999998, 0.40000004, 0.19999981, -1.8000002, 0.40000004, 1.1999998, 2.6000004, 0.40000004, 0, 2, 0.40000004, -0.5999994, 2.3999996, 0.40000004, -2.8000002, 3.6000004, 0.40000004, -3, 3.6000004, 0.40000004, -5.8, 2.3999996, 0.40000004, -6, -1.8000002, 0.40000004, -5.2, 2, 0.40000004, -2.1999998, -1.8000002, 0.40000004, -3.8000002, 4.6000004, 0.40000004, -6, 5, 0.40000004, -2.5999994, 8.6, 0.40000004, 0.19999981, 5.200001, 0.40000004, -1, -7.8, 0.40000004, -2.1999998, -4.5999994, 0.40000004, 0.19999981, -4.5999994, 0.40000004, -3, -7.8, 0.40000004, -0.8000002, -8.599999, 0.40000004, 0, -5, 0.40000004, 1, -10.799999, 0.40000004, -0.19999981, -9.6, 0.40000004, 5, -9.6, 0.40000004, 0.19999981, -14.8, 0.40000004, 5, 8.4, 0.40000004, 3, 6.200001, 0.40000004, 3.8000011, 6.200001, 0.40000004, 5, 8, 0.40000004, 2.3999996, 8, 0.40000004, 0.8000002, 5.800001, 0.40000004, 3.2000008, 4.6000004, 0.40000004, 0, 4, 0.40000004, 3, 3.8000011, 0.40000004, 0.19999981, -3.3999996, 0.40000004, 5, -3.3999996, 0.40000004, 3.2000008, -4.8, 0.40000004, 2.8000011, -2, 0.40000004, 2.6000004, 3, 0.40000004, 3.8000011, 3, 0.40000004, 5)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(8, 10, 9), PackedInt32Array(6, 7, 11), PackedInt32Array(11, 7, 13), PackedInt32Array(11, 13, 12), PackedInt32Array(11, 12, 10), PackedInt32Array(11, 10, 0), PackedInt32Array(0, 10, 8), PackedInt32Array(0, 8, 3), PackedInt32Array(14, 1, 2), PackedInt32Array(5, 15, 4), PackedInt32Array(4, 15, 16), PackedInt32Array(18, 17, 14), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 14), PackedInt32Array(20, 14, 2), PackedInt32Array(15, 17, 16), PackedInt32Array(16, 17, 21), PackedInt32Array(21, 17, 18), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(19, 20, 26), PackedInt32Array(26, 20, 27), PackedInt32Array(27, 20, 25), PackedInt32Array(27, 28, 26), PackedInt32Array(25, 22, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(28, 29, 26), PackedInt32Array(33, 32, 31), PackedInt32Array(24, 35, 23), PackedInt32Array(23, 35, 34), PackedInt32Array(38, 37, 36), PackedInt32Array(31, 39, 33), PackedInt32Array(33, 39, 40), PackedInt32Array(40, 39, 41), PackedInt32Array(34, 35, 36), PackedInt32Array(36, 35, 42), PackedInt32Array(43, 38, 44), PackedInt32Array(44, 38, 45), PackedInt32Array(45, 38, 36), PackedInt32Array(45, 36, 42), PackedInt32Array(39, 43, 41), PackedInt32Array(41, 43, 44), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(52, 51, 50), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(57, 16, 21), PackedInt32Array(53, 58, 56), PackedInt32Array(56, 58, 21), PackedInt32Array(21, 58, 57), PackedInt32Array(57, 58, 59), PackedInt32Array(46, 59, 49), PackedInt32Array(49, 59, 50), PackedInt32Array(50, 59, 52), PackedInt32Array(52, 59, 58), PackedInt32Array(54, 55, 60), PackedInt32Array(60, 29, 54), PackedInt32Array(54, 29, 61), PackedInt32Array(62, 61, 38), PackedInt32Array(38, 61, 29), PackedInt32Array(38, 29, 30), PackedInt32Array(38, 30, 37), PackedInt32Array(62, 63, 61), PackedInt32Array(64, 12, 13), PackedInt32Array(48, 65, 47), PackedInt32Array(47, 65, 66), PackedInt32Array(69, 68, 67), PackedInt32Array(13, 66, 64), PackedInt32Array(64, 66, 67), PackedInt32Array(67, 66, 65), PackedInt32Array(67, 65, 69), PackedInt32Array(70, 8, 9), PackedInt32Array(70, 72, 8), PackedInt32Array(8, 72, 71), PackedInt32Array(8, 71, 73), PackedInt32Array(74, 32, 33), PackedInt32Array(77, 74, 75), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 33), PackedInt32Array(63, 62, 78), PackedInt32Array(77, 79, 78), PackedInt32Array(78, 79, 81), PackedInt32Array(78, 81, 80), PackedInt32Array(78, 80, 63), PackedInt32Array(77, 75, 79), PackedInt32Array(81, 82, 80), PackedInt32Array(84, 83, 85), PackedInt32Array(85, 83, 71), PackedInt32Array(68, 69, 72), PackedInt32Array(72, 69, 85), PackedInt32Array(72, 85, 71), PackedInt32Array(83, 84, 86), PackedInt32Array(82, 81, 51), PackedInt32Array(51, 81, 87), PackedInt32Array(86, 50, 51), PackedInt32Array(87, 88, 51), PackedInt32Array(51, 88, 86), PackedInt32Array(86, 88, 83)]
@@ -2894,64 +2903,6 @@ mesh = SubResource("BoxMesh_0cp2s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6060696, -0.013885498, -0.96125793)
 shape = SubResource("BoxShape3D_ua878")
 
-[node name="BasementRoof" type="CSGCombiner3D" parent="Environment (NavMesh)" unique_id=195131123]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 14.099951, -28)
-visible = false
-transparency = 1.0
-
-[node name="Floor4" type="CSGBox3D" parent="Environment (NavMesh)/BasementRoof" unique_id=1785886725]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -7.000002, -27.319336)
-size = Vector3(24, 1, 13.643555)
-
-[node name="Floor5" type="CSGBox3D" parent="Environment (NavMesh)/BasementRoof" unique_id=1702019362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9541016, -7.000002, -13.01123)
-size = Vector3(15.091797, 1, 13.027344)
-
-[node name="UpstairsRoof" type="CSGCombiner3D" parent="Environment (NavMesh)" unique_id=689338046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -34, -23)
-visible = false
-transparency = 1.0
-cast_shadow = 0
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment (NavMesh)/UpstairsRoof" unique_id=1194128599]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 40, -16.5)
-size = Vector3(28, 1, 36)
-
-[node name="DownstairsRoof" type="CSGCombiner3D" parent="Environment (NavMesh)" unique_id=55848669]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069633484, -31)
-visible = false
-transparency = 1.0
-cast_shadow = 0
-
-[node name="GarageBalconyFloor" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=877855681]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.58545, 7, -17.52877)
-size = Vector3(9.829102, 1, 6)
-
-[node name="Inside1" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1823743327]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3273926, 7, -10.692627)
-size = Vector3(12.668457, 1, 24.385254)
-
-[node name="Inside2" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1933145036]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.725238, 7.0258274, -21.323845)
-size = Vector3(13.478027, 1, 26.403503)
-
-[node name="Hole" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof/Inside2" unique_id=2014440984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8424563, 0, -7.4388275)
-operation = 2
-size = Vector3(2.6064453, 1, 6.3832703)
-
-[node name="Inside3" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=960168714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4414124, 7, -27.990423)
-size = Vector3(4.8848877, 1, 13.003174)
-
-[node name="BalconyFloor" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1985018052]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.510354, 7, 3.5)
-size = Vector3(7, 1, 4)
-
-[node name="Floor" type="CSGBox3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1152770143]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.760742, 7, -32.65772)
-size = Vector3(7.782715, 1, 3.6395874)
-
 [node name="Portals" type="Node3D" parent="Environment (NavMesh)" unique_id=830002159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 
@@ -3036,6 +2987,25 @@ directional_shadow_mode = 0
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 1, 18, -6.867)
 light_energy = 0.2
 directional_shadow_mode = 0
+
+[node name="BasementRoof" type="StaticBody3D" parent="Environment (NavMesh)" unique_id=1298263986]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/BasementRoof" unique_id=961734869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.226992, -38.62969, 13.250366)
+shape = SubResource("BoxShape3D_k0giv")
+
+[node name="DownstairsRoof" type="StaticBody3D" parent="Environment (NavMesh)" unique_id=1878254772]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/DownstairsRoof" unique_id=1266255432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7269917, 5.3703117, -49.249634)
+shape = SubResource("BoxShape3D_7qc1y")
+
+[node name="UpstairsRoof" type="StaticBody3D" parent="Environment (NavMesh)" unique_id=596589155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 42, -108)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/UpstairsRoof" unique_id=1854163102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22699165, 5.3703117, 2.7503662)
+shape = SubResource("BoxShape3D_qdc15")
 
 [node name="Main Room" type="NavigationRegion3D" parent="." unique_id=114454209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
