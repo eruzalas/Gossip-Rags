@@ -31,8 +31,6 @@ func _physics_process(delta: float) -> void:
 
 
 
-
-
 #Old Area3D solution just in case
 #func _on_body_entered(body: Node3D) -> void:
 	#if body.is_in_group("transparent_walls"):

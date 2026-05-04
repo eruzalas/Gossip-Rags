@@ -11,7 +11,6 @@ func _ready():
 		wall_material.append(wall.get_active_material(0))
 	
 
-
 func _process(delta):
 	_change_current_opacity()
 	

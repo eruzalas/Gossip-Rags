@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gossip Rags"
+config/name="Gossip Rags - Emily Merge"
 run/main_scene="uid://b4c0t1vp8jiaf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/images/icon.svg"
