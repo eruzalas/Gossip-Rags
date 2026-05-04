@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cf8vaaj8g3xmh"]
 
-[ext_resource type="Texture2D" uid="uid://bnbbt81uunb88" path="res://assets/dialogue/Placeholder_Speech_bubble.png" id="1_mxvd2"]
+[ext_resource type="Texture2D" uid="uid://bnbbt81uunb88" path="res://assets/dialogue/dialogue_normal.png" id="1_mxvd2"]
 [ext_resource type="Script" uid="uid://423dwsstb15f" path="res://scenes/components/dialogue_component/dialogue_bubble.gd" id="2_7nr3g"]
-[ext_resource type="FontFile" uid="uid://cxil7jri0cjfk" path="res://assets/ui/Fonts/Signika-VariableFont_GRAD,wght.ttf" id="2_cceru"]
+[ext_resource type="FontFile" uid="uid://cylnd2pp5jm24" path="res://assets/ui/Fonts/SourceSans3-VariableFont_wght.ttf" id="3_5iwr1"]
 [ext_resource type="Texture2D" uid="uid://dn1bi0i7k01y" path="res://assets/dialogue/Placeholder_Speech_stem.png" id="3_mxvd2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nr3g"]
@@ -12,26 +12,33 @@ texture_margin_top = 16.0
 texture_margin_right = 18.0
 texture_margin_bottom = 16.0
 
-[sub_resource type="FontVariation" id="FontVariation_5iwr1"]
-base_font = ExtResource("2_cceru")
+[sub_resource type="FontVariation" id="FontVariation_mxvd2"]
+base_font = ExtResource("3_5iwr1")
 variation_opentype = {
-1196572996: 0,
-2003265652: 400
+2003265652: 500
+}
+
+[sub_resource type="FontVariation" id="FontVariation_5iwr1"]
+base_font = ExtResource("3_5iwr1")
+variation_opentype = {
+2003265652: 700
 }
 
 [node name="DialogueBubble" type="PanelContainer" unique_id=1158154028]
 texture_filter = 1
 custom_minimum_size = Vector2(100, 20)
 anchors_preset = -1
-anchor_left = 0.47800002
-anchor_top = 1.0
-anchor_right = 0.47800002
+anchor_left = 0.37500003
+anchor_top = 0.794
+anchor_right = 0.57600003
 anchor_bottom = 1.0
-offset_left = -66.656006
-offset_top = -53.0
-offset_right = 67.343994
+offset_left = 10.207947
+offset_top = 155.47998
+offset_right = 0.079956055
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 10
 theme_override_styles/panel = SubResource("StyleBoxTexture_7nr3g")
 script = ExtResource("2_7nr3g")
 
@@ -39,12 +46,14 @@ script = ExtResource("2_7nr3g")
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("FontVariation_5iwr1")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_fonts/normal_font = SubResource("FontVariation_mxvd2")
+theme_override_fonts/bold_font = SubResource("FontVariation_5iwr1")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "HELLO WORLD"
+text = "HELLO [b]WORLD[/b]"
 fit_content = true
-autowrap_mode = 0
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
