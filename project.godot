@@ -34,7 +34,6 @@ project/assembly_name="Gossip Rags"
 [global_group]
 
 players="group holding player entities - for gossip collision"
-transparent_walls=""
 
 [input]
 
