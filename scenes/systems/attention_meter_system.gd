@@ -22,13 +22,13 @@ func _state_level(att_precent: float):
 	
 	if(att_precent < reset_thresh):
 		state = "base"
-		print("astate: " + state)
+		#print("astate: " + state)
 	elif(att_precent >= reset_thresh && att_precent < sus_thresh):
 		state = "reset"
-		print("astate: " + state)
+		#print("astate: " + state)
 	elif(att_precent >= sus_thresh):
 		state = "sus"
-		print("astate: " + state)
+		#print("astate: " + state)
 		
 	return state
 	
