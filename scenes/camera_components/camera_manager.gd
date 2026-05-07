@@ -95,7 +95,7 @@ func _camera_bias(position_difference: Vector3) -> float:
 	
 	if(distance > max_separation):
 		distance = (distance - max_separation)/100
-		bias -= distance
+		bias -= (distance + 0.05)
 	
 	return bias
 
