@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlpfyy5menbrb"]
 
-[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_GROUP.png" id="1_p5uw1"]
+[ext_resource type="Texture2D" uid="uid://c8bwjahmp4e2w" path="res://assets/images/npc_sprites/npc_sprite_group.png" id="1_p5uw1"]
 [ext_resource type="Script" uid="uid://dr7xn7i0tjd6t" path="res://scenes/entities/npc/npc.gd" id="1_xjnpb"]
 [ext_resource type="PackedScene" uid="uid://vr7io76ls44b" path="res://scenes/components/gossiper_component/gossiper_component.tscn" id="4_67e1k"]
 [ext_resource type="PackedScene" uid="uid://b3dubb4n11c7x" path="res://scenes/components/dialogue_component/dialogue_component.tscn" id="5_hg1eu"]
@@ -36,6 +36,7 @@ shape = SubResource("BoxShape3D_gr72c")
 [node name="Sprite" type="Sprite3D" parent="." unique_id=1590636786]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 pixel_size = 0.0078125
+no_depth_test = true
 texture = ExtResource("1_p5uw1")
 
 [node name="Test Display Text" type="MeshInstance3D" parent="." unique_id=1710215210]
