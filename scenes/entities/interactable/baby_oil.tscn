@@ -19,6 +19,7 @@ data = ExtResource("2_ufwc5")
 
 [node name="BabyOil" type="Sprite3D" parent="Area3D" unique_id=214189048]
 offset = Vector2(0, 136.005)
+no_depth_test = true
 texture_filter = 0
 texture = ExtResource("1_d3nhl")
 
@@ -28,6 +29,7 @@ shape = SubResource("BoxShape3D_d3nhl")
 
 [node name="PuddleSprite" type="Sprite3D" parent="Area3D" unique_id=1182729120]
 transform = Transform3D(0.365, 0, 0, 0, -1.5954656e-08, 0.365, 0, -0.365, -1.5954656e-08, 0, 0, 0)
+no_depth_test = true
 texture = ExtResource("4_umlss")
 
 [node name="CollisionShapePuddle" type="CollisionShape3D" parent="Area3D" unique_id=1674997271]
