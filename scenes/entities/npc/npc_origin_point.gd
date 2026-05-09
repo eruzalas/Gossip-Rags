@@ -11,7 +11,7 @@ class_name OriginPoint
 
 const npc_prefab = preload("res://scenes/entities/npc/npc.tscn")
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var player: CharacterBody3D = get_node("/root/World/Player1")
+@onready var player: CharacterBody3D = get_node("/root/World/Player_ONE")
 @onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
 
 var movement_opportunity_flag: bool = false

@@ -1,5 +1,10 @@
 class_name Enums
 
+enum PlayerType {
+	PLAYER_ONE,
+	PLAYER_TWO,
+}
+
 enum NpcState {
 	IDLE,
 	WATCHING,
