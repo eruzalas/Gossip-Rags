@@ -40,12 +40,19 @@ class_name Npc
 @export var suspicion_multiplier: float = 1.0
 
 signal npc_status_changed(new_status: Enums.NpcState)
+signal listening_range_changed(is_in_range: bool)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
 
 var players: Array
+
+var in_listening_range = false:
+	set(value):
+		in_listening_range = value
+		listening_range_changed.emit(in_listening_range)
+
 
 var current_state = Enums.NpcState.IDLE:
 	set(value):
@@ -63,8 +70,8 @@ var player_listening = false:
 
 # constants
 const SPEED = 3.0
-const TURN_SPEED = 3.0
-const IMMUNITY_FRAMES = 0.5
+const TURN_SPEED = 4.0
+const IMMUNITY_FRAMES = 0.1
 const WATCHING_RADIUS = 2.0
 
 # initialisation

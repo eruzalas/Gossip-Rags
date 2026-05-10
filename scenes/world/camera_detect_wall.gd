@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		if wall not in detected_walls:
 			wall._change_opacity(1.00)
 		
-	print("Detected_walls: ", get_collision_count() )
+	#print("Detected_walls: ", get_collision_count() )
 	collided_wall = detected_walls
 
 

@@ -166,3 +166,12 @@ func _ready():
 	update_sprite()
 	print("-----")
 	print("current speed: "+ str(BASE_SPEED * speed_modifier))
+
+
+func _on_listening_range_body_entered(body: Node3D) -> void:
+	if body is Npc:
+		body.in_listening_range = true
+
+func _on_listening_range_body_exited(body: Node3D) -> void:
+	if body is Npc:
+		body.in_listening_range = false

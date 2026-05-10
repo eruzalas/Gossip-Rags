@@ -7,7 +7,7 @@
 size = Vector3(1, 1, 0.23046875)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_635qg"]
-radius = 6.0
+radius = 5.0
 
 [node name="Player" type="CharacterBody3D" unique_id=1934454904]
 script = ExtResource("1_g2els")
@@ -29,3 +29,6 @@ shape = SubResource("BoxShape3D_58kc7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningRange" unique_id=301084482]
 shape = SubResource("SphereShape3D_635qg")
 debug_color = Color(0, 0.62352943, 0.5137255, 0.81960785)
+
+[connection signal="body_entered" from="ListeningRange" to="." method="_on_listening_range_body_entered"]
+[connection signal="body_exited" from="ListeningRange" to="." method="_on_listening_range_body_exited"]

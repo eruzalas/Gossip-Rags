@@ -17,6 +17,8 @@ const MAX_WAIT: float = 20.0
 const SECONDS_PER_CHARACTER = 0.1
 
 func _ready() -> void:
+	npc.listening_range_changed.connect(_update_vbox_visibility)
+	
 	randomize()
 	timer.start(randf_range(MIN_WAIT, MAX_WAIT))
 	npc.npc_status_changed.connect(_set_status)
@@ -35,6 +37,9 @@ func _set_gossiping(passed_status: bool) -> void:
 
 func _remove_bubble(child):
 	child.queue_free()
+
+func _update_vbox_visibility(is_in_range: bool):
+	v_box_container.visible = is_in_range
 
 func _add_bubble(dialogue: Dictionary) -> void:
 	var v_box_children = v_box_container.get_children()

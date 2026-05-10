@@ -18,10 +18,10 @@ text = "!!!!!"
 font_size = 50
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p5uw1"]
-radius = 2.5
+radius = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xjnpb"]
-radius = 2.5
+radius = 2.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_67e1k"]
 viewport_path = NodePath("SubViewport")
@@ -67,7 +67,7 @@ debug_enabled = true
 
 [node name="GossiperComponent" parent="." unique_id=2127790051 instance=ExtResource("4_67e1k")]
 
-[node name="BetterDialogueRenderer" parent="." unique_id=2046033682 instance=ExtResource("5_hg1eu")]
+[node name="DialogueComponent" parent="." unique_id=2046033682 instance=ExtResource("5_hg1eu")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.2080808, 0)
 texture = SubResource("ViewportTexture_67e1k")
 
