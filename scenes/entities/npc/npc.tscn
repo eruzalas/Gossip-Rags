@@ -43,20 +43,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.004)
 mesh = SubResource("TextMesh_abqhh")
 
 [node name="Bangarang Range" type="Area3D" parent="." unique_id=1818692468]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bangarang Range" unique_id=1568075916]
 shape = SubResource("SphereShape3D_p5uw1")
 debug_color = Color(0.9933688, 0, 0.24539271, 0.41960785)
 
 [node name="Attention Range" type="Area3D" parent="." unique_id=308478209]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Attention Range" unique_id=2046363988]
 shape = SubResource("SphereShape3D_xjnpb")
 disabled = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=777356627]
+path_max_distance = 3.01
 avoidance_enabled = true
-radius = 0.8
+height = 2.0
+radius = 1.5
+max_neighbors = 20
+avoidance_layers = 3
+avoidance_mask = 3
 debug_enabled = true
 
 [node name="Look Timer" type="Timer" parent="." unique_id=1589166161]

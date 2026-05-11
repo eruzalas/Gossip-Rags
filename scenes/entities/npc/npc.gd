@@ -9,8 +9,8 @@ class_name Npc
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var text_display: MeshInstance3D = $"Test Display Text"
 @onready var bangarang_range: Area3D = $"Bangarang Range"
-@onready var watch_range_collision: CollisionShape3D = $"Bangarang Range/CollisionShape3D"
 @onready var attention_range: Area3D = $"Attention Range"
+@onready var watch_range_collision: CollisionShape3D = $"Bangarang Range/CollisionShape3D"
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
@@ -40,7 +40,7 @@ class_name Npc
 @export var suspicion_multiplier: float = 1.0
 
 signal npc_status_changed(new_status: Enums.NpcState)
-signal listening_range_changed(is_in_range: bool)
+signal player_in_range(is_in_range: bool)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
@@ -51,22 +51,22 @@ var players: Array
 var in_listening_range = false:
 	set(value):
 		in_listening_range = value
-		listening_range_changed.emit(in_listening_range)
-
+		player_in_range.emit(in_listening_range)
+		if npc_type == Enums.NpcType.GOSSIPER:
+			var gossiper_listening = in_listening_range && current_state == Enums.NpcState.GOSSIPING
+			SignalBus.player_listening_call.emit(self, gossiper_listening)
 
 var current_state = Enums.NpcState.IDLE:
 	set(value):
 		if current_state != value:
+			if current_state == Enums.NpcState.GOSSIPING && in_listening_range:
+				SignalBus.player_listening_call.emit(self, false)
+			
+			if value == Enums.NpcState.GOSSIPING && in_listening_range:
+				SignalBus.player_listening_call.emit(self, true)
+			
 			current_state = value
 			npc_status_changed.emit(current_state)
-
-var player_listening = false:
-	set(value):
-		if player_listening != value:
-			player_listening = value
-			if npc_type == Enums.NpcType.GOSSIPER:
-				SignalBus.player_listening_call.emit(self, value)
-				gossiper_component._collect_gossip(self, value)
 
 # constants
 const SPEED = 3.0
@@ -103,7 +103,6 @@ func _ready():
 		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
 		
 
-
 func _physics_process(delta: float) -> void:
 	# TODO: fix this up so look should be set in startup
 		# I tried to fix this one night, but had problems and I can't remember what problems lol
@@ -131,7 +130,6 @@ func _physics_process(delta: float) -> void:
 		var next_pos: Vector3 = nav_agent.get_next_path_position()
 		var direction: Vector3 = global_position.direction_to(next_pos) * SPEED
 		var new_velocity: Vector3 = velocity + (direction - velocity)
-		
 		nav_agent.set_velocity(new_velocity)
 		
 		# look at direction
@@ -283,24 +281,6 @@ func _on_bangarang_range_body_exited(body: Node3D) -> void:
 			current_state = Enums.NpcState.IDLE
 			if has_active_target == true:
 				current_state = Enums.NpcState.MOVING
-
-func _on_attention_range_body_entered(body: Node3D) -> void:
-	if body.is_in_group("players"):
-		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
-			player_listening = true
-
-func _on_attention_range_body_exited(body: Node3D) -> void:
-	if body.is_in_group("players"):
-		if npc_type == Enums.NpcType.GOSSIPER && current_state == Enums.NpcState.GOSSIPING:
-			var player_found: bool = false
-			var entities = attention_range.get_overlapping_bodies()
-			for entity in entities:
-				if entity.is_in_group("players"):
-					player_found = true
-					
-			if not player_found:
-				player_listening = false
-
 
 func _update_per_player_attention_zones(player: Player, current_attention: float) -> void:
 	# TODO WITH PER PLAYER CALCULATIONS

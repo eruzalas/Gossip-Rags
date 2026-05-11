@@ -17,7 +17,7 @@ const MAX_WAIT: float = 20.0
 const SECONDS_PER_CHARACTER = 0.1
 
 func _ready() -> void:
-	npc.listening_range_changed.connect(_update_vbox_visibility)
+	npc.player_in_range.connect(_update_vbox_visibility)
 	
 	randomize()
 	timer.start(randf_range(MIN_WAIT, MAX_WAIT))

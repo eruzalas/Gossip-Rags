@@ -12,21 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://ctqlardy4ps7h" path="res://scenes/entities/npc/npc_origin_point.tscn" id="7_srmg5"]
 [ext_resource type="Script" uid="uid://c1hiiryi2peeh" path="res://scenes/world/wall_transparent.gd" id="8_2m0ga"]
 [ext_resource type="Script" uid="uid://xowdms5vesjr" path="res://scenes/systems/debug_system_ui.gd" id="8_t634p"]
-[ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="9_6hctx"]
 [ext_resource type="Shader" uid="uid://mbf2odhsiblk" path="res://scenes/shaders/transparent_wall.gdshader" id="9_ovomx"]
-[ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="10_ues17"]
-[ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="11_xq18t"]
 [ext_resource type="Script" uid="uid://baox6kivo6tru" path="res://scenes/camera_components/camera_manager.gd" id="12_rwifv"]
-[ext_resource type="Texture2D" uid="uid://b21m8xm8fejjv" path="res://assets/ui/placeholder_progress_fill_1.png" id="12_x0nq1"]
 [ext_resource type="Shader" uid="uid://vdffugcut0q" path="res://scenes/camera_components/splitsceen_shader.gdshader" id="13_ckok1"]
-[ext_resource type="Texture2D" uid="uid://bj5u4f4epj5wn" path="res://assets/ui/placeholder_progress_fill_2.png" id="13_rwifv"]
-[ext_resource type="Texture2D" uid="uid://j7ou8uc38l6k" path="res://assets/ui/placeholder_progress_fill_3.png" id="14_ckok1"]
-[ext_resource type="Texture2D" uid="uid://cujh7rnx1ve5r" path="res://assets/ui/placeholder_progress_fill_4.png" id="15_2x71e"]
-[ext_resource type="Texture2D" uid="uid://dxt240vov2e34" path="res://assets/ui/placeholder_progress_fill_5.png" id="16_wnndm"]
-[ext_resource type="Texture2D" uid="uid://bj76pbumdkk2w" path="res://assets/ui/placeholder_progress_fill_6.png" id="17_26xou"]
 [ext_resource type="Script" uid="uid://cexx5e3yuwn2n" path="res://scenes/world/camera_detect_wall.gd" id="17_kx0xk"]
-[ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="18_jyr8v"]
-[ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="19_5o5dd"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
@@ -37,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://csm7r8galo5mp" path="res://scenes/components/inventory/Costumes/test_cat.tres" id="29_wnndm"]
 [ext_resource type="Script" uid="uid://cosqrersv4kf7" path="res://scenes/world/game_state_manager.gd" id="32_lbnhc"]
 [ext_resource type="PackedScene" uid="uid://ctqqspn6xj3gn" path="res://scenes/entities/interactable/baby_oil.tscn" id="34_fymcc"]
+[ext_resource type="PackedScene" uid="uid://b4ihj3hnif6de" path="res://scenes/ui/GUI/gui.tscn" id="34_lbnhc"]
 [ext_resource type="Resource" uid="uid://cwqokda04igv5" path="res://scenes/components/inventory/Costumes/test_cult.tres" id="34_sh7a8"]
 [ext_resource type="Resource" uid="uid://c5lq4d4cfmry7" path="res://scenes/components/inventory/Costumes/test_dino.tres" id="35_7mx70"]
 [ext_resource type="Resource" uid="uid://bmnkcdyb02qaa" path="res://scenes/components/inventory/Costumes/test_ghost.tres" id="36_1cxds"]
@@ -48,6 +38,10 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_rwifv"]
 vertices = PackedVector3Array(8.706997, -2.22476, -37.36168, 8.706997, -2.22476, -34.61168, 12.206997, -5.22476, -34.61168, 12.206997, -5.22476, -37.36168, -3.543003, 0.77523994, -22.11168, -3.543003, 0.77523994, -25.11168, -4.043003, 0.77523994, -25.36168, -12.293003, 0.77523994, -22.11168, -4.043003, 0.77523994, -37.11168, -12.543003, 0.77523994, -37.11168, -2.543003, 0.77523994, -37.11168, -2.543003, 0.77523994, -32.61168, -1.0430031, 0.77523994, -32.61168, -1.0430031, 0.77523994, -37.11168, 4.206997, 0.77523994, -34.86168, 11.206997, 0.77523994, -34.86168, 11.206997, 0.77523994, -37.11168, 0.45699692, 0.77523994, -37.11168, 0.45699692, 0.77523994, -27.11168, 3.956997, 0.77523994, -26.86168, 13.206997, 1.02524, -33.61168, 13.206997, 1.02524, -29.61168, 13.706997, 1.02524, -29.36168, 25.706997, 1.02524, -33.61168, 13.706997, 1.02524, -26.61168, 13.206997, 1.02524, -26.36168, 13.206997, 1.02524, -15.611679, 25.706997, 1.02524, -15.611679, 5.456997, 0.77523994, -25.36168, 4.956997, 0.77523994, -25.11168, 4.956997, 0.77523994, -22.11168, 11.706997, 0.77523994, -22.11168, 11.706997, 0.77523994, -33.36168, 5.456997, 0.77523994, -33.36168, -1.0430031, 4.77524, -31.11168, -0.5430031, 4.77524, -31.11168, -0.5430031, 5.02524, -31.61168, -3.043003, 5.02524, -31.61168, -3.043003, 4.77524, -31.11168, -2.543003, 4.77524, -31.11168, -0.5430031, 0.77523994, -24.86168, -1.0430031, 0.77523994, -25.36168, -2.543003, 0.77523994, -25.36168, -2.543003, 0.77523994, -31.36168, -2.543003, 0.77523994, -28.61168, -1.0430031, 0.77523994, -28.61168, -1.0430031, 0.77523994, -31.36168, -19.543003, 0.77523994, -17.61168, -14.043003, 0.77523994, -17.86168, -14.543003, 0.77523994, -23.36168, -19.543003, 0.77523994, -23.36168, -10.293003, 0.77523994, -20.11168, -10.543003, 0.77523994, -20.61168, -12.543003, 0.77523994, -20.61168, -12.543003, 0.77523994, -13.611679, -1.7930031, 0.77523994, -13.611679, -1.7930031, 0.77523994, -20.61168, -2.293003, 0.77523994, -11.861679, -2.293003, 0.77523994, -9.111679, 0.20699692, 0.77523994, -9.111679, 0.45699692, 0.77523994, -12.111679, 0.20699692, 0.77523994, -13.611679, 11.456997, 0.77523994, -8.611679, 11.706997, 0.77523994, -20.61168, 0.45699692, 0.77523994, -8.611679, -8.293003, 0.77523994, 6.888321, -8.293003, 0.77523994, 6.138321, -9.043003, 0.77523994, 5.888321, -9.043003, 0.77523994, 7.138321, -12.043003, 0.77523994, 1.8883209, -14.043003, 0.77523994, -12.111679, -25.793003, 0.77523994, -15.861679, -25.793003, 0.77523994, 10.638321, -9.043003, 0.77523994, 2.138321, -9.043003, 0.77523994, 10.638321, -14.043003, 0.77523994, -15.611679, -11.793003, 0.77523994, -11.861679, 13.206997, 0.77523994, -13.861679, 13.206997, 0.77523994, -11.611679, 13.706997, 0.77523994, -11.361679, 25.706997, 0.77523994, -13.861679, 13.206997, 0.77523994, 6.388321, 12.706997, 0.77523994, 6.638321, 12.706997, 0.77523994, 10.638321, 25.706997, 0.77523994, 10.638321, 13.706997, 0.77523994, -6.611679, 13.206997, 0.77523994, -6.361679, -9.543003, 0.77523994, -11.611679, -9.543003, 0.77523994, -9.361679, -3.793003, 0.77523994, -9.111679, -3.793003, 0.77523994, -11.861679, 6.706997, 0.77523994, -1.6116791, 6.956997, 0.77523994, 0.38832092, 11.706997, 0.77523994, 0.38832092, 0.45699692, 0.77523994, -7.861679, -0.043003082, 0.77523994, -7.611679, -0.043003082, 0.77523994, -1.6116791, -0.7930031, 0.77523994, -1.3616791, -7.543003, 0.77523994, -7.611679, -7.793003, 0.77523994, -7.111679, -10.543003, 0.77523994, -7.111679, -10.543003, 0.77523994, 0.38832092, -0.7930031, 0.77523994, 0.38832092, 1.2069969, 6.27524, -0.6116791, 1.2069969, 6.27524, 0.13832092, 4.956997, 6.27524, 0.13832092, 4.956997, 6.27524, -0.6116791, 1.4569969, 0.77523994, -0.36167908, 1.4569969, 0.77523994, 0.13832092, 4.706997, 0.77523994, 0.13832092, 4.706997, 0.77523994, -0.36167908, -7.543003, 0.27523994, 5.888321, -7.543003, 0.27523994, 7.138321, -2.293003, 0.025239944, 6.388321, -2.293003, 0.025239944, 2.138321, -7.793003, 0.025239944, 2.138321, -1.7930031, 0.025239944, 10.888321, -1.7930031, 0.27523994, 6.388321, -7.793003, 0.025239944, 10.888321, 8.456997, 0.025239944, 10.888321, 8.456997, 0.27523994, 6.388321, 7.956997, 0.27523994, 6.388321, -1.2930031, 0.27523994, 6.388321, 7.956997, 0.77523994, 2.138321, -1.2930031, 0.77523994, 2.138321, 7.956997, 0.77523994, 4.971653, -1.2930031, 0.77523994, 4.971653, 11.706997, 0.27523994, 6.388321, 8.956997, 0.025239944, 6.388321, 11.290329, 0.025239944, 10.721653, 10.931995, 0.025239944, 8.363319, 11.956997, 0.025239944, 2.138321, 8.956997, 0.025239944, 2.138321)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 7), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(19, 18, 14), PackedInt32Array(14, 18, 17), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(26, 25, 24), PackedInt32Array(26, 24, 27), PackedInt32Array(27, 24, 23), PackedInt32Array(24, 22, 23), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(33, 32, 28), PackedInt32Array(28, 32, 31), PackedInt32Array(36, 35, 34), PackedInt32Array(39, 38, 37), PackedInt32Array(39, 37, 34), PackedInt32Array(34, 37, 36), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 5), PackedInt32Array(5, 40, 4), PackedInt32Array(29, 30, 40), PackedInt32Array(40, 30, 4), PackedInt32Array(42, 39, 41), PackedInt32Array(41, 39, 34), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 47), PackedInt32Array(52, 51, 53), PackedInt32Array(53, 51, 54), PackedInt32Array(56, 55, 51), PackedInt32Array(51, 55, 54), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(56, 63, 61), PackedInt32Array(61, 63, 62), PackedInt32Array(59, 60, 64), PackedInt32Array(64, 60, 62), PackedInt32Array(61, 55, 56), PackedInt32Array(62, 60, 61), PackedInt32Array(65, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(70, 69, 71), PackedInt32Array(71, 69, 72), PackedInt32Array(69, 73, 67), PackedInt32Array(69, 67, 68), PackedInt32Array(68, 74, 69), PackedInt32Array(69, 74, 72), PackedInt32Array(71, 75, 70), PackedInt32Array(76, 69, 70), PackedInt32Array(78, 77, 79), PackedInt32Array(79, 77, 80), PackedInt32Array(82, 81, 83), PackedInt32Array(83, 81, 84), PackedInt32Array(85, 79, 80), PackedInt32Array(81, 86, 85), PackedInt32Array(81, 85, 84), PackedInt32Array(84, 85, 80), PackedInt32Array(87, 90, 88), PackedInt32Array(88, 90, 89), PackedInt32Array(93, 92, 91), PackedInt32Array(95, 94, 96), PackedInt32Array(96, 94, 91), PackedInt32Array(94, 64, 91), PackedInt32Array(91, 64, 62), PackedInt32Array(91, 62, 93), PackedInt32Array(96, 97, 95), PackedInt32Array(95, 97, 98), PackedInt32Array(98, 97, 99), PackedInt32Array(100, 99, 101), PackedInt32Array(101, 99, 97), PackedInt32Array(101, 97, 102), PackedInt32Array(106, 105, 103), PackedInt32Array(103, 105, 104), PackedInt32Array(110, 109, 107), PackedInt32Array(107, 109, 108), PackedInt32Array(66, 111, 65), PackedInt32Array(65, 111, 112), PackedInt32Array(112, 111, 113), PackedInt32Array(115, 114, 111), PackedInt32Array(111, 114, 113), PackedInt32Array(117, 116, 113), PackedInt32Array(113, 116, 112), PackedInt32Array(112, 116, 118), PackedInt32Array(121, 120, 119), PackedInt32Array(116, 117, 122), PackedInt32Array(122, 126, 121), PackedInt32Array(121, 126, 125), PackedInt32Array(125, 126, 124), PackedInt32Array(125, 124, 123), PackedInt32Array(122, 121, 116), PackedInt32Array(116, 121, 119), PackedInt32Array(128, 130, 119), PackedInt32Array(119, 130, 129), PackedInt32Array(129, 130, 83), PackedInt32Array(83, 130, 82), PackedInt32Array(82, 130, 127), PackedInt32Array(127, 130, 128), PackedInt32Array(119, 120, 128), PackedInt32Array(128, 132, 127), PackedInt32Array(127, 132, 131)]
+cell_size = 0.3
+cell_height = 0.15
+agent_height = 0.3
+agent_max_climb = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26xou"]
 
@@ -1237,9 +1231,6 @@ font_size = 180
 font_color = Color(1, 0.41568628, 1, 1)
 outline_size = 10
 outline_color = Color(0.6968401, 3.5039186e-05, 0.5270324, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_sygq6"]
-font_size = 40
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_bq33v")
@@ -3510,152 +3501,6 @@ offset_bottom = 793.0
 text = "ATTENTION RESET!"
 label_settings = SubResource("LabelSettings_1cxds")
 
-[node name="GUI" type="Control" parent="." unique_id=778842495]
-layout_mode = 3
-anchor_right = 0.9990001
-anchor_bottom = 1.006
-offset_right = 0.15185547
-offset_bottom = 0.11199951
-script = ExtResource("9_6hctx")
-game_time = 60
-
-[node name="Clock Label" type="Label" parent="GUI" unique_id=793086485]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.096
-anchor_bottom = 0.097
-offset_left = 896.0
-offset_top = 2.0
-offset_right = 1044.504
-offset_bottom = 1.7559967
-text = "Time: "
-label_settings = SubResource("LabelSettings_sygq6")
-
-[node name="InGame Clock" type="Timer" parent="GUI" unique_id=1380480472]
-unique_name_in_owner = true
-
-[node name="Timeline" type="Control" parent="GUI" unique_id=264530449 node_paths=PackedStringArray("tea_bar_array")]
-layout_mode = 1
-anchor_right = 0.9990001
-anchor_bottom = 1.0
-offset_right = 0.1508789
-offset_bottom = 1.0
-script = ExtResource("10_ues17")
-tea_bar_array = [NodePath("Tea Bar 1"), NodePath("Tea Bar 2"), NodePath("Tea Bar 3"), NodePath("Tea Bar 4"), NodePath("Tea Bar 5"), NodePath("Tea Bar 6"), NodePath("Tea Bar 7"), NodePath("Tea Bar 8")]
-
-[node name="Tea Bar 1" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1961436187]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -2.047058
-offset_right = -1024.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("12_x0nq1")
-
-[node name="Tea Bar 2" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1370408355]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -2.047058
-offset_right = -905.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("13_rwifv")
-
-[node name="Tea Bar 3" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1474512216]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 245.0
-offset_top = -2.047058
-offset_right = -786.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("14_ckok1")
-
-[node name="Tea Bar 4" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1444401142]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 364.0
-offset_top = -2.047058
-offset_right = -667.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("15_2x71e")
-
-[node name="Tea Bar 5" type="TextureProgressBar" parent="GUI/Timeline" unique_id=313880885]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 483.0
-offset_top = -2.047058
-offset_right = -548.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("16_wnndm")
-
-[node name="Tea Bar 6" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1564656617]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 602.0
-offset_top = -2.047058
-offset_right = -429.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("17_26xou")
-
-[node name="Tea Bar 7" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1494194825]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 721.0
-offset_top = -2.047058
-offset_right = -310.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("18_jyr8v")
-
-[node name="Tea Bar 8" type="TextureProgressBar" parent="GUI/Timeline" unique_id=1180053444]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.89900005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 840.0
-offset_top = -2.047058
-offset_right = -191.0
-offset_bottom = -12.0
-nine_patch_stretch = true
-texture_under = ExtResource("11_xq18t")
-texture_progress = ExtResource("19_5o5dd")
-
 [node name="Pause Canvas" type="CanvasLayer" parent="." unique_id=423945713]
 process_mode = 3
 
@@ -3805,6 +3650,8 @@ item = ExtResource("39_kx0xk")
 [node name="item_collectable11" parent="." unique_id=33445408 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6829793, 0.07551098, 1.2410622)
 item = ExtResource("40_5fxch")
+
+[node name="GUI" parent="." unique_id=1597458833 instance=ExtResource("34_lbnhc")]
 
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToUp" to="Environment (NavMesh)/Portals/DownToUp" method="_on_body_entered"]
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToBasement" to="Environment (NavMesh)/Portals/DownToBasement" method="_on_body_entered"]

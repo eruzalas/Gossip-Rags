@@ -1,7 +1,6 @@
 extends Node
 
 @onready var npc: Npc = $".."
-@onready var attention_range: Area3D = $"../Attention Range"
 @onready var internal_activation_timer: Timer = $"Internal Activation Timer"
 @onready var gossip_collection_timer: Timer = $"Gossip Collection Timer"
 
