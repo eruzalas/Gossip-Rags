@@ -1,4 +1,4 @@
-class_name Comparison1 extends AudioStreamPlayer3D
+class_name SpatialAudio3D extends AudioStreamPlayer3D
 ## A Godot 4 plugin that brings physically-informed 3D audio to your scenes
 ## - with distance-based delay, raycast-driven reverb, and dynamic occlusion, all derived from your level geometry at runtime.
 ##
@@ -45,7 +45,7 @@ class_name Comparison1 extends AudioStreamPlayer3D
 @export var shut_up: bool = false ## Mute output.
 @export var debug: bool = false ## Visualize raycasts, measurement rays and reverb-audioplayers.
 
-@onready var player_camera: Camera3D = get_viewport().get_camera_3d() # store reference to camera so that global_position is always up to date
+@onready var player_character: CharacterBody3D = get_node("/root/World/Player1/")
 @onready var raycasts_coords: Array = [
 	Vector3(0, 0, max_raycast_distance),						# N
 	Vector3(max_raycast_distance, 0, max_raycast_distance),		# NW
@@ -165,7 +165,7 @@ func create_raycast_sector(start_angle: int = 0, width_factor: float = 1.5, bear
 			mr.debug_shape_custom_color = Color("#ff0")
 			mr.debug_shape_thickness = 1
 			mr.rotation = Vector3(0, bearing, heading) + Vector3(0, deg_to_rad(-start_angle), 0)
-			mr.enabled = false
+			mr.enabled = true
 
 			if debug:
 				var dray = Debugray.new()
@@ -347,7 +347,6 @@ func calculate_delay(distance: float):
 # reverber.update_position()
 # spawns reverbers
 class Soundsource extends SpatialAudio3D:
-
 	var raycasts: Array[RayCast3D]
 	var reverbers: Array[Reverber]
 	var measurement_rays: Array[RayCast3D]
@@ -526,7 +525,7 @@ class Soundsource extends SpatialAudio3D:
 
 
 	func update_run():
-		distance_to_player = global_position.distance_to(player_camera.global_position)
+		distance_to_player = global_position.distance_to(player_character.global_position)
 
 		# only update delay when moved >5m since last update
 		if abs(distance_to_player - distance_to_player_since_last_delay_update) > 5:
@@ -896,7 +895,7 @@ class Soundplayer extends SpatialAudio3D:
 	func update_effect_params():
 		# update distance vars
 		distance_to_soundsource = global_position.distance_to(soundsource.global_position)
-		distance_to_player = global_position.distance_to(player_camera.global_position)
+		distance_to_player = global_position.distance_to(player_character.global_position)
 
 		# occlusion
 		lp_cutoff = calculate_occlusion_lowpass()
@@ -948,7 +947,7 @@ class Soundplayer extends SpatialAudio3D:
 
 	func calculate_occlusion_lowpass():
 		var limited_distance_to_player = clamp(distance_to_player, 0, max_raycast_distance)
-		occlusion_raycast.target_position = global_position.direction_to(player_camera.global_position) * max_raycast_distance * 10
+		occlusion_raycast.target_position = global_position.direction_to(player_character.global_position) * max_raycast_distance * 10
 
 		var _cutoff = 20500
 		occlusion_raycast.force_raycast_update()
