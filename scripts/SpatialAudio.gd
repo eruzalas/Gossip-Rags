@@ -52,13 +52,15 @@ var debugsphere: Node3D
 var fade_tween: Tween
 var lowpass_tween: Tween
 var xfadetime: float = 1.000
-enum fx {delay, reverb, reverb_hipass, lowpass}
+enum fx {delay, lowpass}
 
 func _ready():
 	soundsource = Soundsource.new()
+	
 	soundsource.loop = loop
 	soundsource.stop = stop
 	soundsource.debug = debug
+	soundsource.max_raycast_distance = max_raycast_distance
 	soundsource.collision_mask = collision_mask
 	
 	soundsource.name = name
@@ -68,7 +70,10 @@ func _ready():
 
 	add_child(soundsource)
 
-
+	if autoplay:
+		stop()
+		await get_tree().create_timer(0.1).timeout # reverbers aren't ready.
+		soundsource.do_play()
 
 
 func raycast(name, position) -> RayCast3D:
@@ -131,25 +136,280 @@ class Soundsource extends SpatialAudio:
 	
 	
 	
-class Soundplayer extends SpatialAudio: 
-	
-	var muffle_raycast: RayCast3D
-	
-	
+class Soundplayer extends SpatialAudio:
+
+	var ds = {0: "active", 1: "inactive", 2: "fading_to_active", 3: "fading_to_inactive"}
+	enum ss {active, inactive, fading_to_active, fading_to_inactive}
+	var with_reverb_fx: bool
+	var state: ss:
+		set(v):
+			if state != v:
+				state = v
+				#if debug: debugsphere.line4 = ds[v]
+				#if debug: print("%s: %s --> %s" % [name, ds[state], ds[v]])
+	var distance_to_soundsource: float
+	var distance_to_player: float
+	var target_position: Vector3:
+		set(v):
+			if target_position != v:
+				if state != ss.fading_to_inactive:
+					target_position = v
+					global_position = v
+	var delay_ms: int:
+		set(v):
+			if abs(delay_ms - v) > 10 and (Time.get_ticks_msec() - delay_updated_at) > 1000:
+				delay_ms = v
+				delay_updated_at = Time.get_ticks_msec()
+				if debug: debugsphere.line2 = "%s ms" % delay_ms
+				if state != ss.fading_to_inactive:
+					set_audioeffect(audiobus_name, fx.delay, {"delay": delay_ms})
+	var delay_updated_at: int
+	var room_size: float:
+		set(v):
+			if room_size != v:
+				room_size = v
+				if state != ss.fading_to_inactive:
+					set_audioeffect(audiobus_name, fx.reverb, {"room_size": room_size, "wetness": wetness})
+	var wetness: float:
+		set(v):
+			if wetness != v:
+				wetness = v
+				# audioeffect is already set together with room_size
+	var proximity_volume: float:
+		set(v):
+			if abs(proximity_volume - v) > 0.1:
+				proximity_volume = v
+				if debug: debugsphere.line3 = "%d dB" % v
+				if state == ss.active:
+					set_audiobus_volume(audiobus_name, proximity_volume)
+	var proximity_bass: float:
+		set(v):
+			if proximity_bass != v:
+				proximity_bass = v
+				if state != ss.fading_to_inactive:
+					set_audioeffect(audiobus_name, fx.reverb_hipass, {"hipass": proximity_bass})
+	var lp_cutoff: int:
+		set(v):
+			if abs(lp_cutoff - v) > 20:
+				lp_cutoff = v
+				if debug: debugsphere.line4 = "occluded" if v != 20500 else ""
+				set_audioeffect(audiobus_name, fx.lowpass, {"lowpass": lp_cutoff, "fadetime": occlusion_fadetime})
+	var occlusion_raycast: RayCast3D
+	var audiobus_name: String
+	var _fade_generation: int = 0
+	var _is_valid: bool = true
+
+
 	func _ready():
-	
-		muffle_raycast = raycast("ray for " + name, position)
-		add_child(muffle_raycast)
-	
-	
-	
-class Debug extends Node3D:
-	var color: Color = "00f"
-	var size: float = 0.5
-	var max_raycast_distance: int
-	var label = Label3D
-	var line1: String
-	var line2: String
-	var line3: String
-	var line4: String
-	var label_offset: Vector3
+
+		if debug:
+			#print("spawning soundplayer: ", name)
+			debugsphere = Debugsphere.new()
+			debugsphere.max_raycast_distance = max_raycast_distance
+			debugsphere.name = "Debugsphere " + name
+			debugsphere.line1 = "♬"
+			add_child(debugsphere)
+			debugsphere.visible = false
+
+		# ensure unique name for the mixer
+		audiobus_name = "%s-%s" % [name, get_instance_id()]
+
+		# create bus and add effects to it
+		create_audiobus(audiobus_name)
+		add_audioeffect(audiobus_name, fx.delay)
+		add_audioeffect(audiobus_name, fx.reverb)
+		if with_reverb_fx == false:
+			toggle_audioeffect(audiobus_name, fx.reverb, false)
+		add_audioeffect(audiobus_name, fx.lowpass)
+
+		# set initial state to inactive and mute
+		state = ss.inactive
+		set_audiobus_volume(audiobus_name, -80)
+
+		# set volume according to AudioStreamPlayer3D param
+		proximity_volume = volume_db
+
+		# set my bus to this newly created bus.
+		bus = audiobus_name
+
+		# create raycast for occlusion test
+		occlusion_raycast = create_raycast("occray for " + name, position)
+		add_child(occlusion_raycast)
+
+		# connect signal (used to restart playing if loop is enabled)
+		finished.connect(_on_finished)
+
+
+	func _on_finished():
+		if loop:
+			soundsource.do_play()
+
+
+	func _physics_process(_delta):
+		if debug:
+			dump_debug()
+			debugsphere.update_label()
+
+
+	func _exit_tree():
+		_is_valid = false
+
+		if fade_tween:
+			fade_tween.kill()
+		if lowpass_tween:
+			lowpass_tween.kill()
+
+		remove_audiobus(audiobus_name)
+
+		for c in get_children():
+			remove_child(c)
+
+
+	func do_play():
+		#if debug: printerr(str(Time.get_ticks_msec()) + ": start playing on " + name + ", stream: " + str(stream))
+		play()
+
+
+	func do_stop():
+		#if debug: printerr(str(Time.get_ticks_msec()) + ": stop playing on " + name + ", stream: " + str(stream))
+		stop()
+
+
+	func set_active(fadetime: float = 0, easing: Tween.EaseType = Tween.EASE_OUT, transition: Tween.TransitionType = Tween.TRANS_QUART):
+		#if debug: print("SET ACTIVE: %s (state: %s, fadetime: %s)" % [name, ds[state], fadetime])
+		if state == ss.inactive:
+			if debug: debugsphere.visible = true
+			update_effect_params()
+
+			if fadetime > 0:
+				# stamp this coroutine's generation before yielding.
+				# If set_inactive (or another set_active) is called while we await,
+				# it will increment _fade_generation, and we will bail on resume
+				# instead of overwriting the new state with ss.active.
+				_fade_generation += 1
+				var my_generation := _fade_generation
+				state = ss.fading_to_active
+
+				if fade_tween:
+					fade_tween.kill()
+				fade_tween = create_tween()
+				fade_tween.stop()
+				fade_tween.set_ease(easing)
+				fade_tween.set_trans(transition)
+
+				set_audiobus_volume(audiobus_name, proximity_volume, fadetime, fade_tween)
+				await fade_tween.finished
+
+				# bail if we were superseded or the node is being freed.
+				if _fade_generation != my_generation or not _is_valid:
+					return
+
+			else:
+				set_audiobus_volume(audiobus_name, proximity_volume)
+
+			state = ss.active
+
+
+	func set_inactive(fadetime: float = 0, easing: Tween.EaseType = Tween.EASE_IN, transition: Tween.TransitionType = Tween.TRANS_QUINT):
+		#if debug: print("SET INACTIVE: %s (state: %s, fadetime: %s)" % [name, ds[state], fadetime])
+		if state == ss.active or state == ss.fading_to_active:
+
+			if fadetime > 0:
+				# increment generation to invalidate any concurrent set_active coroutine.
+				_fade_generation += 1
+				var my_generation := _fade_generation
+				state = ss.fading_to_inactive
+
+				if fade_tween:
+					fade_tween.kill()
+				fade_tween = create_tween()
+				fade_tween.stop()
+				fade_tween.set_ease(easing)
+				fade_tween.set_trans(transition)
+
+				set_audiobus_volume(audiobus_name, -80, fadetime, fade_tween)
+				await fade_tween.finished
+
+				# bail if we were superseded or the node is being freed.
+				if _fade_generation != my_generation or not _is_valid:
+					return
+
+			else:
+				set_audiobus_volume(audiobus_name, -80)
+
+			state = ss.inactive
+			if debug: debugsphere.visible = false
+
+
+	func update_effect_params():
+		# update distance vars
+		distance_to_soundsource = global_position.distance_to(soundsource.global_position)
+		distance_to_player = global_position.distance_to(player_character.global_position)
+
+		# occlusion
+		lp_cutoff = calculate_occlusion_lowpass()
+
+		# only calculate reverb effects on reverbers, not soundsource soundplayers.
+		# soundsource will set delay on soundsource-soundplayers.
+		if with_reverb_fx:
+			# calculate and set delay
+			delay_ms = calculate_delay(distance_to_soundsource) + calculate_delay(distance_to_player)
+
+			# roomsize & wetness
+			room_size = soundsource.room_size
+			wetness = soundsource.wetness
+
+			# set volume. further away = louder.
+			# (without tuning, in small rooms, reverb is overwhelming, but you can't hear echo far away)
+			proximity_volume = calculate_proximity_volume()
+
+			# set proximity bass
+			# more bass if closer to the wall, effect begins at 50m to a wall
+			# hipass = 0.2
+			proximity_bass = calculate_proximity_bass()
+
+
+	# turn down reverb volume by [reduction] dB when closer to the wall
+	func calculate_proximity_volume():
+		var proximity_reduction = 24
+		var max_volume = reverb_volume_db + volume_db
+
+		# calculate reduction based on the ratio player-to-max_raycast_distance and player-to-soundsource.
+		# the closer you are to a wall, the less reverb should be heard. the further away you are, the more it should be audible.
+		# the further away the soundsource is, the less reverb should be heard.
+		var ratio_player_rc = min(1, distance_to_player / max_raycast_distance)
+		var ratio_player_ss = min(1, distance_to_player / distance_to_soundsource)
+		var prox_volume = (proximity_reduction * ratio_player_rc + proximity_reduction * ratio_player_ss) / 2 - proximity_reduction
+
+		# add soundsource max_volume
+		prox_volume = prox_volume + max_volume
+
+		# limit maximum volume to max_volume
+		prox_volume = min(prox_volume, max_volume)
+
+		return prox_volume
+
+
+	func calculate_proximity_bass():
+		return snappedf(min(0.2 * distance_to_player / max(bass_proximity, 0.001), 0.2), 0.001)
+
+
+	func calculate_occlusion_lowpass():
+		var limited_distance_to_player = clamp(distance_to_player, 0, max_raycast_distance)
+		occlusion_raycast.target_position = global_position.direction_to(player_character.global_position) * max_raycast_distance * 10
+
+		var _cutoff = 20500
+		occlusion_raycast.force_raycast_update()
+		if occlusion_raycast.is_colliding():
+			var collision_point = occlusion_raycast.get_collision_point()
+			var ray_distance = collision_point.distance_to(global_position)
+			var wall_to_player_ratio = ray_distance / max(distance_to_player, 0.001)
+			if ray_distance < distance_to_player:
+				_cutoff = snappedf(occlusion_lp_cutoff * wall_to_player_ratio, 0.001)
+
+		return _cutoff
+
+class Debugray extends MeshInstance3D:
+
+	var immediate_mesh: ImmediateMesh
+	var material: ORMMaterial3D
