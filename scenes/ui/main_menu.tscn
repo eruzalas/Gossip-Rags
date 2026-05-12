@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://b078af11vdp51"]
+
+[ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="1_sl1te"]
+[ext_resource type="Script" uid="uid://dte43hd0ciqmu" path="res://scenes/ui/main_menu.gd" id="1_uhagc"]
+[ext_resource type="Texture2D" uid="uid://dj60ws67olcx7" path="res://assets/ui/Button_unlocked_placeholder.png" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://c8orsmbuidgtn" path="res://assets/images/icon.svg" id="3_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://b8hkubt2803s2" path="res://assets/images/png version OTHER PLAYER.png" id="4_uhagc"]
+[ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="4_x2yvf"]
+
+[node name="Main Menu" type="Control" unique_id=565250105]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhagc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2052658413]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.30395508
+offset_right = 0.30395508
+texture = ExtResource("1_sl1te")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=165512575]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34600002
+anchor_top = 0.091000006
+anchor_right = 0.70100003
+anchor_bottom = 0.23900001
+offset_left = 0.4079895
+offset_top = 0.03199768
+offset_right = 0.447937
+offset_bottom = 0.12799072
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[font_size=60][color=black]Gossip Rags[/color][/font_size]"
+
+[node name="Player 1 Image" type="TextureRect" parent="." unique_id=419426641]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.363
+anchor_right = 0.365
+anchor_bottom = 0.71500003
+offset_left = -1.0160065
+offset_top = -37.224
+offset_right = 1.519989
+offset_bottom = -29.320007
+texture = ExtResource("3_x2yvf")
+
+[node name="Player 1 Ready Text" type="RichTextLabel" parent="Player 1 Image" unique_id=1412271704]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.031
+anchor_right = 0.95800006
+anchor_bottom = 1.241
+offset_top = -0.06800842
+offset_right = 0.037979126
+offset_bottom = 0.052001953
+bbcode_enabled = true
+text = "[color=black]Press WASD/A button on controller to Ready Up[/color]"
+
+[node name="Player 2 Image" type="TextureRect" parent="." unique_id=712103194]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65500003
+anchor_top = 0.363
+anchor_right = 0.86200005
+anchor_bottom = 0.71500003
+offset_left = -0.5600586
+offset_top = -35.224
+offset_right = -0.024047852
+offset_bottom = -35.320007
+texture = ExtResource("4_uhagc")
+
+[node name="Player 2 Ready Text" type="RichTextLabel" parent="Player 2 Image" unique_id=221755218]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.031
+anchor_right = 0.98300004
+anchor_bottom = 1.2370001
+offset_top = -0.06800842
+offset_right = 0.06298828
+offset_bottom = -0.036010742
+bbcode_enabled = true
+text = "[color=black]Press Arrow Keys/A button on controller to Ready Up[/color]"
+
+[node name="Ready 1 set" type="RichTextLabel" parent="." unique_id=1592975643]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15400001
+anchor_top = 0.80100006
+anchor_right = 0.32700002
+anchor_bottom = 0.86300004
+offset_left = -0.40802002
+offset_top = -0.048034668
+offset_right = 0.29595947
+offset_bottom = -0.22399902
+bbcode_enabled = true
+text = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
+
+[node name="Ready 2 set" type="RichTextLabel" parent="." unique_id=1967351802]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66700006
+anchor_top = 0.80100006
+anchor_right = 0.84000003
+anchor_bottom = 0.86300004
+offset_left = -0.3840332
+offset_top = -0.048034668
+offset_right = 0.3199463
+offset_bottom = -0.22399902
+bbcode_enabled = true
+text = "[wave amp=50 freq=2][rainbow freq=0.2 sat=0.8 val=0.8][font_size=24][center][color=pink][b]Not Ready[/b][/color][/center][/font_size][/rainbow][/wave]"
+
+[node name="Player 2 Text" type="RichTextLabel" parent="." unique_id=1351968638]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.748
+anchor_top = 0.24200001
+anchor_right = 0.92800003
+anchor_bottom = 0.48200002
+offset_left = 34.303894
+offset_top = 15.183945
+offset_right = 11.94397
+offset_bottom = -82.336075
+rotation = 0.4171337
+bbcode_enabled = true
+text = "[wave amp=100 freq=2][font_size=38][color=pink][b]Player 2[/b][/color][/font_size][/wave]"
+
+[node name="Player 1 Text" type="RichTextLabel" parent="." unique_id=861828653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.101
+anchor_top = 0.257
+anchor_right = 0.291
+anchor_bottom = 0.49600002
+offset_left = 12.647995
+offset_top = 74.464005
+offset_right = -15.231995
+offset_bottom = -9.40802
+rotation = -0.34732053
+bbcode_enabled = true
+text = "[wave amp=100 freq=2][font_size=38][color=dark blue][b]Player 1[/b][/color][/font_size][/wave]"
+
+[node name="Play Button" type="TextureButton" parent="." unique_id=1158147716]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37
+anchor_top = 0.827
+anchor_right = 0.629
+anchor_bottom = 0.93200004
+offset_left = -0.23999023
+offset_top = 0.104003906
+offset_right = 0.39196777
+offset_bottom = 0.063964844
+disabled = true
+texture_normal = ExtResource("3_m1kxf")
+texture_disabled = ExtResource("4_x2yvf")
+
+[node name="Play Text" type="RichTextLabel" parent="Play Button" unique_id=186635506]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99300003
+anchor_bottom = 0.9850001
+offset_top = 17.0
+offset_right = 0.09298706
+offset_bottom = -15.980003
+bbcode_enabled = true
+text = "[font_size=24][center][color=black][b]Ready[/b][/color][/center][/font_size]"

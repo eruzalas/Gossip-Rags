@@ -1,0 +1,272 @@
+{
+	"1": {
+		"trigger_time": 5,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ -11, 1.5, -23 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "I saw Sarah’s dad, [b]Jared[/b], at the [b]shops[/b] the other day…",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ -11, 1.5, -23 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Oh, really? What was he doing?",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ -9, 1.5, -32 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "I caught him [b]buying a pregnancy test[b] as well as [b]chocolates and flowers[/b].",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ -9, 1.5, -32 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Ohhh? Do you this Sarah might be getting a sib?",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ 8, 1.5, -30 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "Maybe~ Just what I saw…",
+				"audio_file": "",
+			}
+		],
+	},
+	"2": {
+		"trigger_time": 15,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ 20, 1.5, -15 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ 20, 1.5, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ 20, 1.5, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ 20, 1.5, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "LKJ<FDNS<MNF<M",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ 20, 1.5, -5 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
+				"audio_file": "",
+			}
+		],
+	},
+	"3": {
+		"trigger_time": 25,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ 5, 43.7, -86 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ 5, 43.7, -86 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ 10, 43.7, -80 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ 10, 43.7, -80 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "LKJ<FDNS<MNF<M",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ 10, 43.7, -80 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
+				"audio_file": "",
+			}
+		]
+	},
+	"4": {
+		"trigger_time": 30,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ -5, -42, 65 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ -5, -42, 65 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ -5, -42, 65 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ -5, -42, 65 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "LKJ<FDNS<MNF<M",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ -5, -42, 65 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
+				"audio_file": "",
+			}
+		]
+	},
+	"5": {
+		"trigger_time": 40,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ 15, 1.5, -38 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ 15, 1.5, -38 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ 15, 1.5, -38 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ 15, 1.5, -38 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "LKJ<FDNS<MNF<M",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ 15, 1.5, -38 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
+				"audio_file": "",
+			}
+		]
+	},
+	"6": {
+		"trigger_time": 45,
+		"dialogue": [
+			{
+				"part": 1,
+				"origin": "1",
+				"path_position" : [ -17.5, 1.5, -27 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
+				"audio_file": "",
+			},
+			{
+				"part": 2,
+				"origin": "2",
+				"path_position" : [ -17.5, 1.5, -27 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
+				"audio_file": "",
+			},
+			{
+				"part": 3,
+				"origin": "1",
+				"path_position" : [ -17.5, 1.5, -27 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
+				"audio_file": "",
+			},
+			{
+				"part": 4,
+				"origin": "2",
+				"path_position" : [ -17.5, 1.5, -27 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "LKJ<FDNS<MNF<M",
+				"audio_file": "",
+			},
+			{
+				"part": 5,
+				"origin": "1",
+				"path_position" : [ -17.5, 1.5, -27 ],
+				"bubble_icon": "dialogue_normal.png",
+				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
+				"audio_file": "",
+			}
+		]
+	}
+}

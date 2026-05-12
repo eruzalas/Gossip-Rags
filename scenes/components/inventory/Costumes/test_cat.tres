@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://csm7r8galo5mp"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_14dmq"]
+[ext_resource type="Texture2D" uid="uid://cqwsi061chx5p" path="res://assets/testsprites/costumes_AM/cat_ears.png" id="2_1n04u"]
+
+[resource]
+script = ExtResource("1_14dmq")
+name = "cat"
+texture = ExtResource("2_1n04u")
+speed_modifier = 1.2
+jump_height_modifier = 1.5
+accel_modifier = 1.5
+decel_modifier = 0.5
+suspicion_modifier = 1.5
+attention_modifier = 1.5
+costume_ID = 4
+metadata/_custom_type_script = "uid://df08msjn6bry6"
