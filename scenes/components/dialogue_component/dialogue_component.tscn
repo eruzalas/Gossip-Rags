@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b3dubb4n11c7x"]
+
+[ext_resource type="Script" uid="uid://cs8vmeyqqrv2" path="res://scenes/components/dialogue_component/dialogue_component.gd" id="1_ornic"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b58pc"]
+viewport_path = NodePath("SubViewport")
+
+[node name="DialogueComponent" type="Sprite3D" unique_id=2046033682]
+billboard = 1
+texture = SubResource("ViewportTexture_b58pc")
+script = ExtResource("1_ornic")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=630747704]
+transparent_bg = true
+size = Vector2i(600, 200)
+
+[node name="Timer" type="Timer" parent="SubViewport" unique_id=502803817]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport" unique_id=1869419130]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="timeout" from="SubViewport/Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="costume" format=3 uid="uid://b10x8ns7avfxm"]
+
+[ext_resource type="Script" uid="uid://df08msjn6bry6" path="res://scenes/components/inventory/Costumes/costume.gd" id="1_4gllb"]
+[ext_resource type="Texture2D" uid="uid://4aaei3717knn" path="res://assets/testsprites/costumes_AM/ninja.png" id="2_r2yiw"]
+
+[resource]
+script = ExtResource("1_4gllb")
+name = "ninja"
+texture = ExtResource("2_r2yiw")
+speed_modifier = 1.5
+jump_height_modifier = 1.5
+accel_modifier = 1.5
+decel_modifier = 1.5
+suspicion_modifier = 1.3
+attention_modifier = 0.6
+costume_ID = 9
+metadata/_custom_type_script = "uid://df08msjn6bry6"

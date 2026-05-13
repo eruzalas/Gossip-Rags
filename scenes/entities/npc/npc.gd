@@ -5,19 +5,18 @@ class_name Npc
 	# https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 
 # -- references --
-# external to NPC
-@onready var player = get_tree().get_first_node_in_group("players")
-
 # internal to NPC
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var text_display: MeshInstance3D = $"Test Display Text"
 @onready var bangarang_range: Area3D = $"Bangarang Range"
+@onready var watch_range_collision: CollisionShape3D = $"Bangarang Range/CollisionShape3D"
 @onready var attention_range: Area3D = $"Attention Range"
 @onready var sprite: Sprite3D = $Sprite
 @onready var look_timer: Timer = $"Look Timer"
 @onready var wander_timer: Timer = $"Wander Timer"
-@onready var dialogue_renderer: Sprite3D = $DialogueRenderer
 @onready var gossiper_component: Node = $GossiperComponent
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var sus_attention_timer: Timer = $"Sus_Attention Timer"
 
 # export vars
 @export var debug_mode: bool = true
@@ -34,11 +33,19 @@ class_name Npc
 @export var min_wander_wait: float = 5.0
 @export var max_wander_wait: float = 10.0
 
+@export_group("Attention and Suspicion")
+@export var base_attention_rise: float = 2.0
+@export var base_suspicion_rise: float = 2.0
+@export var attention_multiplier: float = 1.0
+@export var suspicion_multiplier: float = 1.0
+
 signal npc_status_changed(new_status: Enums.NpcState)
 
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
+
+var players: Array
 
 var current_state = Enums.NpcState.IDLE:
 	set(value):
@@ -57,9 +64,17 @@ var player_listening = false:
 # constants
 const SPEED = 3.0
 const TURN_SPEED = 3.0
+const IMMUNITY_FRAMES = 0.5
+const WATCHING_RADIUS = 2.0
 
 # initialisation
 func _ready():
+	_temp_update_zone(WATCHING_RADIUS)
+	SignalBus.player_current_attention.connect(_update_per_player_attention_zones)
+	SignalBus.global_current_attention.connect(_temp_update_zone)
+	
+	players = get_tree().get_nodes_in_group("players")
+	
 	# check if signal already connected - connect if not
 	if !nav_agent.velocity_computed.is_connected(Callable(_on_navigation_agent_3d_velocity_computed)):
 		nav_agent.velocity_computed.connect(Callable(_on_navigation_agent_3d_velocity_computed))
@@ -79,6 +94,7 @@ func _ready():
 	if npc_type == Enums.NpcType.GOSSIPER:
 		gossiper_component.gossiping_active.connect(_set_gossiping)
 		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
+		
 
 
 func _physics_process(delta: float) -> void:
@@ -115,11 +131,37 @@ func _physics_process(delta: float) -> void:
 		_look_at_position(next_pos, delta)
 		
 	elif current_state == Enums.NpcState.WATCHING:
-		_look_at_position(player.global_transform.origin, delta)
+		_look_at_closest_player(delta)
+		
+		if ray_cast_3d.is_colliding():
+			current_state = Enums.NpcState.ALERTED
 		
 	elif current_state == Enums.NpcState.IDLE:
 		_look_at_position(target_look_position, delta)
 		
+	if current_state == Enums.NpcState.ALERTED:
+		if sus_attention_timer.is_stopped():
+			sus_attention_timer.start(IMMUNITY_FRAMES)
+			
+		_look_at_closest_player(delta)
+		
+		if !ray_cast_3d.is_colliding():
+			current_state = Enums.NpcState.WATCHING
+			
+	else:
+		sus_attention_timer.stop()
+		
+
+func _look_at_closest_player(delta: float) -> void:
+	_look_at_position(_get_closest_player().global_transform.origin, delta)
+
+func _get_closest_player() -> CharacterBody3D:
+	var the_best_player_who_is_closest = players[0]
+	for player in players:
+		if global_position.distance_to(player.global_position) < global_position.distance_to(the_best_player_who_is_closest.global_position):
+			the_best_player_who_is_closest = player
+	return the_best_player_who_is_closest
+
 
 func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
 	var extracted_pos = gossip["path_position"]
@@ -202,6 +244,7 @@ func _look_at_position(target_position: Vector3, delta: float, turn_speed: float
 
 func _generate_wander_wait():
 	# maybe add calculation off suspicion/attention?
+	#return randf_range(min_wander_wait, max_wander_wait - (suspicion_system.sus_level / 2))
 	return randf_range(min_wander_wait, max_wander_wait)
 
 func _set_gossiping(status: bool):
@@ -250,7 +293,19 @@ func _on_attention_range_body_exited(body: Node3D) -> void:
 					
 			if not player_found:
 				player_listening = false
-		
+
+
+func _update_per_player_attention_zones(player: Player, current_attention: float) -> void:
+	# TODO WITH PER PLAYER CALCULATIONS
+	pass
+
+func _temp_update_zone(attention_value: float) -> void:
+	var amount_to_increase = (attention_value - WATCHING_RADIUS) / 2
+	var total = WATCHING_RADIUS + amount_to_increase
+	watch_range_collision.shape.radius = total
+	ray_cast_3d.target_position.y = -total
+	
+
 # ---- TIMER FUNCTIONS ----
 func _on_look_timer_timeout() -> void:
 	# get new look position
@@ -259,7 +314,13 @@ func _on_look_timer_timeout() -> void:
 	look_timer.start(randf_range(min_look_time_elapsed, max_look_time_elapsed))
 	
 func _on_wander_timer_timeout() -> void:
-	# get new wander position
-	_get_new_target_position()
+	if current_state != Enums.NpcState.WATCHING && !current_state != Enums.NpcState.ALERTED:
+		# get new wander position
+		_get_new_target_position()
+		
 	# begin timer
 	wander_timer.start(_generate_wander_wait())
+
+
+func _on_sus_attention_timer_timeout() -> void:
+	SignalBus.caused_attention.emit(_get_closest_player(), base_attention_rise)

@@ -5,6 +5,10 @@ extends Node
 @onready var player_2: CharacterBody3D = $"../Player2"
 @onready var attention_system: Node = %"Attention System"
 @onready var suspicion_system: Node = %"Suspicion System"
+@onready var player_1_sus_att: Label = %"Player1 SUS ATT"
+@onready var player_2_sus_att: Label = %"Player2 SUS ATT"
+@onready var attention_debug: Label = %"Attention Debug"
+@onready var reset_alert: Label = %"RESET ALERT"
 
 # Values to keep track of for Player 1
 var p_1_att_state: String = ""
@@ -27,6 +31,9 @@ var p2_costume_sus_level: float = 1
 var p2_costume_sus_mult: float = 1
 var p2_costume_att_mult: float = 1
 
+var temp_gui_list: Array
+
+
 #Global variables
 var steps: int = 0 #increases by 1 each second the player is in the gossip zone - returns to 0 once no longer collecting suspicion
 var sus: bool = false #if the player is currently in a sus zone - handle via signals
@@ -34,7 +41,9 @@ var yoink: bool = false #if player is trying to grab attentionm - handle via sig
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	SignalBus.caused_attention.connect(_on_caused_attention)
+	print("DEBUG: Manager connected to SignalBus")
+	temp_gui_list = [player_1_sus_att, player_2_sus_att]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,3 +85,34 @@ func _determine_att_level(which_player: int, action: float):
 		player_att = attention_system._calculate_att(1, action, player_att)
 		p_2_att_level = player_att
 	
+
+func _on_caused_attention(player: Node, attention_value: float):
+	print("DEBUG: manager received signal ")
+	
+	var p_id = 1 if player == player_1 else 2 #determine ID based on which player node was passed
+	_determine_att_level(p_id, attention_value) #math logic
+	
+	#just a check in the console so that we know its working
+	print("Player ", p_id, " attention is now: ",
+	p_1_att_level if p_id == 1 else p_2_att_level)
+	
+	temp_gui_list[p_id - 1].text = "Player" + str(p_id) + " = ATT: " + str(p_1_att_level if p_id == 1 else p_2_att_level)
+	
+	var average_attention = (p_1_att_level + p_2_att_level) / 2
+	attention_debug.text = "Attention: " + str(average_attention)
+	
+	if average_attention > 40:
+		reset_alert.visible = true
+		var timer = Timer.new()
+		timer.one_shot = true
+		add_child(timer)
+		timer.timeout.connect(_debug_alert_invis)
+		timer.start(2)
+		average_attention = 0
+		p_1_att_level = 0
+		p_2_att_level = 0
+		
+	SignalBus.global_current_attention.emit(average_attention)
+
+func _debug_alert_invis() -> void:
+	reset_alert.visible = false

@@ -10,22 +10,25 @@ var att_level: float = 0  #int or float?
 
 #Calculate attention to new total attention upon action--mutli=multiplier for costumes, actions=cost of attention action
 #TODO fix maths
-func _calculate_att(multi: float, action: float, current_att: float):
-	att_level = (action * multi) + current_att
-	return att_level
+func _calculate_att(multi: float, action: float, current_att: float) -> float:
+	#return the result so the Manager can store it for specific player
+	return (action * multi) + current_att
+	
+	#att_level = (action * multi) + current_att
+	#return att_level
 
 #Calculate current state level and updates state variable
 func _state_level(att_precent: float):
 	
 	if(att_precent < reset_thresh):
 		state = "base"
-		print("astate: " + state)
+		#print("astate: " + state)
 	elif(att_precent >= reset_thresh && att_precent < sus_thresh):
 		state = "reset"
-		print("astate: " + state)
+		#print("astate: " + state)
 	elif(att_precent >= sus_thresh):
 		state = "sus"
-		print("astate: " + state)
+		#print("astate: " + state)
 		
 	return state
 	

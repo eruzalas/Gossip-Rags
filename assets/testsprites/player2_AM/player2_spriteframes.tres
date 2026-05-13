@@ -1,19 +1,34 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bpqyakqqyurql"]
 
+[ext_resource type="Texture2D" uid="uid://rrtearkkrb0p" path="res://assets/testsprites/player2_AM/player2_angel.png" id="1_ln10v"]
 [ext_resource type="Texture2D" uid="uid://yyhea5o4inx" path="res://assets/testsprites/player2_AM/player2_banana.png" id="1_x8np7"]
 [ext_resource type="Texture2D" uid="uid://clf7om88f54uo" path="res://assets/testsprites/player2_AM/player2_cat.png" id="2_jfo0h"]
 [ext_resource type="Texture2D" uid="uid://skc5r5ggbsfd" path="res://assets/testsprites/player2_AM/test_sprite2.png" id="2_t1x0k"]
 [ext_resource type="Texture2D" uid="uid://bjj1qx0wrwpc4" path="res://assets/testsprites/player2_AM/player2_motorbike.png" id="3_jfo0h"]
 [ext_resource type="Texture2D" uid="uid://cf07pqye4vdw3" path="res://assets/testsprites/player2_AM/player2_pirate.png" id="4_arfia"]
+[ext_resource type="Texture2D" uid="uid://dcvrqxrulm8go" path="res://assets/testsprites/player2_AM/player2_cult.png" id="4_djlir"]
+[ext_resource type="Texture2D" uid="uid://bvkxwic73b5gf" path="res://assets/testsprites/player2_AM/player2_dino.png" id="6_va4y7"]
+[ext_resource type="Texture2D" uid="uid://7e1goh74q4vc" path="res://assets/testsprites/player2_AM/player2_ghost.png" id="7_adesv"]
+[ext_resource type="Texture2D" uid="uid://35h6k281rkg3" path="res://assets/testsprites/player2_AM/player2_horse.png" id="8_bmwhh"]
+[ext_resource type="Texture2D" uid="uid://yptg2wjhn1k5" path="res://assets/testsprites/player2_AM/player2_ninja.png" id="10_uhc2y"]
+[ext_resource type="Texture2D" uid="uid://u2tqiw2adoss" path="res://assets/testsprites/player2_AM/player2_nurse.png" id="11_7axxv"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_ln10v")
+}],
+"loop": true,
+"name": &"p2_angel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_x8np7")
 }],
 "loop": true,
-"name": &"p2_banana_costume",
+"name": &"p2_banana",
 "speed": 5.0
 }, {
 "frames": [{
@@ -26,6 +41,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_djlir")
+}],
+"loop": true,
+"name": &"p2_cult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_t1x0k")
 }],
 "loop": true,
@@ -34,10 +57,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_va4y7")
+}],
+"loop": true,
+"name": &"p2_dino",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_adesv")
+}],
+"loop": true,
+"name": &"p2_ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bmwhh")
+}],
+"loop": true,
+"name": &"p2_horse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_jfo0h")
 }],
 "loop": true,
-"name": &"p2_motorbike_helmet_costume",
+"name": &"p2_motorbike",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_uhc2y")
+}],
+"loop": true,
+"name": &"p2_ninja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7axxv")
+}],
+"loop": true,
+"name": &"p2_nurse",
 "speed": 5.0
 }, {
 "frames": [{
@@ -45,6 +108,6 @@ animations = [{
 "texture": ExtResource("4_arfia")
 }],
 "loop": true,
-"name": &"p2_pirate_costume",
+"name": &"p2_pirate",
 "speed": 5.0
 }]
