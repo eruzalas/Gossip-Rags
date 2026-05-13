@@ -158,14 +158,14 @@ func update_sprite():
 	player_sprite.animation = sprite[selected]
 	
 func _ready():
-	player_inventory = player_inventories[player_ID]
+	player_inventory = player_inventories[player_ID].duplicate()
+	
 	str_ID = str(player_ID + 1)
 	player_sprite.animation = "p%s_default" % str_ID
 	player_inventory.print()
 	update_stats()
 	update_sprite()
-	print("-----")
-	print("current speed: "+ str(BASE_SPEED * speed_modifier))
+	
 
 
 func _on_listening_range_body_entered(body: Node3D) -> void:

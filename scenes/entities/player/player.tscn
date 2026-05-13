@@ -18,7 +18,7 @@ script = ExtResource("1_g2els")
 no_depth_test = true
 render_priority = 1
 sprite_frames = ExtResource("2_635qg")
-animation = &"p1_pirate"
+animation = &"p1_default"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1962865836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.007851124)
