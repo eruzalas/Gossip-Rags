@@ -269,6 +269,12 @@ shader_parameter/opacity = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_ghkdt"]
 size = Vector3(0.375, 2.5, 4.417)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fymcc"]
+render_priority = 0
+shader = ExtResource("9_ovomx")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 1.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_s64j0"]
 size = Vector3(0.375, 1, 4.417)
 
@@ -1218,10 +1224,10 @@ shader_parameter/is_p1_top = false
 [sub_resource type="ViewportTexture" id="ViewportTexture_rwifv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5fxch"]
-radius = 1.0
+radius = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4v0p3"]
-radius = 1.0
+radius = 0.2
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbnhc"]
 font_size = 32
@@ -1291,6 +1297,7 @@ use_collision = true
 
 [node name="FrontFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1463788726 groups=["transparent_walls"]]
 transform = Transform3D(0.99999946, 0, 0, 0, 0.99999946, 0, 0, 0, 0.99999946, 12.587891, 1.0561523, 3.7221832)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence" unique_id=1884012044]
@@ -1302,6 +1309,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_l4ul6")
 
 [node name="FrontFence2_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1627498614 groups=["transparent_walls"]]
 transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -8.412104, 0.99999994, 6.5123863)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_1" unique_id=1826766502]
@@ -1315,6 +1323,7 @@ shape = SubResource("BoxShape3D_d0ajt")
 
 [node name="FrontFence2_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1734561051 groups=["transparent_walls"]]
 transform = Transform3D(0.9999996, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999996, -8.412103, 0.9999999, 6.512386)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontFence2_2" unique_id=188002259]
@@ -1328,6 +1337,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_j0rhc")
 
 [node name="BackyardFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=876217206 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.586426, 2.5, 11.403454)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardFence" unique_id=412315640]
@@ -1341,6 +1351,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_4jq4u")
 
 [node name="BackyardFence2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=130217001]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 22.407682, 2.6957595, -1.5864253)
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardFence2" unique_id=21451758]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.6699999, 0, 0, 0, 0.9999999, 3.9867706, -1.0017171, 0)
@@ -1352,6 +1363,7 @@ shape = SubResource("BoxShape3D_nqe8x")
 
 [node name="FrontWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=805640906 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5185547, 3.5, 1.3122559)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Hole" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontWall" unique_id=818178979]
@@ -1371,6 +1383,7 @@ shape = SubResource("BoxShape3D_hx1je")
 
 [node name="FrontWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1418363814 groups=["transparent_walls"]]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 8.369848, 3.4999995, 1.3122559)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontWall2" unique_id=722097143]
@@ -1384,6 +1397,7 @@ shape = SubResource("BoxShape3D_ij5nj")
 
 [node name="FrontDoorWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=626226563 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.224235, 3.5, 0.090329766)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Hole" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall" unique_id=1964568196]
@@ -1403,6 +1417,7 @@ shape = SubResource("BoxShape3D_jhdiv")
 
 [node name="FrontDoorWall_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=369066568 groups=["transparent_walls"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 3.224235, 3.4999998, 0.090330124)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall_1" unique_id=640617154]
@@ -1416,6 +1431,7 @@ shape = SubResource("BoxShape3D_7o8ut")
 
 [node name="FrontDoorWall_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=171770305 groups=["transparent_walls"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 3.224235, 3.4999998, 0.090330124)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/FrontDoorWall_2" unique_id=1822186311]
@@ -1429,6 +1445,7 @@ shape = SubResource("BoxShape3D_a5636")
 
 [node name="RightSideWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=93286132 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.477688, 3.5, -16.325623)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall" unique_id=380918668]
@@ -1454,6 +1471,7 @@ shape = SubResource("BoxShape3D_bmoad")
 
 [node name="RightSideWall_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1144453457 groups=["transparent_walls"]]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 12.477684, 3.4999995, -3.672605)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall_1" unique_id=891594969]
@@ -1467,6 +1485,7 @@ shape = SubResource("BoxShape3D_5obl8")
 
 [node name="RightSideWall_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=2001916882 groups=["transparent_walls"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 12.477686, 3.4999998, -16.32562)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall_2" unique_id=251380110]
@@ -1480,6 +1499,7 @@ shape = SubResource("BoxShape3D_1n8ra")
 
 [node name="RightSideWall_3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1534024602 groups=["transparent_walls"]]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 12.47768, 3.499999, -33.52396)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall_3" unique_id=1146844831]
@@ -1493,6 +1513,7 @@ shape = SubResource("BoxShape3D_0n6td")
 
 [node name="RightSideWall_4" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1348328471 groups=["transparent_walls"]]
 transform = Transform3D(0.99998987, 0, 0, 0, 0.99998987, 0, 0, 0, 0.99998987, 12.477686, 4.023725, -28.047222)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/RightSideWall_4" unique_id=1847664221]
@@ -1506,6 +1527,7 @@ shape = SubResource("BoxShape3D_mb8w1")
 
 [node name="BackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1131530604]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.41226575, 3.4999998, -37.924183)
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackWall" unique_id=1327768187]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0, -1.0017171, 0)
@@ -1517,6 +1539,7 @@ shape = SubResource("BoxShape3D_olhon")
 
 [node name="LeftSideWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1767041268 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.325065, 3.5, -23.311508)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall" unique_id=1401878517]
@@ -1530,6 +1553,7 @@ shape = SubResource("BoxShape3D_mdkuk")
 
 [node name="LeftSideWall_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1559637864]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -13.325064, 3.4999998, -23.311506)
+collision_layer = 3
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall_1" unique_id=1456781455]
 transform = Transform3D(1, 0, 0, 0, 0.67, 0, 0, 0, 1.295, -9.536743e-07, -1.0017173, -7.692875)
@@ -1541,6 +1565,7 @@ shape = SubResource("BoxShape3D_mrxq0")
 
 [node name="LeftSideWall_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1443823236 groups=["transparent_walls"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -13.325064, 3.4999998, -23.311506)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall_2" unique_id=805030113]
@@ -1560,6 +1585,7 @@ shape = SubResource("BoxShape3D_i1y2t")
 
 [node name="LeftSideWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=372308146 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.648863, 3.5, -12.710175)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall2" unique_id=1816861712]
@@ -1571,8 +1597,10 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 0.99999994, 0,
 mesh = SubResource("BoxMesh_7mx70")
 surface_material_override/0 = SubResource("ShaderMaterial_kngxi")
 
-[node name="LeftSideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1722187974]
+[node name="LeftSideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1722187974 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.314469, 3.5, -10.682159)
+collision_layer = 3
+script = ExtResource("8_2m0ga")
 
 [node name="DoubleDoor" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall3" unique_id=1949117532]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.31749058, -1.2661133, 0.18735504)
@@ -1583,6 +1611,7 @@ size = Vector3(1, 3.5322266, 4)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall3" unique_id=113357976]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.39999995, 0, 0, 0, 0.9999999, 0, 0.47814465, 0)
 mesh = SubResource("BoxMesh_ghkdt")
+surface_material_override/0 = SubResource("ShaderMaterial_fymcc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LeftSideWall3" unique_id=2063182246]
 transform = Transform3D(0.99999744, 0, 0, 0, 0.99999744, 0, 0, 0, 0.99999744, 0, 0.49484754, 0)
@@ -1590,6 +1619,7 @@ shape = SubResource("BoxShape3D_s64j0")
 
 [node name="Foyer1Wall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=854906300 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.815979, 3.5, -8.29621)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/Foyer1Wall2" unique_id=748773193]
@@ -1603,6 +1633,7 @@ shape = SubResource("BoxShape3D_2m0ga")
 
 [node name="Foyer1Wall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=2114351400 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.318791, 3.5, -3.4941883)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/Foyer1Wall" unique_id=898736494]
@@ -1616,6 +1647,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_cf0uk")
 
 [node name="GarageWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=499810386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.569494, 3.5, -34.30719)
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall" unique_id=1003708922]
 transform = Transform3D(0.9999865, 0, 0, 0, 0.9999865, 0, 0, 0, 0.9999865, 2.039444, -1.0000002, -0.19691849)
@@ -1627,6 +1659,7 @@ mesh = SubResource("BoxMesh_4v0p3")
 
 [node name="GarageWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=120307788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.300573, 3.5, -24.30382)
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall2" unique_id=1705195933]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.66999996, 0, 0, 0, 1.0099999, 4.111454, -1.0017171, -0.12726402)
@@ -1638,6 +1671,7 @@ shape = SubResource("BoxShape3D_jum6b")
 
 [node name="GarageWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=706777163 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.452198, 3.4999995, -14.710199)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Arch" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/GarageWall3" unique_id=1317818427]
@@ -1675,6 +1709,7 @@ shape = SubResource("BoxShape3D_j8f2q")
 
 [node name="LaundryBackWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1153420156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3.5, -24.289995)
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryBackWall" unique_id=1452007069]
 transform = Transform3D(1.385, 0, 0, 0, 0.67, 0, 0, 0, 1, -1.0017176, -1.0017171, 0)
@@ -1686,6 +1721,7 @@ shape = SubResource("BoxShape3D_q3hpu")
 
 [node name="LaundryLeftWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=573444080 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.310852, 3.5, -20.341888)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryLeftWall" unique_id=778508565]
@@ -1699,6 +1735,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_7lp0r")
 
 [node name="LaundryFrontWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=426946201 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.807095, 3.5, -16.695995)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Door" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/LaundryFrontWall" unique_id=409093319]
@@ -1736,6 +1773,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_l72hy")
 
 [node name="BackyardWestFrontFence3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1710526398 groups=["transparent_walls"]]
 transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, -13.5, 2.5, 11.391009)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardWestFrontFence3" unique_id=258395641]
@@ -1749,6 +1787,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_6eles")
 
 [node name="BackyardWestFrontFence4" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=460349156]
 transform = Transform3D(0.99999946, 0, 0, 0, 0.99999946, 0, 0, 0, 0.99999946, -13.499996, 2.4337578, -16.566694)
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardWestFrontFence4" unique_id=1588626056]
 transform = Transform3D(0.99999285, 0, 0, 0, 0.99999285, 0, 0, 0, 0.99999285, -9.999994, -1.0000001, 0)
@@ -1761,6 +1800,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fymcc")
 
 [node name="BackyardWestFence" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1997808974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.40085, 2.5, -2.6060762)
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BackyardWestFence" unique_id=1909417515]
 transform = Transform3D(0.9999965, 0, 0, 0, 0.9999965, 0, 0, 0, 0.9999965, -8.013737, -0.9999995, 0)
@@ -1772,6 +1812,7 @@ mesh = SubResource("BoxMesh_phx5y")
 
 [node name="BathroomWall1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1577748971 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1207066, 3.5, -8.310213)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Arch" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall1" unique_id=688518401]
@@ -1800,6 +1841,7 @@ shape = SubResource("BoxShape3D_x77xw")
 
 [node name="InsideWall_1" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=686609311 groups=["transparent_walls"]]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.74488306, 3.4999993, -8.310207)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall_1" unique_id=1521611052]
@@ -1813,6 +1855,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_vl1dq")
 
 [node name="InsideWall_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1123542260 groups=["transparent_walls"]]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.744883, 3.499999, -12.758175)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall_2" unique_id=1090051810]
@@ -1826,6 +1869,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_hx1je")
 
 [node name="InsideWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1657271770 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0829067, 3.5, -12.71961)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Arch" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall" unique_id=1720691578]
@@ -1854,6 +1898,7 @@ shape = SubResource("BoxShape3D_124cm")
 
 [node name="BathroomWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1053074201 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3.5, -10.512085)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BathroomWall3" unique_id=829963425]
@@ -1867,6 +1912,7 @@ shape = SubResource("BoxShape3D_hph6x")
 
 [node name="InsideWall3" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=429159329 groups=["transparent_walls"]]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -9.155695, 3.4999995, -21.325703)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Arch" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3" unique_id=1518444386]
@@ -1895,6 +1941,7 @@ shape = SubResource("BoxShape3D_pww7v")
 
 [node name="InsideWall3_2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=346814417 groups=["transparent_walls"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.4189596, 3.4999998, -21.325703)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/InsideWall3_2" unique_id=546756783]
@@ -1908,6 +1955,7 @@ shape = SubResource("BoxShape3D_pyabd")
 
 [node name="StorageWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=2046018533 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, -26)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="Arch" type="CSGBox3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall" unique_id=8918411]
@@ -1936,6 +1984,7 @@ shape = SubResource("BoxShape3D_2qot8")
 
 [node name="StorageWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=402625065 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6749573, 3.5, -28.332272)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/StorageWall2" unique_id=288740527]
@@ -1949,6 +1998,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_x77xw")
 
 [node name="BasementStairWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=75949105 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.582119, 3.5069718, -30.62582)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/BasementStairWall" unique_id=739115664]
@@ -1962,6 +2012,7 @@ shape = SubResource("BoxShape3D_jyr8v")
 
 [node name="UpstairsWall" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=732889108 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30223668, 3.4502835, -30.206526)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall" unique_id=1341935665]
@@ -1975,6 +2026,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_5obl8")
 
 [node name="UpstairsWall2" type="StaticBody3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls" unique_id=1125407588 groups=["transparent_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3078928, 3.5, -29.936121)
+collision_layer = 3
 script = ExtResource("8_2m0ga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment (NavMesh)/Downstairs/DownstairsWalls/UpstairsWall2" unique_id=2013863762]
@@ -3428,6 +3480,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.766
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="CameraManager/Viewport1/Player1Cam" unique_id=780776281 node_paths=PackedStringArray("target_player")]
 shape = SubResource("SphereShape3D_5fxch")
+collision_mask = 2
 script = ExtResource("17_kx0xk")
 target_player = NodePath("../../../../Player_ONE")
 
@@ -3438,6 +3491,7 @@ transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.7660
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="CameraManager/Viewport2/Player2Cam" unique_id=1772562121 node_paths=PackedStringArray("target_player")]
 shape = SubResource("SphereShape3D_4v0p3")
+collision_mask = 2
 script = ExtResource("17_kx0xk")
 target_player = NodePath("../../../../Player_TWO")
 
