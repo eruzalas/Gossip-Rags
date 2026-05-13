@@ -38,7 +38,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	#checks which player pressed and caused the fall
 	for p in players_in_range:
 		var p_name = p.name 
-		var action = "p1_interact" if p_name == "Player1" else "p2_interact"
+		var action = "p" + str(p.str_ID) + "_interact"
+		#var action = "p1_interact" if p_name == "Player1" else "p2_interact"
 	
 		if event.is_action_pressed(action): #makes sure both players can interact
 			_trigger_spill(p) #pass specific player that caused it

@@ -5,8 +5,8 @@ extends Node3D
 @export var split_line_color: Color = Color.BLACK
 
 @onready var isMultiplayer: bool = true 	 #FOR TESTING PURPOSES, use actual signal in menu
-@onready var player1: Node = $"../Player1"
-@onready var player2: Node = $"../Player2"
+@onready var player1: Node = $"../Player_ONE"
+@onready var player2: Node = $"../Player_TWO"
 @onready var view = $View
 @onready var viewport1: Viewport = $Viewport1
 @onready var viewport2: Viewport = $Viewport2

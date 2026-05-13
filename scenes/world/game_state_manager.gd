@@ -1,8 +1,8 @@
 extends Node
 
 # Nodes the script uses
-@onready var player_1: CharacterBody3D = $"../Player1"
-@onready var player_2: CharacterBody3D = $"../Player2"
+@onready var player_1: CharacterBody3D = $"../Player_ONE"
+@onready var player_2: CharacterBody3D = $"../Player_TWO"
 @onready var attention_system: Node = %"Attention System"
 @onready var suspicion_system: Node = %"Suspicion System"
 @onready var player_1_sus_att: Label = %"Player1 SUS ATT"
