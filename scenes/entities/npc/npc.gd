@@ -191,9 +191,10 @@ func _get_closest_player() -> CharacterBody3D:
 # ill fix later hahahahhahahhahauhesagusdfbhjdsajhdsa
 func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
 	var extracted_pos = gossip["path_position"]
-	var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
-	_set_movement_target(gossip_location)
-	has_active_target = true
+	# uncomment this later when json fixed
+	#var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
+	#_set_movement_target(gossip_location)
+	#has_active_target = true
 
 # runtime set self (used when npc_type == "group" given they are dynamically generated)
 func _set_npc_type(type: Enums.NpcType) -> void:
