@@ -103,6 +103,11 @@ func _tell_child_to_move(destination):
 	_get_child_npcs()
 	destination._get_child_npcs()
 
+# used by the origin controller
+func _refresh_movement_opportunity_timer():
+	movement_opportunity_flag = false
+	movement_opportunity_timer.start(_generate_timeout_period())
+
 # source: https://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly/50746409#50746409
 # and: https://codepen.io/KonradLinkowski/pen/ExjLGxJ
 # auuug annuluses can suck on my ballllllls
