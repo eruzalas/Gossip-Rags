@@ -4,6 +4,9 @@ class_name Npc
 # some of the code in _set_movement_target and _process was taken from the following source:
 	# https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_using_navigationagents.html#navigationagent-pathfinding 
 
+# I LOVE GOD CLASSESSSSS
+# THIS BREAKS LIKE ALL THE HEURISTICS IN SWE HAHHAHHAHHAHAHA
+
 # -- references --
 # internal to NPC
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -59,6 +62,7 @@ var in_listening_range = false:
 var current_state = Enums.NpcState.IDLE:
 	set(value):
 		if current_state != value:
+			# handling gossiping bulllshit when player already in range on state changes
 			if current_state == Enums.NpcState.GOSSIPING && in_listening_range:
 				SignalBus.player_listening_call.emit(self, false)
 			
@@ -71,12 +75,15 @@ var current_state = Enums.NpcState.IDLE:
 # constants
 const SPEED = 3.0
 const TURN_SPEED = 4.0
-const IMMUNITY_FRAMES = 0.1
+const IMMUNITY_FRAMES = 0.2
 const WATCHING_RADIUS = 2.0
 
 # initialisation
 func _ready():
+	# TEMP NEEDS TO BE KILLED
 	_temp_update_zone(WATCHING_RADIUS)
+	# link up signals
+	# WE DONT HAVE FUCKING PER PLAYER ATTENTION CALCULATIONS YETTTTTT SO THIS SHIT SUCKS
 	SignalBus.player_current_attention.connect(_update_per_player_attention_zones)
 	SignalBus.global_current_attention.connect(_temp_update_zone)
 	
@@ -98,6 +105,7 @@ func _ready():
 	# TODO: find a better fix
 	text_display.mesh = text_display.mesh.duplicate(true)
 	
+	# if gossiper, link up to additional calls
 	if npc_type == Enums.NpcType.GOSSIPER:
 		gossiper_component.gossiping_active.connect(_set_gossiping)
 		gossiper_component.current_gossip.connect(_pathfind_to_gossip_position)
@@ -136,38 +144,50 @@ func _physics_process(delta: float) -> void:
 		_look_at_position(next_pos, delta)
 		
 	elif current_state == Enums.NpcState.WATCHING:
+		# look at closest player
 		_look_at_closest_player(delta)
 		
+		# raycast to player - deviously cast through the walls >:D
 		if ray_cast_3d.is_colliding():
 			current_state = Enums.NpcState.ALERTED
 		
 	elif current_state == Enums.NpcState.IDLE:
+		# look at nearby NPCs
+		# this fucking fucking fucking function needs to be fixed
 		_look_at_position(target_look_position, delta)
 		
 	if current_state == Enums.NpcState.ALERTED:
+		# handle attention collection using immunity frames
 		if sus_attention_timer.is_stopped():
 			sus_attention_timer.start(IMMUNITY_FRAMES)
 			
+		# look at the player
 		_look_at_closest_player(delta)
 		
+		# check if no longer looking
 		if !ray_cast_3d.is_colliding():
 			current_state = Enums.NpcState.WATCHING
 			
 	else:
+		# stop collecting attention if not alerted
 		sus_attention_timer.stop()
 		
-
+# look at player
 func _look_at_closest_player(delta: float) -> void:
 	_look_at_position(_get_closest_player().global_transform.origin, delta)
 
+# subsequent calculations
 func _get_closest_player() -> CharacterBody3D:
 	var the_best_player_who_is_closest = players[0]
 	for player in players:
 		if global_position.distance_to(player.global_position) < global_position.distance_to(the_best_player_who_is_closest.global_position):
 			the_best_player_who_is_closest = player
+	# im really good at naming variables
 	return the_best_player_who_is_closest
 
-
+# get gossiper path position
+# wait why the fuck is this in NPC and not in GossiperComponent?
+# ill fix later hahahahhahahhahauhesagusdfbhjdsajhdsa
 func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
 	var extracted_pos = gossip["path_position"]
 	var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
@@ -192,6 +212,7 @@ func _get_new_target_position():
 	elif Enums.NpcType.keys()[npc_type].contains("WANDER"):
 		var world = get_world_3d().navigation_map
 		var nav_layer = 1
+		# I FUCKING HATE BITMASKS AND HOW LONG IT TOOK FOR ME TO REALISE THAT ITS ALL BITMASKS
 		if Enums.NpcType.keys()[npc_type] == "WANDER_ZONE":
 			# note: when setting nav layers for wandering, the layer number is equiv to 2^(layer index FROM ZERO)
 				# adding multiple layers involve taking the original calculated layer and ADDING THEM TOGETHER
@@ -212,10 +233,9 @@ func _get_new_target_position():
 	current_state = Enums.NpcState.MOVING
 	has_active_target = true
 
-func _flatten_look_y(target_position):
-	target_position.y = global_position.y
-	return target_position
-
+# get position in area
+# needs to be fixed cuz ofc NPCs no longer have the larger gossiper range
+# since thta got switched to be handled in Player
 func _get_random_entity_pos_in_area():
 	var entity_position: Vector3 = Vector3.ZERO
 	if attention_range.has_overlapping_bodies():
@@ -223,6 +243,7 @@ func _get_random_entity_pos_in_area():
 		entities_in_range.erase(self)
 		if entities_in_range.size() > 0:
 			looking_at_entity = true
+			# look at a random entity in the range
 			entity_position = entities_in_range[randi_range(0, entities_in_range.size() - 1)].global_transform.origin
 	
 	if entity_position == Vector3.ZERO:
@@ -252,6 +273,7 @@ func _generate_wander_wait():
 	#return randf_range(min_wander_wait, max_wander_wait - (suspicion_system.sus_level / 2))
 	return randf_range(min_wander_wait, max_wander_wait)
 
+# flick between gossip/not gossip state
 func _set_gossiping(status: bool):
 	if status:
 		current_state = Enums.NpcState.GOSSIPING
@@ -259,6 +281,9 @@ func _set_gossiping(status: bool):
 		current_state = Enums.NpcState.IDLE
 
 # ---- SIGNAL FUNCTIONS ----
+
+# velocity calculations for NPC avoidance
+# doesnt fucking work
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	if current_state == Enums.NpcState.MOVING || current_state == Enums.NpcState.GOSSIPING:
 		velocity = safe_velocity
@@ -286,6 +311,7 @@ func _update_per_player_attention_zones(player: Player, current_attention: float
 	# TODO WITH PER PLAYER CALCULATIONS
 	pass
 
+# temp function while i wait impatiently for attention/suspicion systems to be done
 func _temp_update_zone(attention_value: float) -> void:
 	var amount_to_increase = (attention_value - WATCHING_RADIUS) / 2
 	var total = WATCHING_RADIUS + amount_to_increase
@@ -308,6 +334,7 @@ func _on_wander_timer_timeout() -> void:
 	# begin timer
 	wander_timer.start(_generate_wander_wait())
 
-
+# suck on my balls
+# also emit attention when immunity frame timer runs out
 func _on_sus_attention_timer_timeout() -> void:
 	SignalBus.caused_attention.emit(_get_closest_player(), base_attention_rise)
