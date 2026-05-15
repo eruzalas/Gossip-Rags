@@ -10,8 +10,8 @@ static func _load_file(file_path) -> Dictionary:
 	return JSON.parse_string(dialogue_file.get_as_text())
 	
 static func _get_all_gossiper_dialogue(gossiper_type: int):
-	var file = _load_file(ResourcePaths.gossiper_dialogue_path)
-	return file[str(gossiper_type)]
+	var file = _load_file(ResourcePaths.gossiper_dialogue_path + str(gossiper_type) + ".json")
+	return file["gossip"]
 
 static func _filter_dialogue_list(dialogue_list:Array, attribute:String, filter) -> Array:
 	var filtered_dialogue_list = []

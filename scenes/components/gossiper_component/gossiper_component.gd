@@ -12,7 +12,11 @@ var current_dialogue_segment: Dictionary
 var begin_gossip: bool = false
 var player_listening: bool = false
 var current_increment_value: float = 0
-var current_dialogue_id: int = 1
+var current_dialogue_id: int = 0
+
+var all_gossiping_segments: Array
+var current_gossiping_segment: Dictionary
+var current_segment: int = 0
 
 # consts
 const SECONDS_PER_CHAR: float = 0.07
@@ -27,10 +31,11 @@ func _ready() -> void:
 	# probs a better way to do this dynamically in NPC but anyways
 	if npc.npc_type == Enums.NpcType.GOSSIPER && npc.gossiper_ID != 0:
 		# get gossiper-specific dialogue (certain gossipers get different areas)
-		var gossiper_dict = DialogueProcessor._get_all_gossiper_dialogue(npc.gossiper_ID)
+		all_gossiping_segments = DialogueProcessor._get_all_gossiper_dialogue(npc.gossiper_ID)
+		current_gossiping_segment = all_gossiping_segments[current_segment]
 		# set values from dict
-		activation_time = gossiper_dict["trigger_time"]
-		gossiper_dialogue = gossiper_dict["dialogue"]
+		activation_time = current_gossiping_segment["trigger_time"]
+		gossiper_dialogue = current_gossiping_segment["dialogue"]
 		current_dialogue_segment = gossiper_dialogue[0]
 		internal_activation_timer.start(activation_time)
 		
@@ -85,12 +90,12 @@ func _on_internal_activation_timer_timeout() -> void:
 	# make sure gossip exists
 	var gossip_exists = false
 	for gossip in gossiper_dialogue:
-		if gossip["part"] == (current_dialogue_id):
+		if gossip["ID"] == (current_dialogue_id):
 			gossip_exists = true
 	
 	# if yes it exists, begin yapping
 	if gossip_exists:
-		current_dialogue_segment = gossiper_dialogue[current_dialogue_id - 1]
+		current_dialogue_segment = gossiper_dialogue[current_dialogue_id]
 		var new_timeout = _get_dialogue_seconds(current_dialogue_segment["dialogue"])
 		#print(new_timeout)
 		

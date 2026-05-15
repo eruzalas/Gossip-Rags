@@ -190,7 +190,7 @@ func _get_closest_player() -> CharacterBody3D:
 # wait why the fuck is this in NPC and not in GossiperComponent?
 # ill fix later hahahahhahahhahauhesagusdfbhjdsajhdsa
 func _pathfind_to_gossip_position(gossip: Dictionary) -> void:
-	var extracted_pos = gossip["path_position"]
+	var extracted_pos = gossip["position"]
 	# uncomment this later when json fixed
 	#var gossip_location: Vector3 = Vector3(extracted_pos[0], extracted_pos[1], extracted_pos[2])
 	#_set_movement_target(gossip_location)
