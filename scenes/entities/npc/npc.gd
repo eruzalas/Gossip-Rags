@@ -23,38 +23,38 @@ class_name Npc
 
 # export vars
 @export var debug_mode: bool = true
-
 @export_group("Type")
 @export var npc_type: Enums.NpcType = Enums.NpcType.STATIONARY
 @export var gossiper_ID: int = 0
 @export var npc_allowed_zone_layers: Array[int] = []
-
 @export_group("Timer Control")
 	# vars controlling waiting periods
 @export var min_look_time_elapsed: float = 5.0
 @export var max_look_time_elapsed: float = 10.0
 @export var min_wander_wait: float = 5.0
 @export var max_wander_wait: float = 10.0
-
 @export_group("Attention and Suspicion")
 @export var base_attention_rise: float = 2.0
 @export var base_suspicion_rise: float = 2.0
 @export var attention_multiplier: float = 1.0
 @export var suspicion_multiplier: float = 1.0
 
+# signals
 signal npc_status_changed(new_status: Enums.NpcState)
 signal player_in_range(is_in_range: bool)
 
+# runtime vars
 var looking_at_entity: bool = false
 var target_look_position: Vector3 = Vector3.ZERO
 var has_active_target = false
-
 var players: Array
 
+# custom setters to automatically handle signal emitting too
 var in_listening_range = false:
 	set(value):
 		in_listening_range = value
 		player_in_range.emit(in_listening_range)
+		# if gossiper, broadcast across world via SignalBus
 		if npc_type == Enums.NpcType.GOSSIPER:
 			var gossiper_listening = in_listening_range && current_state == Enums.NpcState.GOSSIPING
 			SignalBus.player_listening_call.emit(self, gossiper_listening)
@@ -63,6 +63,7 @@ var current_state = Enums.NpcState.IDLE:
 	set(value):
 		if current_state != value:
 			# handling gossiping bulllshit when player already in range on state changes
+			# handle the fucking state calculations
 			if current_state == Enums.NpcState.GOSSIPING && in_listening_range:
 				SignalBus.player_listening_call.emit(self, false)
 			

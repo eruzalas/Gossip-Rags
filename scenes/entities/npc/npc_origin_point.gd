@@ -2,6 +2,11 @@ extends Area3D
 
 class_name OriginPoint
 
+# external references
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+@onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
+
+# exported vars
 @export var is_active: bool = false
 @export var group_origin_ID: int = 0
 @export var gen_NPC_number: int = 2
@@ -9,20 +14,19 @@ class_name OriginPoint
 @export var base_movement_chance: float = 0.5
 @export var time_elapse_minimum: int = 5
 
+# load npc prefab for generation
 const npc_prefab = preload("res://scenes/entities/npc/npc.tscn")
-@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var player: CharacterBody3D = get_node("/root/World/Player_ONE")
-@onready var movement_opportunity_timer: Timer = $"Movement Opportunity Timer"
 
 var movement_opportunity_flag: bool = false
 var child_npcs: Array = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 	
+	# origin point can be set to active or inactive - if active run this code
 	if is_active:
 		var i = 0
+		# generate npcs for origin point
 		while i < gen_NPC_number:
 			var new_npc = npc_prefab.instantiate()
 			# https://forum.godotengine.org/t/create-node-at-random-position-in-area-3d/830/2
@@ -33,33 +37,36 @@ func _ready() -> void:
 			var iteration_counter = 0
 			var random_position
 			# check position before setting - to reduce issues with NPC position being too close to another
+			# THERE IS FUCKING PROBLEMS WITH THIS SHIT BUT IM IGNORING IT IDC
 			while valid_position_set != true:
-				if iteration_counter > 10:
-					print("Failed to find appropriate location in 10 iterations.")
-					valid_position_set = true
-					
 				random_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
 				if !_is_position_colliding_with_children(random_position):
 					valid_position_set = true
 					
 				iteration_counter += 1
-				
+			
+			# after valid position found, set global pos to this spot, offset by origin range
 			new_npc.global_position = collision_shape_3d.global_position + _get_random_position_in_annulus()
 			new_npc._set_npc_type(Enums.NpcType.GROUP)
 			i += 1
 			
+		# start movement opportunity timer
 		movement_opportunity_timer.start(_generate_timeout_period())
 	
-
+# check if npcs are too close
 func _is_position_colliding_with_children(unchecked_position: Vector3) -> bool:
 	for child in child_npcs:
 		if child.global_position.distance_to(unchecked_position) < 1.5:
 			return true
 	return false
 
+# return movement flag - ughh this fucking code needs to redone
 func _check_movement_opportunity_status():
 	return movement_opportunity_flag
 
+# unlinked timeout code
+# needs to have suspicion and attention metrics added
+# currently unlinked cuz it wasnt a major thing to be done and plus fucking navmeshes are broken
 func _generate_timeout_period():
 	# retrieve suspicion/attention values - hardcoded for sake of testing
 	var suspicion = 9
@@ -68,9 +75,6 @@ func _generate_timeout_period():
 	var timeout = 2
 	return timeout
 	
-func _refresh_movement_opportunity_timer():
-	movement_opportunity_flag = false
-	movement_opportunity_timer.start(_generate_timeout_period())
 
 func _process(_delta: float) -> void:
 	pass
@@ -101,6 +105,7 @@ func _tell_child_to_move(destination):
 
 # source: https://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly/50746409#50746409
 # and: https://codepen.io/KonradLinkowski/pen/ExjLGxJ
+# auuug annuluses can suck on my ballllllls
 func _get_random_position_in_annulus(include_own_position:bool = false):
 	var x_offset: float = 1.0
 	var z_offset: float = 1.0
