@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b2l68uswvb46x" path="res://assets/magazine/jared_placeholder.png" id="4_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://dvaev7i2552ty" path="res://assets/magazine/sarah_placeholder.png" id="5_m0tqb"]
 [ext_resource type="PackedScene" uid="uid://2eatn2pmbqse" path="res://scenes/components/magazine_components/info_pieces.tscn" id="6_m0tqb"]
+[ext_resource type="PackedScene" uid="uid://bo0scue3cl4p3" path="res://scenes/components/magazine_components/lock_info.tscn" id="7_b0mm3"]
 
 [node name="Magazine" type="Node2D" unique_id=80378607]
 
 [node name="Label Maker" type="TextureButton" parent="." unique_id=49971375]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,71 +37,6 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[font_size=24][center][color=black][b]Add evidence[/b][/color][/center][/font_size]"
 
-[node name="Evidence 1" type="TextureRect" parent="." unique_id=1411384636]
-anchors_preset = -1
-anchor_left = 0.052
-anchor_top = 0.056
-anchor_right = 0.45600003
-anchor_bottom = 0.83400005
-offset_left = 60.096
-offset_top = 180.712
-offset_right = -277.312
-offset_bottom = -186.432
-texture = ExtResource("4_wkjyd")
-expand_mode = 1
-
-[node name="Evidence 4" type="TextureRect" parent="." unique_id=1897306451]
-anchors_preset = -1
-anchor_left = 0.052
-anchor_top = 0.056
-anchor_right = 0.45600003
-anchor_bottom = 0.83400005
-offset_left = 279.096
-offset_top = 258.712
-offset_right = -58.31201
-offset_bottom = -108.43201
-texture = ExtResource("5_m0tqb")
-expand_mode = 1
-
-[node name="Evidence 2" type="RichTextLabel" parent="." unique_id=1438384014]
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.052
-anchor_right = 0.455
-anchor_bottom = 0.836
-offset_left = 33.399998
-offset_top = 27.304
-offset_right = -226.16003
-offset_bottom = -415.72803
-bbcode_enabled = true
-text = "[font_size=32][center][color=black][b]Pregnancy[/b][/color][/center][/font_size]"
-
-[node name="Evidence 3" type="RichTextLabel" parent="." unique_id=538548319]
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.052
-anchor_right = 0.455
-anchor_bottom = 0.836
-offset_left = 238.4
-offset_top = 115.304
-offset_right = -20.160034
-offset_bottom = -305.72803
-bbcode_enabled = true
-text = "[font_size=24][center][color=black][b]Chocolates & Flowers[/b][/color][/center][/font_size]"
-
-[node name="Evidence 5" type="RichTextLabel" parent="." unique_id=1066915609]
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.052
-anchor_right = 0.455
-anchor_bottom = 0.836
-offset_left = 46.399998
-offset_top = 391.30402
-offset_right = -212.16003
-offset_bottom = -29.728027
-bbcode_enabled = true
-text = "[font_size=24][center][color=black][b]Shops[/b][/color][/center][/font_size]"
-
 [node name="Tray" type="Sprite2D" parent="." unique_id=350245428]
 position = Vector2(258.75, 322.87503)
 scale = Vector2(1.0725446, 0.9271956)
@@ -114,5 +51,18 @@ texture = ExtResource("1_2evbi")
 position = Vector2(48, 53)
 sprite = ExtResource("4_wkjyd")
 
-[node name="info_pieces2" parent="." unique_id=652174280 groups=["text"] instance=ExtResource("6_m0tqb")]
-position = Vector2(198, 422)
+[node name="info_pieces2" parent="." unique_id=1856840795 groups=["text"] instance=ExtResource("6_m0tqb")]
+position = Vector2(127, 392)
+
+[node name="info_pieces3" parent="." unique_id=1212795323 groups=["pic"] instance=ExtResource("6_m0tqb")]
+position = Vector2(248, 212)
+sprite = ExtResource("5_m0tqb")
+
+[node name="lock_info" parent="." unique_id=467774183 groups=["lock"] instance=ExtResource("7_b0mm3")]
+position = Vector2(714, 68)
+
+[node name="lock_info2" parent="." unique_id=759481559 groups=["lock"] instance=ExtResource("7_b0mm3")]
+position = Vector2(751, 378)
+
+[node name="lock_info3" parent="." unique_id=274688817 groups=["lock"] instance=ExtResource("7_b0mm3")]
+position = Vector2(936, 201)

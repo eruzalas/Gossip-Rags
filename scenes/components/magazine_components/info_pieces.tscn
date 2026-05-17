@@ -36,3 +36,12 @@ text = "[color=black]Test text for funsies and to see if this is a good way of d
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Text Area2D" unique_id=1101342492]
 position = Vector2(137, 39)
 shape = SubResource("RectangleShape2D_b8ims")
+
+[connection signal="body_entered" from="Info Area2D" to="." method="_on_info_area_2d_body_entered"]
+[connection signal="body_exited" from="Info Area2D" to="." method="_on_info_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Info Area2D" to="." method="_on_info_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Info Area2D" to="." method="_on_info_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Text Area2D" to="." method="_on_text_area_2d_body_entered"]
+[connection signal="body_exited" from="Text Area2D" to="." method="_on_text_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Text Area2D" to="." method="_on_text_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Text Area2D" to="." method="_on_text_area_2d_mouse_exited"]

@@ -8,11 +8,11 @@ size = Vector2(99, 101)
 [node name="lock_info" type="StaticBody2D" unique_id=467774183]
 script = ExtResource("1_8wiuw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=465652937]
-position = Vector2(49.5, 50.5)
-shape = SubResource("RectangleShape2D_8wiuw")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1975756151]
 offset_right = 99.0
 offset_bottom = 101.0
 color = Color(0.5372549, 0.41568628, 0.9411765, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=465652937]
+position = Vector2(49.5, 50.5)
+shape = SubResource("RectangleShape2D_8wiuw")

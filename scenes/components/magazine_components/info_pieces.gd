@@ -15,8 +15,10 @@ extends Node2D
 
 #additional variables
 @export var sprite: Texture2D
-@export var type_info: int
 var my_group: Array
+var is_draggable: bool = false
+var is_in_lock: bool = false
+var body_ref
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,3 +42,56 @@ func _setup() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+#when the cursor hovers over the info
+func _on_cursor_enter():
+	is_draggable = true
+	
+#when the cursor exits hovering over the info
+func _on_mouse_exit():
+	is_draggable = false
+	
+#when the info enters the lock area
+func _on_entered_area_2d_lock(body: StaticBody2D):
+	if(body.is_in_group("lock")):
+		is_in_lock = true
+		body.modulate = Color(Color.REBECCA_PURPLE, 1)
+		body = body_ref
+
+#when the info exits the lock area
+func _on_exit_area_2d_lock(body):
+	if(body.is_in_group("lock")):
+		is_in_lock = false
+		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+
+#connections for pic mouse
+func _on_info_area_2d_mouse_entered() -> void:
+	pass # Replace with function body.
+	
+
+func _on_info_area_2d_mouse_exited() -> void:
+	pass # Replace with function body.
+	
+
+func _on_info_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+	
+
+func _on_info_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
+
+#connections for text mouse
+func _on_text_area_2d_mouse_entered() -> void:
+	pass # Replace with function body.
+	
+
+func _on_text_area_2d_mouse_exited() -> void:
+	pass # Replace with function body.
+	
+
+func _on_text_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+	
+
+func _on_text_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
