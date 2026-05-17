@@ -12,4 +12,4 @@ func _ready() -> void:
 	npc_icon_path = "res://assets/images/npc_sprites/npc_sprite_"
 	npc_rand_dialogue_path = "res://assets/dialogue/npc_rand_dialogue.json"
 	dialogue_bubble_texture_path = "res://assets/dialogue/"
-	gossiper_dialogue_path = "res://assets/dialogue/gossiper_dialogue.json"
+	gossiper_dialogue_path = "res://assets/dialogue/gossiper/gossiper_"

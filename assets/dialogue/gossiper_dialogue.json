@@ -1,184 +1,977 @@
 {
 	"1": {
-		"trigger_time": 5,
-		"dialogue": [
+		"segment": [
 			{
 				"part": 1,
-				"origin": "1",
-				"path_position" : [ -11, 1.5, -23 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "I saw Sarah’s dad, [b]Jared[/b], at the [b]shops[/b] the other day…",
-				"audio_file": "",
+				"trigger_time": 5,
+				"dialogue": [
+					{
+						"ID": 1,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "I was working at the shop the other day...",
+						"audio_file": ""
+					},
+					{
+						"ID": 2,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Oh? Any interesting customers?",
+						"audio_file": ""
+					},
+					{
+						"ID": 3,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Yeah actually, [b]Sarah’s Dad, Jared[/b].",
+						"audio_file": ""
+					},
+					{
+						"ID": 4,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "OH! It’s been a while since I ran into him.",
+						"audio_file": ""
+					},
+					{
+						"ID": 5,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "I rarely see him in there—oh! [b]Guess what he was buying~[/b]",
+						"audio_file": ""
+					},
+					{
+						"ID": 6,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Beer? Or was it [b][i]something[/i] a bit more...[i]interesting~[/i][/b]",
+						"audio_file": ""
+					},
+					{
+						"ID": 7,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Would [b]chocolates, flowers, and a [i]pregnancy test[/i][/b] count?",
+						"audio_file": ""
+					},
+					{
+						"ID": 8,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "[i]Hell yeah[/i] that does! Good for Sarah’s parents, married so many years and still happy!",
+						"audio_file": ""
+					},
+					{
+						"ID": 9,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "[i]Well..[/i].",
+						"audio_file": ""
+					},
+					{
+						"ID": 10,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Oh my god, don’t tell me—",
+						"audio_file": ""
+					},
+					{
+						"ID": 11,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "He [b]wasn’t wearing his wedding ring[/b]...",
+						"audio_file": ""
+					},
+					{
+						"ID": 12,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Oh [i]damn...[/i]",
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 2,
-				"origin": "2",
-				"path_position" : [ -11, 1.5, -23 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "Oh, really? What was he doing?",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": 13,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "You know...now that I think about it, I also saw [b]Sarah’s Mum, Ariel[/b], recently...",
+						"audio_file": ""
+					},
+					{
+						"ID": 14,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "The plot thickens?",
+						"audio_file": ""
+					},
+					{
+						"ID": 15,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Yeah actually, I asked her [b]bout the ring[/b].",
+						"audio_file": ""
+					},
+					{
+						"ID": 16,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "[i]No you didn’t![/i] Getting yourself right into the middle of family drama.",
+						"audio_file": ""
+					},
+					{
+						"ID": 17,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "[i]Hey![/i] She said he [b]just broke it[/b].",
+						"audio_file": ""
+					},
+					{
+						"ID": 18,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "No chance it [i]‘just[/i]’ broke, that had to be [b]on purpose[/b].",
+						"audio_file": ""
+					},
+					{
+						"ID": 19,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "[b]Broken ring[/b] and a [b]pregnancy test[b]? Sells like bull to me.",
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 3,
-				"origin": "1",
-				"path_position" : [ -9, 1.5, -32 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "I caught him [b]buying a pregnancy test[b] as well as [b]chocolates and flowers[/b].",
-				"audio_file": "",
-			},
-			{
-				"part": 4,
-				"origin": "2",
-				"path_position" : [ -9, 1.5, -32 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "Ohhh? Do you this Sarah might be getting a sib?",
-				"audio_file": "",
-			},
-			{
-				"part": 5,
-				"origin": "1",
-				"path_position" : [ 8, 1.5, -30 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "Maybe~ Just what I saw…",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": 20,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Do you think it was a[b][i] Sugar baby[/i][/b] kinda deal?",
+						"audio_file": ""
+					},
+					{
+						"ID": 21,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Surely, sorry Jared but he is not the prettiest tool in the shed.",
+						"audio_file": ""
+					},
+					{
+						"ID": 22,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "I think he got [b]put on hold[/b] as well.",
+						"audio_file": ""
+					},
+					{
+						"ID": 23,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "Whenever I saw him after his shop, he was [b][i]constantly[/i] checking his phone[/b]!",
+						"audio_file": ""
+					},
+					{
+						"ID": 24,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "And you don’t think it was Ariel he was waiting for?",
+						"audio_file": ""
+					},
+					{
+						"ID": 25,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": "No way! He would [b]still be checking with his wife there[/b].",
+						"audio_file": ""
+					}
+				]
 			}
-		],
+		]
 	},
+
+
+
+
+
 	"2": {
-		"trigger_time": 15,
-		"dialogue": [
+		"segment": [
 			{
 				"part": 1,
-				"origin": "1",
-				"path_position" : [ 20, 1.5, -15 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh, there was that [b]interesting case[/b] my cousin mentioned the other day...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s promising, he always has the best stories!” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “It’s actually [b]related to Sarah...[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “No. Way. Did they [i]finally[/i] catch her for something?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Well[/i]...not [i]her[/i], she was listed as [b]the victim of the case.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Ain’t no way, for what?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Something tried to [b]break into her house and off her.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s terrible! But she looks completely fine?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Well she [b]won the knife fight[/b] but get this-” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh my [i]god[/i].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “-considering the...[b]body count[/b] [i]rumour[/i]...” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 2,
-				"origin": "2",
-				"path_position" : [ 20, 1.5, -5 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You know...he was said [b]to have a husband...[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Shut. Up. [i]No way![/i]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I mean is it [i]really[/i] shocking? Look at the people she surrounds herself with...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]True[/i]...although...I don’t think she knows [b]he had a husband[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I don’t think she knows that’s the [b]reason she was even targeted[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Probably has no idea that she was [b]‘the other woman’[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Should[/i] we say something?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Ehh, you know the [b]rules of the After Dark[/b], I say the same applies here.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “This [i]isn’t[/i] Serenade business though, well as far as [i]we[/i] know.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s the [b]entire point of the rules, anonymous fun[/b] has to be, well, [i]anonymous[/i].” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 3,
-				"origin": "1",
-				"path_position" : [ 20, 1.5, -5 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
-				"audio_file": "",
-			},
-			{
-				"part": 4,
-				"origin": "2",
-				"path_position" : [ 20, 1.5, -5 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "LKJ<FDNS<MNF<M",
-				"audio_file": "",
-			},
-			{
-				"part": 5,
-				"origin": "1",
-				"path_position" : [ 20, 1.5, -5 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Did you cousin have any other tea on Chris?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Oh[/i] yeah, he wasn’t just [b]cheated on, he [i]cheated[/i] first.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Ohhhh~[/i] So [i]he[/i] was the homewrecker, or at least at first.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Not just that! Get this, there’s some rumours that [b]he may have got a girl pregnant[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Buuuuuut, I also heard that might have been a [b]ploy to get money outta him[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oof, I would [i]not[/i] want an attempted murderer as my Baby Daddy.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You and me [i]both[/i].” 
+						"audio_file": ""
+					}
+				]
 			}
-		],
+		]
 	},
+
+
+
+
+
 	"3": {
-		"trigger_time": 25,
-		"dialogue": [
+		"segment": [
 			{
 				"part": 1,
-				"origin": "1",
-				"path_position" : [ 5, 43.7, -86 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Do you know what’s going on with Eva?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I keep seeing her [b]go off and whisper to Talia[/b] every now and then...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You didn’t know? [b]Talia’s a regular at the bar Eva works at[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Still, odd pairing those two, completely different personalities.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Ehh, [b]Talia helped her out[/b] with [b]some old guy hitting on her[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “And I think [b]Eva helped?[/b] She did something back.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Hmm, I’ll see if I can sniff out some more tea.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I’ll go ask Sandra, she should be wearing [b][insert costume here][/b].” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 2,
-				"origin": "2",
-				"path_position" : [ 5, 43.7, -86 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Hey Sandy, do you remember [b]what’s the deal between Eva and Talia[/b]?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Ohhh~[/i] The deal with the both of them is [i]juicy~[/i]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You’re [i]killing[/i] me Sandy.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Okay, okay. So we all know [b]Eva has the hots for Cathy[/b], right?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “And [b]Cathy’s sister is [i]helping?[/i][/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Please[/i], we both know [b]Talia doesn’t anything for free[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[b]Eva set her up with her current Sugar Daddy[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh, set up for set up...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Exactly[/i], she apparently needed the help after her [b]last failed one[/b].” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 3,
-				"origin": "1",
-				"path_position" : [ 10, 43.7, -80 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
-				"audio_file": "",
-			},
-			{
-				"part": 4,
-				"origin": "2",
-				"path_position" : [ 10, 43.7, -80 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "LKJ<FDNS<MNF<M",
-				"audio_file": "",
-			},
-			{
-				"part": 5,
-				"origin": "1",
-				"path_position" : [ 10, 43.7, -80 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “So, because of that...Eva set them up?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Yup. Imagine fumbling a man like that.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Honestly, although from what I heard [b]Talia dodged a bullet[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Yeah, I mean [b]guy was already a red flag[/b]. What with the way he just [b]snapped[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “And yet Talia still [b]went after that bag and clout over stability[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Still, didn’t think Eva was the type to [b]set this kinda thing up to save her own skin[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Yeah! Like, [b]setting up your crush's sister with her bestie's dad?[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s a whole [i]‘nother[/i] level of messy!” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Well better Talia then her right? Didn’t he [b]flirt with Eva first?[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh my [i]god[/i]. He [i]did[/i]!” 
+						"audio_file": ""
+					}
+				]
 			}
 		]
 	},
+
+
+
+
+
+
 	"4": {
-		"trigger_time": 30,
-		"dialogue": [
+		"segment": [
 			{
 				"part": 1,
-				"origin": "1",
-				"path_position" : [ -5, -42, 65 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh, there was that [b]interesting case[/b] my cousin mentioned the other day...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s promising, he always has the best stories!” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “It’s actually [b]related to Sarah...[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “No. Way. Did they [i]finally[/i] catch her for something?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Well[/i]...not [i]her[/i], she was listed as [b]the victim of the case.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Ain’t no way, for what?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Something tried to [b]break into her house and off her.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s terrible! But she looks completely fine?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Well she [b]won the knife fight[/b] but get this-” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oh my [i]god[/i].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “-considering the...[b]body count[/b] [i]rumour[/i]...” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 2,
-				"origin": "2",
-				"path_position" : [ -5, -42, 65 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You know...he was said [b]to have a husband...[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Shut. Up. [i]No way![/i]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I mean is it [i]really[/i] shocking? Look at the people she surrounds herself with...” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]True[/i]...although...I don’t think she knows [b]he had a husband[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “I don’t think she knows that’s the [b]reason she was even targeted[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Probably has no idea that she was [b]‘the other woman’[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Should[/i] we say something?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Ehh, you know the [b]rules of the After Dark[/b], I say the same applies here.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “This [i]isn’t[/i] Serenade business though, well as far as [i]we[/i] know.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “That’s the [b]entire point of the rules, anonymous fun[/b] has to be, well, [i]anonymous[/i].” 
+						"audio_file": ""
+					}
+				]
 			},
 			{
 				"part": 3,
-				"origin": "1",
-				"path_position" : [ -5, -42, 65 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
-				"audio_file": "",
-			},
-			{
-				"part": 4,
-				"origin": "2",
-				"path_position" : [ -5, -42, 65 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "LKJ<FDNS<MNF<M",
-				"audio_file": "",
-			},
-			{
-				"part": 5,
-				"origin": "1",
-				"path_position" : [ -5, -42, 65 ],
-				"bubble_icon": "dialogue_normal.png",
-				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
-				"audio_file": "",
+				"trigger_time": 10,
+				"dialogue": [
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Did you cousin have any other tea on Chris?” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Oh[/i] yeah, he wasn’t just [b]cheated on, he [i]cheated[/i] first.[/b]” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “[i]Ohhhh~[/i] So [i]he[/i] was the homewrecker, or at least at first.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Not just that! Get this, there’s some rumours that [b]he may have got a girl pregnant[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "LISTENER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Buuuuuut, I also heard that might have been a [b]ploy to get money outta him[/b].” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “Oof, I would [i]not[/i] want an attempted murderer as my Baby Daddy.” 
+						"audio_file": ""
+					},
+					{
+						"ID": ,
+						"origin": "GOSSIPER",
+						"position" : [ 0, 0, 0 ],
+						"bubble_icon": "dialogue_normal.png",
+						"dialogue": “You and me [i]both[/i].” 
+						"audio_file": ""
+					}
+				]
 			}
 		]
 	},
+
+
+
+
+
 	"5": {
 		"trigger_time": 40,
 		"dialogue": [
@@ -188,7 +981,7 @@
 				"path_position" : [ 15, 1.5, -38 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 2,
@@ -196,7 +989,7 @@
 				"path_position" : [ 15, 1.5, -38 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 3,
@@ -204,7 +997,7 @@
 				"path_position" : [ 15, 1.5, -38 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 4,
@@ -212,7 +1005,7 @@
 				"path_position" : [ 15, 1.5, -38 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "LKJ<FDNS<MNF<M",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 5,
@@ -220,7 +1013,7 @@
 				"path_position" : [ 15, 1.5, -38 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
-				"audio_file": "",
+				"audio_file": ""
 			}
 		]
 	},
@@ -233,7 +1026,7 @@
 				"path_position" : [ -17.5, 1.5, -27 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "HKFJHKJDSAKAJGLKJELKJSF",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 2,
@@ -241,7 +1034,7 @@
 				"path_position" : [ -17.5, 1.5, -27 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "KHDKJHCKJHSAKJHCKJHASKCJHAKJHCKADJLKAJDLWJJALKSJDFLKJ",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 3,
@@ -249,7 +1042,7 @@
 				"path_position" : [ -17.5, 1.5, -27 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "ENDMN<BEFB<MDLKJV:ODVKLKSJWDKJFHSJKF",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 4,
@@ -257,7 +1050,7 @@
 				"path_position" : [ -17.5, 1.5, -27 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "LKJ<FDNS<MNF<M",
-				"audio_file": "",
+				"audio_file": ""
 			},
 			{
 				"part": 5,
@@ -265,7 +1058,7 @@
 				"path_position" : [ -17.5, 1.5, -27 ],
 				"bubble_icon": "dialogue_normal.png",
 				"dialogue": "JBJHBKJNCMNDLCPOEOEPOIEJRHTJJ<JHKHIUSYIUHHCLKSJ",
-				"audio_file": "",
+				"audio_file": ""
 			}
 		]
 	}

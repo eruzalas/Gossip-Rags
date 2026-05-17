@@ -1,0 +1,238 @@
+{
+	"gossip": [
+		{
+			"part": 1,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yeah, I’ve [b]met a [i]lot[/i] of people recently[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hmm, yeah, you were quite hard to catch up with.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I know, but lemme tell you about [b]this guy I met[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Ohh~[/i] what [i]kind[/i] of guy?",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh, he was this absolute [b][i]hunk[/i][/b], and get this, [i]totally[/i] part of the Serenade.",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh my god, you were [i]totally[/i] [b]trying to get in[/b] through him!",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Guilty as charged~ I overheard he [b]recently joined[/b] as well...",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 2,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Girl, are you [b]not drinking tonight[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Urgh, [i]I wish[/i], [b]I can’t[/b] though, doctors' orders.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh no! Are you feeling alright?",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yeah...I’m [b]not [i]sick[/i] or anything[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "But you can’t drink-[i]oh my god[/i]! Are you...?",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hehe, yeah, but keep it on the downlow!",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "My lips are [i]sealed[/i]! Congratulations!",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Thank you! [b]Wish I could say it was planned[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "There’s a [i]messy[/i] story there...",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 3,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "So, what’s the deal with those [b]guys you’ve been seeing[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Okay, so, I fooled around with the one guy who [b]recently joined the Serenade[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And that ended up going...?",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Ugh, not well, he [b]totally ghosted me[/b]. Something about [b]his husband[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "What? [i]You?[/i] Also, [b][i]husband[/i][/b]? You [i]sly dog[/i]!",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Teehe~[/i] He [b]wasn’t the only one[/b] either, the next guy [b]had a wife[/b].", 
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh my [i]god[/i] Talia!",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hey, he approached [i]me[/i], and he [b]wasn’t wearing his wedding ring[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Ah, he’s [i]one of those sorts[/i]...did he at least treat you right?",
+					"audio_file": ""
+				},
+				{
+					"ID": 9,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh [i]absolutely[/i]! I would not stay if he wasn’t a [b]good Sugar Daddy[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 10,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I certainly got some good [b]chocolates and flowers[/b] out of it!",
+					"audio_file": ""
+				}
+			]
+		}
+	]
+}

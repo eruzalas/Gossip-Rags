@@ -6,6 +6,7 @@ extends Node
 # gossiper related calls
 signal player_listening_call(gossiper_npc: Npc, listening_status: bool)
 signal incremented_timeline(bar_num: int, value: float)
+signal update_timeline(bar_num: int, active: bool, segment_number: int, leeway_value: float)
 
 
 # suspicion related calls

@@ -1,0 +1,238 @@
+{
+	"gossip": [
+		{
+			"part": 1,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Do you know what’s going on with Eva?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I keep seeing her [b]go off and whisper to Talia[/b] every now and then...",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "You didn’t know? [b]Talia’s a regular at the bar Eva works at[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Still, odd pairing those two, completely different personalities.",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Ehh, [b]Talia helped her out[/b] with [b]some old guy hitting on her[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And I think [b]Eva helped?[/b] She did something back.",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hmm, I’ll see if I can sniff out some more tea.",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I’ll go ask Sandra, she should be wearing [b][insert costume here][/b].",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 2,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hey Sandy, do you remember [b]what’s the deal between Eva and Talia[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Ohhh~[/i] The deal with the both of them is [i]juicy~[/i]",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "You’re [i]killing[/i] me Sandy.",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Okay, okay. So we all know [b]Eva has the hots for Cathy[/b], right?",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And [b]Cathy’s sister is [i]helping?[/i][/b]",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Please[/i], we both know [b]Talia doesn’t anything for free[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[b]Eva set her up with her current Sugar Daddy[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh, set up for set up...",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Exactly[/i], she apparently needed the help after her [b]last failed one[/b].",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 3,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "So, because of that...Eva set them up?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yup. Imagine fumbling a man like that.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Honestly, although from what I heard [b]Talia dodged a bullet[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yeah, I mean [b]guy was already a red flag[/b]. What with the way he just [b]snapped[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And yet Talia still [b]went after that bag and clout over stability[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Still, didn’t think Eva was the type to [b]set this kinda thing up to save her own skin[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yeah! Like, [b]setting up your crush's sister with her bestie's dad?[/b]",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "That’s a whole [i]‘nother[/i] level of messy!",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Well better Talia then her right? Didn’t he [b]flirt with Eva first?[/b]",
+					"audio_file": ""
+				},
+				{
+					"ID": 9,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh my [i]god[/i]. He [i]did[/i]!",
+					"audio_file": ""
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,190 @@
+{
+	"gossip": [
+		{
+			"part": 1,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "You know, for a [b]guy ‘Peaches’ brought in[/b], he kinda [b]killed the vibe[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "They definitely [b]were an item[/b] before ‘Peaches’ brought him into the fold.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "This is why partners shouldn’t be allowed to be brought in.",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "The jealousy [b]breaks the anonymity[/b], I can practically feel the awkwardness.",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Right? He was [i]always[/i] [b]glaring[/b] at anyone who [b]dared [i]touch[/i] ‘Peaches’[/b].",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 2,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Do you know what irks me?",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "A lot. But go on.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "The snakes who have [b]find out[/b] about the [b]Serenade[/b] and [b]try to slide right on in[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Pfft. I know who you are talking about. A [b]certain pregnant someone[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "It just-it goes to show [b]new guy[/b] did [i]not[/i] get the [b]memo on the rules[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Like honestly. How hard is the [b]‘first rule of A.D.S. is that there is no A.D.S.’[/b] to understand?",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]And[/i] that [b]everyone is [i]fair game[/i][/b]? [b]No faces[/b], no questions, [b]your business is your own[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Yeah[/i] actually, and now we have a bunch of nobodies trying to get in...",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 3,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Now that I think about it, I [b]haven’t seen[/b] ‘Peaches’ buddy recently...",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And also in the recent events...’Peaches’ basically [b]pushed him onto other people[/b]...",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Well given the clear displays of jealousy...",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "No but, he was also [i]really[/i] [b]getting into the other people[/b] but kept [b]staring at ‘Peaches’[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And now [b]he’s not showing up[/b] to meeting anymore...",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[b]’Peaches’[/b] was the one [b]passing info[/b] to him about that...",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "They [i]TOTALLY[/i] [b]broke up[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Either that, or [b][i]something else[/i][/b] happened to him.",
+					"audio_file": ""
+				}
+			]
+		}
+	]
+}

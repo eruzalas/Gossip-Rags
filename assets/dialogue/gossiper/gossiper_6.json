@@ -1,0 +1,206 @@
+{
+	"gossip": [
+		{
+			"part": 1,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Yeah, [b]Chris[/b] just [b]ran into her[/b] and it went from there.",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Just like that? Wasn’t he [b]obsessed with his husband[/b] only a few [b]weeks prior[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Something [i]must[/i] have happened, some sort of [b]big change[/b] for Chris to just [b]go and cheat[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I heard something about a [b][i]Serenade[/i][/b] at some point...but how could romantic singing do that?",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "What? He hated his husbands singing [i]so much[/i] he decided to tap the next pair of legs he saw?",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hey-don’t shoot me!? I’m only telling you what I heard.",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Besides, the reasoning means so little, nothing forgives cheating!",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 2,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I just kinda feel sorry for [b]Chris’ husband[/b]...",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Well hopefully not too bad, [b]he cheated too[/b] instead of leaving.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Wait. [b]He [i]also[/i] cheated[/b]?!",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I take it back, they were made for each other.",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Although it was only [b]after[/b] he [b]found out about Chris’ cheating[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Ah. Well [b]revenge cheating[/b] is still bad.",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Apparently he’s [b]still with her[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Man, what a mess.",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 3,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "You will not believe what I just overheard.",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh? What was it?",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "That girl [b]Talia[/b], she’s here at the party [b]tonight[/b] right.",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "She was trying to [b]convince Chris of something[/b], I didn’t get to hear.",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "She was trying to get something out of Chris [i]and[/i] [b]knew he was married[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And she [i]still[i/i] went after him?",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Well, objectively Chris [i]is[/i] [b]good-looking[/b] and [b]rich[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Still, [b]considering what happened after[/b]...kinda glad it didn’t work.",
+					"audio_file": ""
+				}
+			]
+		}
+	]
+}

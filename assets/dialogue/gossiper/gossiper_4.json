@@ -1,0 +1,238 @@
+{
+	"gossip": [
+		{
+			"part": 1,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Jackass was so [b]unhappy in his marriage[/b] that he decided he’d [b]try it[/b] with the [b]bar tender[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Ugh, what a weirdo, couldn’t he understand [b]you were working[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Didn’t really matter to him, he was [b]trying it[/b] with [b]everyone[/b] at the bar.",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Gross, such a scummy move to [b]take his ring off[/b] as well.",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "It [b]wasn’t really working[/b], heh, his felt way too much like a creeper.",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And yet...[b][i]Talia?[/i][/b]",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I have no clue, but hey, if homegirl wanted him, I wasn’t gonna get in the way.",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "You didn’t just get outta the way, you basically [b]set up[/b] and [b]wing-manned her[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hey, it got him off my back and also [b]she’s Cathy’s sister[/b]!",
+					"audio_file": ""
+				},
+				{
+					"ID": 9,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And you just needed to get on her good side so maybe she’ll put in a [i]good word~[/i]",
+					"audio_file": ""
+				},
+				{
+					"ID": 10,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Sh-Shut up! It worked, didn’t it? [b]Talia promised to help[/b]...",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 2,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "[i]Hey Eva~[/i] Certainly looking cute tonight!",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Oh Talia, hey, you’re looking lovely as well.",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Cathys in tonight~ Now would be a fantastic time to...",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "That’s way too soon! We haven’t even talked in a while!",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I’m not like you...I can’t just swagger my way into relationships.",
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Hey now, I easily [b]failed in my endeavors[/b] as well, the very [b]reason I ended up[/b] in that [b]bar[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "But even then, I [i]did[/i] manage to still have my fun.",
+					"audio_file": ""
+				},
+				{
+					"ID": 7,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And besides, this is [b]my sister[/b] we are talking about, she’s basically [b]head over heels[/b] for you.",
+					"audio_file": ""
+				},
+				{
+					"ID": 8,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "If your certain...",
+					"audio_file": ""
+				}
+			]
+		},
+		{
+			"part": 3,
+			"trigger_time": 10,
+			"dialogue": [
+				{
+					"ID": 0,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I’m surprised that his [b]wife[/b] never found out, he’s so obvious with his cheating.",
+					"audio_file": ""
+				},
+				{
+					"ID": 1,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "I actually [b]think she did[/b], or was at least [b]suspicious[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 2,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Some [b]lady named Ariel[/b] came in and showed me a [b]picture of him[/b].",
+					"audio_file": ""
+				},
+				{
+					"ID": 3,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "No way. Did you tell her?",
+					"audio_file": ""
+				},
+				{
+					"ID": 4,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "Somewhat, I [b]told her he’d been there[/b].", 
+					"audio_file": ""
+				},
+				{
+					"ID": 5,
+					"origin": "LISTENER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "And the [b]stuff with Talia[/b]?",
+					"audio_file": ""
+				},
+				{
+					"ID": 6,
+					"origin": "GOSSIPER",
+					"position" : [ 0, 0, 0 ],
+					"bubble_icon": "dialogue_normal.png",
+					"dialogue": "...no.",
+					"audio_file": ""
+				}
+			]
+		}
+	]
+}
