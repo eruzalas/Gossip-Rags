@@ -5,39 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://cenkmgockp7ia" path="res://assets/magazine/label_printer_placeholder.png" id="3_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://b2l68uswvb46x" path="res://assets/magazine/jared_placeholder.png" id="4_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://dvaev7i2552ty" path="res://assets/magazine/sarah_placeholder.png" id="5_m0tqb"]
+[ext_resource type="PackedScene" uid="uid://2eatn2pmbqse" path="res://scenes/components/magazine_components/info_pieces.tscn" id="6_m0tqb"]
 
 [node name="Magazine" type="Node2D" unique_id=80378607]
-
-[node name="Magazine Page" type="TextureRect" parent="." unique_id=553412869]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.006
-offset_left = 651.0
-offset_top = 31.0
-offset_right = -24.0
-offset_bottom = -44.888
-texture = ExtResource("1_2evbi")
-expand_mode = 1
-
-[node name="Evidence Tray" type="TextureRect" parent="." unique_id=207898057]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.006
-offset_left = 54.0
-offset_top = 31.0
-offset_right = -621.0
-offset_bottom = -104.888
-texture = ExtResource("2_gqbng")
-expand_mode = 1
 
 [node name="Label Maker" type="TextureButton" parent="." unique_id=49971375]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 71.0
-offset_top = 566.0
-offset_right = -635.0
-offset_bottom = 5.0
+offset_left = -282.0
+offset_top = 285.5
+offset_right = -282.0
+offset_bottom = 285.5
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_wkjyd")
@@ -48,10 +27,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = 23.0
-offset_right = -22.0
-offset_bottom = -25.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -121,3 +99,17 @@ offset_right = -212.16003
 offset_bottom = -29.728027
 bbcode_enabled = true
 text = "[font_size=24][center][color=black][b]Shops[/b][/color][/center][/font_size]"
+
+[node name="Tray" type="Sprite2D" parent="." unique_id=350245428]
+position = Vector2(258.75, 322.87503)
+scale = Vector2(1.0725446, 0.9271956)
+texture = ExtResource("2_gqbng")
+
+[node name="Magazine Page" type="Sprite2D" parent="." unique_id=46340658]
+position = Vector2(886, 319)
+scale = Vector2(1.0401785, 0.9237288)
+texture = ExtResource("1_2evbi")
+
+[node name="info_pieces" parent="." unique_id=1536340139 instance=ExtResource("6_m0tqb")]
+position = Vector2(48, 53)
+sprite = ExtResource("4_wkjyd")
