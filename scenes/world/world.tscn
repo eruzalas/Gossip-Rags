@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cexx5e3yuwn2n" path="res://scenes/world/camera_detect_wall.gd" id="17_kx0xk"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
+[ext_resource type="Script" uid="uid://lrddp5nk51ww" path="res://scenes/systems/sus_manager.gd" id="21_sygq6"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
@@ -1240,21 +1241,6 @@ outline_color = Color(0.6968401, 3.5039186e-05, 0.5270324, 1)
 
 [node name="World" type="Node3D" unique_id=783765433]
 script = ExtResource("1_bq33v")
-
-[node name="item_collectable" parent="." unique_id=1933756928 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.642555, 1, -9.155)
-item = ExtResource("3_x0nq1")
-
-[node name="item_collectable2" parent="." unique_id=1836070800 instance=ExtResource("2_xq18t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.879, 1, -17.578)
-item = ExtResource("4_x0nq1")
-
-[node name="Player_ONE" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("5_5fxch")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-
-[node name="Player_TWO" parent="." unique_id=1837211296 groups=["players"] instance=ExtResource("5_5fxch")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.293, 0, 0.472)
-player_ID = 1
 
 [node name="Optimisation Metric Display" type="CanvasLayer" parent="." unique_id=1770815078]
 
@@ -3225,48 +3211,12 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="stationary NPC 1" parent="." unique_id=981572405 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.789, 1.5, -2.295)
-debug_mode = null
-npc_type = null
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="stationary NPC 2" parent="." unique_id=1281532514 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.548, 1.5, -21.152)
-debug_mode = null
-npc_type = null
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="stationary NPC 3" parent="." unique_id=869678440 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.398865, 1.5083423, -33.52036)
-debug_mode = null
-npc_type = null
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GROUP NPCS" type="Node" parent="." unique_id=358091135]
 
@@ -3296,173 +3246,67 @@ max_NPC_number = 3
 
 [node name="wander NPC 1" parent="." unique_id=1893472972 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.469, 1.5, 1.734)
-debug_mode = null
 npc_type = 1
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="wander NPC 2" parent="." unique_id=1293646166 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.783, 1.5, -10.658)
-debug_mode = null
 npc_type = 1
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="wander NPC 3" parent="." unique_id=1910700534 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.304, 1.5, -35.499)
-debug_mode = null
 npc_type = 1
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="wander NPC 4" parent="." unique_id=1312555435 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.767, 1.5, -5.172)
-debug_mode = null
 npc_type = 1
-gossiper_ID = null
-npc_allowed_zone_layers = null
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="WANDER ZONE NPCS" type="Node" parent="." unique_id=1848413065]
 
 [node name="wander zone NPC 1" parent="." unique_id=1260027074 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66725993, 1.5, -24.521)
-debug_mode = null
 npc_type = 2
-gossiper_ID = null
 npc_allowed_zone_layers = Array[int]([1])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 1" parent="." unique_id=1817096426 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, -23)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 1
 npc_allowed_zone_layers = Array[int]([1])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 2" parent="." unique_id=1562508470 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.5, -15)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 2
 npc_allowed_zone_layers = Array[int]([1])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 3" parent="." unique_id=125182183 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 43.7, -86)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 3
 npc_allowed_zone_layers = Array[int]([13])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 4" parent="." unique_id=267999522 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -42.051, 65)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 4
 npc_allowed_zone_layers = Array[int]([9])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 5" parent="." unique_id=219192584 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5, -38)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 5
 npc_allowed_zone_layers = Array[int]([2])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
 [node name="GOSSIP NPC BAR 6" parent="." unique_id=766525897 instance=ExtResource("5_5qq27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.551, 1.5, -27)
-debug_mode = null
 npc_type = 4
 gossiper_ID = 6
 npc_allowed_zone_layers = Array[int]([2])
-min_look_time_elapsed = null
-max_look_time_elapsed = null
-min_wander_wait = null
-max_wander_wait = null
-base_attention_rise = null
-base_suspicion_rise = null
-attention_multiplier = null
-suspicion_multiplier = null
 
-[node name="CameraManager" type="Node3D" parent="." unique_id=957882876]
+[node name="CameraManager" type="Node3D" parent="." unique_id=957882876 node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("12_rwifv")
+player1 = NodePath("../Player_ONE")
+player2 = NodePath("../Player_TWO")
 
 [node name="View" type="TextureRect" parent="CameraManager" unique_id=914826662]
 material = SubResource("ShaderMaterial_2x71e")
@@ -3649,12 +3493,8 @@ offset_bottom = -207.0
 bbcode_enabled = true
 text = "[center][color=black][b]Resume[/b][/color][/center]"
 
-[node name="Suspicion System" type="Node" parent="." unique_id=616305401]
-unique_name_in_owner = true
-script = ExtResource("20_d0ajt")
-wary_thresh = 50
-alert_thresh = 80
-max_thresh = 100
+[node name="baby_oil" parent="." unique_id=1184009151 instance=ExtResource("34_fymcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4885087, -0.16634738, 0)
 
 [node name="Attention System" type="Node" parent="." unique_id=1550473888]
 unique_name_in_owner = true
@@ -3662,9 +3502,40 @@ script = ExtResource("21_fymcc")
 reset_thresh = 30
 sus_thresh = 80
 
+[node name="Suspicion System" type="Node" parent="." unique_id=616305401]
+unique_name_in_owner = true
+script = ExtResource("20_d0ajt")
+wary_thresh = 50
+alert_thresh = 80
+max_thresh = 100
+
 [node name="Game State Manager" type="Node" parent="." unique_id=1281440516]
 unique_name_in_owner = true
 script = ExtResource("32_lbnhc")
+
+[node name="SusManager" type="Node" parent="." unique_id=1525877004]
+unique_name_in_owner = true
+script = ExtResource("21_sygq6")
+wary_thresh = 50.0
+alert_thresh = 80.0
+max_thresh = 100.0
+
+[node name="GUI" parent="." unique_id=1597458833 instance=ExtResource("34_lbnhc")]
+
+[node name="Player_ONE" parent="." unique_id=1934454904 groups=["players"] instance=ExtResource("5_5fxch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Player_TWO" parent="." unique_id=1837211296 groups=["players"] instance=ExtResource("5_5fxch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.293, 0, 0.472)
+player_ID = 1
+
+[node name="item_collectable" parent="." unique_id=1933756928 instance=ExtResource("2_xq18t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.642555, 1, -9.155)
+item = ExtResource("3_x0nq1")
+
+[node name="item_collectable2" parent="." unique_id=1836070800 instance=ExtResource("2_xq18t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.879, 1, -17.578)
+item = ExtResource("4_x0nq1")
 
 [node name="item_collectable3" parent="." unique_id=1334551701 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.109, 0.2, -2.729)
@@ -3673,9 +3544,6 @@ item = ExtResource("28_2x71e")
 [node name="item_collectable4" parent="." unique_id=1486121612 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.61088, 1, -2.0949178)
 item = ExtResource("29_wnndm")
-
-[node name="baby_oil" parent="." unique_id=1184009151 instance=ExtResource("34_fymcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4885087, -0.16634738, 0)
 
 [node name="item_collectable5" parent="." unique_id=1732482437 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8503275, 0.075511456, 2.306306)
@@ -3704,8 +3572,6 @@ item = ExtResource("39_kx0xk")
 [node name="item_collectable11" parent="." unique_id=33445408 instance=ExtResource("2_xq18t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6829793, 0.07551098, 1.2410622)
 item = ExtResource("40_5fxch")
-
-[node name="GUI" parent="." unique_id=1597458833 instance=ExtResource("34_lbnhc")]
 
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToUp" to="Environment (NavMesh)/Portals/DownToUp" method="_on_body_entered"]
 [connection signal="body_entered" from="Environment (NavMesh)/Portals/DownToBasement" to="Environment (NavMesh)/Portals/DownToBasement" method="_on_body_entered"]

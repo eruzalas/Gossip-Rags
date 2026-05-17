@@ -117,6 +117,7 @@ func pickup():
 		drop(old_costume)
 	new_costume.remove()
 	update_stats()
+	#print(new_costume.name)
 	#$inventory_ui.update() #debug UI, not really important (also unfinished lol)
 	if (!is_empty):
 		toggle_selected()

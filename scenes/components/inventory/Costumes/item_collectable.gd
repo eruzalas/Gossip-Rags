@@ -3,6 +3,7 @@ extends Node3D
 @export var item: costume
 var players_in_range = []
 var collected = false
+
 func _ready():
 	if (!item):
 		queue_free() # destroys the collectable if no costume assigned

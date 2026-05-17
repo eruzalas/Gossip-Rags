@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5csjinbsck85" path="res://scenes/entities/player/player.gd" id="1_g2els"]
 [ext_resource type="SpriteFrames" uid="uid://bpqyakqqyurql" path="res://assets/testsprites/player2_AM/player2_spriteframes.tres" id="2_635qg"]
+[ext_resource type="Script" uid="uid://cvdwiahg87od1" path="res://scenes/systems/sus_component.gd" id="3_58kc7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58kc7"]
 size = Vector3(1, 1, 0.23046875)
@@ -13,6 +14,9 @@ radius = 5.0
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_g2els")
+
+[node name="SusComponent" type="Node3D" parent="." unique_id=1915246010]
+script = ExtResource("3_58kc7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=365335817]
 no_depth_test = true

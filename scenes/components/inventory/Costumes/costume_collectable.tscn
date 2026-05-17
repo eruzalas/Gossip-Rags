@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://68s4y85p8gpm"]
 
 [ext_resource type="Script" uid="uid://dctf3cbwo7ix0" path="res://scenes/components/inventory/Costumes/item_collectable.gd" id="1_xv1bf"]
+[ext_resource type="Script" uid="uid://cvdwiahg87od1" path="res://scenes/systems/sus_component.gd" id="2_3wq3e"]
 [ext_resource type="Texture2D" uid="uid://npofle3s271" path="res://assets/testsprites/costumes_AM/placeholder.png" id="2_wbokh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3wq3e"]
@@ -8,6 +9,9 @@ radius = 0.9
 
 [node name="item_collectable" type="Node3D" unique_id=1933756928]
 script = ExtResource("1_xv1bf")
+
+[node name="SusComponent" type="Node3D" parent="." unique_id=1005914209]
+script = ExtResource("2_3wq3e")
 
 [node name="placeholder_sprite" type="Sprite3D" parent="." unique_id=1490945758]
 pixel_size = 0.0078125

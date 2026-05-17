@@ -3,10 +3,10 @@ extends Node3D
 @export var max_separation: float = 7.0
 @export var split_line_thickness: float = 3.0
 @export var split_line_color: Color = Color.BLACK
+@export var player1: Node
+@export var player2: Node
 
 @onready var isMultiplayer: bool = true 	 #FOR TESTING PURPOSES, use actual signal in menu
-@onready var player1: Node = $"../Player_ONE"
-@onready var player2: Node = $"../Player_TWO"
 @onready var view = $View
 @onready var viewport1: Viewport = $Viewport1
 @onready var viewport2: Viewport = $Viewport2
