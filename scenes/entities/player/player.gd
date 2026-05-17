@@ -32,6 +32,8 @@ var move_speed = 0 #used to handle speed when running/crouching, inputs required
 ##array for storing costumes in interactable range, used to avoid multiplayer issues
 var costume_in_range = []
 
+var new_costume #Defining new_costume, which is the current costume
+
 #unfinished toggle for selecting a costume if multiple are equipped, idea is to be able to choose which one is dropped
 var selected_costume = 0
 
@@ -111,7 +113,7 @@ func pickup():
 		return
 	if(player_inventory.equipment[0]):
 		is_empty = false
-	var new_costume = costume_in_range[0]
+	new_costume = costume_in_range[0]
 	var old_costume = player_inventory.equip(new_costume.item, selected_costume) #equips the new item and returns the old one
 	if (old_costume): #if an item has to be dropped, player needs to spawn it
 		drop(old_costume)

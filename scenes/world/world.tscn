@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://cexx5e3yuwn2n" path="res://scenes/world/camera_detect_wall.gd" id="17_kx0xk"]
 [ext_resource type="Script" uid="uid://ukhcavi444ca" path="res://scenes/systems/sus_meter_system.gd" id="20_d0ajt"]
 [ext_resource type="Script" uid="uid://c561dt8p0110s" path="res://scenes/systems/attention_meter_system.gd" id="21_fymcc"]
-[ext_resource type="Script" uid="uid://lrddp5nk51ww" path="res://scenes/systems/sus_manager.gd" id="21_sygq6"]
+[ext_resource type="Script" uid="uid://lrddp5nk51ww" path="res://scenes/systems/new_system/sus_manager.gd" id="21_sygq6"]
 [ext_resource type="Script" uid="uid://cufajiykllstw" path="res://scenes/world/pause_menu.gd" id="25_26xou"]
 [ext_resource type="Texture2D" uid="uid://dn5jwfuxs3ubf" path="res://assets/ui/button_disabled_placeholder.png" id="25_wnndm"]
 [ext_resource type="Texture2D" uid="uid://b7igtkwwlyoub" path="res://assets/ui/pause_menu_placeholder_button.png" id="26_26xou"]
