@@ -5,9 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cenkmgockp7ia" path="res://assets/magazine/label_printer_placeholder.png" id="3_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://b2l68uswvb46x" path="res://assets/magazine/jared_placeholder.png" id="4_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://dvaev7i2552ty" path="res://assets/magazine/sarah_placeholder.png" id="5_m0tqb"]
-[ext_resource type="PackedScene" uid="uid://2eatn2pmbqse" path="res://scenes/components/magazine_components/info_pieces_portrait.tscn" id="6_m0tqb"]
-[ext_resource type="PackedScene" uid="uid://dxq7gckuppb73" path="res://scenes/components/magazine_components/info_pieces_text.tscn" id="7_b0mm3"]
-[ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="8_qiuyc"]
+[ext_resource type="PackedScene" uid="uid://2eatn2pmbqse" path="res://scenes/components/magazine_components/info_pieces.tscn" id="6_m0tqb"]
 
 [node name="Magazine" type="Node2D" unique_id=80378607]
 
@@ -112,11 +110,9 @@ position = Vector2(886, 319)
 scale = Vector2(1.0401785, 0.9237288)
 texture = ExtResource("1_2evbi")
 
-[node name="info_pieces_portrait" parent="." unique_id=1536340139 instance=ExtResource("6_m0tqb")]
+[node name="info_pieces" parent="." unique_id=1536340139 groups=["pic"] instance=ExtResource("6_m0tqb")]
 position = Vector2(48, 53)
 sprite = ExtResource("4_wkjyd")
 
-[node name="info_pieces_text" parent="." unique_id=252889733 instance=ExtResource("7_b0mm3")]
-position = Vector2(149, 326)
-sprite = ExtResource("8_qiuyc")
-type_info = 1
+[node name="info_pieces2" parent="." unique_id=652174280 groups=["text"] instance=ExtResource("6_m0tqb")]
+position = Vector2(198, 422)
