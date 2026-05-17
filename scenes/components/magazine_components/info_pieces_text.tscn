@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dxq7gckuppb73"]
+
+[ext_resource type="Script" uid="uid://bo6f2vqsv25hq" path="res://scenes/components/magazine_components/info_pieces.gd" id="1_dgyie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a330k"]
+size = Vector2(272, 78)
+
+[node name="info_pieces_text" type="Node2D" unique_id=252889733]
+script = ExtResource("1_dgyie")
+
+[node name="Text Sprite2D" type="Sprite2D" parent="." unique_id=1073148025]
+position = Vector2(137.22, 40.53)
+scale = Vector2(0.23746528, 0.11564815)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1784284405]
+offset_right = 273.0
+offset_bottom = 81.0
+bbcode_enabled = true
+text = "[color=black]Test text for funsies and to see if this is a good way of doing this and if it will work[/color]"
+
+[node name="Text Area2D" type="Area2D" parent="." unique_id=1032696601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Text Area2D" unique_id=1100128941]
+position = Vector2(137, 39)
+shape = SubResource("RectangleShape2D_a330k")
