@@ -16,11 +16,12 @@ var bar_a_num: int  # may need to be changed later for this to be a variable rec
 
 # When the game begins set all the progress bars values to 0
 func _ready() -> void:
-	SignalBus.incremented_timeline.connect(_set_progress_bar_value)
-	print("Number in tea array " + str(tea_bar_array.size()))
-	for tea in tea_bar_array:
-		tea.value == tea.min_value
-		print("PROG IS " +  str(tea.value))
+	pass
+	#SignalBus.incremented_timeline.connect(_set_progress_bar_value)
+	#print("Number in tea array " + str(tea_bar_array.size()))
+	#for tea in tea_bar_array:
+	#	tea.value == tea.min_value
+	#	print("PROG IS " +  str(tea.value))
 
 # Update the indiviual progress bars
 func _process(delta: float) -> void:

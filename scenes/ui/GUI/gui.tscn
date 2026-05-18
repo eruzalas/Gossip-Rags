@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwy23r2u8vqj0" path="res://scenes/gui.gd" id="1_0e313"]
 [ext_resource type="Script" uid="uid://b873n2pxh1g7s" path="res://scenes/timeline_progress.gd" id="2_g7ujo"]
+[ext_resource type="PackedScene" uid="uid://rgbpkioyf431" path="res://scenes/ui/GUI/timeline_component/timeline_bar_prefab/timeline_bar_prefab.tscn" id="3_g7ujo"]
 [ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="3_uut3t"]
-[ext_resource type="Texture2D" uid="uid://b21m8xm8fejjv" path="res://assets/ui/placeholder_progress_fill_1.png" id="4_h2p1c"]
 [ext_resource type="Texture2D" uid="uid://bj5u4f4epj5wn" path="res://assets/ui/placeholder_progress_fill_2.png" id="5_5rqb3"]
 [ext_resource type="Script" uid="uid://c7ixj33suiv1q" path="res://scenes/ui/GUI/timeline.gd" id="5_g7ujo"]
 [ext_resource type="Texture2D" uid="uid://j7ou8uc38l6k" path="res://assets/ui/placeholder_progress_fill_3.png" id="6_f5knn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bj76pbumdkk2w" path="res://assets/ui/placeholder_progress_fill_6.png" id="9_jwpkq"]
 [ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="10_dr5w8"]
 [ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="11_158oo"]
+[ext_resource type="PackedScene" uid="uid://qwtki1ms512r" path="res://scenes/ui/GUI/timeline_component/timeline_component.tscn" id="13_uut3t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ac7o"]
 font_size = 40
@@ -43,13 +44,14 @@ label_settings = SubResource("LabelSettings_8ac7o")
 unique_name_in_owner = true
 
 [node name="Timeline" type="Control" parent="." unique_id=1126224388 node_paths=PackedStringArray("tea_bar_array")]
+visible = false
 layout_mode = 1
 anchor_right = 0.9990001
 anchor_bottom = 1.0
 offset_right = 3.6861572
 offset_bottom = -6.592041
 script = ExtResource("2_g7ujo")
-tea_bar_array = [NodePath("HBoxContainer/Tea Bar 1"), NodePath("HBoxContainer/Tea Bar 2"), NodePath("HBoxContainer/Tea Bar 3"), NodePath("HBoxContainer/Tea Bar 4"), NodePath("HBoxContainer/Tea Bar 5"), NodePath("HBoxContainer/Tea Bar 6"), NodePath("HBoxContainer/Tea Bar 7"), NodePath("HBoxContainer/Tea Bar 8")]
+tea_bar_array = [null, NodePath("HBoxContainer/Tea Bar 2"), NodePath("HBoxContainer/Tea Bar 3"), NodePath("HBoxContainer/Tea Bar 4"), NodePath("HBoxContainer/Tea Bar 5"), NodePath("HBoxContainer/Tea Bar 6"), NodePath("HBoxContainer/Tea Bar 7"), NodePath("HBoxContainer/Tea Bar 8")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Timeline" unique_id=1268281700]
 layout_mode = 1
@@ -66,15 +68,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 5
 
-[node name="Tea Bar 1" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=1834859920]
-custom_minimum_size = Vector2(200, 50)
+[node name="Tea Bar 1" parent="Timeline/HBoxContainer" unique_id=1835427972 instance=ExtResource("3_g7ujo")]
 layout_mode = 2
-step = 0.0
-nine_patch_stretch = true
-texture_under = ExtResource("3_uut3t")
-texture_progress = ExtResource("4_h2p1c")
-script = ExtResource("5_g7ujo")
-self_bar_number = 1
 
 [node name="Tea Bar 2" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=1439581926]
 custom_minimum_size = Vector2(200, 50)
@@ -84,7 +79,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("5_5rqb3")
 script = ExtResource("5_g7ujo")
-self_bar_number = 2
 
 [node name="Tea Bar 3" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=559936368]
 custom_minimum_size = Vector2(200, 50)
@@ -94,7 +88,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("6_f5knn")
 script = ExtResource("5_g7ujo")
-self_bar_number = 3
 
 [node name="Tea Bar 4" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=388184406]
 custom_minimum_size = Vector2(200, 50)
@@ -104,7 +97,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("7_1vruq")
 script = ExtResource("5_g7ujo")
-self_bar_number = 4
 
 [node name="Tea Bar 5" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=835498768]
 custom_minimum_size = Vector2(200, 50)
@@ -114,7 +106,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("8_ehwkb")
 script = ExtResource("5_g7ujo")
-self_bar_number = 5
 
 [node name="Tea Bar 6" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=1750626512]
 custom_minimum_size = Vector2(200, 50)
@@ -124,7 +115,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("9_jwpkq")
 script = ExtResource("5_g7ujo")
-self_bar_number = 6
 
 [node name="Tea Bar 7" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=451844767]
 custom_minimum_size = Vector2(200, 50)
@@ -134,7 +124,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("10_dr5w8")
 script = ExtResource("5_g7ujo")
-self_bar_number = 7
 
 [node name="Tea Bar 8" type="TextureProgressBar" parent="Timeline/HBoxContainer" unique_id=1344868781]
 custom_minimum_size = Vector2(200, 50)
@@ -144,4 +133,17 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("11_158oo")
 script = ExtResource("5_g7ujo")
-self_bar_number = 8
+
+[node name="TimelineComponent" parent="." unique_id=1691984756 instance=ExtResource("13_uut3t")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -870.0
+offset_top = -130.0
+offset_right = 870.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
