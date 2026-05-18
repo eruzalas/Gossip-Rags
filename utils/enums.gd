@@ -22,3 +22,8 @@ enum NpcType {
 	GOSSIPER,
 	SPECIAL,
 }
+
+enum TimelineBarType {
+	OVERALL,
+	SEGMENTED,
+}

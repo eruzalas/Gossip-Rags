@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bp6bat1chlua3"]
+
+[ext_resource type="Script" uid="uid://ebmh6unqmc8" path="res://scenes/ui/GUI/timeline_component/segment_timeline/segmented_timeline.gd" id="1_nxwx6"]
+
+[node name="SegmentedTimeline" type="HBoxContainer" unique_id=1052109499]
+offset_right = 1740.0
+theme_override_constants/separation = 15
+alignment = 1
+script = ExtResource("1_nxwx6")

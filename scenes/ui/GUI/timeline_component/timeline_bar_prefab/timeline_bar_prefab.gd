@@ -1,7 +1,8 @@
 extends TextureProgressBar
 
 # vars to be provided on initialisation in timeline component
-var target_per_part: float
+var target_per_part: float = 100
+var type: Enums.TimelineBarType = Enums.TimelineBarType.OVERALL
 
 # vars for updating progress
 var is_active: bool = false
@@ -9,7 +10,10 @@ var frames_for_target: float = 0
 var current_segment: int = 0
 
 func _ready() -> void:
-	pass
+	if type == Enums.TimelineBarType.OVERALL:
+		custom_minimum_size.x = 180
+	else:
+		custom_minimum_size.x = 60
 
 func _process(delta: float) -> void:
 	if is_active:

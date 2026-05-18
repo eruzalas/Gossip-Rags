@@ -1,7 +1,40 @@
-[gd_scene format=3 uid="uid://qwtki1ms512r"]
+[gd_scene format=3 uid="uid://lyrpksrcr2a6"]
 
-[ext_resource type="Script" uid="uid://dnbg0k3j1f0wa" path="res://scenes/ui/GUI/timeline_component/timeline_component.gd" id="1_qjav3"]
+[ext_resource type="PackedScene" uid="uid://qwtki1ms512r" path="res://scenes/ui/GUI/timeline_component/overall_timeline/overall_timeline.tscn" id="1_qjav3"]
+[ext_resource type="PackedScene" uid="uid://bp6bat1chlua3" path="res://scenes/ui/GUI/timeline_component/segment_timeline/segmented_timeline.tscn" id="2_ixx32"]
 
-[node name="TimelineComponent" type="HBoxContainer" unique_id=1691984756]
-theme_override_constants/separation = 5
-script = ExtResource("1_qjav3")
+[node name="TimelineComponent" type="Control" unique_id=2132877681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OverallTimeline" parent="." unique_id=1691984756 instance=ExtResource("1_qjav3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -870.0
+offset_top = -160.0
+offset_right = 870.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SegmentedTimeline" parent="." unique_id=1052109499 instance=ExtResource("2_ixx32")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -870.0
+offset_top = -20.0
+offset_right = 870.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0

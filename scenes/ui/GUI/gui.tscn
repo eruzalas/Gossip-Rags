@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://rgbpkioyf431" path="res://scenes/ui/GUI/timeline_component/timeline_bar_prefab/timeline_bar_prefab.tscn" id="3_g7ujo"]
 [ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="3_uut3t"]
 [ext_resource type="Texture2D" uid="uid://bj5u4f4epj5wn" path="res://assets/ui/placeholder_progress_fill_2.png" id="5_5rqb3"]
-[ext_resource type="Script" uid="uid://c7ixj33suiv1q" path="res://scenes/ui/GUI/timeline.gd" id="5_g7ujo"]
+[ext_resource type="Script" uid="uid://c7ixj33suiv1q" path="res://scenes/ui/GUI/timeline_component/timeline_bar_prefab/timeline_bar_prefab.gd" id="5_g7ujo"]
 [ext_resource type="Texture2D" uid="uid://j7ou8uc38l6k" path="res://assets/ui/placeholder_progress_fill_3.png" id="6_f5knn"]
 [ext_resource type="Texture2D" uid="uid://cujh7rnx1ve5r" path="res://assets/ui/placeholder_progress_fill_4.png" id="7_1vruq"]
 [ext_resource type="Texture2D" uid="uid://dxt240vov2e34" path="res://assets/ui/placeholder_progress_fill_5.png" id="8_ehwkb"]
 [ext_resource type="Texture2D" uid="uid://bj76pbumdkk2w" path="res://assets/ui/placeholder_progress_fill_6.png" id="9_jwpkq"]
 [ext_resource type="Texture2D" uid="uid://dedhykv54lxxs" path="res://assets/ui/placeholder_progress_fill_7.png" id="10_dr5w8"]
 [ext_resource type="Texture2D" uid="uid://dcsi7coo4olpd" path="res://assets/ui/placeholder_progress_fill_8.png" id="11_158oo"]
-[ext_resource type="PackedScene" uid="uid://qwtki1ms512r" path="res://scenes/ui/GUI/timeline_component/timeline_component.tscn" id="13_uut3t"]
+[ext_resource type="PackedScene" uid="uid://lyrpksrcr2a6" path="res://scenes/ui/GUI/timeline_component/timeline_component.tscn" id="13_uut3t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ac7o"]
 font_size = 40
@@ -134,16 +134,5 @@ texture_under = ExtResource("3_uut3t")
 texture_progress = ExtResource("11_158oo")
 script = ExtResource("5_g7ujo")
 
-[node name="TimelineComponent" parent="." unique_id=1691984756 instance=ExtResource("13_uut3t")]
+[node name="TimelineComponent" parent="." unique_id=2132877681 instance=ExtResource("13_uut3t")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -870.0
-offset_top = -130.0
-offset_right = 870.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 0

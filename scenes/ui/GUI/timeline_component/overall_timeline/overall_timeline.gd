@@ -9,15 +9,17 @@ const target_bar_increment: float = 33
 const bar_prefab = preload("res://scenes/ui/GUI/timeline_component/timeline_bar_prefab/timeline_bar_prefab.tscn")
 
 func _ready() -> void:
+	SignalBus.update_timeline.connect(_update_child_bar)
+	
 	for i in range(number_of_bars):
 		var new_bar = bar_prefab.instantiate()
+		new_bar.type = Enums.TimelineBarType.OVERALL
 		# again see comment in const decl section - improvements can be made
 		new_bar.target_per_part = target_bar_increment
 		add_child(new_bar)
-		
-	print(get_children())
-	print("Tell child 1 to incrmeent:")
-	get_children()[0]._update_connection(true, 1, target_bar_increment / 30)
+
+func _update_child_bar(bar_num: int, active: bool, segment_number: int, leeway_value: float):
+	get_children()[bar_num - 1]._update_connection(active, segment_number, target_bar_increment / leeway_value)
 
 func _process(delta: float) -> void:
 	pass

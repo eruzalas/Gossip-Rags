@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qwtki1ms512r"]
+
+[ext_resource type="Script" uid="uid://dnbg0k3j1f0wa" path="res://scenes/ui/GUI/timeline_component/overall_timeline/overall_timeline.gd" id="1_qjav3"]
+
+[node name="OverallTimeline" type="HBoxContainer" unique_id=1691984756]
+offset_right = 1740.0
+offset_bottom = 100.0
+theme_override_constants/separation = 5
+alignment = 1
+script = ExtResource("1_qjav3")
