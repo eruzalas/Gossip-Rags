@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2l68uswvb46x" path="res://assets/magazine/jared_placeholder.png" id="4_wkjyd"]
 [ext_resource type="Texture2D" uid="uid://dvaev7i2552ty" path="res://assets/magazine/sarah_placeholder.png" id="5_m0tqb"]
 [ext_resource type="PackedScene" uid="uid://2eatn2pmbqse" path="res://scenes/components/magazine_components/info_pieces.tscn" id="6_m0tqb"]
+[ext_resource type="Texture2D" uid="uid://bda2y213i1ufb" path="res://assets/ui/placeholder_empty_outline.png" id="6_qiuyc"]
 [ext_resource type="PackedScene" uid="uid://bo0scue3cl4p3" path="res://scenes/components/magazine_components/lock_info.tscn" id="7_b0mm3"]
 
 [node name="Magazine" type="Node2D" unique_id=80378607]
@@ -52,7 +53,9 @@ position = Vector2(48, 53)
 sprite = ExtResource("4_wkjyd")
 
 [node name="info_pieces2" parent="." unique_id=1856840795 groups=["text"] instance=ExtResource("6_m0tqb")]
-position = Vector2(127, 392)
+position = Vector2(210, 409)
+sprite = ExtResource("6_qiuyc")
+new_text = "[color=black]leon kennedy [/color]"
 
 [node name="info_pieces3" parent="." unique_id=1212795323 groups=["pic"] instance=ExtResource("6_m0tqb")]
 position = Vector2(248, 212)
@@ -63,6 +66,10 @@ position = Vector2(714, 68)
 
 [node name="lock_info2" parent="." unique_id=759481559 groups=["lock"] instance=ExtResource("7_b0mm3")]
 position = Vector2(751, 378)
+
+[node name="info_pieces4" parent="." unique_id=1132056996 groups=["pic"] instance=ExtResource("6_m0tqb")]
+position = Vector2(68, 249)
+sprite = ExtResource("4_wkjyd")
 
 [node name="lock_info3" parent="." unique_id=274688817 groups=["lock"] instance=ExtResource("7_b0mm3")]
 position = Vector2(936, 201)

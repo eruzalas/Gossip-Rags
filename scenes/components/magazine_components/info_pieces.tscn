@@ -29,7 +29,7 @@ scale = Vector2(0.23746528, 0.11564815)
 offset_right = 273.0
 offset_bottom = 81.0
 bbcode_enabled = true
-text = "[color=black]Test text for funsies and to see if this is a good way of doing this and if it will work[/color]"
+text = "[color=black]Test [/color]"
 
 [node name="Text Area2D" type="Area2D" parent="." unique_id=234012528]
 

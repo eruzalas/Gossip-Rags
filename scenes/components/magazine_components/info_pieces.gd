@@ -15,6 +15,7 @@ extends Node2D
 
 #additional variables
 @export var sprite: Texture2D
+@export var new_text: String
 var my_group: Array
 var is_draggable: bool = false
 var is_in_lock: bool = false
@@ -32,6 +33,7 @@ func _setup() -> void:
 		info_area_2d.process_mode = Node.PROCESS_MODE_DISABLED
 		info_collision_shape_2d.disabled = true
 		text_sprite_2d.texture = sprite
+		rich_text_label.text = new_text
 	elif(my_group.has("pic")):
 		text_sprite_2d.queue_free()
 		text_area_2d.process_mode = Node.PROCESS_MODE_DISABLED
